@@ -1,0 +1,187 @@
+/* =====================================================
+   ELEIÇÕES 2026 — CANDIDATE DETAIL PAGE CSS
+   ===================================================== */
+
+#candidato-main {
+  min-height: 100vh;
+  padding: 120px var(--section-pad-x) 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.candidato-hero {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.candidato-photo-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+  border: 1px solid var(--border-strong);
+  aspect-ratio: 3/4;
+}
+
+.candidato-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.candidato-photo-emoji {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  background: var(--bg-card);
+}
+
+.candidato-header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.candidato-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.candidato-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.candidato-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.candidato-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.candidato-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.candidato-stat-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.section-block {
+  margin-bottom: 64px;
+}
+
+.section-block h3 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-block h3::before {
+  content: '';
+  width: 16px;
+  height: 4px;
+  background: var(--accent-primary);
+  border-radius: 2px;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.bento-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.text-content {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.text-content p {
+  margin-bottom: 1.5em;
+}
+
+.text-content p:last-child {
+  margin-bottom: 0;
+}
+
+.propostas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.proposta-item {
+  display: flex;
+  gap: 16px;
+  background: var(--bg-elevated, rgba(0,0,0,0.03));
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.proposta-item-icon {
+  font-size: 1.8rem;
+}
+
+.proposta-item-content h4 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.proposta-item-content p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .candidato-hero {
+    grid-template-columns: 1fr;
+  }
+  .candidato-photo-wrapper {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
