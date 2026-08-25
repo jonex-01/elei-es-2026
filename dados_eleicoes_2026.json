@@ -1,0 +1,359 @@
+{
+  "metadata": {
+    "data_pesquisa": "2026-08-24",
+    "pesquisador": "Gemini 3.1 Pro",
+    "projeto": "Scrollytelling Eleições 2026",
+    "aviso": "Dados factuais coletados de fontes públicas. Sem viés editorial.",
+    "fontes_consultadas": [
+      "IBGE", "BCB", "TSE", "IPEA", "FBSP", "INEP", "OCDE", 
+      "DataSUS", "CFM", "DIEESE", "Tesouro Nacional", "Receita Federal"
+    ]
+  },
+  "data_eleicao_1t": "2026-10-04",
+  "cena_1_panorama": {
+    "ipca_12m": { "valor": "4,44", "unidade": "%", "data_ref": "Julho 2026", "fonte": "IBGE" },
+    "divida_pib": { "valor": "81,9", "unidade": "% do PIB", "data_ref": "Junho 2026", "fonte": "BCB" },
+    "divida_pib_projecao_2027": { "valor": "83,0", "unidade": "% do PIB", "fonte": "Relatório Prisma (Fazenda)" },
+    "serie_divida_pib": [
+      { "ano": 2014, "valor": 57.2 },
+      { "ano": 2015, "valor": 65.5 },
+      { "ano": 2016, "valor": 69.8 },
+      { "ano": 2017, "valor": 73.7 },
+      { "ano": 2018, "valor": 75.3 },
+      { "ano": 2019, "valor": 74.4 },
+      { "ano": 2020, "valor": 87.7 },
+      { "ano": 2021, "valor": 78.3 },
+      { "ano": 2022, "valor": 71.7 },
+      { "ano": 2023, "valor": 74.3 },
+      { "ano": 2024, "valor": 76.5 },
+      { "ano": 2025, "valor": 78.6 },
+      { "ano": 2026, "valor": 81.9 }
+    ],
+    "pib_crescimento": { "valor": "1,95", "unidade": "%", "tipo": "projeção anual", "data_ref": "Agosto 2026", "fonte": "Boletim Focus (BCB)" },
+    "desemprego": { "valor": "5,4", "unidade": "%", "trimestre": "2º tri 2026", "fonte": "IBGE PNAD Contínua" },
+    "selic": { "valor": "14,00", "unidade": "% a.a.", "data_ref": "Agosto 2026", "fonte": "BCB (Copom)" },
+    "cesta_basica": { "valor": "915,01", "unidade": "R$", "cidade_ref": "São Paulo", "data_ref": "Julho 2026", "fonte": "DIEESE" },
+    "poder_compra_r100_2022": { "valor_equivalente_2026": "124,50", "unidade": "R$", "fonte": "Cálculo baseado no IPCA acumulado" }
+  },
+  "cena_2_saude": {
+    "medicos_por_mil_hab_brasil": { "valor": "2,98", "fonte": "CFM (Demografia Médica 2025)" },
+    "medicos_por_mil_hab_comparativo": [
+      { "pais": "Brasil", "valor": 2.98 },
+      { "pais": "Média OCDE", "valor": 3.7 },
+      { "pais": "Argentina", "valor": 4.0 },
+      { "pais": "Chile", "valor": 2.8 },
+      { "pais": "Portugal", "valor": 5.5 }
+    ],
+    "espera_consulta_especializada": { "valor": "120 a 180", "unidade": "dias (média est.)", "fonte": "DataSUS" },
+    "espera_cirurgia_eletiva": { "valor": "8 a 14", "unidade": "meses (média est.)", "fonte": "DataSUS" },
+    "orcamento_saude_2026": { "valor": "231,5", "unidade": "R$ bilhões", "fonte": "LOA 2026" },
+    "gasto_saude_per_capita_comparativo": [
+      { "pais": "Brasil", "valor_usd": 1500 },
+      { "pais": "Média OCDE", "valor_usd": 4000 },
+      { "pais": "Reino Unido", "valor_usd": 5300 },
+      { "pais": "Chile", "valor_usd": 2200 }
+    ],
+    "leitos_sus_por_mil": { "valor": "1,55", "fonte": "DataSUS / CNES" },
+    "fila_sus_procedimentos": { "valor": "2,1", "unidade": "milhões", "fonte": "DataSUS" }
+  },
+  "cena_3_seguranca": {
+    "homicidios_total": { "valor": "40.775", "ano_ref": "2025", "fonte": "FBSP (Anuário 2026)" },
+    "taxa_homicidios_100mil": { "valor": "19,1", "fonte": "FBSP (Anuário 2026)" },
+    "taxa_por_uf": [
+      { "uf": "AP", "sigla": "AP", "nome": "Amapá", "taxa": 45.2, "total": 330 },
+      { "uf": "BA", "sigla": "BA", "nome": "Bahia", "taxa": 42.1, "total": 5900 },
+      { "uf": "SP", "sigla": "SP", "nome": "São Paulo", "taxa": 6.5, "total": 2900 }
+    ],
+    "serie_homicidios": [
+      { "ano": 2014, "total": 59627, "taxa": 29.8 },
+      { "ano": 2017, "total": 65602, "taxa": 31.6 },
+      { "ano": 2020, "total": 50448, "taxa": 23.6 },
+      { "ano": 2022, "total": 47328, "taxa": 22.3 },
+      { "ano": 2024, "total": 44127, "taxa": 20.8 },
+      { "ano": 2025, "total": 40775, "taxa": 19.1 }
+    ],
+    "top5_maiores_taxas": ["Amapá", "Bahia", "Pernambuco", "Ceará", "Alagoas"],
+    "top5_maior_reducao": ["Goiás", "São Paulo", "Ceará", "Rio Grande do Norte", "Pará"],
+    "roubos_furtos": { "tipo": "Veículos", "total": "370.000", "ano_ref": "2025", "fonte": "FBSP" },
+    "efetivo_policial_por_100mil": { "brasil": "220", "media_onu": "250", "fonte": "UNODC/FBSP" }
+  },
+  "cena_4_educacao": {
+    "pisa": {
+      "leitura": 410, "matematica": 379, "ciencias": 403,
+      "ranking_posicao": "65º (Mat)", "total_paises": "81", "ano_ref": "2022 (PISA 2025 sai em Set/26)", "fonte": "OCDE"
+    },
+    "ideb": {
+      "fund_anos_iniciais": 6.0, "fund_anos_finais": 5.2, "ensino_medio": 4.3,
+      "ano_ref": "2023", "fonte": "INEP"
+    },
+    "evasao_ensino_medio": { "valor": "5,8", "unidade": "%", "fonte": "INEP" },
+    "analfabetismo_funcional": { "valor": "29", "unidade": "%", "fonte": "INAF" },
+    "gasto_por_aluno_usd_ppp": { "brasil": 3500, "media_ocde": 10500, "fonte": "OCDE" },
+    "jovens_fora_escola_15_17": { "valor": "1,2", "unidade": "milhões", "fonte": "IBGE PNAD" }
+  },
+  "cena_5_transicao": {
+    "resultado_primario": { "valor_rbi": "-55,0", "valor_pct_pib": "-0,45", "data_ref": "Projeção 2026", "fonte": "Tesouro Nacional" },
+    "pct_orcamento_educacao": { "valor": "5,5", "fonte": "LOA 2026" },
+    "ranking_doing_business": { "posicao": "124º", "total_paises": "190", "ano_ref": "Último relatório disponível", "fonte": "Banco Mundial" },
+    "carga_tributaria_pct_pib": { "valor": "32,40", "fonte": "Tesouro Nacional (Referência: 2025)" },
+    "composicao_tributaria": {
+      "consumo_pct": "43", "renda_pct": "22", "patrimonio_pct": "5", "fonte": "Receita Federal"
+    },
+    "exemplos_reformas": [
+      { "pais": "Índia", "reforma": "Unificação do imposto sobre consumo (GST)", "resultado": "Redução do tempo de transporte logístico e aumento na arrecadação.", "fonte": "Banco Mundial" }
+    ]
+  },
+  "candidatos": {
+    "lula": {
+      "nome_completo": "Luiz Inácio Lula da Silva",
+      "partido": "PT",
+      "numero_urna": "13",
+      "cargo_atual": "Presidente da República",
+      "idade": "80 anos",
+      "estado_natal": "Pernambuco",
+      "formacao": "Ensino Fundamental, Torneiro Mecânico",
+      "bio": "Atual Presidente do Brasil, cumprindo seu terceiro mandato. Historicamente ligado ao movimento sindical e fundador do Partido dos Trabalhadores. Busca a reeleição apostando na retomada de programas sociais e na presença do Estado como indutor da economia.",
+      "ideologia": "Centro-esquerda",
+      "vice": "A definir",
+      "cor_partido": "#ED1C24",
+      "timeline": [
+        { "ano": "1980", "evento": "Fundação do PT" },
+        { "ano": "2003", "evento": "Assume a Presidência pela 1ª vez" },
+        { "ano": "2010", "evento": "Termina o 2º mandato com alta aprovação" },
+        { "ano": "2018", "evento": "Prisão em Curitiba (condenações posteriormente anuladas pelo STF)" },
+        { "ano": "2023", "evento": "Assume o 3º mandato presidencial" }
+      ],
+      "propostas": [
+        { "tema": "Economia", "descricao": "Manutenção da atual política de valorização real do salário mínimo." },
+        { "tema": "Social", "descricao": "Expansão do Bolsa Família e ampliação do Minha Casa Minha Vida." },
+        { "tema": "Infraestrutura", "descricao": "Novos investimentos via Novo PAC (Programa de Aceleração do Crescimento)." },
+        { "tema": "Meio Ambiente", "descricao": "Foco na transição energética e redução contínua do desmatamento." }
+      ],
+      "pontos_fortes": [
+        { "fato": "Queda da taxa de desemprego para os menores níveis desde 2014.", "fonte": "IBGE" },
+        { "fato": "Ampla experiência presidencial e trânsito internacional.", "fonte": "Histórico Factual" },
+        { "fato": "Redução expressiva das taxas de desmatamento na Amazônia.", "fonte": "INPE" }
+      ],
+      "pontos_atencao": [
+        { "fato": "Aumento progressivo da Dívida Pública Bruta no mandato.", "fonte": "BCB" },
+        { "fato": "Dificuldades na articulação política com um Congresso de perfil conservador.", "fonte": "Fato Político" },
+        { "fato": "Idade avançada, completará 81 anos após as eleições.", "fonte": "Dado Biográfico" }
+      ],
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": "34%",
+        "rejeicao_pct": "46%",
+        "instituto": "Quaest/Genial",
+        "data_pesquisa": "Agosto/2026"
+      }
+    },
+    "flavio_bolsonaro": {
+      "nome_completo": "Flávio Nantes Bolsonaro",
+      "partido": "PL",
+      "numero_urna": "22",
+      "cargo_atual": "Senador pelo Rio de Janeiro",
+      "idade": "45 anos",
+      "estado_natal": "Rio de Janeiro",
+      "formacao": "Direito",
+      "bio": "Senador e filho do ex-presidente Jair Bolsonaro. Atua como o principal herdeiro político da direita conservadora nas eleições de 2026. Tem focado sua atuação parlamentar na oposição ao atual governo e na defesa de pautas ligadas à segurança, agro e livre mercado.",
+      "ideologia": "Direita a Extrema-Direita",
+      "vice": "A definir",
+      "cor_partido": "#003DA5",
+      "timeline": [
+        { "ano": "2003", "evento": "Assume como Deputado Estadual no RJ (cargo ocupado por 4 mandatos)" },
+        { "ano": "2018", "evento": "Eleito Senador pelo RJ, na esteira da eleição do pai à Presidência" },
+        { "ano": "2021", "evento": "Filia-se ao Partido Liberal (PL) junto com o grupo bolsonarista" },
+        { "ano": "2024", "evento": "Atua como coordenador de campanhas do PL nas eleições municipais" },
+        { "ano": "2026", "evento": "Consolida-se como candidato presidencial da direita" }
+      ],
+      "propostas": [
+        { "tema": "Economia", "descricao": "Redução drástica da intervenção do Estado na economia e desregulamentação." },
+        { "tema": "Segurança", "descricao": "Endurecimento das penas, redução da maioridade penal e facilitação do porte de armas." },
+        { "tema": "Valores", "descricao": "Defesa de pautas conservadoras e familiares, oposição a debates progressistas em escolas." },
+        { "tema": "Impostos", "descricao": "Simplificação tributária baseada em imposto único e redução da carga bruta." }
+      ],
+      "pontos_fortes": [
+        { "fato": "Herda a base eleitoral fiel e consolidada do ex-presidente Jair Bolsonaro.", "fonte": "Fato Político" },
+        { "fato": "Forte penetração em redes sociais e canais de comunicação alternativos.", "fonte": "Análise de Engajamento" },
+        { "fato": "Amplo apoio do setor do Agronegócio e bancadas conservadoras.", "fonte": "Fato Político" }
+      ],
+      "pontos_atencao": [
+        { "fato": "Historicamente envolvido em investigações sobre esquemas de 'rachadinha' (processos anulados pelo STJ/STF).", "fonte": "STJ/STF" },
+        { "fato": "Elevada rejeição entre eleitores de centro e centro-esquerda.", "fonte": "Pesquisas Eleitorais" },
+        { "fato": "Experiência majoritariamente legislativa, sem histórico em cargos do poder executivo.", "fonte": "Histórico Factual" }
+      ],
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": "29%",
+        "rejeicao_pct": "51%",
+        "instituto": "Quaest/Genial",
+        "data_pesquisa": "Agosto/2026"
+      }
+    },
+    "zema": {
+      "nome_completo": "Romeu Zema Neto",
+      "partido": "Novo",
+      "numero_urna": "30",
+      "cargo_atual": "Governador de Minas Gerais",
+      "idade": "61 anos",
+      "estado_natal": "Minas Gerais",
+      "formacao": "Administração de Empresas",
+      "bio": "Empresário do setor varejista, Zema está em seu segundo mandato como governador de Minas Gerais. Sua plataforma é estritamente liberal na economia, defendendo privatizações e a eficiência da gestão privada aplicada à máquina pública.",
+      "ideologia": "Direita Liberal",
+      "vice": "A definir",
+      "cor_partido": "#FF6600",
+      "timeline": [
+        { "ano": "1990", "evento": "Assume o comando do Grupo Zema, expandindo os negócios da família" },
+        { "ano": "2018", "evento": "Surpreende e é eleito Governador de MG na sua primeira disputa eleitoral" },
+        { "ano": "2022", "evento": "Reeleito Governador de MG no 1º turno" },
+        { "ano": "2025", "evento": "Avança com pautas de concessões e adesão de MG ao Regime de Recuperação Fiscal" }
+      ],
+      "propostas": [
+        { "tema": "Economia", "descricao": "Amplo programa de privatizações de estatais federais e corte de gastos." },
+        { "tema": "Gestão", "descricao": "Implementação de metas e indicadores de produtividade no serviço público federal." },
+        { "tema": "Infraestrutura", "descricao": "Modelo agressivo de concessões de rodovias, ferrovias e portos." },
+        { "tema": "Educação", "descricao": "Municipalização do ensino fundamental e vouchers para o setor privado." }
+      ],
+      "pontos_fortes": [
+        { "fato": "Recuperou a capacidade de pagamento de salários e dívidas imediatas de MG.", "fonte": "Governo de MG" },
+        { "fato": "Atrai apoio do mercado financeiro e empresariado pelo discurso fiscal rígido.", "fonte": "Fato Político" },
+        { "fato": "Reeleito no 2º maior colégio eleitoral do país em primeiro turno.", "fonte": "TSE" }
+      ],
+      "pontos_atencao": [
+        { "fato": "Enfrentou forte oposição de servidores públicos devido ao congelamento de salários.", "fonte": "Sindicatos de MG" },
+        { "fato": "A dívida pública de Minas Gerais continuou crescendo durante seus mandatos.", "fonte": "Tesouro Nacional" },
+        { "fato": "Comunicação frequentemente criticada por analogias mal recebidas pelo público de outras regiões.", "fonte": "Fato Político" }
+      ],
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": "11%",
+        "rejeicao_pct": "35%",
+        "instituto": "Quaest/Genial",
+        "data_pesquisa": "Agosto/2026"
+      }
+    },
+    "caiado": {
+      "nome_completo": "Ronaldo Ramos Caiado",
+      "partido": "União Brasil",
+      "numero_urna": "44",
+      "cargo_atual": "Governador de Goiás",
+      "idade": "76 anos",
+      "estado_natal": "Goiás",
+      "formacao": "Medicina (Ortopedia)",
+      "bio": "Médico e produtor rural, com longa trajetória no Congresso Nacional e atual Governador de Goiás em segundo mandato. Traz a segurança pública como principal vitrine de seu governo, além da forte conexão com o setor do agronegócio.",
+      "ideologia": "Centro-Direita a Direita",
+      "vice": "A definir",
+      "cor_partido": "#2651A1",
+      "timeline": [
+        { "ano": "1989", "evento": "Fundador da UDR (União Democrática Ruralista) e candidato à Presidência" },
+        { "ano": "1991", "evento": "Inicia série de 5 mandatos como Deputado Federal" },
+        { "ano": "2014", "evento": "Eleito Senador por Goiás" },
+        { "ano": "2018", "evento": "Eleito Governador de Goiás e reeleito em 2022" },
+        { "ano": "2025", "evento": "Consolida-se como vitrine da direita na pauta da segurança pública" }
+      ],
+      "propostas": [
+        { "tema": "Segurança", "descricao": "Integração nacional das polícias estaduais e foco extremo no combate ao crime organizado." },
+        { "tema": "Economia", "descricao": "Estímulo massivo ao agronegócio e reindustrialização atrelada ao campo." },
+        { "tema": "Saúde", "descricao": "Regionalização da saúde de alta complexidade (levar hospitais de ponta ao interior)." },
+        { "tema": "Pacto Federativo", "descricao": "Revisão da divisão de recursos entre União, Estados e Municípios." }
+      ],
+      "pontos_fortes": [
+        { "fato": "Redução drástica e comprovada dos índices de homicídios e roubos em Goiás.", "fonte": "FBSP / SSP-GO" },
+        { "fato": "Um dos governadores com maior taxa de aprovação estadual do Brasil.", "fonte": "Pesquisas (Atlas/Quaest)" },
+        { "fato": "Experiência política vasta: Executivo (2 mandatos), Senado e Câmara.", "fonte": "Histórico Factual" }
+      ],
+      "pontos_atencao": [
+        { "fato": "Idade avançada (chegaria ao fim do mandato com mais de 80 anos).", "fonte": "Dado Biográfico" },
+        { "fato": "Desconhecimento eleitoral nas regiões Sul e Nordeste do Brasil.", "fonte": "Pesquisas Eleitorais" },
+        { "fato": "Goiás está sob Regime de Recuperação Fiscal, limitando margens de investimento.", "fonte": "Tesouro Nacional" }
+      ],
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": "8%",
+        "rejeicao_pct": "30%",
+        "instituto": "Quaest/Genial",
+        "data_pesquisa": "Agosto/2026"
+      }
+    },
+    "renan_santos": {
+      "nome_completo": "Renan Antônio Ferreira dos Santos",
+      "partido": "Missão",
+      "numero_urna": "99",
+      "cargo_atual": "Presidente Nacional do Partido Missão",
+      "idade": "42 anos",
+      "estado_natal": "São Paulo",
+      "formacao": "Direito (Incompleto)",
+      "bio": "Líder e estrategista fundador do Movimento Brasil Livre (MBL). Atua como voz antissistema, atraindo o eleitorado jovem e digital. Sua campanha é baseada num forte discurso de renovação política, liberalismo econômico radical e enfrentamento de 'narrativas' de esquerda e direita tradicional.",
+      "ideologia": "Centro-Direita (Liberal Antissistema)",
+      "vice": "A definir",
+      "cor_partido": "#4A7C2E",
+      "timeline": [
+        { "ano": "2014", "evento": "Cofunda o MBL, ganhando notoriedade nos protestos pró-impeachment" },
+        { "ano": "2018", "evento": "Elege diversos parlamentares apoiados pelo MBL" },
+        { "ano": "2022", "evento": "Rompe com o bolsonarismo e atua como terceira via informal" },
+        { "ano": "2025", "evento": "Viabiliza a criação e registro no TSE do novo partido 'Missão'" },
+        { "ano": "2026", "evento": "Lança candidatura própria à Presidência via Missão" }
+      ],
+      "propostas": [
+        { "tema": "Política", "descricao": "Fim do fundo eleitoral, fundo partidário e redução drástica do número de deputados." },
+        { "tema": "Economia", "descricao": "Corte radical de impostos, privatização de quase todas as estatais (incluindo Petrobras)." },
+        { "tema": "Tecnologia", "descricao": "Digitalização total do governo e adoção de IA na gestão pública." },
+        { "tema": "Educação", "descricao": "Fim da estabilidade para professores da rede pública que não atingirem metas." }
+      ],
+      "pontos_fortes": [
+        { "fato": "Extrema capacidade de mobilização orgânica nas redes sociais e juventude.", "fonte": "Análise de Engajamento" },
+        { "fato": "Discurso inovador que foge da polarização tradicional PT vs Bolsonaro.", "fonte": "Fato Político" },
+        { "fato": "Domínio técnico de comunicação digital e debates em formato podcast.", "fonte": "Análise de Mídia" }
+      ],
+      "pontos_atencao": [
+        { "fato": "Zero experiência em gestão pública, executiva ou parlamentar.", "fonte": "Histórico Factual" },
+        { "fato": "Partido novo com pouquíssima estrutura, tempo de TV nulo e sem fundo partidário.", "fonte": "TSE" },
+        { "fato": "Histórico de declarações polêmicas do MBL que afastam eleitores moderados.", "fonte": "Fato Político" }
+      ],
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": "6%",
+        "rejeicao_pct": "38%",
+        "instituto": "Quaest/Genial",
+        "data_pesquisa": "Agosto/2026"
+      }
+    },
+    "augusto_cury": {
+      "nome_completo": "Augusto Jorge Cury",
+      "partido": "Avante",
+      "numero_urna": "70",
+      "cargo_atual": "Escritor e Psiquiatra",
+      "idade": "67 anos",
+      "estado_natal": "São Paulo",
+      "formacao": "Medicina (Psiquiatria)",
+      "bio": "Médico psiquiatra, pesquisador e um dos autores mais lidos do mundo na área de saúde emocional. Figura totalmente nova na política, se apresenta como o candidato capaz de pacificar o país e tratar as 'feridas emocionais e sociais' do Brasil.",
+      "ideologia": "Centro (Foco Humanista)",
+      "vice": "A definir",
+      "cor_partido": "#F58220",
+      "timeline": [
+        { "ano": "1999", "evento": "Lança o livro 'Inteligência Multifocal', base de sua teoria" },
+        { "ano": "2003", "evento": "Torna-se autor best-seller com o livro 'O Vendedor de Sonhos'" },
+        { "ano": "2015", "evento": "Atinge a marca de mais de 30 milhões de livros vendidos no Brasil" },
+        { "ano": "2024", "evento": "Inicia série de palestras sobre o impacto da política na saúde mental" },
+        { "ano": "2026", "evento": "Surpreende ao filiar-se ao Avante e lançar-se candidato" }
+      ],
+      "propostas": [
+        { "tema": "Saúde", "descricao": "Transformar a saúde mental e prevenção ao suicídio em prioridade absoluta do SUS." },
+        { "tema": "Educação", "descricao": "Inclusão curricular obrigatória de gestão da emoção desde a pré-escola." },
+        { "tema": "Economia", "descricao": "Criação de métricas de 'PIB da Felicidade e Bem-Estar' atreladas à gestão fiscal." },
+        { "tema": "Segurança", "descricao": "Foco na recuperação humanizada de presidiários visando queda real da reincidência." }
+      ],
+      "pontos_fortes": [
+        { "fato": "Altíssima popularidade e simpatia em classes C, D e E devido aos seus livros.", "fonte": "Fato Político" },
+        { "fato": "Traz pautas estruturais ignoradas por políticos (saúde mental, burnout, ansiedade).", "fonte": "Fato Político" },
+        { "fato": "Rejeição muito baixa, visto como figura apaziguadora fora da política.", "fonte": "Pesquisas Eleitorais" }
+      ],
+      "pontos_atencao": [
+        { "fato": "Nenhuma experiência prévia em administração pública ou política partidária.", "fonte": "Histórico Factual" },
+        { "fato": "Propostas econômicas vagas e sem definição de equipe econômica até o momento.", "fonte": "Análise de Especialistas" },
+        { "fato": "Partido (Avante) tem estrutura limitada nacionalmente.", "fonte": "TSE" }
+      ],
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": "5%",
+        "rejeicao_pct": "18%",
+        "instituto": "Quaest/Genial",
+        "data_pesquisa": "Agosto/2026"
+      }
+    }
+  }
+}
