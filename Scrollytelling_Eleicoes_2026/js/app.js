@@ -1,4 +1,4 @@
-import { ELECTION_DATA, CANDIDATOS_ORDEM } from './data.js';
+import { ELECTION_DATA, CANDIDATOS_ORDEM } from './data.js?v=20260906_tse_v5';
 
 // ── GLOBAL STATE ──
 let currentTheme = localStorage.getItem('theme') || 
@@ -415,7 +415,7 @@ function populateCandidato(el, c, key) {
   }
 
   if (srcEl && c.pesquisa_eleitoral) {
-    srcEl.textContent = `${c.pesquisa_eleitoral.instituto} — ${c.pesquisa_eleitoral.data_pesquisa}`;
+    srcEl.innerHTML = `<strong>${c.pesquisa_eleitoral.instituto}</strong> — ${c.pesquisa_eleitoral.data_pesquisa}${c.pesquisa_eleitoral.outras_fontes ? `<div style="font-size:0.75rem;margin-top:4px;opacity:0.85;color:var(--text-secondary)">Comparativo: ${c.pesquisa_eleitoral.outras_fontes}</div>` : ''}`;
   }
 }
 

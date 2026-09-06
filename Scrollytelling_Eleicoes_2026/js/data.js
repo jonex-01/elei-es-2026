@@ -1,10 +1,10 @@
 export const ELECTION_DATA = {
   "metadata": {
-    "data_pesquisa": "2026-08-24",
-    "pesquisador": "Gemini 3.1 Pro",
+    "data_pesquisa": "2026-09-06",
+    "pesquisador": "Antigravity AI (Fontes Oficiais TSE & Datafolha/Quaest)",
     "projeto": "Scrollytelling Eleições 2026",
-    "aviso": "Dados factuais coletados de fontes públicas. Sem viés editorial.",
-    "fontes_consultadas": ["IBGE","BCB","TSE","IPEA","FBSP","INEP","OCDE","DataSUS","CFM","DIEESE","Tesouro Nacional","Receita Federal"]
+    "aviso": "Dados factuais de registros oficiais no TSE e pesquisas registradas de setembro/2026. Sem viés editorial.",
+    "fontes_consultadas": ["TSE","Datafolha","Quaest","IBGE","BCB","IPEA","FBSP","INEP","OCDE","DataSUS","CFM","DIEESE","Tesouro Nacional","Receita Federal"]
   },
   "data_eleicao_1t": "2026-10-04",
   "cena_1_panorama": {
@@ -157,7 +157,13 @@ export const ELECTION_DATA = {
         "plano_governo": "O plano de governo baseia-se na forte indução do crescimento econômico por meio de investimentos estatais e bancos públicos (como o BNDES). Foca na transição energética ecológica e na reindustrialização do país. Defende o aumento real do salário mínimo, a expansão do crédito para a população de baixa renda e a proteção ambiental rigorosa na Amazônia como vitrine para atrair investimentos estrangeiros.",
         "controversias": "A sua prisão no âmbito da Operação Lava Jato em 2018 marcou profundamente sua imagem política. Embora o Supremo Tribunal Federal tenha anulado as condenações por erros processuais e suspeição do juiz, parte significativa do eleitorado (e adversários) ainda associa os governos petistas a escândalos de corrupção. Além disso, no atual mandato, sofre críticas do mercado financeiro devido ao persistente déficit primário e ao aumento da Dívida Pública."
       },
-      "pesquisa_eleitoral": { "intencao_voto_1t_pct": 34, "rejeicao_pct": 46, "instituto": "Quaest/Genial", "data_pesquisa": "Agosto/2026" }
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": 38,
+        "rejeicao_pct": 45,
+        "instituto": "Datafolha (TSE: BR-03669/2026)",
+        "data_pesquisa": "03/Setembro/2026",
+        "outras_fontes": "Quaest (BR-07065/2026): 37% (1ºT) · 42% (2ºT)"
+      }
     },
     "flavio_bolsonaro": {
       "nome_completo": "Flávio Bolsonaro", "partido": "PL", "numero_urna": "22",
@@ -194,7 +200,13 @@ export const ELECTION_DATA = {
         "plano_governo": "Seu plano é a continuidade da agenda liberal-conservadora. Economicamente, propõe privatizações, desburocratização, redução rigorosa de impostos (focando no setor produtivo) e flexibilização das leis trabalhistas. Na pauta de costumes, defende a oposição estrita ao aborto, oposição à descriminalização das drogas e a facilitação do porte de armas para defesa pessoal e proteção ao agronegócio.",
         "controversias": "O ponto mais sensível de sua trajetória são as investigações do caso das 'rachadinhas' na ALERJ, envolvendo ex-assessores. Embora os processos tenham sido trancados ou anulados nas instâncias superiores (STJ/STF) devido a ilegalidades processuais nas quebras de sigilo, o caso ainda é amplamente usado como munição pela oposição. Flávio também enfrenta o desafio interno de liderar alas mais radicais da direita."
       },
-      "pesquisa_eleitoral": { "intencao_voto_1t_pct": 29, "rejeicao_pct": 51, "instituto": "Quaest/Genial", "data_pesquisa": "Agosto/2026" }
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": 33,
+        "rejeicao_pct": 47,
+        "instituto": "Datafolha (TSE: BR-03669/2026)",
+        "data_pesquisa": "03/Setembro/2026",
+        "outras_fontes": "Quaest (BR-07065/2026): 30% (1ºT) · 41% (2ºT)"
+      }
     },
     "zema": {
       "nome_completo": "Romeu Zema", "partido": "Novo", "numero_urna": "30",
@@ -230,7 +242,13 @@ export const ELECTION_DATA = {
         "plano_governo": "Sua visão de país é ultra focada no livre mercado. Zema defende o Estado mínimo, propondo a venda rápida de estatais federais, reforma administrativa profunda para acabar com a estabilidade de novos servidores públicos, e o estabelecimento de metas corporativas rígidas para o serviço público. Defende também o pacto federativo, exigindo que impostos federais fiquem, em maior parte, nos próprios estados onde são gerados.",
         "controversias": "Enfrenta duras críticas de sindicatos e servidores estaduais, que o acusam de sucatear serviços e congelar salários por anos em Minas Gerais sob o pretexto de austeridade. Apesar do forte discurso fiscal, a dívida total de Minas Gerais continuou subindo expressivamente durante seus mandatos, forçando-o a aderir ao polêmico Regime de Recuperação Fiscal imposto pela União."
       },
-      "pesquisa_eleitoral": { "intencao_voto_1t_pct": 11, "rejeicao_pct": 35, "instituto": "Quaest/Genial", "data_pesquisa": "Agosto/2026" }
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": 2,
+        "rejeicao_pct": 16,
+        "instituto": "Datafolha (TSE: BR-03669/2026)",
+        "data_pesquisa": "03/Setembro/2026",
+        "outras_fontes": "Quaest (BR-07065/2026): 1% (1ºT)"
+      }
     },
     "caiado": {
       "nome_completo": "Ronaldo Caiado", "partido": "União Brasil", "numero_urna": "44",
@@ -267,10 +285,16 @@ export const ELECTION_DATA = {
         "plano_governo": "No plano federal, Caiado tem como base a tolerância zero contra facções criminosas. Ele propõe a federalização parcial de crimes relacionados ao tráfico, a unificação das polícias sob comandos integrados fortes, e construção massiva de novos presídios de segurança máxima. Na economia, é o principal escudo do agronegócio, defendendo pesados subsídios, renegociação de dívidas do setor e expansão da infraestrutura escoadora de safra.",
         "controversias": "Sua idade avançada (completará mais de 80 anos ao fim de um eventual mandato presidencial) levanta constantes questionamentos sobre vigor e renovação política. Apesar do sucesso midiático na segurança, Goiás continua enfrentando graves problemas fiscais, dependendo do Regime de Recuperação Fiscal. A oposição acusa sua política de segurança de ser pautada na letalidade policial e em abusos de autoridade institucional."
       },
-      "pesquisa_eleitoral": { "intencao_voto_1t_pct": 8, "rejeicao_pct": 30, "instituto": "Quaest/Genial", "data_pesquisa": "Agosto/2026" }
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": 4,
+        "rejeicao_pct": 13,
+        "instituto": "Datafolha (TSE: BR-03669/2026)",
+        "data_pesquisa": "03/Setembro/2026",
+        "outras_fontes": "Quaest (BR-07065/2026): 1% (1ºT)"
+      }
     },
     "renan_santos": {
-      "nome_completo": "Renan Santos", "partido": "Missão", "numero_urna": "99",
+      "nome_completo": "Renan Santos", "partido": "Missão", "numero_urna": "14",
       "cargo_atual": "Presidente do Partido Missão", "idade": "42 anos", "estado_natal": "São Paulo",
       "formacao": "Direito (Incompleto)", "ideologia": "Centro-Direita (Liberal Antissistema)", "vice": "A definir",
       "cor_partido": "#4A7C2E", "cor_secundaria": "#2E5019",
@@ -304,7 +328,13 @@ export const ELECTION_DATA = {
         "plano_governo": "Promete uma verdadeira 'demolição' do sistema político tradicional: defende a extinção dos fundos eleitoral e partidário, o fim da reeleição para todos os cargos e a redução drástica de deputados e senadores. Na economia, é um liberal purista, pregando choque de capitalismo e a implementação pesada de Inteligência Artificial para automatizar e reduzir pela metade a máquina pública em 4 anos.",
         "controversias": "Possui total inexperiência em cargos eletivos ou administração pública formal, um alvo constante de seus adversários. O histórico do MBL, recheado de declarações inflamadas, cancelamentos e brigas públicas com aliados do passado, dificulta a criação de pontes e o afasta de eleitores mais moderados. Além disso, a capacidade de sua base jovem e altamente digital se transformar em votos reais na urna em escala nacional permanece uma grande incógnita."
       },
-      "pesquisa_eleitoral": { "intencao_voto_1t_pct": 6, "rejeicao_pct": 38, "instituto": "Quaest/Genial", "data_pesquisa": "Agosto/2026" }
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": 3,
+        "rejeicao_pct": 15,
+        "instituto": "Datafolha (TSE: BR-03669/2026)",
+        "data_pesquisa": "03/Setembro/2026",
+        "outras_fontes": "Quaest (BR-07065/2026): 3% (1ºT)"
+      }
     },
     "augusto_cury": {
       "nome_completo": "Augusto Cury", "partido": "Avante", "numero_urna": "70",
@@ -341,7 +371,13 @@ export const ELECTION_DATA = {
         "plano_governo": "Sua principal plataforma é completamente atípica: a saúde mental. Propõe reformar o SUS para que a psiquiatria e a psicologia sejam acessíveis a todos, além de tornar disciplinas de Gestão de Emoção obrigatórias desde a pré-escola até o ensino médio para estancar a violência estrutural. Na economia, defende que a gestão fiscal seja atrelada ao que chama de 'PIB da Felicidade', medindo o retorno social e humano de cada real gasto.",
         "controversias": "Sua total ausência de histórico executivo, somada a um discurso que muitos críticos da ciência política classificam como 'utópico' e de 'autoajuda', geram fortes desconfianças sobre sua real capacidade de liderar o país diante do Congresso. Sua equipe econômica é praticamente inexistente no momento, gerando nervosismo no mercado. Conta com uma máquina partidária muito incipiente, dificultando alianças estaduais fortes."
       },
-      "pesquisa_eleitoral": { "intencao_voto_1t_pct": 5, "rejeicao_pct": 18, "instituto": "Quaest/Genial", "data_pesquisa": "Agosto/2026" }
+      "pesquisa_eleitoral": {
+        "intencao_voto_1t_pct": 8,
+        "rejeicao_pct": 9,
+        "instituto": "Datafolha (TSE: BR-03669/2026)",
+        "data_pesquisa": "03/Setembro/2026",
+        "outras_fontes": "Quaest (BR-07065/2026): 10% (1ºT)"
+      }
     }
   }
 };

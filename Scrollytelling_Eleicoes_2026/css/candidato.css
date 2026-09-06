@@ -185,3 +185,640 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ═══════════════════════════════════════════
+   FASE 2: SABATINA DA GLOBO — FACT-CHECK
+   ═══════════════════════════════════════════ */
+
+.sabatina-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.sabatina-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.sabatina-badge {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Outfit', sans-serif;
+}
+
+.sabatina-temas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.sabatina-temas span {
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.sabatina-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sabatina-chart-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.sabatina-chart-total {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.sabatina-chart canvas {
+  max-width: 220px;
+  max-height: 220px;
+}
+
+.sabatina-legenda {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.legenda-cor {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legenda-valor {
+  margin-left: auto;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
+}
+
+/* Fact-check exemplos (collapsibles) */
+.factcheck-exemplos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.factcheck-category {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.factcheck-category[open] {
+  border-color: var(--border-strong);
+}
+
+.factcheck-category summary {
+  padding: 16px 20px;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  list-style: none;
+  user-select: none;
+}
+
+.factcheck-category summary::-webkit-details-marker { display: none; }
+
+.factcheck-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.factcheck-chevron {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: transform 0.3s ease;
+}
+
+.factcheck-category[open] .factcheck-chevron {
+  transform: rotate(180deg);
+}
+
+.factcheck-examples-list {
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.factcheck-example {
+  padding: 16px;
+  background: var(--bg-secondary, rgba(0,0,0,0.2));
+  border-radius: 12px;
+  border-left: 3px solid var(--border-strong);
+}
+
+.factcheck-example blockquote {
+  font-style: italic;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.factcheck-example .verificacao {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.factcheck-example cite {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+.factcheck-example cite a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+/* ═══════════════════════════════════════════
+   FASE 2: PLANO DE GOVERNO — ANÁLISE DETALHADA
+   ═══════════════════════════════════════════ */
+
+.plano-doc-info {
+  margin-bottom: 32px;
+}
+
+.plano-doc-nome {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.plano-doc-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.plano-doc-meta a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.plano-doc-meta a:hover {
+  text-decoration: underline;
+}
+
+/* Eixos (accordions principais) */
+.plano-eixos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.plano-eixo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.plano-eixo[open] {
+  border-color: var(--border-strong);
+}
+
+.plano-eixo-header {
+  padding: 20px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  list-style: none;
+  user-select: none;
+}
+
+.plano-eixo-header::-webkit-details-marker { display: none; }
+
+.eixo-icone {
+  font-size: 1.5rem;
+}
+
+.eixo-nome {
+  flex: 1;
+}
+
+.eixo-tipo-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: rgba(var(--accent-rgb), 0.15);
+  color: var(--accent-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.eixo-chevron {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.plano-eixo[open] .eixo-chevron {
+  transform: rotate(180deg);
+}
+
+.eixo-content {
+  padding: 0 24px 24px;
+}
+
+.eixo-resumo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.eixo-resumo {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.btn-toggle-detalhes {
+  background: rgba(var(--accent-rgb), 0.08);
+  color: var(--accent-primary);
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-toggle-detalhes:hover {
+  background: rgba(var(--accent-rgb), 0.16);
+  border-color: var(--accent-primary);
+}
+
+/* Proposta Card */
+.proposta-card {
+  background: var(--bg-card, rgba(255,255,255,0.85));
+  border: 1px solid var(--border-strong, rgba(0,0,0,0.12));
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+[data-theme="dark"] .proposta-card {
+  background: var(--bg-card, rgba(20,25,35,0.7));
+  border: 1px solid var(--border-strong, rgba(255,255,255,0.1));
+}
+
+.proposta-card:last-child {
+  margin-bottom: 0;
+}
+
+.proposta-titulo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.proposta-resumo {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+/* Painel de Viabilidade (3 badges) */
+.viabilidade-painel {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: rgba(var(--accent-rgb), 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(var(--accent-rgb), 0.08);
+}
+
+.viabilidade-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.viab-label {
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+}
+
+.viab-badge {
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+}
+
+/* Cores dos badges */
+.viab-baixo, .viab-baixa  { background: rgba(16,185,129,0.15); color: #10B981; }
+.viab-medio, .viab-media   { background: rgba(245,158,11,0.15); color: #F59E0B; }
+.viab-alto, .viab-alta     { background: rgba(239,68,68,0.15);  color: #EF4444; }
+.viab-prec-sim             { background: rgba(16,185,129,0.15); color: #10B981; }
+.viab-prec-parcial         { background: rgba(245,158,11,0.15); color: #F59E0B; }
+.viab-prec-nao             { background: rgba(239,68,68,0.15);  color: #EF4444; }
+
+/* Sub-accordions dentro das propostas */
+.proposta-detalhe {
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.proposta-detalhe[open] {
+  border-color: var(--border-strong);
+}
+
+.proposta-detalhe summary {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  list-style: none;
+  user-select: none;
+  background: rgba(var(--accent-rgb), 0.03);
+  transition: background 0.2s ease;
+}
+
+.proposta-detalhe summary:hover {
+  background: rgba(var(--accent-rgb), 0.06);
+}
+
+.proposta-detalhe summary::-webkit-details-marker { display: none; }
+
+.proposta-detalhe-content {
+  padding: 16px;
+}
+
+.proposta-detalhe-content p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+/* Tabela de dados do diagnóstico */
+.dados-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-top: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dados-table thead tr {
+  background: rgba(var(--accent-rgb), 0.08);
+}
+
+.dados-table th {
+  text-align: left;
+  padding: 10px 12px;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dados-table td {
+  padding: 10px 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.dados-table td strong {
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Grid de referências internacionais */
+.ref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ref-card {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(var(--accent-rgb), 0.02);
+}
+
+.ref-positiva {
+  border-left: 3px solid #10B981;
+}
+
+.ref-negativa {
+  border-left: 3px solid #EF4444;
+}
+
+.ref-header {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.ref-periodo {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.ref-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.ref-resultado {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin: 8px 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+.ref-card cite {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+/* Grid do teste de viabilidade */
+.viab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.viab-question {
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(var(--accent-rgb), 0.02);
+  border: 1px solid var(--border);
+}
+
+.viab-question h5 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.viab-question p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Fontes da proposta */
+.proposta-fontes {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.proposta-fontes small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Mecanismo itens */
+.mecanismo-item {
+  padding: 12px 16px;
+  margin: 8px 0;
+  background: rgba(var(--accent-rgb), 0.04);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.mecanismo-item strong {
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+}
+
+.mec-badge {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(var(--accent-rgb), 0.12);
+  color: var(--accent-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ═══════════════════════════════════════════
+   FASE 2: RESPONSIVIDADE
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .sabatina-container {
+    grid-template-columns: 1fr;
+  }
+  .ref-grid {
+    grid-template-columns: 1fr;
+  }
+  .viab-grid {
+    grid-template-columns: 1fr;
+  }
+  .viabilidade-painel {
+    flex-direction: column;
+  }
+}
