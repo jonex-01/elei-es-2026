@@ -1,4 +1,5 @@
 import { ELECTION_DATA, CANDIDATOS_ORDEM } from './data.js?v=20260906_tse_v5';
+import { MACRO } from './macro-data.js?v=20261002';
 
 // ── GLOBAL STATE ──
 let currentTheme = localStorage.getItem('theme') || 
@@ -12,10 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initDoubleBezel();
   initScrollProgress();
   initChapterRoute();
-  buildCena1();
-  buildCena2();
-  buildCena3();
-  buildCena4();
   buildCandidatos();
   buildEncerramento();
   initScrollObserver();
@@ -272,42 +269,7 @@ function observeCounter(el, target, decimals = 0, suffix = '') {
   io.observe(el);
 }
 
-// ── DATA SCENES ──
-function buildCena1() {
-  const D = ELECTION_DATA.cena_1_panorama;
-  setText('stat-ipca', D.ipca_12m.valor);
-  setText('stat-selic', D.selic.valor);
-  setText('stat-desemprego', D.desemprego.valor);
-  setText('stat-cesta', 'R$ ' + D.cesta_basica.valor);
-  setText('stat-divida', D.divida_pib.valor + '%');
-
-  const poderEl = document.getElementById('stat-poder');
-  if (poderEl) observeCounter(poderEl, parseFloat(D.poder_compra_r100_2022.valor_equivalente_2026.replace(',', '.')), 2);
-}
-
-function buildCena2() {
-  const D = ELECTION_DATA.cena_2_saude;
-  setText('stat-medicos', D.medicos_por_mil_hab_brasil.valor);
-  setText('stat-fila-sus', D.fila_sus_procedimentos.valor + ' mi');
-  setText('stat-orcamento-saude', 'R$ ' + D.orcamento_saude_2026.valor + ' bi');
-  setText('stat-leitos', D.leitos_sus_por_mil.valor);
-}
-
-function buildCena3() {
-  const D = ELECTION_DATA.cena_3_seguranca;
-  setText('stat-homicidios', D.homicidios_total.valor);
-  setText('stat-taxa-hom', D.taxa_homicidios_100mil.valor);
-  setText('stat-roubos', D.roubos_furtos.total);
-}
-
-function buildCena4() {
-  const D = ELECTION_DATA.cena_4_educacao;
-  setText('stat-pisa-mat', D.pisa.matematica);
-  setText('stat-ideb-medio', D.ideb.ensino_medio);
-  setText('stat-analfab', D.analfabetismo_funcional.valor + '%');
-  const jovensEl = document.getElementById('stat-jovens-fora');
-  if (jovensEl) observeCounter(jovensEl, 1.2, 1, ' mi');
-}
+// Macro indicators are rendered statically by generate_macro.mjs.
 
 // ── CANDIDATES ──
 function buildCandidatos() {
@@ -433,10 +395,6 @@ function getChartColors() {
 }
 
 function initChart(id) {
-  const D1 = ELECTION_DATA.cena_1_panorama;
-  const D2 = ELECTION_DATA.cena_2_saude;
-  const D3 = ELECTION_DATA.cena_3_seguranca;
-  const D4 = ELECTION_DATA.cena_4_educacao;
   const el = document.getElementById(id);
   if (!el) return;
   const ctx = el.getContext('2d');
@@ -454,333 +412,6 @@ function initChart(id) {
       y: { ticks: { color: c.text, font: { family: 'Inter Tight', size: 10 } }, grid: { color: c.grid } }
     }
   };
-
-  if (id === 'chart-divida') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: D1.serie_divida_pib.map(d => d.ano),
-        datasets: [{
-          label: 'Dívida Bruta (% PIB)',
-          data: D1.serie_divida_pib.map(d => d.valor),
-          borderColor: c.accent,
-          backgroundColor: c.accent + '14',
-          fill: true,
-          tension: 0.4,
-          pointBackgroundColor: c.accent,
-          pointRadius: 3,
-          pointHoverRadius: 6,
-          borderWidth: 2,
-        }]
-      },
-      options: { ...baseOpts, plugins: { ...baseOpts.plugins, legend: { display: false } } }
-    });
-  }
-
-  if (id === 'chart-desemprego') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: D1.serie_desemprego.map(d => d.ano),
-        datasets: [{
-          label: 'Taxa de Desemprego (%)',
-          data: D1.serie_desemprego.map(d => d.valor),
-          borderColor: c.isDark ? '#34D399' : '#10B981', // Emerald green
-          backgroundColor: c.isDark ? 'rgba(52,211,153,0.06)' : 'rgba(16,185,129,0.06)',
-          fill: true,
-          tension: 0.4,
-          pointBackgroundColor: c.isDark ? '#34D399' : '#10B981',
-          pointRadius: 4,
-          borderWidth: 2,
-        }]
-      },
-      options: { ...baseOpts, plugins: { ...baseOpts.plugins, legend: { display: false } } }
-    });
-  }
-
-  if (id === 'chart-falencias') {
-    const dataSeries = D1.serie_falencias_rj || [
-      { ano: 2018, rj: 1400, falencias: 1500 },
-      { ano: 2019, rj: 1380, falencias: 1400 },
-      { ano: 2020, rj: 1179, falencias: 978 },
-      { ano: 2021, rj: 891, falencias: 730 },
-      { ano: 2022, rj: 833, falencias: 866 },
-      { ano: 2023, rj: 1405, falencias: 973 },
-      { ano: 2024, rj: 1950, falencias: 1200 },
-      { ano: 2025, rj: 2200, falencias: 1350 },
-      { ano: 2026, rj: 2350, falencias: 1480 }
-    ];
-
-    chartInstances[id] = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: dataSeries.map(d => d.ano),
-        datasets: [
-          {
-            label: 'Recuperações Judiciais',
-            data: dataSeries.map(d => d.rj),
-            borderColor: c.accent,
-            backgroundColor: c.accent + '14',
-            fill: true,
-            tension: 0.4,
-            pointBackgroundColor: c.accent,
-            pointRadius: 3,
-            borderWidth: 2,
-          },
-          {
-            label: 'Falências Decretadas',
-            data: dataSeries.map(d => d.falencias),
-            borderColor: c.isDark ? '#EF4444' : '#DC2626',
-            backgroundColor: c.isDark ? 'rgba(239, 68, 68, 0.1)' : 'rgba(220, 38, 38, 0.1)',
-            fill: true,
-            tension: 0.4,
-            pointBackgroundColor: c.isDark ? '#EF4444' : '#DC2626',
-            pointRadius: 3,
-            borderWidth: 2,
-          }
-        ]
-      },
-      options: { 
-        ...baseOpts, 
-        plugins: { 
-          ...baseOpts.plugins, 
-          legend: { 
-            display: true,
-            position: 'bottom',
-            labels: { color: c.text, font: { family: 'Inter Tight', size: 11 } }
-          } 
-        } 
-      }
-    });
-  }
-
-  if (id === 'chart-medicos') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: D2.medicos_por_mil_hab_comparativo.map(d => d.pais),
-        datasets: [{
-          label: 'Médicos por 1.000 hab.',
-          data: D2.medicos_por_mil_hab_comparativo.map(d => d.valor),
-          backgroundColor: D2.medicos_por_mil_hab_comparativo.map(d => d.pais === 'Brasil' ? c.accent : c.accent + '44'),
-          borderRadius: 8,
-        }]
-      },
-      options: { ...baseOpts, plugins: { ...baseOpts.plugins, legend: { display: false } } }
-    });
-  }
-
-  if (id === 'chart-leitos') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: D2.serie_leitos_sus.map(d => d.ano),
-        datasets: [{
-          label: 'Leitos por 1.000 hab.',
-          data: D2.serie_leitos_sus.map(d => d.valor),
-          borderColor: c.accent,
-          backgroundColor: c.accent + '14',
-          fill: true,
-          tension: 0.4,
-          pointBackgroundColor: c.accent,
-          pointRadius: 3,
-          borderWidth: 2,
-        }]
-      },
-      options: { ...baseOpts, plugins: { ...baseOpts.plugins, legend: { display: false } } }
-    });
-  }
-
-  if (id === 'chart-fila') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: D2.serie_fila_sus.map(d => d.ano),
-        datasets: [{
-          label: 'Fila do SUS (Milhões)',
-          data: D2.serie_fila_sus.map(d => d.valor),
-          borderColor: c.isDark ? '#F87171' : '#DC2626', // Red color for negative aspect
-          backgroundColor: c.isDark ? 'rgba(248,113,113,0.06)' : 'rgba(220,38,38,0.06)',
-          fill: true,
-          tension: 0.4,
-          pointBackgroundColor: c.isDark ? '#F87171' : '#DC2626',
-          pointRadius: 4,
-          borderWidth: 2,
-        }]
-      },
-      options: { ...baseOpts, plugins: { ...baseOpts.plugins, legend: { display: false } } }
-    });
-  }
-
-  if (id === 'chart-homicidios') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: D3.serie_homicidios.map(d => d.ano),
-        datasets: [{
-          label: 'Homicídios/ano',
-          data: D3.serie_homicidios.map(d => d.total),
-          borderColor: c.isDark ? '#F87171' : '#DC2626',
-          backgroundColor: c.isDark ? 'rgba(248,113,113,0.06)' : 'rgba(220,38,38,0.06)',
-          fill: true,
-          tension: 0.4,
-          pointBackgroundColor: c.isDark ? '#F87171' : '#DC2626',
-          pointRadius: 4,
-          borderWidth: 2,
-        }]
-      },
-      options: { ...baseOpts, plugins: { ...baseOpts.plugins, legend: { display: false } } }
-    });
-  }
-
-  if (id === 'chart-roubos') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: D3.serie_roubos.map(d => d.ano),
-        datasets: [{
-          label: 'Milhões de Registros',
-          data: D3.serie_roubos.map(d => d.valor),
-          backgroundColor: c.isDark ? 'rgba(212, 168, 67, 0.7)' : 'rgba(184, 134, 11, 0.7)',
-          borderRadius: 6,
-        }]
-      },
-      options: { ...baseOpts, plugins: { ...baseOpts.plugins, legend: { display: false } } }
-    });
-  }
-
-  if (id === 'chart-faccoes') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: D3.faccoes_criminosas.anos,
-        datasets: [
-          {
-            label: 'PCC',
-            data: D3.faccoes_criminosas.pcc,
-            borderColor: c.isDark ? '#9CA3AF' : '#4B5563', // Cinza
-            backgroundColor: c.isDark ? 'rgba(156, 163, 175, 0.1)' : 'rgba(75, 85, 99, 0.1)',
-            fill: true,
-            tension: 0.4,
-            pointBackgroundColor: c.isDark ? '#9CA3AF' : '#4B5563',
-            pointRadius: 4,
-            borderWidth: 2,
-          },
-          {
-            label: 'Comando Vermelho',
-            data: D3.faccoes_criminosas.cv,
-            borderColor: c.isDark ? '#F87171' : '#DC2626', // Vermelho
-            backgroundColor: c.isDark ? 'rgba(248, 113, 113, 0.1)' : 'rgba(220, 38, 38, 0.1)',
-            fill: true,
-            tension: 0.4,
-            pointBackgroundColor: c.isDark ? '#F87171' : '#DC2626',
-            pointRadius: 4,
-            borderWidth: 2,
-          }
-        ]
-      },
-      options: {
-        ...baseOpts,
-        plugins: { 
-          ...baseOpts.plugins, 
-          legend: { 
-            display: true, 
-            position: 'bottom',
-            labels: { color: c.text, font: { family: 'Inter Tight', size: 11 } }
-          } 
-        },
-        scales: {
-          x: { ticks: { color: c.text, font: { family: 'Inter Tight', size: 10 } }, grid: { color: c.grid } },
-          y: { 
-            min: 0,
-            max: 28, // Ajustado para 28 para não cortar a bolinha do valor 27 no topo
-            ticks: { 
-              color: c.text, 
-              font: { family: 'Inter Tight', size: 10 },
-              stepSize: 5
-            }, 
-            grid: { color: c.grid } 
-          }
-        },
-        layout: {
-          padding: {
-            top: 10 // Adicionando um pequeno espaçamento no topo para garantir que o ponto não seja cortado
-          }
-        }
-      }
-    });
-  }
-
-  if (id === 'chart-educacao') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['IDEB Fund. I', 'IDEB Fund. II', 'IDEB E. Médio'],
-        datasets: [{
-          label: 'IDEB Brasil',
-          data: [D4.ideb.fund_anos_iniciais, D4.ideb.fund_anos_finais, D4.ideb.ensino_medio],
-          backgroundColor: [c.accent + 'B3', c.accent + '80', c.accent + '59'],
-          borderRadius: 8,
-        },{
-          label: 'Meta 2023',
-          data: [7.0, 6.0, 5.2],
-          backgroundColor: c.whiteOrDarkBg,
-          borderColor: c.whiteOrDark,
-          borderWidth: 2,
-          borderRadius: 8,
-        }]
-      },
-      options: { ...baseOpts }
-    });
-  }
-
-  if (id === 'chart-analfabetismo') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: D4.serie_analfabetismo_funcional.map(d => d.ano),
-        datasets: [{
-          label: 'Analfabetismo Funcional (%)',
-          data: D4.serie_analfabetismo_funcional.map(d => d.valor),
-          borderColor: c.isDark ? '#F59E0B' : '#D97706', // Laranja
-          backgroundColor: c.isDark ? 'rgba(245, 158, 11, 0.06)' : 'rgba(217, 119, 6, 0.06)',
-          fill: true,
-          tension: 0.4,
-          pointBackgroundColor: c.isDark ? '#F59E0B' : '#D97706',
-          pointRadius: 4,
-          borderWidth: 2,
-        }]
-      },
-      options: { 
-        ...baseOpts, 
-        plugins: { ...baseOpts.plugins, legend: { display: false } },
-        scales: {
-          x: { ticks: { color: c.text, font: { family: 'Inter Tight', size: 10 } }, grid: { color: c.grid } },
-          y: { 
-            min: 20, // Define um mínimo para destacar melhor a variação na casa dos 20-30%
-            ticks: { color: c.text, font: { family: 'Inter Tight', size: 10 } }, 
-            grid: { color: c.grid } 
-          }
-        }
-      }
-    });
-  }
-
-  if (id === 'chart-evasao') {
-    chartInstances[id] = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: D4.serie_jovens_fora_escola.map(d => d.ano),
-        datasets: [{
-          label: 'Milhões de Jovens',
-          data: D4.serie_jovens_fora_escola.map(d => d.valor),
-          backgroundColor: c.isDark ? 'rgba(248, 113, 113, 0.7)' : 'rgba(220, 38, 38, 0.7)', // Vermelho (problema)
-          borderRadius: 6,
-        }]
-      },
-      options: { ...baseOpts, plugins: { ...baseOpts.plugins, legend: { display: false } } }
-    });
-  }
 
   if (id === 'chart-pesquisa') {
     const cands = CANDIDATOS_ORDEM.map(k => ELECTION_DATA.candidatos[k]);
@@ -868,37 +499,13 @@ const MARQUEE_DATA = {
     { text: "150 milhões de eleitores aptos", type: 'neutral' },
     { text: "6 candidatos confirmados", type: 'neutral' },
     { text: "1º turno em Outubro 2026", type: 'neutral' },
-    { text: "Dados de Ago/2026", type: 'neutral' },
+    { text: "Indicadores macro revisados em 02/10/2026", type: 'neutral' },
     { text: "100% imparcial e independente", type: 'neutral' },
     { text: "Fontes: IBGE, BCB, TSE, IPEA", type: 'neutral' },
     { text: "Voto consciente é voto informado", type: 'neutral' },
     { text: "Compare propostas sem viés", type: 'neutral' }
   ],
-  'scene-panorama': [
-    { text: "Inflação (IPCA) em 4,44%", type: 'bad' },
-    { text: "Selic a 14,00%", type: 'bad' },
-    { text: "Desemprego em 5,4%", type: 'good' },
-    { text: "Dívida Pública 81,9% do PIB", type: 'bad' },
-    { text: "Cesta Básica R$ 915,01", type: 'bad' }
-  ],
-  'scene-saude': [
-    { text: "Médicos: 2,98 por 1.000 hab.", type: 'good' },
-    { text: "Fila SUS: 2,1 milhões", type: 'bad' },
-    { text: "Orçamento Saúde: R$ 231,5 bi", type: 'neutral' },
-    { text: "Leitos SUS: 1,55 por 1.000 hab.", type: 'bad' }
-  ],
-  'scene-seguranca': [
-    { text: "Mortes violentas em queda (2025)", type: 'good' },
-    { text: "Taxa abaixo de 20/100 mil", type: 'good' },
-    { text: "Roubos e furtos: 1,8 mi", type: 'bad' },
-    { text: "Amapá lidera em taxas", type: 'bad' }
-  ],
-  'scene-educacao': [
-    { text: "IDEB Ensino Médio: 4,3", type: 'bad' },
-    { text: "Analfabetismo Funcional: 29%", type: 'bad' },
-    { text: "Jovens fora da escola: 18%", type: 'bad' },
-    { text: "Evasão Escolar: 5,2%", type: 'bad' }
-  ]
+  ...Object.fromEntries(MACRO.map(scene => [scene.id, scene.stats.map(([label, value, unit, period]) => ({ text: `${label}: ${value} ${unit} · ${period}`, type: 'neutral' }))]))
 };
 
 function updateMarquee(sceneId) {

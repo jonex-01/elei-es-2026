@@ -1,0 +1,46 @@
+/* Explicações editoriais: tipografia e cores acompanham o tema do site. */
+.macro-scene .scene-header { margin-bottom: 40px; }
+.macro-review { color: var(--text-secondary); font: 400 .85rem/1.6 'Outfit', sans-serif; margin-top: 18px; }
+.macro-stats { align-items: stretch; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.macro-scene .macro-stat { text-align: left; }
+.macro-stat .double-bezel-inner { display: flex; flex-direction: column; height: 100%; }
+.macro-stat .stat-label { font-size: .9rem; line-height: 1.45; min-height: 2.6em; color: var(--text-primary); }
+.macro-value { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin: 12px 0 4px; }
+.macro-stat .stat-value { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.15; }
+.macro-stat .stat-unit { font-size: .9rem; color: var(--text-primary); }
+.macro-period { font: 400 .8rem/1.6 'Outfit', sans-serif; color: var(--text-secondary); margin-bottom: 16px; }
+.macro-definition, .macro-details p { font: 400 .95rem/1.7 'Outfit', sans-serif; color: var(--text-primary); }
+.macro-details { border-top: 1px solid var(--border-strong); margin-top: 18px; padding-top: 12px; }
+.macro-details summary { cursor: pointer; color: var(--text-primary); font: 600 .9rem/1.5 'Outfit', sans-serif; }
+.macro-details p { margin-top: 12px; }
+.macro-source { font: 400 .78rem/1.6 'Outfit', sans-serif; margin-top: 18px; overflow-wrap: anywhere; }
+.macro-source a { color: var(--text-primary); text-decoration: underline; text-underline-offset: 3px; opacity: .85; }
+.macro-stat .macro-source { padding-top: 12px; margin-top: auto; }
+.macro-stat .macro-details + .macro-source { margin-top: 14px; }
+.macro-scene a:focus-visible, .macro-details summary:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 5px; border-radius: 2px; }
+.macro-reading { margin: 56px 0 32px; }
+.macro-reading > h3, .macro-chart h3 { font: 700 clamp(1.3rem, 2.5vw, 2rem)/1.3 'Outfit', sans-serif; color: var(--text-primary); margin-bottom: 20px; }
+.macro-connections { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.macro-connections article { border-top: 1px solid var(--border-strong); padding: 24px 0; }
+.macro-connections h4 { color: var(--text-primary); font: 600 1.1rem/1.4 'Outfit', sans-serif; margin-bottom: 12px; }
+.macro-connections p { color: var(--text-primary); font: 400 1rem/1.8 'Outfit', sans-serif; max-width: 68ch; }
+.macro-flow { padding: 24px; border-left: 3px solid var(--accent-primary); background: var(--bg-card-solid); }
+.macro-flow ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; margin: 0; padding: 0; }
+.macro-flow li { font: 600 .95rem/1.6 'Outfit', sans-serif; color: var(--text-primary); }
+.macro-flow > p, .macro-chart-note { margin-top: 20px; color: var(--text-secondary); font: 400 .85rem/1.7 'Outfit', sans-serif; }
+.macro-chart { margin: 40px 0; padding: clamp(20px, 4vw, 40px); border: 1px solid var(--border-strong); background: var(--bg-card-solid); }
+.macro-chart figcaption > p { color: var(--text-secondary); font-size: .85rem; }
+.macro-bars { display: grid; gap: 16px; margin-top: 24px; }
+.macro-bar-row { display: grid; grid-template-columns: minmax(100px, 190px) minmax(0, 1fr) 60px; gap: 16px; align-items: center; color: var(--text-primary); font: 400 .9rem/1.4 'Outfit', sans-serif; }
+.macro-bar-row strong { text-align: right; font-variant-numeric: tabular-nums; }
+.macro-bar-track { height: 14px; background: var(--border-strong); }
+.macro-bar-track > div { height: 100%; background: var(--accent-primary); }
+@media (max-width: 700px) {
+  .macro-connections { grid-template-columns: 1fr; }
+  .macro-scene .macro-stats { grid-template-columns: 1fr; }
+  .macro-bar-row { grid-template-columns: minmax(85px, 115px) minmax(0, 1fr) 44px; gap: 10px; font-size: .8rem; }
+  .macro-flow { padding: 20px; }
+}
+@media (min-width: 701px) and (max-width: 1050px) {
+  .macro-scene .macro-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
