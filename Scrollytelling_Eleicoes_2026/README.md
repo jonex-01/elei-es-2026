@@ -54,6 +54,10 @@ O gerador mantém as outras seções. A faixa de fatos utiliza a mesma base macr
 
 A economia usa `js/economy-data.js`, organizada em bolso, trabalho, produção, contas públicas e futuro. Cada indicador inclui unidade, referência, definição, limite e fonte. Os gráficos distinguem variação de contribuição e períodos completos de períodos parciais. Os dados observados de 2026 não são tratados como um mandato encerrado.
 
+`js/economy-cycles.js` organiza os cinco temas na sequência **Pergunta → dados comparáveis → explicação → interpretação alternativa → conclusão que os dados permitem**. Essa leitura fica visível em HTML estático. Os indicadores completos, exemplos interativos e metodologia ficam em detalhes expansíveis por teclado. As interpretações alternativas são confrontadas com evidências; não recebem o mesmo peso automaticamente. Cada conclusão indica também o que acompanhar para avançar na análise.
+
+`dados/analises-economia-2026-10-02.csv` exporta as tabelas dessa sequência, com períodos, limites e fontes. O investimento é comparado em duas janelas separadas: variação trimestral com ajuste sazonal e acumulado de quatro trimestres. A decomposição da mudança da DBGG/PIB entre janeiro e agosto vem do BCB: juros +6,5 p.p., emissões líquidas +1,5 p.p., PIB nominal −3,6 p.p. e câmbio −0,2 p.p., total +4,2 p.p. Ela não é somada à conta fiscal de 12 meses, que tem outra abrangência.
+
 O gerador também exporta `dados/economia-2026-10-02.csv` com os indicadores e links. A inflação acumulada de jan/2023 a ago/2026 (17,90%) é calculada pelo produto de 44 fatores mensais da série SGS 433, não pela soma das taxas. A informalidade usa SIDRA 8513, variável 12466; a taxa de investimento usa SIDRA 6727, variável 2517. O SOFI 2026 usa o triênio 2023–2025.
 
 A conta fiscal soma déficit primário (0,62%) e juros nominais (8,86%) no déficit nominal (9,48% do PIB), todos do setor público consolidado nos 12 meses até agosto. A DBGG tem outra abrangência e não é obtida somando esses fluxos. O RTN e o boletim trimestral do Governo Geral aparecem em explicações separadas com seus próprios conceitos e períodos.

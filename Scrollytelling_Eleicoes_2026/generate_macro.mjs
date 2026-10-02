@@ -51,16 +51,33 @@ const analysis = data => !data ? '' : `<div class="economy-analysis">
   ${demonstration(data.demo)}
   <div class="economy-reading">${data.reading.map(([title, text, keys = []]) => `<details class="macro-details"><summary>${escape(title)}</summary><p>${escape(text)}</p>${keys.length ? `<div class="macro-source">${keys.map(source).join(' · ')}</div>` : ''}</details>`).join('')}</div>
 </div>`;
+const cycleTable = data => `<figure class="cycle-evidence">
+  <table class="cycle-table" data-columns="${data.headers.length}"><caption>${escape(data.caption)}</caption>
+    <thead><tr>${data.headers.map(label => `<th scope="col">${escape(label)}</th>`).join('')}</tr></thead>
+    <tbody>${data.rows.map(row => `<tr>${row.map((value, i) => i === 0 ? `<th scope="row">${escape(value)}</th>` : `<td>${escape(value)}</td>`).join('')}</tr>`).join('')}</tbody>
+  </table>
+  <p class="macro-chart-note">${escape(data.note)}</p><div class="macro-source">${data.sources.map(source).join(' · ')}</div>
+</figure>`;
+const cycleText = data => `<h4>${escape(data.title)}</h4>${data.paragraphs.map(text => `<p>${escape(text)}</p>`).join('')}<div class="macro-source">${data.sources.map(source).join(' · ')}</div>`;
+const cycle = data => `<ol class="economy-cycle" start="2" aria-label="Da comparação à conclusão">
+  <li class="cycle-step"><span class="cycle-label">Dados comparáveis</span><div>${data.tables.map(cycleTable).join('')}</div></li>
+  <li class="cycle-step"><span class="cycle-label">Explicação</span><div>${cycleText(data.explanation)}</div></li>
+  <li class="cycle-step"><span class="cycle-label">Interpretação alternativa</span><div>${cycleText(data.alternative)}</div></li>
+  <li class="cycle-step cycle-conclusion"><span class="cycle-label">Conclusão que os dados permitem</span><div><p>${escape(data.conclusion)}</p><p class="cycle-next"><strong>O que acompanhar:</strong> ${escape(data.nextEvidence)}</p><div class="macro-source">${data.sources.map(source).join(' · ')}</div></div></li>
+</ol>`;
 const block = data => `<article id="${data.id}" class="economy-block" aria-labelledby="${data.id}-title">
-  <header><h3 id="${data.id}-title">${escape(data.title)}</h3><p>${escape(data.intro)}</p></header>
+  <header><span class="cycle-question-label">1 · Pergunta</span><h3 id="${data.id}-title">${escape(data.cycle.question)}</h3><p>${escape(data.cycle.purpose)}</p></header>
+  ${cycle(data.cycle)}
+  <details class="economy-dossier"><summary>${escape(data.cycle.detailLabel)}</summary><div class="economy-dossier-body">
   <div class="stats-grid macro-stats">${data.stats.map(card).join('')}</div>
   ${analysis(data.analysis)}
   ${data.equation ? `<figure class="economy-equation"><figcaption>A conta em 12 meses até agosto de 2026 · % do PIB · setor público consolidado</figcaption><div>${data.equation.map(([label, value], i) => `${i ? `<span class="equation-operator" aria-hidden="true">${i === 1 ? '+' : '='}</span>` : ''}<p><strong>${value}%</strong><span>${escape(label)}</span></p>`).join('')}</div><p class="macro-chart-note">Valores arredondados pelo BCB. Todos os componentes usam o mesmo período e abrangência.</p><div class="macro-source">${source('fiscalAtual')}</div></figure>` : ''}
   ${(data.charts || []).map(chart).join('')}
   <div class="economy-reading">${data.reading.map(([title, text, keys = []]) => `<details class="macro-details"><summary>${escape(title)}</summary><p>${escape(text)}</p>${keys.length ? `<div class="macro-source">${keys.map(source).join(' · ')}</div>` : ''}</details>`).join('')}</div>
+  </div></details>
 </article>`;
 const economy = data => `<nav class="economy-nav" aria-label="Explore os temas de economia">${data.blocks.map((item, i) => `<a href="#${item.id}"><span>${['Bolso', 'Trabalho', 'Produção', 'Contas públicas', 'Futuro'][i]}</span></a>`).join('')}</nav>
-  <aside class="economy-context"><strong>Como ler este retrato</strong><p>2026 ainda está em andamento. Cada indicador usa o último período verificado até 02/10/2026: inflação e contas públicas até agosto, crédito das famílias até julho, PIB até junho e alimentação no triênio 2023–2025. A mediana usa os microdados de abril–junho, com uma comparação no mesmo período. São dados observados, não previsões para o fim do ano.</p><a href="dados/economia-2026-10-02.csv" download>Baixar indicadores e fontes (CSV)</a></aside>
+  <aside class="economy-context"><strong>Como ler este retrato</strong><p>Cada tema parte de uma pergunta, compara dados, explica mecanismos, examina outra interpretação e conclui dentro dos limites da evidência. Os períodos estão em cada tabela. 2026 está em andamento: os resultados parciais não são previsões para o fim do ano. As conclusões ficam visíveis; indicadores completos, exemplos e metodologia estão nos detalhes.</p><a href="dados/economia-2026-10-02.csv" download>Baixar indicadores e fontes (CSV)</a> · <a href="dados/analises-economia-2026-10-02.csv" download>Baixar comparações da análise (CSV)</a></aside>
   ${data.blocks.map(block).join('')}
   <aside class="macro-flow"><ul><li>Renda e preços → poder de compra</li><li>Trabalho e investimento → capacidade produtiva</li><li>Receitas e despesas → resultado primário</li><li>Juros, crescimento e ajustes → trajetória da dívida</li></ul><p>As setas explicam mecanismos. Não são um cálculo de correlação nem uma atribuição de resultados a um governo ou programa específico.</p></aside>`;
 const section = data => `<section id="${data.id}" class="scene data-scene macro-scene" aria-labelledby="${data.id}-title">
@@ -82,6 +99,13 @@ const section = data => `<section id="${data.id}" class="scene data-scene macro-
   </aside>`}
 </section>`;
 
+const economyData = MACRO.find(item => item.blocks);
+for (const item of economyData.blocks) {
+  if (!item.cycle) throw new Error(`Ciclo ausente: ${item.id}`);
+  for (const table of item.cycle.tables) {
+    if (table.rows.some(row => row.length !== table.headers.length)) throw new Error(`Tabela inconsistente: ${table.caption}`);
+  }
+}
 let html = readFileSync(path, 'utf8');
 for (const data of MACRO) {
   const pattern = new RegExp(`<section id="${data.id}"[\\s\\S]*?</section>`);
@@ -91,7 +115,14 @@ for (const data of MACRO) {
 if (!html.includes('css/macro.css')) html = html.replace('<link rel="stylesheet" href="css/styles.css">', '<link rel="stylesheet" href="css/styles.css">\n  <link rel="stylesheet" href="css/macro.css?v=20261002">');
 writeFileSync(path, html.replace(/ +$/gm, ''), 'utf8');
 const csvCell = value => `"${String(value).replaceAll('"', '""')}"`;
-const economyData = MACRO.find(item => item.blocks);
 const csv = [['tema', 'indicador', 'valor', 'unidade', 'periodo', 'fonte', 'url', 'revisao'], ...economyData.blocks.flatMap(item => item.stats.map(([label, value, unit, period, key]) => [item.title, label, value, unit, period, SOURCES[key][0], new URL(SOURCES[key][1], 'https://jonex-01.github.io/elei-es-2026/Scrollytelling_Eleicoes_2026/').href, '2026-10-02']))];
 writeFileSync(fileURLToPath(new URL('./dados/economia-2026-10-02.csv', import.meta.url)), '\uFEFF' + csv.map(row => row.map(csvCell).join(';')).join('\n') + '\n', 'utf8');
+const comparisonRows = economyData.blocks.flatMap(item => item.cycle.tables.flatMap(table => table.rows.map(row => [
+  item.cycle.question, table.caption, row[0], table.headers[1], row[1],
+  table.headers[2] || '', row[2] || '', table.note,
+  table.sources.map(key => new URL(SOURCES[key][1], 'https://jonex-01.github.io/elei-es-2026/Scrollytelling_Eleicoes_2026/').href).join(' | '),
+  '2026-10-02'
+])));
+const comparisons = [['tema', 'comparacao', 'indicador', 'referencia_1', 'valor_1', 'referencia_2', 'valor_2', 'limites', 'fontes', 'revisao'], ...comparisonRows];
+writeFileSync(fileURLToPath(new URL('./dados/analises-economia-2026-10-02.csv', import.meta.url)), '\uFEFF' + comparisons.map(row => row.map(csvCell).join(';')).join('\n') + '\n', 'utf8');
 console.log('Quatro seções macro geradas com fontes e explicações.');
