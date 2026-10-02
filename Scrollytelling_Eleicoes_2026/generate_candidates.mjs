@@ -6,9 +6,9 @@ const dir=fileURLToPath(new URL('.',import.meta.url));
 const page=(title,body)=>`<!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escapeHtml(title)} — Eleições 2026</title><meta name="description" content="Propostas documentadas em economia, saúde, educação e segurança, com fontes, explicações e limites da análise.">
-<link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/candidatos.css?v=20261002_candidates1"></head>
+<link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/candidatos.css?v=20261002_candidates2"></head>
 <body><a class="sr-only" href="#candidato-main">Pular para o conteúdo</a><nav id="navbar" class="profile-navbar" aria-label="Navegação do perfil"><a class="nav-brand" href="index.html#scene-candidatos">← Voltar às candidaturas</a><button id="theme-toggle" aria-label="Alternar tema claro ou escuro">☀️</button></nav>
-${body}<footer class="fontes-footer"><p>Projeto independente, sem vínculo com partidos ou candidatos. Consulta de propostas: ${REVIEW_DATE}. Análises são identificadas e seus limites estão descritos no método.</p></footer><script type="module" src="js/candidato.js?v=20261002_candidates1"></script></body></html>\n`;
+${body}<footer class="fontes-footer"><p>Projeto independente, sem vínculo com partidos ou candidatos. Consulta de propostas: ${REVIEW_DATE}. Análises são identificadas e seus limites estão descritos no método.</p></footer><script type="module" src="js/candidato.js?v=20261002_candidates2"></script></body></html>\n`;
 for(const c of CANDIDATES)writeFileSync(dir+c.id+'.html',page(c.name,profileHtml(c)));
 writeFileSync(dir+'candidato.html',page('Escolha uma candidatura',`<main id="candidato-main" class="candidate-profile"><h1>Escolha uma candidatura</h1><p>Use os perfis documentados abaixo.</p><ul>${CANDIDATES.map(c=>`<li><a href="${c.id}.html">${escapeHtml(c.name)} · ${c.party}</a></li>`).join('')}</ul></main>`).replace('<body>','<body data-candidate-resolver>'));
 let index=readFileSync(dir+'index.html','utf8');

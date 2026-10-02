@@ -1,4 +1,33 @@
 /* Hierarquia documental comum às 13 candidaturas. */
+.candidate-introduction{padding-bottom:40px}
+.candidate-jump-links{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:28px;font-family:'Outfit',sans-serif}
+.candidate-presentation .candidate-header{min-height:340px}
+.candidate-presentation .candidate-avatar{height:300px}
+.candidate-presentation .candidate-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.candidate-presentation .candidate-name{font-size:clamp(2rem,4.5vw,4rem);line-height:1.1;margin:20px 0}
+.candidate-presentation .candidate-eyebrow{color:#fff;opacity:.8}
+.candidate-presentation .candidate-partido-badge{color:#fff;border-color:rgba(255,255,255,.6);background:rgba(0,0,0,.25);font-size:.85rem}
+.candidate-presentation .candidate-info-item{font-size:1rem;line-height:1.7}
+.candidate-presentation-content{max-width:1160px;margin:auto}
+.candidate-presentation .candidate-source{max-width:100%;overflow-wrap:anywhere}
+.candidate-presentation .candidate-source a{color:var(--accent-primary);text-underline-offset:.2em}
+.candidate-presentation .candidate-bio{max-width:860px;line-height:1.8}
+.candidate-presentation .candidate-section-title{margin-top:38px;margin-bottom:22px}
+.candidate-traits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.candidate-traits h4{font:600 1.05rem 'Outfit',sans-serif;margin-bottom:12px}
+.candidate-traits p{line-height:1.8;color:var(--text-secondary)}
+.candidate-presentation .proposta-desc{line-height:1.7}
+.candidate-more{display:flex;width:100%;justify-content:space-between;text-decoration:none;margin-top:32px;gap:16px;box-sizing:border-box}
+.candidate-more-description{font-size:.85rem;color:var(--text-secondary);margin-top:16px;line-height:1.7}
+.candidate-additional{min-height:auto}
+.candidate-additional>h2,.candidate-additional>p,.candidate-additional>.candidate-method{max-width:1160px;margin-left:auto;margin-right:auto}
+.candidate-additional-list .candidate-directory-card{padding:22px 0}
+#scene-caiado.candidate-presentation .candidate-header{background-image:url('../assets/brasilia-golden.jpg')}
+#scene-cury.candidate-presentation .candidate-header{background-image:url('../assets/congresso.jpg')}
+.profile-portrait{width:150px;height:180px;object-fit:cover;object-position:center 25%;border-radius:12px;float:right;margin:0 0 24px 28px}
+.profile-header::after{content:'';display:block;clear:both}
+@media(max-width:900px){.candidate-presentation .candidate-avatar{height:180px;width:180px}.candidate-presentation .candidate-header{min-height:0}.candidate-presentation .candidate-name{font-size:2.2rem}}
+@media(max-width:600px){.candidate-traits{grid-template-columns:1fr;gap:22px}.candidate-presentation{padding:60px 22px}.candidate-presentation .candidate-header{padding:32px 22px;margin-left:-22px;margin-right:-22px}.candidate-more{font-size:.95rem;padding:18px}.profile-portrait{float:none;display:block;margin:0 0 24px;width:150px;height:180px}}
 .candidate-editorial{padding:80px var(--section-pad-x);min-height:auto;overflow:visible}
 .candidate-section-heading,.candidate-directory,.candidate-comparator,.candidate-editorial>.candidate-method{max-width:1160px;margin-left:auto;margin-right:auto}
 .candidate-section-heading{margin-bottom:40px}
