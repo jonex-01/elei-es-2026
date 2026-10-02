@@ -1,5 +1,6 @@
 import { INCOME_ESTIMATES } from './income-estimates.js';
 import { INCOME_ANALYSIS, WORK_ANALYSIS } from './income-work-analysis.js';
+import { ECONOMY_CYCLES } from './economy-cycles.js';
 // Revisão editorial em 02/10/2026. Valores observados; 2026 ainda não terminou.
 export const ECONOMY_SOURCES = {
   rendaCalculo: ['Estimativa do projeto · microdados IBGE · abr–jun/2026', 'dados/renda-pnad-2026-2tri.json'],
@@ -99,3 +100,5 @@ export const ECONOMY_BLOCKS = [
     ]
   }
 ];
+
+for (const block of ECONOMY_BLOCKS) block.cycle = ECONOMY_CYCLES[block.id];

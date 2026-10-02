@@ -87,7 +87,33 @@
 .work-population h5 { font: 700 1rem/1.5 'Outfit', sans-serif; }
 .work-population strong { display: block; font: 700 1.4rem/1.6 'Outfit', sans-serif; }
 .work-population article p { color: var(--text-primary); font: 400 .9rem/1.7 'Outfit', sans-serif; margin-top: 12px; }
+.cycle-question-label { display: block; margin-bottom: 14px; color: var(--accent-primary); font: 700 .8rem/1.5 'Outfit', sans-serif; }
+.economy-cycle { counter-reset: cycle 1; list-style: none; padding: 0; margin: 0; }
+.cycle-step { counter-increment: cycle; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 32px; border-top: 1px solid var(--border-strong); padding: 30px 0; }
+.cycle-label { color: var(--text-secondary); font: 600 .85rem/1.6 'Outfit', sans-serif; }
+.cycle-label::before { content: counter(cycle) ' · '; color: var(--accent-primary); }
+.cycle-step h4 { color: var(--text-primary); font: 700 1.2rem/1.45 'Outfit', sans-serif; margin-bottom: 14px; }
+.cycle-step p:not(.macro-chart-note) { color: var(--text-primary); font: 400 1rem/1.8 'Outfit', sans-serif; max-width: 85ch; margin-bottom: 14px; }
+.cycle-evidence { margin: 0 0 24px; padding: clamp(16px, 3vw, 28px); background: var(--bg-card-solid); border: 1px solid var(--border-strong); }
+.cycle-evidence:last-child { margin-bottom: 0; }
+.cycle-table { width: 100%; table-layout: fixed; border-collapse: collapse; color: var(--text-primary); font: 400 .9rem/1.6 'Outfit', sans-serif; }
+.cycle-table caption { text-align: left; font: 700 1.05rem/1.5 'Outfit', sans-serif; padding-bottom: 18px; }
+.cycle-table th, .cycle-table td { text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--border-strong); vertical-align: top; overflow-wrap: anywhere; }
+.cycle-table th:first-child { width: 58%; }
+.cycle-table[data-columns="3"] th:first-child { width: 46%; }
+.cycle-table td { font-variant-numeric: tabular-nums; }
+.cycle-conclusion { border-left: 3px solid var(--accent-primary); padding: 26px; background: var(--bg-card-solid); margin: 12px 0 28px; }
+.cycle-conclusion .cycle-label { color: var(--text-primary); }
+.cycle-next { border-top: 1px solid var(--border-strong); padding-top: 16px; }
+.economy-dossier { border: 1px solid var(--border-strong); background: var(--bg-card-solid); padding: 22px; }
+.economy-dossier > summary { cursor: pointer; color: var(--text-primary); font: 600 .95rem/1.6 'Outfit', sans-serif; }
+.economy-dossier > summary:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 5px; }
+.economy-dossier-body { margin-top: 28px; }
 @media (max-width: 700px) {
+  .cycle-step { grid-template-columns: 1fr; gap: 14px; padding: 24px 0; }
+  .cycle-conclusion { padding: 20px; }
+  .cycle-table th, .cycle-table td { font-size: .8rem; padding: 10px 4px; }
+  .economy-dossier { padding: 16px; }
   .economy-block .macro-stats:has(> .macro-stat:nth-child(4):last-child) { grid-template-columns: 1fr; }
   .work-population > div { grid-template-columns: 1fr; }
   .income-distribution th, .income-distribution td { padding: 12px 4px; font-size: .85rem; }
