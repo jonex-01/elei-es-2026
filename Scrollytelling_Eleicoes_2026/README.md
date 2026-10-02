@@ -58,6 +58,21 @@ O gerador também exporta `dados/economia-2026-10-02.csv` com os indicadores e l
 
 A conta fiscal soma déficit primário (0,62%) e juros nominais (8,86%) no déficit nominal (9,48% do PIB), todos do setor público consolidado nos 12 meses até agosto. A DBGG tem outra abrangência e não é obtida somando esses fluxos. O RTN e o boletim trimestral do Governo Geral aparecem em explicações separadas com seus próprios conceitos e períodos.
 
+### Renda mediana e leitura do mercado de trabalho
+
+`js/income-work-analysis.js` aprofunda média, mediana, percentis, desalento, subocupação, participação e diferenças entre a PNAD e o Novo Caged. Dois exemplos interativos ilustram a influência de uma renda alta na média e a queda da desocupação quando alguém sai da força de trabalho. Os exemplos são fictícios e não são usados para atribuir a evolução real do Brasil a um mecanismo específico.
+
+A mediana de R$ 2.300 é uma **estimativa do projeto**, obtida nos microdados trimestrais públicos de abril–junho de 2026. A comparação é com a média nominal do mesmo trimestre, R$ 3.738, e não com a média real de junho–agosto, R$ 3.777. Incluímos apenas pessoas ocupadas (`VD4002=1`) com renda habitual positiva de todos os trabalhos (`VD4019`), ponderadas pelo peso calibrado (`V1028`). Não incluímos rendimentos de benefícios sociais nessa variável. Os resultados são estimativas pontuais sem intervalo de confiança.
+
+Para reproduzir, baixe `PNADC_022026.zip` na pasta oficial de microdados do IBGE indicada no JSON e execute, sem descompactar nem instalar dependências:
+
+```bash
+python scripts/calculate_income.py /caminho/PNADC_022026.zip dados/renda-pnad-2026-2tri.json --module js/income-estimates.js
+node generate_macro.mjs
+```
+
+O cálculo confere a média e a população ocupada contra os totais independentes divulgados no SIDRA. O JSON registra variáveis, critérios, fonte e SHA-256 do ZIP. A mediana é o menor valor em que a soma dos pesos alcança 50%; percentis usam o mesmo critério e não interpolam valores. Dados individuais não são publicados nem versionados no repositório.
+
 O gráfico de dívida usa a série SGS 13762 do BCB (76,27% em dez/2024; 78,64% em dez/2025; 82,86% em ago/2026). A comparação de Ideb usa os resultados nacionais de 2023 e 2025 do Inep. O percentual de estudantes abaixo do nível 2 em matemática no PISA 2025 é calculado como 100% − 28%, conforme a nota da OCDE sobre o Brasil.
 
 Séries e estimativas antigas sem metodologia rastreável deixaram de ser exibidas: filas e tempos médios do SUS, leitos, comparação internacional de médicos, falências, roubos, facções e jovens fora da escola. Os arquivos de pesquisa antigos e os campos macro de `js/data.js` permanecem como material legado, mas não alimentam os quatro blocos nem a faixa macro. Os dados eleitorais e os perfis de candidatos não foram revisados nesta atualização.

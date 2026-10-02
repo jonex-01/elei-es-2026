@@ -1,5 +1,5 @@
 import { ELECTION_DATA, CANDIDATOS_ORDEM } from './data.js?v=20260906_tse_v5';
-import { MACRO } from './macro-data.js?v=20261002_economia2';
+import { MACRO } from './macro-data.js?v=20261002_renda3';
 
 // ── GLOBAL STATE ──
 let currentTheme = localStorage.getItem('theme') || 
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   applyTheme(currentTheme);
   initNavMorph();
   initDoubleBezel();
+  initEconomyDemonstrations();
   initScrollProgress();
   initChapterRoute();
   buildCandidatos();
@@ -19,6 +20,38 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   startParticles();
 });
+
+function initEconomyDemonstrations() {
+  const currency = value => value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+  const income = document.querySelector('[data-income-demo]');
+  if (income) {
+    const input = income.querySelector('input');
+    input.disabled = false;
+    const update = () => {
+      const high = Number(input.value);
+      income.querySelector('[data-high]').textContent = currency(high);
+      income.querySelector('[data-mean]').textContent = currency((8000 + high) / 5);
+    };
+    input.addEventListener('input', update);
+    update();
+  }
+  const work = document.querySelector('[data-work-demo]');
+  if (work) {
+    const input = work.querySelector('input');
+    input.disabled = false;
+    const update = () => {
+      const leavers = Number(input.value);
+      const seekers = 10 - leavers;
+      const rate = (seekers / (90 + seekers) * 100).toLocaleString('pt-BR', { maximumFractionDigits: 1 });
+      work.querySelector('[data-seekers]').textContent = seekers;
+      work.querySelector('[data-leavers]').textContent = leavers;
+      work.querySelector('[data-rate]').textContent = `${rate}%`;
+      work.querySelector('[data-work-formula]').textContent = `${seekers} ÷ (90 + ${seekers}) × 100 = ${rate}%`;
+    };
+    input.addEventListener('input', update);
+    update();
+  }
+}
 
 // ── VANGUARD LOGIC ──
 function initNavMorph() {
