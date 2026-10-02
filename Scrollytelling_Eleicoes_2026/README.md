@@ -95,6 +95,8 @@ Custos, financiamento, cronogramas e compatibilidade jurídica não foram audita
 
 O comparador em `js/candidate-view.mjs` confronta duas candidaturas no mesmo tema e permite copiar uma URL que preserva as seleções. No celular, as candidaturas aparecem dentro de cada critério, antes do próximo critério. Sem JavaScript, os 13 perfis e uma comparação inicial continuam disponíveis em HTML. Não há ranking ou recomendação de voto.
 
+**Apresentação principal:** manter os seis capítulos originais (Lula, Flávio, Zema, Caiado, Renan e Cury), cada um com foto, identidade, apresentação biográfica, características do programa, propostas e botão para sua página individual. Essa estrutura é uma preferência explícita do usuário: não substituir os capítulos por um diretório ou grade de links. As outras sete candidaturas ficam em uma seção adicional expansível. O comparador complementa a apresentação. `js/candidate-overviews.mjs` contém as apresentações e suas fontes; rótulos de cargos distinguem atuação atual e passada. Banners partidários antigos divergentes dos registros atuais não são reaproveitados para Caiado ou Cury.
+
 Para gerar os perfis, diretório, comparação inicial e arquivo público de referências:
 
 ```bash
