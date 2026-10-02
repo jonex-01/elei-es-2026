@@ -1,5 +1,7 @@
+import { ECONOMY_SOURCES, ECONOMY_BLOCKS } from './economy-data.js';
 // Fontes consultadas em 02/10/2026. Conteúdo publicado por generate_macro.mjs.
 export const SOURCES = {
+  ...ECONOMY_SOURCES,
   ipca: ['IBGE / informativo da Fazenda · ago/2026', 'https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/inflacao/defeso-eleitoral-2026/informativo-ipca-ago2026.html'],
   emprego: ['IBGE / informativo da Fazenda · jun–ago/2026', 'https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/emprego-e-renda/defeso-eleitoral-2026/informativo-pnad-ago2026.html'],
   selic: ['BCB · decisão de 16/09/2026', 'https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?numero=45963&tipo=Comunicado'],
@@ -24,26 +26,9 @@ export const SOURCES = {
 export const MACRO = [
   {
     id: 'scene-panorama', tag: 'Economia e alimentação', title: 'O bolso de hoje. As contas de amanhã.', image: 'congresso.jpg',
-    intro: 'Preços, emprego e contas públicas se conectam. Entenda o que melhorou, o que ainda pesa no orçamento e como sustentar os avanços.',
-    stats: [
-      ['IPCA em 12 meses', '4,22', '%', 'ago/2026 · Brasil', 'ipca', 'É a variação média dos preços de uma cesta de consumo das famílias em 12 meses.', 'Com renda sem reajuste, preços mais altos reduzem o que você consegue comprar.', 'O índice de preços recuou 0,32% em agosto; isso não apaga a alta acumulada. Sua cesta pessoal pode variar mais ou menos que a média.'],
-      ['Meta Selic', '13,75', '% a.a.', 'vigente desde 17/09/2026', 'selic', 'É a taxa básica de juros definida pelo Banco Central para orientar a política monetária.', 'Juros altos tendem a encarecer crédito e desestimular consumo e investimento, ajudando a conter a inflação.', 'Não é a taxa cobrada no cartão. Também influencia parte do custo da dívida pública, com efeito que depende dos títulos e seus prazos.'],
-      ['Desocupação', '5,3', '%', 'jun–ago/2026 · Brasil', 'emprego', 'É a parcela de quem está na força de trabalho e procura emprego, mas não encontra.', 'Mais emprego pode ampliar a renda das famílias e a arrecadação de impostos.', 'Não mede qualidade do trabalho, informalidade ou todos que desistiram de procurar emprego. É um trimestre móvel, não o ano inteiro.'],
-      ['Dívida bruta / PIB', '82,9', '%', 'ago/2026 · governo geral', 'divida', 'Compara o estoque da dívida federal, estadual e municipal coberto pela DBGG com a produção anual da economia.', 'Mais dívida e juros podem aumentar a pressão sobre o orçamento e dificultar o financiamento de serviços.', 'Não significa que 82,9% dos impostos vão para a dívida. A razão também muda com o PIB. Valor da série: 82,86%, arredondado.'],
-      ['Cesta básica em São Paulo', '900,59', 'R$', 'ago/2026 · capital paulista', 'cesta', 'É o custo de uma lista padronizada de alimentos básicos para um adulto.', 'Ajuda a mostrar quanto da renda é necessário para alimentação.', 'Não é o custo de vida de uma família nem a média do Brasil. Não inclui aluguel, transporte e todas as necessidades alimentares.'],
-      ['Prevalência de subalimentação', '< 2,5', '%', '2022–2024 · média trienal', 'fome', 'É a estimativa da população sem acesso habitual a energia alimentar suficiente. Esse patamar caracteriza a saída do Mapa da Fome.', 'Mostra um avanço no acesso à alimentação, que deve ser preservado.', 'Não significa fome zero. É diferente de insegurança alimentar e não revela, sozinho, a qualidade da dieta ou o custo fiscal da melhora.']
-    ],
-    chart: { title: 'A dívida em relação ao tamanho da economia', unit: '% do PIB', max: 100, source: 'divida', note: 'Dezembro de 2024 e 2025; agosto de 2026. São estoques em datas específicas, não médias anuais. A série pode ser revisada pelo BCB.', rows: [['dez/2024', 76.27], ['dez/2025', 78.64], ['ago/2026', 82.86]] },
-    connections: [
-      ['PIB: o tamanho da produção, não o dinheiro do governo', 'PIB é o valor dos bens e serviços finais produzidos no país em um período. Não é a arrecadação de impostos nem a soma do dinheiro que cada brasileiro possui. A dívida/PIB compara uma obrigação acumulada com a capacidade econômica de gerar renda.', ['pib']],
-      ['Menos fome: qual foi o custo?', 'Renda do trabalho, transferências sociais e preços dos alimentos podem melhorar o acesso à comida. Programas custam recursos, mas a saída do Mapa da Fome não demonstra que o aumento da dívida foi causado por eles. Para atribuir esse custo, seria preciso examinar despesas executadas, receitas, juros e uma avaliação do efeito de cada política.', ['fome', 'fiscal']],
-      ['De onde vem o endividamento?', 'Receitas primárias incluem impostos e outras receitas não financeiras; despesas primárias financiam pessoal, benefícios, serviços e investimentos, sem os juros. Quando essas despesas superam essas receitas, há déficit primário. Ao incluir juros, chega-se ao resultado nominal. Juros, necessidades de financiamento e outros ajustes afetam a dívida; crescer menos também pode elevar a razão dívida/PIB.', ['fiscal', 'cenarios']],
-      ['Um exemplo para entender a conta', 'Exemplo hipotético, não um dado do Brasil: arrecadar R$ 100 e gastar R$ 110 antes dos juros gera déficit primário de R$ 10. Com mais R$ 15 de juros, o déficit nominal seria R$ 25. Mesmo arrecadando R$ 100 e gastando R$ 95 antes dos juros, os mesmos juros de R$ 15 deixariam déficit nominal de R$ 10. Por isso, um superávit primário pode coexistir com aumento da dívida.', ['fiscal']],
-      ['Se a trajetória não melhorar, o que pode acontecer?', 'Uma dívida crescendo sem perspectiva de estabilização pode elevar o prêmio de risco e o custo de financiamento, limitar investimentos e aumentar a pressão por impostos ou cortes. São riscos, não uma previsão inevitável de crise. Juros, crescimento, credibilidade e composição da dívida alteram o resultado.', ['cenarios']],
-      ['Como preservar avanços sem adiar a conta?', 'Ajustar contas pode envolver reduzir desperdícios, revisar benefícios tributários, melhorar a arrecadação e priorizar despesas eficazes. Cortes em saúde, alimentação ou educação também podem gerar custos futuros. O objetivo é uma trajetória sustentável com serviços que entreguem resultados, e não reduzir toda despesa indiscriminadamente.', ['fiscal', 'cenarios']]
-    ],
-    flow: ['Renda e preços → acesso à alimentação', 'Políticas e serviços → despesas públicas', 'Receitas, despesas e juros → financiamento', 'Dívida, juros e crescimento → espaço futuro'],
-    flowNote: 'Esquema de mecanismos econômicos. As setas não calculam correlação estatística nem atribuem a variação da dívida a um programa específico.'
+    intro: 'O que melhorou, o que ainda pesa e como sustentar os avanços: explore renda, trabalho, produção e contas públicas.',
+    blocks: ECONOMY_BLOCKS,
+    stats: ECONOMY_BLOCKS.flatMap(block => block.stats)
   },
   {
     id: 'scene-saude', tag: 'Saúde pública', title: 'Atender mais. Fazer a espera diminuir.', image: 'bg_saude_clara.jpg?v=2',

@@ -1,5 +1,5 @@
 import { ELECTION_DATA, CANDIDATOS_ORDEM } from './data.js?v=20260906_tse_v5';
-import { MACRO } from './macro-data.js?v=20261002';
+import { MACRO } from './macro-data.js?v=20261002_economia2';
 
 // ── GLOBAL STATE ──
 let currentTheme = localStorage.getItem('theme') || 
@@ -201,7 +201,8 @@ function initScrollObserver() {
         }
       }
     });
-  }, { threshold: 0.15 });
+  // Uma seção longa deve continuar ativa quando cruza o centro da tela.
+  }, { threshold: 0, rootMargin: '-40% 0px -40% 0px' });
 
   // Fade-in animations
   const animIO = new IntersectionObserver((entries) => {

@@ -44,3 +44,32 @@
 @media (min-width: 701px) and (max-width: 1050px) {
   .macro-scene .macro-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Economia: perguntas, evidências e uma conta fiscal com os mesmos conceitos. */
+.economy-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.economy-nav a { padding: 12px 18px; border: 1px solid var(--border-strong); color: var(--text-primary); background: var(--bg-card-solid); text-decoration: none; font: 600 .9rem/1.4 'Outfit', sans-serif; }
+.economy-nav a:hover { border-color: var(--accent-primary); }
+.economy-context { max-width: 85ch; border-left: 3px solid var(--accent-primary); padding: 18px 24px; background: var(--bg-card-solid); color: var(--text-primary); }
+.economy-context p { margin-top: 8px; font: 400 .9rem/1.7 'Outfit', sans-serif; }
+.economy-block { scroll-margin-top: 100px; margin: 64px 0; padding-top: 32px; border-top: 1px solid var(--border-strong); }
+.economy-block > header { max-width: 75ch; margin-bottom: 28px; }
+.economy-block > header h3 { font: 700 clamp(1.5rem, 3vw, 2.4rem)/1.25 'Outfit', sans-serif; color: var(--text-primary); }
+.economy-block > header p { margin-top: 14px; color: var(--text-secondary); font: 400 1rem/1.7 'Outfit', sans-serif; }
+.economy-block .stats-grid { margin-bottom: 28px; }
+.economy-reading { max-width: 90ch; }
+.economy-reading .macro-details { padding: 18px 0; margin: 0; }
+.economy-equation { padding: clamp(20px, 4vw, 40px); border: 1px solid var(--accent-primary); background: var(--bg-card-solid); color: var(--text-primary); }
+.economy-equation figcaption { font: 500 .85rem/1.6 'Outfit', sans-serif; }
+.economy-equation > div:first-of-type { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 20px; align-items: center; margin-top: 24px; }
+.economy-equation strong { display: block; font: 700 clamp(1.8rem, 4vw, 3rem)/1.2 'Outfit', sans-serif; font-variant-numeric: tabular-nums; }
+.economy-equation > div:first-of-type p { color: var(--text-primary); }
+.economy-equation span { display: block; font: 500 .9rem/1.6 'Outfit', sans-serif; margin-top: 8px; }
+.economy-equation .equation-operator { font-size: 2rem; color: var(--accent-primary); }
+@media (max-width: 700px) {
+  .economy-nav { gap: 8px; }
+  .economy-nav a { padding: 12px 14px; }
+  .economy-context { padding: 16px; }
+  .economy-block { margin: 44px 0; }
+  .economy-equation > div:first-of-type { grid-template-columns: 1fr; gap: 8px; }
+  .economy-equation .equation-operator { line-height: 1; margin: 0; }
+}
