@@ -1,7 +1,9 @@
+import { EXTRA_SOURCES, extendEvidence } from './further-data.js?v=20261002_evidence1';
 import { SOCIAL_SOURCES, SOCIAL_BLOCKS } from './social-data.js?v=20261002_social1';
 import { ECONOMY_SOURCES, ECONOMY_BLOCKS } from './economy-data.js?v=20261002_empresas5';
 // Fontes consultadas em 02/10/2026. Conteúdo publicado por generate_macro.mjs.
 export const SOURCES = {
+  ...EXTRA_SOURCES,
   ...ECONOMY_SOURCES,
   ...SOCIAL_SOURCES,
   ipca: ['IBGE / informativo da Fazenda · ago/2026', 'https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/inflacao/defeso-eleitoral-2026/informativo-ipca-ago2026.html'],
@@ -100,3 +102,5 @@ for (const area of MACRO) {
     area.blocks[1].stats = area.stats.slice(3);
   }
 }
+
+extendEvidence(MACRO);

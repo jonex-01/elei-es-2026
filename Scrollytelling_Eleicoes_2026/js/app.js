@@ -1,5 +1,5 @@
 import { ELECTION_DATA, CANDIDATOS_ORDEM } from './data.js?v=20260906_tse_v5';
-import { MACRO } from './macro-data.js?v=20261002_social1';
+import { MACRO } from './macro-data.js?v=20261002_evidence1';
 
 // ── GLOBAL STATE ──
 let currentTheme = localStorage.getItem('theme') || 
@@ -594,4 +594,3 @@ function updateMarquee(sceneId) {
 // ── MODAL LOGIC REMOVED (Now using standalone pages) ──
 
 // Drawer logic removed (Now using standalone pages)
-

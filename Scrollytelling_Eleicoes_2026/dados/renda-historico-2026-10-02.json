@@ -1,0 +1,316 @@
+{
+  "review": "2026-10-02",
+  "period": "2º trimestre de cada ano",
+  "population": "Ocupados de 14+ com rendimento habitual positivo de todos os trabalhos; VD4002=1 e VD4019>0; pesos V1028",
+  "deflation": "Estimativa do projeto: IPCA nacional, média aritmética dos níveis de abril/maio/junho; base 2º trimestre de 2026. Não usa os deflatores regionais oficiais da PNAD.",
+  "method": "Quantis ponderados sem interpolação; média validada contra SIDRA 6472/5929. Mesmas posições do dicionário oficial de 31/10/2022.",
+  "limits": "Estimativas sem intervalo de confiança. Comparação de distribuições, não dos mesmos indivíduos. Mudanças de composição e revisões de pesos podem influenciar resultados. Renda do trabalho não é renda domiciliar per capita.",
+  "sources": [
+    "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/",
+    "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json&dataInicial=01/01/2022&dataFinal=01/08/2026",
+    "https://apisidra.ibge.gov.br/values/t/6472/n1/all/v/5929/p/202202,202502,202602"
+  ],
+  "price_observations": [
+    {
+      "data": "01/01/2022",
+      "valor": "0.54"
+    },
+    {
+      "data": "01/02/2022",
+      "valor": "1.01"
+    },
+    {
+      "data": "01/03/2022",
+      "valor": "1.62"
+    },
+    {
+      "data": "01/04/2022",
+      "valor": "1.06"
+    },
+    {
+      "data": "01/05/2022",
+      "valor": "0.47"
+    },
+    {
+      "data": "01/06/2022",
+      "valor": "0.67"
+    },
+    {
+      "data": "01/07/2022",
+      "valor": "-0.68"
+    },
+    {
+      "data": "01/08/2022",
+      "valor": "-0.36"
+    },
+    {
+      "data": "01/09/2022",
+      "valor": "-0.29"
+    },
+    {
+      "data": "01/10/2022",
+      "valor": "0.59"
+    },
+    {
+      "data": "01/11/2022",
+      "valor": "0.41"
+    },
+    {
+      "data": "01/12/2022",
+      "valor": "0.62"
+    },
+    {
+      "data": "01/01/2023",
+      "valor": "0.53"
+    },
+    {
+      "data": "01/02/2023",
+      "valor": "0.84"
+    },
+    {
+      "data": "01/03/2023",
+      "valor": "0.71"
+    },
+    {
+      "data": "01/04/2023",
+      "valor": "0.61"
+    },
+    {
+      "data": "01/05/2023",
+      "valor": "0.23"
+    },
+    {
+      "data": "01/06/2023",
+      "valor": "-0.08"
+    },
+    {
+      "data": "01/07/2023",
+      "valor": "0.12"
+    },
+    {
+      "data": "01/08/2023",
+      "valor": "0.23"
+    },
+    {
+      "data": "01/09/2023",
+      "valor": "0.26"
+    },
+    {
+      "data": "01/10/2023",
+      "valor": "0.24"
+    },
+    {
+      "data": "01/11/2023",
+      "valor": "0.28"
+    },
+    {
+      "data": "01/12/2023",
+      "valor": "0.56"
+    },
+    {
+      "data": "01/01/2024",
+      "valor": "0.42"
+    },
+    {
+      "data": "01/02/2024",
+      "valor": "0.83"
+    },
+    {
+      "data": "01/03/2024",
+      "valor": "0.16"
+    },
+    {
+      "data": "01/04/2024",
+      "valor": "0.38"
+    },
+    {
+      "data": "01/05/2024",
+      "valor": "0.46"
+    },
+    {
+      "data": "01/06/2024",
+      "valor": "0.21"
+    },
+    {
+      "data": "01/07/2024",
+      "valor": "0.38"
+    },
+    {
+      "data": "01/08/2024",
+      "valor": "-0.02"
+    },
+    {
+      "data": "01/09/2024",
+      "valor": "0.44"
+    },
+    {
+      "data": "01/10/2024",
+      "valor": "0.56"
+    },
+    {
+      "data": "01/11/2024",
+      "valor": "0.39"
+    },
+    {
+      "data": "01/12/2024",
+      "valor": "0.52"
+    },
+    {
+      "data": "01/01/2025",
+      "valor": "0.16"
+    },
+    {
+      "data": "01/02/2025",
+      "valor": "1.31"
+    },
+    {
+      "data": "01/03/2025",
+      "valor": "0.56"
+    },
+    {
+      "data": "01/04/2025",
+      "valor": "0.43"
+    },
+    {
+      "data": "01/05/2025",
+      "valor": "0.26"
+    },
+    {
+      "data": "01/06/2025",
+      "valor": "0.24"
+    },
+    {
+      "data": "01/07/2025",
+      "valor": "0.26"
+    },
+    {
+      "data": "01/08/2025",
+      "valor": "-0.11"
+    },
+    {
+      "data": "01/09/2025",
+      "valor": "0.48"
+    },
+    {
+      "data": "01/10/2025",
+      "valor": "0.09"
+    },
+    {
+      "data": "01/11/2025",
+      "valor": "0.18"
+    },
+    {
+      "data": "01/12/2025",
+      "valor": "0.33"
+    },
+    {
+      "data": "01/01/2026",
+      "valor": "0.33"
+    },
+    {
+      "data": "01/02/2026",
+      "valor": "0.70"
+    },
+    {
+      "data": "01/03/2026",
+      "valor": "0.88"
+    },
+    {
+      "data": "01/04/2026",
+      "valor": "0.67"
+    },
+    {
+      "data": "01/05/2026",
+      "valor": "0.58"
+    },
+    {
+      "data": "01/06/2026",
+      "valor": "0.16"
+    },
+    {
+      "data": "01/07/2026",
+      "valor": "0.07"
+    },
+    {
+      "data": "01/08/2026",
+      "valor": "-0.32"
+    }
+  ],
+  "rows": [
+    {
+      "year": 2022,
+      "sample_count": 200195,
+      "weighted_people": 94605146.51752469,
+      "nominal_mean": 2640.5639657827937,
+      "nominal_percentiles": {
+        "10": 600,
+        "25": 1212,
+        "50": 1600,
+        "75": 2800,
+        "90": 5000
+      },
+      "official_nominal_mean": 2641.0,
+      "file": "PNADC_022022_20250815.zip",
+      "sha256": "2d536418c947f1b048abd2336f9ed82891a48454c3ed093bdff7f5b0d0936aa8",
+      "price_factor": 1.1889194577350353,
+      "real_mean": 3139.4178783131533,
+      "real_percentiles": {
+        "10": 713.3516746410212,
+        "25": 1440.9703827748629,
+        "50": 1902.2711323760564,
+        "75": 3328.9744816580987,
+        "90": 5944.597288675176
+      }
+    },
+    {
+      "year": 2025,
+      "sample_count": 207698,
+      "weighted_people": 101005851.52271304,
+      "nominal_mean": 3476.9273102862007,
+      "nominal_percentiles": {
+        "10": 800,
+        "25": 1518,
+        "50": 2000,
+        "75": 3500,
+        "90": 7000
+      },
+      "official_nominal_mean": 3477.0,
+      "file": "PNADC_022025.zip",
+      "sha256": "f6edbe24a17ad7b126a5dbb4377b673b016ab8dfbd7f40135ec0f962daaa0fba",
+      "price_factor": 1.0458619691826483,
+      "real_mean": 3636.386043440855,
+      "real_percentiles": {
+        "10": 836.6895753461187,
+        "25": 1587.61846921926,
+        "50": 2091.7239383652964,
+        "75": 3660.516892139269,
+        "90": 7321.033784278538
+      }
+    },
+    {
+      "year": 2026,
+      "sample_count": 231474,
+      "weighted_people": 101736857.53131545,
+      "nominal_mean": 3738.1608991173684,
+      "nominal_percentiles": {
+        "10": 900,
+        "25": 1621,
+        "50": 2300,
+        "75": 4000,
+        "90": 7000
+      },
+      "official_nominal_mean": 3738.0,
+      "file": "PNADC_022026.zip",
+      "sha256": "53f813034dc6d18268e8962716a05a1b374e3f23fc2f596fafc7146cf3bb0b0a",
+      "price_factor": 1.0,
+      "real_mean": 3738.1608991173684,
+      "real_percentiles": {
+        "10": 900.0,
+        "25": 1621.0,
+        "50": 2300.0,
+        "75": 4000.0,
+        "90": 7000.0
+      }
+    }
+  ]
+}
