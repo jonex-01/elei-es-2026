@@ -1,4 +1,4 @@
-import { ECONOMY_SOURCES, ECONOMY_BLOCKS } from './economy-data.js';
+import { ECONOMY_SOURCES, ECONOMY_BLOCKS } from './economy-data.js?v=20261002_empresas5';
 // Fontes consultadas em 02/10/2026. Conteúdo publicado por generate_macro.mjs.
 export const SOURCES = {
   ...ECONOMY_SOURCES,
@@ -26,7 +26,7 @@ export const SOURCES = {
 export const MACRO = [
   {
     id: 'scene-panorama', tag: 'Economia e alimentação', title: 'O bolso de hoje. As contas de amanhã.', image: 'congresso.jpg',
-    intro: 'O que melhorou, o que ainda pesa e como sustentar os avanços: explore renda, trabalho, produção e contas públicas.',
+    intro: 'Explore renda, trabalho, empresas, produção, contas públicas e alimentação, com períodos, conceitos e fontes identificados.',
     blocks: ECONOMY_BLOCKS,
     stats: ECONOMY_BLOCKS.flatMap(block => block.stats)
   },

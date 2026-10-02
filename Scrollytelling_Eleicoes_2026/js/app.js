@@ -1,5 +1,5 @@
 import { ELECTION_DATA, CANDIDATOS_ORDEM } from './data.js?v=20260906_tse_v5';
-import { MACRO } from './macro-data.js?v=20261002_ciclo4';
+import { MACRO } from './macro-data.js?v=20261002_empresas5';
 
 // ── GLOBAL STATE ──
 let currentTheme = localStorage.getItem('theme') || 

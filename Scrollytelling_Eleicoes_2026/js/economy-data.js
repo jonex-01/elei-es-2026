@@ -1,8 +1,10 @@
 import { INCOME_ESTIMATES } from './income-estimates.js';
 import { INCOME_ANALYSIS, WORK_ANALYSIS } from './income-work-analysis.js';
-import { ECONOMY_CYCLES } from './economy-cycles.js';
+import { ECONOMY_CYCLES } from './economy-cycles.js?v=20261002_empresas5';
+import { BUSINESS_BLOCK, BUSINESS_SOURCES } from './business-data.js';
 // Revisão editorial em 02/10/2026. Valores observados; 2026 ainda não terminou.
 export const ECONOMY_SOURCES = {
+  ...BUSINESS_SOURCES,
   rendaCalculo: ['Estimativa do projeto · microdados IBGE · abr–jun/2026', 'dados/renda-pnad-2026-2tri.json'],
   rendaTrimestre: ['IBGE · SIDRA 6472 · renda nominal · abr–jun/2026', 'https://apisidra.ibge.gov.br/values/t/6472/n1/all/v/5929/p/202602'],
   empregoDetalhes: ['IBGE · divulgação de 29/09/2026 · via Agência Gov', 'https://agenciagov.ebc.com.br/noticias/202609/desemprego-cai-no-trimestre-e-numero-de-pessoas-ocupadas-e-o-maior-da-serie-historica'],
@@ -101,4 +103,5 @@ export const ECONOMY_BLOCKS = [
   }
 ];
 
+ECONOMY_BLOCKS.splice(2, 0, BUSINESS_BLOCK);
 for (const block of ECONOMY_BLOCKS) block.cycle = ECONOMY_CYCLES[block.id];

@@ -12,7 +12,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/macro.css?v=20261002_ciclo4">
+  <link rel="stylesheet" href="css/macro.css?v=20261002_empresas5">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -140,16 +140,16 @@
   <div class="scene-header">
     <span class="scene-tag">Economia e alimentação</span>
     <h2 class="scene-title" id="scene-panorama-title">O bolso de hoje. As contas de amanhã.</h2>
-    <p class="scene-description">O que melhorou, o que ainda pesa e como sustentar os avanços: explore renda, trabalho, produção e contas públicas.</p>
+    <p class="scene-description">Explore renda, trabalho, empresas, produção, contas públicas e alimentação, com períodos, conceitos e fontes identificados.</p>
     <p class="macro-review">Revisão: <time datetime="2026-10-02">02/10/2026</time> · período e fonte em cada indicador</p>
   </div>
-  <nav class="economy-nav" aria-label="Explore os temas de economia"><a href="#economia-bolso"><span>Bolso</span></a><a href="#economia-trabalho"><span>Trabalho</span></a><a href="#economia-producao"><span>Produção</span></a><a href="#economia-contas"><span>Contas públicas</span></a><a href="#economia-futuro"><span>Futuro</span></a></nav>
+  <nav class="economy-nav" aria-label="Explore os temas de economia"><a href="#economia-bolso"><span>Bolso</span></a><a href="#economia-trabalho"><span>Trabalho</span></a><a href="#economia-empresas"><span>Empresas</span></a><a href="#economia-producao"><span>Produção</span></a><a href="#economia-contas"><span>Contas públicas</span></a><a href="#economia-futuro"><span>Futuro</span></a></nav>
   <aside class="economy-context"><strong>Como ler este retrato</strong><p>Cada tema parte de uma pergunta, compara dados, explica mecanismos, examina outra interpretação e conclui dentro dos limites da evidência. Os períodos estão em cada tabela. 2026 está em andamento: os resultados parciais não são previsões para o fim do ano. As conclusões ficam visíveis; indicadores completos, exemplos e metodologia estão nos detalhes.</p><a href="dados/economia-2026-10-02.csv" download>Baixar indicadores e fontes (CSV)</a> · <a href="dados/analises-economia-2026-10-02.csv" download>Baixar comparações da análise (CSV)</a></aside>
   <article id="economia-bolso" class="economy-block" aria-labelledby="economia-bolso-title">
   <header><span class="cycle-question-label">1 · Pergunta</span><h3 id="economia-bolso-title">A renda melhorou para quem?</h3><p>Distinguir ganho médio de poder de compra e posição central da distribuição.</p></header>
   <ol class="economy-cycle" start="2" aria-label="Da comparação à conclusão">
   <li class="cycle-step"><span class="cycle-label">Dados comparáveis</span><div><figure class="cycle-evidence">
-  <table class="cycle-table" data-columns="2"><caption>Média e mediana no mesmo recorte</caption>
+  <table class="cycle-table" data-columns="2" data-layout="indicator"><caption>Média e mediana no mesmo recorte</caption>
     <thead><tr><th scope="col">Rendimento do trabalho</th><th scope="col">Abr–jun/2026</th></tr></thead>
     <tbody><tr><th scope="row">Média nominal · IBGE</th><td>R$ 3.738</td></tr><tr><th scope="row">Mediana ponderada · projeto</th><td>R$ 2.300</td></tr><tr><th scope="row">Parcela abaixo da média · projeto</th><td>73%</td></tr></tbody>
   </table>
@@ -247,7 +247,7 @@
   <header><span class="cycle-question-label">1 · Pergunta</span><h3 id="economia-trabalho-title">O desemprego caiu porque apareceu trabalho ou porque as pessoas desistiram?</h3><p>Confrontar a taxa de desemprego com ocupação, subutilização e desalento.</p></header>
   <ol class="economy-cycle" start="2" aria-label="Da comparação à conclusão">
   <li class="cycle-step"><span class="cycle-label">Dados comparáveis</span><div><figure class="cycle-evidence">
-  <table class="cycle-table" data-columns="3"><caption>O mesmo trimestre móvel em dois anos</caption>
+  <table class="cycle-table" data-columns="3" data-layout="indicator"><caption>O mesmo trimestre móvel em dois anos</caption>
     <thead><tr><th scope="col">Indicador · Brasil</th><th scope="col">Jun–ago/2025</th><th scope="col">Jun–ago/2026</th></tr></thead>
     <tbody><tr><th scope="row">Desocupação · força de trabalho</th><td>5,6%</td><td>5,3%</td></tr><tr><th scope="row">Subutilização · força ampliada</th><td>14,1%</td><td>13,1%</td></tr><tr><th scope="row">Nível de ocupação · população 14+</th><td>58,8%</td><td>58,9%</td></tr></tbody>
   </table>
@@ -349,17 +349,116 @@
   </figure>
   <div class="economy-reading"><details class="macro-details"><summary>O que falta para avaliar a qualidade?</summary><p>Diferenças de renda entre grupos complementam a análise. A média nacional não informa se uma pessoa tem estabilidade, proteção previdenciária ou renda suficiente.</p></details></div>
   </div></details>
+</article><article id="economia-empresas" class="economy-block" aria-labelledby="economia-empresas-title">
+  <header><span class="cycle-question-label">1 · Pergunta</span><h3 id="economia-empresas-title">Empresas em dificuldade significam menos empregos formais?</h3><p>Comparar aberturas, baixas, pedidos judiciais e vínculos de trabalho sem tratar essas medidas como equivalentes.</p></header>
+  <ol class="economy-cycle" start="2" aria-label="Da comparação à conclusão">
+  <li class="cycle-step"><span class="cycle-label">Dados comparáveis</span><div><figure class="cycle-evidence">
+  <table class="cycle-table" data-columns="3" data-layout="indicator"><caption>Aberturas e baixas: o mesmo quadrimestre em dois anos</caption>
+    <thead><tr><th scope="col">Registros · Brasil · inclui MEI e filiais</th><th scope="col">Mai–ago/2024</th><th scope="col">Mai–ago/2025</th></tr></thead>
+    <tbody><tr><th scope="row">Aberturas</th><td>1.459.079</td><td>1.668.753</td></tr><tr><th scope="row">Baixas</th><td>830.525</td><td>942.049</td></tr><tr><th scope="row">Saldo · aberturas menos baixas</th><td>+628.554</td><td>+726.704</td></tr></tbody>
+  </table>
+  <p class="macro-chart-note">Valores dos boletins de cada ano; cadastros podem ser revisados. Baixa cadastral não identifica a causa do encerramento nem quantos empregados havia. O saldo de registros não é saldo de empregos. Esta comparação não descreve 2026; o painel mais recente informa referência até julho/2026.</p><div class="macro-source"><a href="https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas/boletins/mapa-de-empresas-boletim-2o-quadrimestre-2024.pdf" target="_blank" rel="noopener noreferrer">MEMP · maio–agosto/2024 · tabela 19 ↗</a> · <a href="https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas/boletins/mapa-de-empresas-boletim-2o-quadrimestre-2025.pdf" target="_blank" rel="noopener noreferrer">MEMP · maio–agosto/2025 · tabela 19 ↗</a> · <a href="https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas/painel-mapa-de-empresas" target="_blank" rel="noopener noreferrer">MEMP · referência e abrangência do painel ↗</a></div>
+</figure><figure class="cycle-evidence">
+  <table class="cycle-table" data-columns="3" data-layout="year"><caption>Histórico anual de CNPJs envolvidos em pedidos judiciais</caption>
+    <thead><tr><th scope="col">Ano completo</th><th scope="col">Recuperação judicial · requerida</th><th scope="col">Falência · requerida</th></tr></thead>
+    <tbody><tr><th scope="row">2012</th><td>779</td><td>1.810</td></tr><tr><th scope="row">2013</th><td>783</td><td>1.607</td></tr><tr><th scope="row">2014</th><td>822</td><td>1.706</td></tr><tr><th scope="row">2015</th><td>1.412</td><td>1.828</td></tr><tr><th scope="row">2016</th><td>1.738</td><td>1.797</td></tr><tr><th scope="row">2017</th><td>1.814</td><td>1.571</td></tr><tr><th scope="row">2018</th><td>1.382</td><td>1.377</td></tr><tr><th scope="row">2019</th><td>1.441</td><td>1.302</td></tr><tr><th scope="row">2020</th><td>1.155</td><td>814</td></tr><tr><th scope="row">2021</th><td>911</td><td>817</td></tr><tr><th scope="row">2022</th><td>1.269</td><td>826</td></tr><tr><th scope="row">2023</th><td>1.728</td><td>846</td></tr><tr><th scope="row">2024</th><td>2.184</td><td>862</td></tr><tr><th scope="row">2025</th><td>2.466</td><td>698</td></tr></tbody>
+  </table>
+  <p class="macro-chart-note">Série revisada publicada em abril/2026. CNPJs envolvidos nos pedidos de cada ano, não estoque de empresas ainda em recuperação nem número de falências decretadas. Dados de 2025 preliminares; não concatenamos o indicador antigo com esta metodologia. As duas colunas não devem ser somadas: pode haver sobreposição.</p><div class="macro-source"><a href="https://www.serasaexperian.com.br/content/dam/serasa-institucional/releases-images-2025/indicadores/01-recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta.png" target="_blank" rel="noopener noreferrer">Serasa Experian · gráfico revisado de recuperação judicial · 2012–2025 ↗</a> · <a href="https://www.serasaexperian.com.br/content/dam/serasa-institucional/releases-images-2025/indicadores/06-recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta.png" target="_blank" rel="noopener noreferrer">Serasa Experian · gráfico revisado de falência requerida · 2012–2025 ↗</a> · <a href="dados/empresas-historico-2026-10-02.json" target="_blank" rel="noopener noreferrer">Dados e critérios do histórico · projeto ↗</a></div>
+</figure><figure class="cycle-evidence">
+  <table class="cycle-table" data-columns="3" data-layout="indicator"><caption>2026 parcial: processos e CNPJs são contagens distintas</caption>
+    <thead><tr><th scope="col">Pedidos · janeiro–abril/2026</th><th scope="col">Processos</th><th scope="col">CNPJs envolvidos</th></tr></thead>
+    <tbody><tr><th scope="row">Recuperação judicial requerida</th><td>268</td><td>602</td></tr><tr><th scope="row">Falência requerida</th><td>224</td><td>234</td></tr></tbody>
+  </table>
+  <p class="macro-chart-note">Última referência localizada no indicador até a revisão de 02/10/2026. Há defasagem informacional média de três meses e revisões retroativas. Quatro meses não são comparáveis a um ano inteiro; não anualizamos estes números.</p><div class="macro-source"><a href="https://www.serasaexperian.com.br/conteudos/indicadores-economicos/" target="_blank" rel="noopener noreferrer">Serasa Experian · acumulado até abr/2026 ↗</a> · <a href="https://www.serasaexperian.com.br/sala-de-imprensa/indicadores/pedidos-de-recuperacao-judicial-somaram-60-processos-em-abril-aponta-serasa-experian/" target="_blank" rel="noopener noreferrer">Serasa Experian · abril/2026 · publicado em 12/08/2026 ↗</a></div>
+</figure><figure class="cycle-evidence">
+  <table class="cycle-table" data-columns="2" data-layout="indicator"><caption>Emprego formal: admissões e desligamentos no mesmo mês</caption>
+    <thead><tr><th scope="col">Novo Caged · Brasil · agosto/2026</th><th scope="col">Vínculos</th></tr></thead>
+    <tbody><tr><th scope="row">Admissões</th><td>2.294.563</td></tr><tr><th scope="row">Desligamentos</th><td>2.128.736</td></tr><tr><th scope="row">Saldo · admissões menos desligamentos</th><td>+165.827</td></tr></tbody>
+  </table>
+  <p class="macro-chart-note">Vínculos, não pessoas únicas ou CNPJs. Os desligamentos abrangem diferentes motivos; esta tabela não identifica demissões causadas por falências. É outra base e outro período, apresentados separadamente dos pedidos judiciais.</p><div class="macro-source"><a href="https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/setembro/novo-caged-emprego-formal-gera-165-8-mil-vagas-em-agosto-e-acumula-1-13-milhao-de-postos-no-ano/" target="_blank" rel="noopener noreferrer">MTE · Novo Caged · agosto/2026 · divulgação de 29/09 ↗</a></div>
+</figure></div></li>
+  <li class="cycle-step"><span class="cycle-label">Explicação</span><div><h4>O caminho entre dificuldade financeira e perda de emprego tem etapas</h4><p>Recuperação judicial é um pedido de reorganização de dívidas; sua finalidade legal inclui manter a atividade e os empregos. O pedido não prova fechamento. Falência requerida é uma solicitação; a decretação depende de decisão judicial. Baixa é o encerramento de um registro, que também pode ocorrer sem processo de falência.</p><p>Uma empresa pode reunir vários CNPJs num processo; um CNPJ pode aparecer em mais de um pedido de falência. Por isso, contar processos, registros e trabalhadores produz números diferentes.</p><p>Encerrar uma operação pode eliminar vagas e afetar fornecedores. O resultado agregado também depende de admissões em empresas novas ou já existentes, do porte de quem fecha e de quem expande.</p><div class="macro-source"><a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11101.htm" target="_blank" rel="noopener noreferrer">Lei 11.101 · conceitos · arts. 47, 73, 75 e 99 ↗</a> · <a href="https://www.serasaexperian.com.br/sala-de-imprensa/indicadores/recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta-serasa-experian/" target="_blank" rel="noopener noreferrer">Serasa Experian · revisão metodológica · 07/04/2026 ↗</a> · <a href="https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/setembro/novo-caged-emprego-formal-gera-165-8-mil-vagas-em-agosto-e-acumula-1-13-milhao-de-postos-no-ano/" target="_blank" rel="noopener noreferrer">MTE · Novo Caged · agosto/2026 · divulgação de 29/09 ↗</a></div></div></li>
+  <li class="cycle-step"><span class="cycle-label">Interpretação alternativa</span><div><h4>Mais pedidos podem coexistir com mais registros e vínculos?</h4><p>Sim. No histórico revisado, os CNPJs em pedidos de recuperação passaram de 1.269 em 2022 para 2.466 em 2025; os envolvidos em pedidos de falência passaram de 826 para 698. São movimentos diferentes, não uma contagem de empresas que desapareceram.</p><p>Nos boletins de maio–agosto, houve mais baixas em 2025 que em 2024, mas também mais aberturas e saldo positivo nos dois períodos. Isso não informa a sobrevivência dos negócios nem prova expansão do número de empregadores.</p><p>O Novo Caged registrou saldo positivo de 1.134.033 vínculos em janeiro–agosto/2026. Esse total pode coexistir com perdas em empresas ou localidades específicas. Não demonstra que a dificuldade empresarial seja irrelevante, nem permite atribuir uma quantidade de vagas aos processos judiciais.</p><div class="macro-source"><a href="https://www.serasaexperian.com.br/content/dam/serasa-institucional/releases-images-2025/indicadores/01-recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta.png" target="_blank" rel="noopener noreferrer">Serasa Experian · gráfico revisado de recuperação judicial · 2012–2025 ↗</a> · <a href="https://www.serasaexperian.com.br/content/dam/serasa-institucional/releases-images-2025/indicadores/06-recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta.png" target="_blank" rel="noopener noreferrer">Serasa Experian · gráfico revisado de falência requerida · 2012–2025 ↗</a> · <a href="https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas/boletins/mapa-de-empresas-boletim-2o-quadrimestre-2024.pdf" target="_blank" rel="noopener noreferrer">MEMP · maio–agosto/2024 · tabela 19 ↗</a> · <a href="https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas/boletins/mapa-de-empresas-boletim-2o-quadrimestre-2025.pdf" target="_blank" rel="noopener noreferrer">MEMP · maio–agosto/2025 · tabela 19 ↗</a> · <a href="https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/setembro/novo-caged-emprego-formal-gera-165-8-mil-vagas-em-agosto-e-acumula-1-13-milhao-de-postos-no-ano/" target="_blank" rel="noopener noreferrer">MTE · Novo Caged · agosto/2026 · divulgação de 29/09 ↗</a></div></div></li>
+  <li class="cycle-step cycle-conclusion"><span class="cycle-label">Conclusão que os dados permitem</span><div><p>Os CNPJs envolvidos em pedidos de recuperação aumentaram entre 2022 e 2025, enquanto os pedidos de falência por CNPJ recuaram nesse intervalo. Os registros de aberturas superaram as baixas nos quadrimestres comparados, e o emprego formal teve saldo positivo no período informado de 2026. Esses dados não medem quantas vagas foram perdidas por falências ou quantas empresas empregadoras deixaram de operar.</p><p class="cycle-next"><strong>O que acompanhar:</strong> Para medir essa ligação: acompanhar empregadores com funcionários, vínculos nos estabelecimentos que encerram atividade, sobrevivência dos negócios e resultados por setor e região, com bases e períodos compatíveis.</p><div class="macro-source"><a href="https://www.serasaexperian.com.br/content/dam/serasa-institucional/releases-images-2025/indicadores/01-recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta.png" target="_blank" rel="noopener noreferrer">Serasa Experian · gráfico revisado de recuperação judicial · 2012–2025 ↗</a> · <a href="https://www.serasaexperian.com.br/content/dam/serasa-institucional/releases-images-2025/indicadores/06-recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta.png" target="_blank" rel="noopener noreferrer">Serasa Experian · gráfico revisado de falência requerida · 2012–2025 ↗</a> · <a href="https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas/boletins/mapa-de-empresas-boletim-2o-quadrimestre-2024.pdf" target="_blank" rel="noopener noreferrer">MEMP · maio–agosto/2024 · tabela 19 ↗</a> · <a href="https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas/boletins/mapa-de-empresas-boletim-2o-quadrimestre-2025.pdf" target="_blank" rel="noopener noreferrer">MEMP · maio–agosto/2025 · tabela 19 ↗</a> · <a href="https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/setembro/novo-caged-emprego-formal-gera-165-8-mil-vagas-em-agosto-e-acumula-1-13-milhao-de-postos-no-ano/" target="_blank" rel="noopener noreferrer">MTE · Novo Caged · agosto/2026 · divulgação de 29/09 ↗</a></div></div></li>
+</ol>
+  <details class="economy-dossier"><summary>Explorar conceitos, limites do histórico e a ligação com o emprego</summary><div class="economy-dossier-body">
+  <div class="stats-grid macro-stats">
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Registros empresariais ativos</h3>
+      <div class="macro-value"><span class="stat-value">25,4</span><span class="stat-unit">milhões</span></div>
+      <p class="macro-period">jul/2026 · referência do painel · Brasil</p>
+      <p class="macro-definition">Quantidade arredondada exibida pelo Mapa de Empresas, com MEI e filiais.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Descreve a base de registros empresariais.</p><p><strong>Como interpretar:</strong> Um registro ativo não prova operação ou contratação. Não equivale a 25,4 milhões de empregadores.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas" target="_blank" rel="noopener noreferrer">MEMP / Receita Federal · painel até jul/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">CNPJs em pedidos de recuperação</h3>
+      <div class="macro-value"><span class="stat-value">2.466</span><span class="stat-unit">CNPJs</span></div>
+      <p class="macro-period">2025 completo · série revisada · preliminar</p>
+      <p class="macro-definition">Registros empresariais envolvidos nos pedidos de recuperação judicial do ano.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Descreve empresas que recorreram à reorganização judicial.</p><p><strong>Como interpretar:</strong> Não são empresas fechadas nem o estoque de todas as recuperações em andamento.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.serasaexperian.com.br/content/dam/serasa-institucional/releases-images-2025/indicadores/01-recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta.png" target="_blank" rel="noopener noreferrer">Serasa Experian · gráfico revisado de recuperação judicial · 2012–2025 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">CNPJs em pedidos de falência</h3>
+      <div class="macro-value"><span class="stat-value">698</span><span class="stat-unit">CNPJs</span></div>
+      <p class="macro-period">2025 completo · série revisada · preliminar</p>
+      <p class="macro-definition">Registros envolvidos em falências requeridas durante o ano.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Descreve pedidos que alcançaram empresas devedoras.</p><p><strong>Como interpretar:</strong> Pedido não significa falência decretada nem permite contar empregos perdidos.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.serasaexperian.com.br/content/dam/serasa-institucional/releases-images-2025/indicadores/06-recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta.png" target="_blank" rel="noopener noreferrer">Serasa Experian · gráfico revisado de falência requerida · 2012–2025 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">CNPJs em pedidos de recuperação</h3>
+      <div class="macro-value"><span class="stat-value">602</span><span class="stat-unit">CNPJs</span></div>
+      <p class="macro-period">jan–abr/2026 · parcial</p>
+      <p class="macro-definition">Acumulado exibido na referência de abril/2026.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Complementa o histórico anual com uma janela parcial.</p><p><strong>Como interpretar:</strong> Não compare quatro meses com os doze meses de 2025; dados podem ser revistos.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.serasaexperian.com.br/conteudos/indicadores-economicos/" target="_blank" rel="noopener noreferrer">Serasa Experian · acumulado até abr/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">CNPJs em pedidos de falência</h3>
+      <div class="macro-value"><span class="stat-value">234</span><span class="stat-unit">CNPJs</span></div>
+      <p class="macro-period">jan–abr/2026 · parcial</p>
+      <p class="macro-definition">CNPJs envolvidos nos pedidos de falência do período.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Complementa a contagem de processos, que foi de 224.</p><p><strong>Como interpretar:</strong> Não são falências decretadas ou baixas cadastrais.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.serasaexperian.com.br/conteudos/indicadores-economicos/" target="_blank" rel="noopener noreferrer">Serasa Experian · acumulado até abr/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Saldo de vínculos formais</h3>
+      <div class="macro-value"><span class="stat-value">+1.134.033</span><span class="stat-unit">vínculos</span></div>
+      <p class="macro-period">jan–ago/2026 · Novo Caged</p>
+      <p class="macro-definition">Admissões menos desligamentos no período.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Descreve o movimento líquido do emprego formal.</p><p><strong>Como interpretar:</strong> Não identifica o efeito de falências; vínculos e pessoas são unidades diferentes.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/setembro/novo-caged-emprego-formal-gera-165-8-mil-vagas-em-agosto-e-acumula-1-13-milhao-de-postos-no-ano/" target="_blank" rel="noopener noreferrer">MTE · Novo Caged · agosto/2026 · divulgação de 29/09 ↗</a></div>
+    </article></div>
+
+
+
+  <div class="economy-reading"><details class="macro-details"><summary>O que mudou no histórico da Serasa?</summary><p>A divulgação de abril/2026 revisou a metodologia e separou processos de CNPJs. O histórico aqui vem dos gráficos revisados de 2012–2025; não usa a antiga contagem de 2.273 pedidos divulgada para 2024. Atualizações podem alterar meses anteriores.</p><div class="macro-source"><a href="https://www.serasaexperian.com.br/sala-de-imprensa/indicadores/recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta-serasa-experian/" target="_blank" rel="noopener noreferrer">Serasa Experian · revisão metodológica · 07/04/2026 ↗</a> · <a href="https://www.serasaexperian.com.br/sala-de-imprensa/indicadores/brasil-registra-22-mil-pedidos-de-recuperacao-judicial-em-2024-o-maior-numero-da-serie-historica-aponta-serasa-experian/" target="_blank" rel="noopener noreferrer">Serasa Experian · divulgação anterior de 2024 · não concatenada ↗</a> · <a href="dados/empresas-historico-2026-10-02.json" target="_blank" rel="noopener noreferrer">Dados e critérios do histórico · projeto ↗</a></div></details><details class="macro-details"><summary>Por que baixa cadastral não é sinônimo de falência?</summary><p>A baixa identifica encerramento de registro. Os totais apresentados não distinguem dificuldades financeiras, mudança da organização do negócio ou outros motivos. Também não mostram se havia funcionários. Para medir perda de postos, precisamos de informação sobre vínculos nos estabelecimentos envolvidos.</p><div class="macro-source"><a href="https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas/boletins/mapa-de-empresas-boletim-2o-quadrimestre-2025.pdf" target="_blank" rel="noopener noreferrer">MEMP · maio–agosto/2025 · tabela 19 ↗</a> · <a href="https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/setembro/novo-caged-emprego-formal-gera-165-8-mil-vagas-em-agosto-e-acumula-1-13-milhao-de-postos-no-ano/" target="_blank" rel="noopener noreferrer">MTE · Novo Caged · agosto/2026 · divulgação de 29/09 ↗</a></div></details><details class="macro-details"><summary>Recuperação, decretação e resultado são etapas diferentes</summary><p>O pedido de recuperação, o processamento, a aprovação do plano e seu cumprimento não são a mesma etapa. A recuperação pode ser convertida em falência nas hipóteses legais. Esta série de pedidos não acompanha o desfecho de cada processo e não mede a proporção de empresas que voltaram a operar normalmente.</p><div class="macro-source"><a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11101.htm" target="_blank" rel="noopener noreferrer">Lei 11.101 · conceitos · arts. 47, 73, 75 e 99 ↗</a> · <a href="https://www.serasaexperian.com.br/sala-de-imprensa/indicadores/pedidos-de-recuperacao-judicial-somaram-60-processos-em-abril-aponta-serasa-experian/" target="_blank" rel="noopener noreferrer">Serasa Experian · abril/2026 · publicado em 12/08/2026 ↗</a></div></details><details class="macro-details"><summary>Um exemplo: menos empresas pode coexistir com mais vagas</summary><p>Exemplo fictício: duas empresas com dez empregados cada encerram operações, eliminando vinte vagas. Uma empresa existente contrata trinta pessoas. Há duas empresas a menos e dez vínculos a mais. O exemplo apenas mostra por que contagens de empresas não substituem contagens de empregos; não descreve o resultado do Brasil.</p></details><details class="macro-details"><summary>O que ainda falta para medir o impacto nos trabalhadores?</summary><p>É necessário ligar registros empresariais e eventos judiciais a admissões, desligamentos e estoques de vínculos ao longo do tempo. Os agregados publicados aqui não fazem esse cruzamento. Uma perda numa empresa pode ser compensada no total nacional e ainda atingir trabalhadores, fornecedores e uma economia local.</p><div class="macro-source"><a href="https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/setembro/novo-caged-emprego-formal-gera-165-8-mil-vagas-em-agosto-e-acumula-1-13-milhao-de-postos-no-ano/" target="_blank" rel="noopener noreferrer">MTE · Novo Caged · agosto/2026 · divulgação de 29/09 ↗</a> · <a href="https://www.serasaexperian.com.br/sala-de-imprensa/indicadores/recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta-serasa-experian/" target="_blank" rel="noopener noreferrer">Serasa Experian · revisão metodológica · 07/04/2026 ↗</a></div></details></div>
+  </div></details>
 </article><article id="economia-producao" class="economy-block" aria-labelledby="economia-producao-title">
   <header><span class="cycle-question-label">1 · Pergunta</span><h3 id="economia-producao-title">O crescimento de hoje está preparando a produção de amanhã?</h3><p>Separar expansão recente da produção e trajetória do investimento.</p></header>
   <ol class="economy-cycle" start="2" aria-label="Da comparação à conclusão">
   <li class="cycle-step"><span class="cycle-label">Dados comparáveis</span><div><figure class="cycle-evidence">
-  <table class="cycle-table" data-columns="3"><caption>Variação real frente ao trimestre imediatamente anterior</caption>
+  <table class="cycle-table" data-columns="3" data-layout="indicator"><caption>Variação real frente ao trimestre imediatamente anterior</caption>
     <thead><tr><th scope="col">Indicador · ajuste sazonal</th><th scope="col">1º tri/2026</th><th scope="col">2º tri/2026</th></tr></thead>
     <tbody><tr><th scope="row">PIB</th><td>+1,1%</td><td>+0,5%</td></tr><tr><th scope="row">Investimento em capital fixo</th><td>+3,4%</td><td>+1,2%</td></tr><tr><th scope="row">Consumo das famílias</th><td>+0,8%</td><td>−0,4%</td></tr></tbody>
   </table>
   <p class="macro-chart-note">Variações reais com ajuste sazonal. Cada coluna compara com o trimestre anterior; não são contribuições ao PIB nem taxas para somar.</p><div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/atividade-economica/defeso-eleitoral-2026/informativo-pib-jun2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · 2º trimestre/2026 ↗</a></div>
 </figure><figure class="cycle-evidence">
-  <table class="cycle-table" data-columns="2"><caption>Outra janela: quatro trimestres até junho de 2026</caption>
+  <table class="cycle-table" data-columns="2" data-layout="indicator"><caption>Outra janela: quatro trimestres até junho de 2026</caption>
     <thead><tr><th scope="col">Indicador</th><th scope="col">Contra os quatro trimestres anteriores</th></tr></thead>
     <tbody><tr><th scope="row">PIB</th><td>+1,9%</td></tr><tr><th scope="row">Investimento em capital fixo</th><td>−0,2%</td></tr></tbody>
   </table>
@@ -429,13 +528,13 @@
   <header><span class="cycle-question-label">1 · Pergunta</span><h3 id="economia-contas-title">Por que a dívida aumentou: gastos, juros ou crescimento?</h3><p>Separar resultado fiscal e fatores que alteram o estoque da dívida em relação ao PIB.</p></header>
   <ol class="economy-cycle" start="2" aria-label="Da comparação à conclusão">
   <li class="cycle-step"><span class="cycle-label">Dados comparáveis</span><div><figure class="cycle-evidence">
-  <table class="cycle-table" data-columns="2"><caption>A conta fiscal na mesma janela e abrangência</caption>
+  <table class="cycle-table" data-columns="2" data-layout="indicator"><caption>A conta fiscal na mesma janela e abrangência</caption>
     <thead><tr><th scope="col">Setor público consolidado · 12 meses até ago/2026</th><th scope="col">% do PIB</th></tr></thead>
     <tbody><tr><th scope="row">Déficit primário</th><td>0,62</td></tr><tr><th scope="row">Juros nominais</th><td>8,86</td></tr><tr><th scope="row">Déficit nominal</th><td>9,48</td></tr></tbody>
   </table>
   <p class="macro-chart-note">O déficit nominal inclui primário e juros: 0,62 + 8,86 = 9,48% do PIB. É um fluxo; não é a dívida bruta.</p><div class="macro-source"><a href="https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202609_Texto_de_estatisticas_fiscais.pdf" target="_blank" rel="noopener noreferrer">BCB · nota de 30/09/2026 · p. 2–3 ↗</a></div>
 </figure><figure class="cycle-evidence">
-  <table class="cycle-table" data-columns="2"><caption>O que alterou a dívida bruta / PIB em 2026?</caption>
+  <table class="cycle-table" data-columns="2" data-layout="indicator"><caption>O que alterou a dívida bruta / PIB em 2026?</caption>
     <thead><tr><th scope="col">DBGG · janeiro a agosto</th><th scope="col">Efeito em pontos percentuais do PIB</th></tr></thead>
     <tbody><tr><th scope="row">Incorporação de juros</th><td>+6,5 p.p.</td></tr><tr><th scope="row">Emissões líquidas de dívida</th><td>+1,5 p.p.</td></tr><tr><th scope="row">Crescimento do PIB nominal</th><td>−3,6 p.p.</td></tr><tr><th scope="row">Valorização cambial</th><td>−0,2 p.p.</td></tr><tr><th scope="row">Variação total</th><td>+4,2 p.p.</td></tr></tbody>
   </table>
@@ -519,7 +618,7 @@
   <header><span class="cycle-question-label">1 · Pergunta</span><h3 id="economia-futuro-title">A melhora na alimentação pode ser preservada sem adiar a conta?</h3><p>Reconhecer o avanço social e examinar os limites da atribuição de custo e sustentabilidade.</p></header>
   <ol class="economy-cycle" start="2" aria-label="Da comparação à conclusão">
   <li class="cycle-step"><span class="cycle-label">Dados comparáveis</span><div><figure class="cycle-evidence">
-  <table class="cycle-table" data-columns="2"><caption>Segurança alimentar com a mesma definição</caption>
+  <table class="cycle-table" data-columns="2" data-layout="indicator"><caption>Segurança alimentar com a mesma definição</caption>
     <thead><tr><th scope="col">Insegurança alimentar moderada ou grave · SOFI</th><th scope="col">Parcela da população</th></tr></thead>
     <tbody><tr><th scope="row">Triênio 2020–2022</th><td>22,1%</td></tr><tr><th scope="row">Triênio 2023–2025</th><td>9,6%</td></tr></tbody>
   </table>
@@ -1048,7 +1147,7 @@
 <!-- SCRIPTS -->
 
 
-<script type="module" src="js/app.js?v=ciclo4_20261002_macro"></script>
+<script type="module" src="js/app.js?v=empresas5_20261002_macro"></script>
 
 </body>
 </html>
