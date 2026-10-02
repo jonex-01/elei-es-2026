@@ -33,7 +33,7 @@ Scrollytelling_Eleicoes_2026/
 
 - 🎨 **Sistema "Chameleon"** — cores mudam conforme o candidato em foco
 - ⏱️ **Countdown em tempo real** para o 1º turno (4/Out/2026)
-- 📊 **4 gráficos animados** (dívida, médicos, homicídios, IDEB)
+- 📊 **Gráficos de linhas** com valores consultáveis, fontes e escalas explícitas
 - 🌙 **Toggle Dark/Light mode** com persistência
 - 📍 **Barra de progresso lateral** com 13 dots clicáveis
 - 📱 **Responsivo** — mobile a desktop
@@ -90,3 +90,13 @@ Os esquemas explicam mecanismos e limites; não afirmam correlação estatístic
 - Fontes: IBGE, BCB, TSE, FBSP, INEP, OCDE, CFM, DIEESE
 - Pesquisas: Quaest/Genial (Agosto/2026)
 - Projeto 100% imparcial — sem vínculo com partidos ou candidatos
+
+### Saúde, educação e segurança: a mesma sequência de análise
+
+`js/social-data.js` acrescenta seis perguntas com comparação, explicação, hipótese alternativa, conclusão e evidências a acompanhar. Saúde separa produção, pessoas e espera, e usa a execução do INCA até agosto/2026 como exemplo delimitado — nunca como total da Saúde. A comparação do rol de cirurgias não reproduz o percentual da notícia, que diverge dos totais informados. Fila e fluxo têm um exemplo fictício, sem estimar uma fila nacional ausente.
+
+Educação mostra o Ideb observado de 2005–2025, confrontado com matemática do Saeb nas redes públicas (recorte diferente). O Inaf usa o percentual agregado publicado, sem somar níveis já arredondados: 27% em 2015 e 29% em 2018/2024. O PISA não é tratado como percentual de todos os brasileiros.
+
+Segurança usa exclusivamente o histórico revisado do Anuário 2026: 44.220 MVI em 2024 e 40.775 em 2025. A queda de 8,2% é da taxa; a queda do total é 7,79%. O histórico de homicídios de mulheres inclui feminicídios, impedindo soma duplicada. As taxas e participações têm denominadores identificados.
+
+Os gráficos usam anos no eixo horizontal com espaçamento temporal proporcional, eixo vertical iniciado em zero, cores e traçados distintos, identificação acessível e tabela opcional. Não interpolam resultados em anos sem avaliação. Os arquivos `dados/saude-2026-10-02.csv`, `dados/educacao-2026-10-02.csv` e `dados/seguranca-2026-10-02.csv` exportam todas as comparações, inclusive as três séries do Ideb, com limites e fontes.

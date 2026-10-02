@@ -151,3 +151,10 @@
   .economy-equation > div:first-of-type { grid-template-columns: 1fr; gap: 8px; }
   .economy-equation .equation-operator { line-height: 1; margin: 0; }
 }
+
+/* Terceira série: cor e traçado distintos, preservados nos dois temas. */
+.business-history { --chart-third: #f5a4c7; }
+[data-theme="light"] .business-history { --chart-third: #993862; }
+.business-third { background: var(--chart-third); }
+.business-chart-legend i.business-third { background: none; border-top: 3px dotted var(--chart-third); }
+.business-line-third { stroke: var(--chart-third); stroke-dasharray: 2 5; }
