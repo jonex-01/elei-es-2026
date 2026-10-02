@@ -106,6 +106,8 @@ node generate_candidates.mjs
 
 `dados/candidatos-2026-10-02.json` contém os 52 recortes, fontes e limites. O gerador é idempotente e preserva os blocos macro. Atualizações exigem nova consulta à fonte, revisão humana das sínteses e atualização da data. `js/data.js` e `js/data_fase2.js` permanecem apenas como legado, não são carregados pela interface e não devem ser reutilizados como fontes verificadas.
 
+**Sabatinas:** preservar a seção `#secao-sabatina` nos perfis detalhados e seu atalho na navegação. `js/candidate-interviews.mjs` registra três recortes por candidato das checagens publicadas pela Lupa sobre a rodada da TV Globo de 24–29/08/2026. São paráfrases com fonte e classificação atribuída, seguidas de interpretação do projeto e conclusão limitada. Não houve auditoria da íntegra nem contagem de todas as falas: não gerar gráfico de percentuais de verdades/mentiras ou nota comparativa com esses recortes. As outras sete candidaturas têm indicação explícita de ausência de recorte documentado, sem presumir ausência de entrevista. O gerador exporta as fontes em `dados/sabatinas-2026-10-02.json`.
+
 ### Saúde, educação e segurança: a mesma sequência de análise
 
 `js/social-data.js` acrescenta seis perguntas com comparação, explicação, hipótese alternativa, conclusão e evidências a acompanhar. Saúde separa produção, pessoas e espera, e usa a execução do INCA até agosto/2026 como exemplo delimitado — nunca como total da Saúde. A comparação do rol de cirurgias não reproduz o percentual da notícia, que diverge dos totais informados. Fila e fluxo têm um exemplo fictício, sem estimar uma fila nacional ausente.
