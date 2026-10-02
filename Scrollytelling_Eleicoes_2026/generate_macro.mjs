@@ -52,16 +52,36 @@ const analysis = data => !data ? '' : `<div class="economy-analysis">
   ${demonstration(data.demo)}
   <div class="economy-reading">${data.reading.map(([title, text, keys = []]) => `<details class="macro-details"><summary>${escape(title)}</summary><p>${escape(text)}</p>${keys.length ? `<div class="macro-source">${keys.map(source).join(' · ')}</div>` : ''}</details>`).join('')}</div>
 </div>`;
-const historyChart = data => `<figure class="cycle-evidence business-history" aria-labelledby="business-history-title">
+const historyChart = data => {
+  const ticks = Array.from({ length: 6 }, (_, i) => i * data.chartMax / 5);
+  const x = index => index / (data.chartRows.length - 1) * 100;
+  const y = value => (1 - value / data.chartMax) * 100;
+  const line = column => data.chartRows.map((row, i) => `${x(i) * 10},${y(row[column]) * 3}`).join(' ');
+  const latest = data.chartRows.at(-1);
+  return `<figure class="cycle-evidence business-history" aria-labelledby="business-history-title">
   <figcaption id="business-history-title">${escape(data.caption)}</figcaption>
   <p class="business-chart-unit">CNPJs por ano · mesma escala nas duas séries · eixo começa em zero</p>
   <ul class="business-chart-legend"><li><i class="business-recovery" aria-hidden="true"></i>Recuperação judicial requerida</li><li><i class="business-bankruptcy" aria-hidden="true"></i>Falência requerida</li></ul>
-  <div class="business-chart-axis" aria-hidden="true"><span>0</span><span>${number(data.chartMax)} CNPJs</span></div>
-  <ol class="business-chart-years" aria-label="Valores anuais de recuperação judicial e falência requeridas">${data.chartRows.map(([year, recovery, bankruptcy]) => `<li class="business-chart-year"><strong>${year}</strong><div>${[[recovery, 'recovery', 'Recuperação judicial requerida'], [bankruptcy, 'bankruptcy', 'Falência requerida']].map(([value, kind, label]) => `<div class="business-series"><span class="business-chart-sr">${label}: </span><div class="business-chart-track" aria-hidden="true"><span class="business-${kind}" style="width:${value / data.chartMax * 100}%"></span></div><span class="business-chart-value">${number(value)}<span class="business-chart-sr"> CNPJs</span></span></div>`).join('')}</div></li>`).join('')}</ol>
+  <div class="business-line-chart">
+    <div class="business-line-y" aria-hidden="true">${ticks.map(value => `<span style="top:${y(value)}%">${number(value)}</span>`).join('')}</div>
+    <div class="business-line-plot">
+      ${ticks.map(value => `<span class="business-line-grid" style="top:${y(value)}%" aria-hidden="true"></span>`).join('')}
+      <svg viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-labelledby="business-line-title business-line-description">
+        <title id="business-line-title">Recuperação judicial e falência requeridas, de 2012 a 2025</title>
+        <desc id="business-line-description">Anos no eixo horizontal e CNPJs no eixo vertical, de zero a ${data.chartMax}. Duas linhas ligam observações anuais. Valores completos disponíveis na tabela abaixo.</desc>
+        <polyline class="business-line-recovery" points="${line(1)}" vector-effect="non-scaling-stroke"/>
+        <polyline class="business-line-bankruptcy" points="${line(2)}" vector-effect="non-scaling-stroke"/>
+      </svg>
+      ${data.chartRows.map(([year, recovery, bankruptcy], i) => [[recovery, 'recovery', 'Recuperação judicial'], [bankruptcy, 'bankruptcy', 'Falência requerida']].map(([value, kind, label]) => `<span class="business-line-dot business-${kind}" style="left:${x(i)}%;top:${y(value)}%" title="${year} · ${label}: ${number(value)} CNPJs" aria-hidden="true"></span>`).join('')).join('')}
+    </div>
+    <div class="business-line-x" aria-hidden="true">${data.chartRows.map(([year], i) => (i % 3 === 0 && i < data.chartRows.length - 2) || i === data.chartRows.length - 1 ? `<span class="${i === 0 ? 'first' : i === data.chartRows.length - 1 ? 'last' : ''}" style="left:${x(i)}%">${year}</span>` : '').join('')}</div>
+  </div>
+  <p class="business-line-latest"><strong>${latest[0]}:</strong> recuperação judicial ${number(latest[1])} · falência requerida ${number(latest[2])} CNPJs.</p>
   <p class="macro-chart-note">${escape(data.note)}</p><div class="macro-source">${data.sources.map(source).join(' · ')}</div>
   <details class="macro-details business-chart-data"><summary>Consultar valores em tabela</summary>${cycleTable({ ...data, presentation: 'table' })}</details>
 </figure>`;
-const cycleTable = data => data.presentation === 'paired-bars' ? historyChart(data) : `<figure class="cycle-evidence">
+};
+const cycleTable = data => data.presentation === 'lines' ? historyChart(data) : `<figure class="cycle-evidence">
   <table class="cycle-table" data-columns="${data.headers.length}" data-layout="${escape(data.layout || 'indicator')}"><caption>${escape(data.caption)}</caption>
     <thead><tr>${data.headers.map(label => `<th scope="col">${escape(label)}</th>`).join('')}</tr></thead>
     <tbody>${data.rows.map(row => `<tr>${row.map((value, i) => i === 0 ? `<th scope="row">${escape(value)}</th>` : `<td>${escape(value)}</td>`).join('')}</tr>`).join('')}</tbody>
