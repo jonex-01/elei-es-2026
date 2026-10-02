@@ -12,7 +12,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/macro.css?v=20261002">
+  <link rel="stylesheet" href="css/macro.css?v=20261002_economia2">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -140,87 +140,288 @@
   <div class="scene-header">
     <span class="scene-tag">Economia e alimentação</span>
     <h2 class="scene-title" id="scene-panorama-title">O bolso de hoje. As contas de amanhã.</h2>
-    <p class="scene-description">Preços, emprego e contas públicas se conectam. Entenda o que melhorou, o que ainda pesa no orçamento e como sustentar os avanços.</p>
+    <p class="scene-description">O que melhorou, o que ainda pesa e como sustentar os avanços: explore renda, trabalho, produção e contas públicas.</p>
     <p class="macro-review">Revisão: <time datetime="2026-10-02">02/10/2026</time> · período e fonte em cada indicador</p>
   </div>
+  <nav class="economy-nav" aria-label="Explore os temas de economia"><a href="#economia-bolso"><span>Bolso</span></a><a href="#economia-trabalho"><span>Trabalho</span></a><a href="#economia-producao"><span>Produção</span></a><a href="#economia-contas"><span>Contas públicas</span></a><a href="#economia-futuro"><span>Futuro</span></a></nav>
+  <aside class="economy-context"><strong>Como ler este retrato</strong><p>2026 ainda está em andamento. Cada indicador usa o último período verificado até 02/10/2026: inflação e contas públicas até agosto, crédito das famílias até julho, PIB até junho e alimentação no triênio 2023–2025. São dados observados, não previsões para o fim do ano.</p><a href="dados/economia-2026-10-02.csv" download>Baixar indicadores e fontes (CSV)</a></aside>
+  <article id="economia-bolso" class="economy-block" aria-labelledby="economia-bolso-title">
+  <header><h3 id="economia-bolso-title">Seu dinheiro compra mais?</h3><p>A renda precisa acompanhar o custo de vida. Inflação menor é uma alta mais lenta dos preços; renda real já desconta a inflação.</p></header>
   <div class="stats-grid macro-stats">
     <article class="stat-card macro-stat">
-      <h3 class="stat-label">IPCA em 12 meses</h3>
-      <div class="macro-value"><span class="stat-value">4,22</span><span class="stat-unit">%</span></div>
-      <p class="macro-period">ago/2026 · Brasil</p>
-      <p class="macro-definition">É a variação média dos preços de uma cesta de consumo das famílias em 12 meses.</p>
+      <h3 class="stat-label">Alta dos preços desde 2023</h3>
+      <div class="macro-value"><span class="stat-value">17,90</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">jan/2023–ago/2026 · IPCA</p>
+      <p class="macro-definition">Variação acumulada do índice de preços desde dezembro de 2022.</p>
       <details class="macro-details"><summary>Como isso afeta você?</summary>
-        <p>Com renda sem reajuste, preços mais altos reduzem o que você consegue comprar.</p><p><strong>Como interpretar:</strong> O índice de preços recuou 0,32% em agosto; isso não apaga a alta acumulada. Sua cesta pessoal pode variar mais ou menos que a média.</p>
+        <p>Uma cesta que acompanhou exatamente o IPCA e custava R$ 100 passou a custar cerca de R$ 117,90.</p><p><strong>Como interpretar:</strong> Cálculo composto com 44 taxas mensais: produto de (1 + taxa/100), menos 1. Não é soma das taxas nem a inflação de todo o mandato.</p>
       </details>
-      <div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/inflacao/defeso-eleitoral-2026/informativo-ipca-ago2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · ago/2026 ↗</a></div>
+      <div class="macro-source"><a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json&amp;dataInicial=01/01/2023&amp;dataFinal=01/08/2026" target="_blank" rel="noopener noreferrer">BCB / IBGE · SGS 433 · jan/2023–ago/2026 ↗</a></div>
     </article>
     <article class="stat-card macro-stat">
-      <h3 class="stat-label">Meta Selic</h3>
-      <div class="macro-value"><span class="stat-value">13,75</span><span class="stat-unit">% a.a.</span></div>
-      <p class="macro-period">vigente desde 17/09/2026</p>
-      <p class="macro-definition">É a taxa básica de juros definida pelo Banco Central para orientar a política monetária.</p>
+      <h3 class="stat-label">Rendimento médio real</h3>
+      <div class="macro-value"><span class="stat-unit">R$</span><span class="stat-value">3.777</span><span class="stat-unit"></span></div>
+      <p class="macro-period">jun–ago/2026 · todos os trabalhos</p>
+      <p class="macro-definition">Renda habitual média do trabalho, corrigida pela inflação.</p>
       <details class="macro-details"><summary>Como isso afeta você?</summary>
-        <p>Juros altos tendem a encarecer crédito e desestimular consumo e investimento, ajudando a conter a inflação.</p><p><strong>Como interpretar:</strong> Não é a taxa cobrada no cartão. Também influencia parte do custo da dívida pública, com efeito que depende dos títulos e seus prazos.</p>
+        <p>A alta real foi de 3,7% frente ao mesmo trimestre de 2025.</p><p><strong>Como interpretar:</strong> É média dos trabalhadores com rendimento, não mediana nem renda de cada família. Não se deve descontar a inflação novamente.</p>
       </details>
-      <div class="macro-source"><a href="https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?numero=45963&amp;tipo=Comunicado" target="_blank" rel="noopener noreferrer">BCB · decisão de 16/09/2026 ↗</a></div>
+      <div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/emprego-e-renda/defeso-eleitoral-2026/informativo-pnad-ago2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · jun–ago/2026 ↗</a></div>
     </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Cesta / salário mínimo líquido</h3>
+      <div class="macro-value"><span class="stat-value">60,06</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">ago/2026 · São Paulo</p>
+      <p class="macro-definition">Parcela do salário mínimo após desconto previdenciário necessária para a cesta de um adulto.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>A cesta custou R$ 900,59; ainda faltam aluguel, transporte e outras despesas.</p><p><strong>Como interpretar:</strong> A lista e as quantidades diferem entre regiões. Essa proporção não representa o orçamento de toda família brasileira.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.dieese.org.br/analisecestabasica/2026/202608cestabasica.pdf" target="_blank" rel="noopener noreferrer">Conab / DIEESE · ago/2026 · p. 3 ↗</a></div>
+    </article></div>
+
+
+  <figure class="macro-chart">
+    <figcaption><h3>A inflação muda conforme a despesa</h3><p>variação em 12 meses até ago/2026 · % · eixo começa em zero</p></figcaption>
+    <div class="macro-bars">
+      <div class="macro-bar-row"><span>IPCA geral</span><div class="macro-bar-track" aria-hidden="true"><div style="width:52.75%"></div></div><strong>4,22</strong></div>
+      <div class="macro-bar-row"><span>Alimentação e bebidas</span><div class="macro-bar-track" aria-hidden="true"><div style="width:44.125%"></div></div><strong>3,53</strong></div>
+      <div class="macro-bar-row"><span>Habitação</span><div class="macro-bar-track" aria-hidden="true"><div style="width:61.25000000000001%"></div></div><strong>4,9</strong></div>
+      <div class="macro-bar-row"><span>Transportes</span><div class="macro-bar-track" aria-hidden="true"><div style="width:38%"></div></div><strong>3,04</strong></div>
+      <div class="macro-bar-row"><span>Saúde e cuidados</span><div class="macro-bar-track" aria-hidden="true"><div style="width:73%"></div></div><strong>5,84</strong></div>
+      <div class="macro-bar-row"><span>Educação</span><div class="macro-bar-track" aria-hidden="true"><div style="width:74.75%"></div></div><strong>5,98</strong></div>
+    </div>
+    <p class="macro-chart-note">Grupos do IPCA, não contribuições para o índice: os percentuais não devem ser somados.</p><div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/inflacao/defeso-eleitoral-2026/informativo-ipca-ago2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · ago/2026 ↗</a></div>
+  </figure>
+  <figure class="macro-chart">
+    <figcaption><h3>A cesta varia entre as capitais</h3><p>ago/2026 · R$ · cinco capitais selecionadas · eixo começa em zero</p></figcaption>
+    <div class="macro-bars">
+      <div class="macro-bar-row"><span>São Paulo · SE</span><div class="macro-bar-track" aria-hidden="true"><div style="width:90.059%"></div></div><strong>900,59</strong></div>
+      <div class="macro-bar-row"><span>Florianópolis · S</span><div class="macro-bar-track" aria-hidden="true"><div style="width:85.09%"></div></div><strong>850,9</strong></div>
+      <div class="macro-bar-row"><span>Brasília · CO</span><div class="macro-bar-track" aria-hidden="true"><div style="width:73.435%"></div></div><strong>734,35</strong></div>
+      <div class="macro-bar-row"><span>Belém · N</span><div class="macro-bar-track" aria-hidden="true"><div style="width:70.91199999999999%"></div></div><strong>709,12</strong></div>
+      <div class="macro-bar-row"><span>Aracaju · NE</span><div class="macro-bar-track" aria-hidden="true"><div style="width:57.098000000000006%"></div></div><strong>570,98</strong></div>
+    </div>
+    <p class="macro-chart-note">Um exemplo de cada região, não um ranking completo. No Norte e Nordeste, composição e quantidades são diferentes; o valor não representa uma cesta idêntica em todos os locais.</p><div class="macro-source"><a href="https://www.dieese.org.br/analisecestabasica/2026/202608cestabasica.pdf" target="_blank" rel="noopener noreferrer">Conab / DIEESE · ago/2026 · p. 3 ↗</a></div>
+  </figure>
+  <div class="economy-reading"><details class="macro-details"><summary>O que muda no seu orçamento?</summary><p>Se sua renda cresce menos que seus gastos, o orçamento aperta. A renda média pode melhorar enquanto algumas famílias perdem poder de compra, porque os reajustes e a composição das despesas variam.</p></details></div>
+</article><article id="economia-trabalho" class="economy-block" aria-labelledby="economia-trabalho-title">
+  <header><h3 id="economia-trabalho-title">Há mais trabalho. Ele atende às necessidades?</h3><p>Conseguir uma ocupação é uma parte da melhora. Horas disponíveis, rendimento e proteção social também importam.</p></header>
+  <div class="stats-grid macro-stats">
     <article class="stat-card macro-stat">
       <h3 class="stat-label">Desocupação</h3>
       <div class="macro-value"><span class="stat-value">5,3</span><span class="stat-unit">%</span></div>
       <p class="macro-period">jun–ago/2026 · Brasil</p>
-      <p class="macro-definition">É a parcela de quem está na força de trabalho e procura emprego, mas não encontra.</p>
+      <p class="macro-definition">Parcela da força de trabalho sem ocupação, disponível e procurando trabalho.</p>
       <details class="macro-details"><summary>Como isso afeta você?</summary>
-        <p>Mais emprego pode ampliar a renda das famílias e a arrecadação de impostos.</p><p><strong>Como interpretar:</strong> Não mede qualidade do trabalho, informalidade ou todos que desistiram de procurar emprego. É um trimestre móvel, não o ano inteiro.</p>
+        <p>Caiu de 5,6% no mesmo trimestre de 2025.</p><p><strong>Como interpretar:</strong> Quem trabalha por aplicativo ou por conta própria pode ser considerado ocupado. A taxa não exige carteira assinada.</p>
       </details>
       <div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/emprego-e-renda/defeso-eleitoral-2026/informativo-pnad-ago2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · jun–ago/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Subutilização do trabalho</h3>
+      <div class="macro-value"><span class="stat-value">13,1</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">jun–ago/2026 · Brasil</p>
+      <p class="macro-definition">Inclui desocupação, trabalho com horas insuficientes e força de trabalho potencial.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Caiu de 14,1% no mesmo trimestre de 2025.</p><p><strong>Como interpretar:</strong> Usa uma base ampliada e inclui desocupados: não some 13,1% com 5,3%.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/emprego-e-renda/defeso-eleitoral-2026/informativo-pnad-ago2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · jun–ago/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Informalidade</h3>
+      <div class="macro-value"><span class="stat-value">37,5</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">jun–ago/2026 · população ocupada</p>
+      <p class="macro-definition">Parcela dos ocupados em situações de trabalho classificadas como informais pelo IBGE.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Ajuda a avaliar a proteção e a qualidade das ocupações.</p><p><strong>Como interpretar:</strong> Inclui empregados sem carteira e trabalhadores por conta própria ou empregadores sem CNPJ, entre outros. Não é taxa de desemprego.</p>
+      </details>
+      <div class="macro-source"><a href="https://apisidra.ibge.gov.br/values/t/8513/n1/all/v/12466/p/202608" target="_blank" rel="noopener noreferrer">IBGE · SIDRA 8513 · jun–ago/2026 ↗</a></div>
+    </article></div>
+
+
+  <figure class="macro-chart">
+    <figcaption><h3>Compare o mesmo trimestre de cada ano</h3><p>junho–agosto · % · eixo começa em zero</p></figcaption>
+    <div class="macro-bars">
+      <div class="macro-bar-row"><span>Desocupação · 2025</span><div class="macro-bar-track" aria-hidden="true"><div style="width:27.999999999999996%"></div></div><strong>5,6</strong></div>
+      <div class="macro-bar-row"><span>Desocupação · 2026</span><div class="macro-bar-track" aria-hidden="true"><div style="width:26.5%"></div></div><strong>5,3</strong></div>
+      <div class="macro-bar-row"><span>Subutilização · 2025</span><div class="macro-bar-track" aria-hidden="true"><div style="width:70.5%"></div></div><strong>14,1</strong></div>
+      <div class="macro-bar-row"><span>Subutilização · 2026</span><div class="macro-bar-track" aria-hidden="true"><div style="width:65.5%"></div></div><strong>13,1</strong></div>
+    </div>
+    <p class="macro-chart-note">Taxas sem ajuste sazonal. Cada par usa a mesma definição; desemprego e subutilização têm denominadores diferentes.</p><div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/emprego-e-renda/defeso-eleitoral-2026/informativo-pnad-ago2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · jun–ago/2026 ↗</a></div>
+  </figure>
+  <div class="economy-reading"><details class="macro-details"><summary>O que falta para avaliar a qualidade?</summary><p>Diferenças de renda entre grupos complementam a análise. A média nacional não informa se uma pessoa tem estabilidade, proteção previdenciária ou renda suficiente.</p></details></div>
+</article><article id="economia-producao" class="economy-block" aria-labelledby="economia-producao-title">
+  <header><h3 id="economia-producao-title">O país está produzindo e investindo mais?</h3><p>PIB é o valor dos bens e serviços finais produzidos. Crescer amplia a atividade; investir ajuda a sustentar a capacidade de produzir.</p></header>
+  <div class="stats-grid macro-stats">
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Crescimento real do PIB</h3>
+      <div class="macro-value"><span class="stat-value">+0,5</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">2º tri/2026 contra 1º tri/2026</p>
+      <p class="macro-definition">Mudança na produção descontando preços, com ajuste sazonal.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Indica expansão em relação ao trimestre anterior.</p><p><strong>Como interpretar:</strong> Frente ao 2º trimestre de 2025, a alta foi de 2,0%. São comparações diferentes, não taxas que podem ser somadas.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/atividade-economica/defeso-eleitoral-2026/informativo-pib-jun2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · 2º trimestre/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">PIB em quatro trimestres</h3>
+      <div class="macro-value"><span class="stat-value">+1,9</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">até o 2º trimestre/2026</p>
+      <p class="macro-definition">Crescimento acumulado comparado aos quatro trimestres anteriores.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Mostra um intervalo mais longo que a variação de um trimestre.</p><p><strong>Como interpretar:</strong> Não é o resultado anual de 2026 nem uma previsão para dezembro.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/atividade-economica/defeso-eleitoral-2026/informativo-pib-jun2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · 2º trimestre/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Investimento em capital fixo</h3>
+      <div class="macro-value"><span class="stat-value">+1,2</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">2º tri/2026 contra 1º tri/2026</p>
+      <p class="macro-definition">Variação real da formação bruta de capital fixo: máquinas, construções e outros ativos produtivos.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Investimentos podem ampliar a capacidade futura.</p><p><strong>Como interpretar:</strong> Série com ajuste sazonal. Nos quatro trimestres até junho, a variação foi de −0,2%; a recuperação recente não apaga essa fraqueza.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/atividade-economica/defeso-eleitoral-2026/informativo-pib-jun2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · 2º trimestre/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Taxa de investimento</h3>
+      <div class="macro-value"><span class="stat-value">16,1</span><span class="stat-unit">% do PIB</span></div>
+      <p class="macro-period">2º trimestre/2026 · Brasil</p>
+      <p class="macro-definition">Proporção da formação bruta de capital fixo no PIB, a preços correntes.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Mostra quanto da produção corresponde à formação de ativos produtivos.</p><p><strong>Como interpretar:</strong> Não é a taxa de crescimento do investimento nem inclui aplicações financeiras.</p>
+      </details>
+      <div class="macro-source"><a href="https://apisidra.ibge.gov.br/values/t/6727/n1/all/v/2517/p/202602" target="_blank" rel="noopener noreferrer">IBGE · SIDRA 6727 · 2º trimestre/2026 ↗</a></div>
+    </article></div>
+
+
+  <figure class="macro-chart">
+    <figcaption><h3>Os setores cresceram em ritmos diferentes</h3><p>2º tri/2026 contra 2º tri/2025 · % · eixo começa em zero</p></figcaption>
+    <div class="macro-bars">
+      <div class="macro-bar-row"><span>Agropecuária</span><div class="macro-bar-track" aria-hidden="true"><div style="width:85%"></div></div><strong>6,8</strong></div>
+      <div class="macro-bar-row"><span>Indústria</span><div class="macro-bar-track" aria-hidden="true"><div style="width:18.75%"></div></div><strong>1,5</strong></div>
+      <div class="macro-bar-row"><span>Serviços</span><div class="macro-bar-track" aria-hidden="true"><div style="width:18.75%"></div></div><strong>1,5</strong></div>
+    </div>
+    <p class="macro-chart-note">Variações reais por setor. Não são contribuições em pontos percentuais; os setores têm pesos diferentes.</p><div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/atividade-economica/defeso-eleitoral-2026/informativo-pib-jun2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · 2º trimestre/2026 ↗</a></div>
+  </figure>
+  <div class="economy-reading"><details class="macro-details"><summary>PIB maior não garante renda maior para todos</summary><p>O PIB por habitante divide a produção pela população, mas continua sendo uma média. Distribuição da renda, produtividade e qualidade dos serviços determinam como o crescimento chega às pessoas.</p></details></div>
+</article><article id="economia-contas" class="economy-block" aria-labelledby="economia-contas-title">
+  <header><h3 id="economia-contas-title">Como a conta pública fecha?</h3><p>O resultado primário compara receitas e despesas sem juros. O nominal inclui juros. A dívida é um estoque acumulado, não o déficit de um único ano.</p></header>
+  <div class="stats-grid macro-stats">
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Déficit primário</h3>
+      <div class="macro-value"><span class="stat-value">0,62</span><span class="stat-unit">% do PIB</span></div>
+      <p class="macro-period">12 meses até ago/2026 · setor público consolidado</p>
+      <p class="macro-definition">Despesas primárias superaram receitas no período.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>É uma das partes da necessidade de financiamento.</p><p><strong>Como interpretar:</strong> Inclui governos e estatais abrangidos pelo BCB. O RTN do Tesouro usa outra metodologia; não misture as séries.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202609_Texto_de_estatisticas_fiscais.pdf" target="_blank" rel="noopener noreferrer">BCB · nota de 30/09/2026 · p. 2–3 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Juros nominais</h3>
+      <div class="macro-value"><span class="stat-value">8,86</span><span class="stat-unit">% do PIB</span></div>
+      <p class="macro-period">12 meses até ago/2026 · setor público consolidado</p>
+      <p class="macro-definition">Juros apropriados por competência, inclusive efeitos financeiros previstos na metodologia.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Entram no resultado nominal junto com o primário.</p><p><strong>Como interpretar:</strong> Não equivalem à amortização da dívida nem apenas ao custo dos programas sociais.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202609_Texto_de_estatisticas_fiscais.pdf" target="_blank" rel="noopener noreferrer">BCB · nota de 30/09/2026 · p. 2–3 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Déficit nominal</h3>
+      <div class="macro-value"><span class="stat-value">9,48</span><span class="stat-unit">% do PIB</span></div>
+      <p class="macro-period">12 meses até ago/2026 · setor público consolidado</p>
+      <p class="macro-definition">Resultado deficitário depois de incluir os juros.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Neste período: 0,62 de déficit primário + 8,86 de juros = 9,48% do PIB.</p><p><strong>Como interpretar:</strong> Não é a mesma coisa que aumento da dívida bruta: há ajustes patrimoniais e variação do PIB.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202609_Texto_de_estatisticas_fiscais.pdf" target="_blank" rel="noopener noreferrer">BCB · nota de 30/09/2026 · p. 2–3 ↗</a></div>
     </article>
     <article class="stat-card macro-stat">
       <h3 class="stat-label">Dívida bruta / PIB</h3>
       <div class="macro-value"><span class="stat-value">82,9</span><span class="stat-unit">%</span></div>
       <p class="macro-period">ago/2026 · governo geral</p>
-      <p class="macro-definition">Compara o estoque da dívida federal, estadual e municipal coberto pela DBGG com a produção anual da economia.</p>
+      <p class="macro-definition">Estoque da dívida bruta em relação à produção anual.</p>
       <details class="macro-details"><summary>Como isso afeta você?</summary>
-        <p>Mais dívida e juros podem aumentar a pressão sobre o orçamento e dificultar o financiamento de serviços.</p><p><strong>Como interpretar:</strong> Não significa que 82,9% dos impostos vão para a dívida. A razão também muda com o PIB. Valor da série: 82,86%, arredondado.</p>
+        <p>Sua trajetória influencia o espaço fiscal e as condições de financiamento.</p><p><strong>Como interpretar:</strong> DBGG não tem a mesma abrangência do setor público consolidado. Valor da série: 82,86%, arredondado.</p>
       </details>
-      <div class="macro-source"><a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/12/2024&amp;dataFinal=01/08/2026" target="_blank" rel="noopener noreferrer">BCB · SGS 13762 · ago/2026 ↗</a></div>
-    </article>
-    <article class="stat-card macro-stat">
-      <h3 class="stat-label">Cesta básica em São Paulo</h3>
-      <div class="macro-value"><span class="stat-unit">R$</span><span class="stat-value">900,59</span><span class="stat-unit"></span></div>
-      <p class="macro-period">ago/2026 · capital paulista</p>
-      <p class="macro-definition">É o custo de uma lista padronizada de alimentos básicos para um adulto.</p>
-      <details class="macro-details"><summary>Como isso afeta você?</summary>
-        <p>Ajuda a mostrar quanto da renda é necessário para alimentação.</p><p><strong>Como interpretar:</strong> Não é o custo de vida de uma família nem a média do Brasil. Não inclui aluguel, transporte e todas as necessidades alimentares.</p>
-      </details>
-      <div class="macro-source"><a href="https://www.dieese.org.br/analisecestabasica/2026/202608cestabasica.pdf" target="_blank" rel="noopener noreferrer">Conab / DIEESE · ago/2026 · p. 3 ↗</a></div>
-    </article>
+      <div class="macro-source"><a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/12/2010&amp;dataFinal=01/08/2026" target="_blank" rel="noopener noreferrer">BCB · SGS 13762 · dez/2010–ago/2026 ↗</a></div>
+    </article></div>
+  <figure class="economy-equation"><figcaption>A conta em 12 meses até agosto de 2026 · % do PIB · setor público consolidado</figcaption><div><p><strong>0,62%</strong><span>Déficit primário</span></p><span class="equation-operator" aria-hidden="true">+</span><p><strong>8,86%</strong><span>Juros nominais</span></p><span class="equation-operator" aria-hidden="true">=</span><p><strong>9,48%</strong><span>Déficit nominal</span></p></div><p class="macro-chart-note">Valores arredondados pelo BCB. Todos os componentes usam o mesmo período e abrangência.</p><div class="macro-source"><a href="https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202609_Texto_de_estatisticas_fiscais.pdf" target="_blank" rel="noopener noreferrer">BCB · nota de 30/09/2026 · p. 2–3 ↗</a></div></figure>
+
+  <figure class="macro-chart">
+    <figcaption><h3>A trajetória da dívida vem de antes de 2023</h3><p>% do PIB · DBGG · eixo começa em zero</p></figcaption>
+    <div class="macro-bars">
+      <div class="macro-bar-row"><span>dez/2010</span><div class="macro-bar-track" aria-hidden="true"><div style="width:51.77%"></div></div><strong>51,77</strong></div>
+      <div class="macro-bar-row"><span>dez/2011</span><div class="macro-bar-track" aria-hidden="true"><div style="width:51.27%"></div></div><strong>51,27</strong></div>
+      <div class="macro-bar-row"><span>dez/2012</span><div class="macro-bar-track" aria-hidden="true"><div style="width:53.67000000000001%"></div></div><strong>53,67</strong></div>
+      <div class="macro-bar-row"><span>dez/2013</span><div class="macro-bar-track" aria-hidden="true"><div style="width:51.54%"></div></div><strong>51,54</strong></div>
+      <div class="macro-bar-row"><span>dez/2014</span><div class="macro-bar-track" aria-hidden="true"><div style="width:56.279999999999994%"></div></div><strong>56,28</strong></div>
+      <div class="macro-bar-row"><span>dez/2015</span><div class="macro-bar-track" aria-hidden="true"><div style="width:65.5%"></div></div><strong>65,5</strong></div>
+      <div class="macro-bar-row"><span>dez/2016</span><div class="macro-bar-track" aria-hidden="true"><div style="width:69.84%"></div></div><strong>69,84</strong></div>
+      <div class="macro-bar-row"><span>dez/2017</span><div class="macro-bar-track" aria-hidden="true"><div style="width:73.72%"></div></div><strong>73,72</strong></div>
+      <div class="macro-bar-row"><span>dez/2018</span><div class="macro-bar-track" aria-hidden="true"><div style="width:75.27%"></div></div><strong>75,27</strong></div>
+      <div class="macro-bar-row"><span>dez/2019</span><div class="macro-bar-track" aria-hidden="true"><div style="width:74.44%"></div></div><strong>74,44</strong></div>
+      <div class="macro-bar-row"><span>dez/2020</span><div class="macro-bar-track" aria-hidden="true"><div style="width:86.94%"></div></div><strong>86,94</strong></div>
+      <div class="macro-bar-row"><span>dez/2021</span><div class="macro-bar-track" aria-hidden="true"><div style="width:77.31%"></div></div><strong>77,31</strong></div>
+      <div class="macro-bar-row"><span>dez/2022</span><div class="macro-bar-track" aria-hidden="true"><div style="width:71.68%"></div></div><strong>71,68</strong></div>
+      <div class="macro-bar-row"><span>dez/2023</span><div class="macro-bar-track" aria-hidden="true"><div style="width:73.83%"></div></div><strong>73,83</strong></div>
+      <div class="macro-bar-row"><span>dez/2024</span><div class="macro-bar-track" aria-hidden="true"><div style="width:76.27%"></div></div><strong>76,27</strong></div>
+      <div class="macro-bar-row"><span>dez/2025</span><div class="macro-bar-track" aria-hidden="true"><div style="width:78.64%"></div></div><strong>78,64</strong></div>
+      <div class="macro-bar-row"><span>ago/2026 · parcial</span><div class="macro-bar-track" aria-hidden="true"><div style="width:82.86%"></div></div><strong>82,86</strong></div>
+    </div>
+    <p class="macro-chart-note">Estoques de dezembro de cada ano; último ponto é agosto de 2026, ainda parcial. Dados podem ser revisados. A marca de 2026 não é uma projeção.</p><div class="macro-source"><a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/12/2010&amp;dataFinal=01/08/2026" target="_blank" rel="noopener noreferrer">BCB · SGS 13762 · dez/2010–ago/2026 ↗</a></div>
+  </figure>
+  <div class="economy-reading"><details class="macro-details"><summary>Arrecadação e gastos: outra janela da mesma discussão</summary><p>No RTN de agosto, a receita líquida do Governo Central cresceu 3,5% e a despesa primária 1,9% em termos reais frente a agosto de 2025. Ainda houve déficit primário de R$ 13,6 bilhões. Crescer a receita mais depressa não garante superávit quando a despesa começa de um nível maior.</p><div class="macro-source"><a href="https://www.tesourotransparente.gov.br/publicacoes/boletim-resultado-do-tesouro-nacional-rtn/2026/8" target="_blank" rel="noopener noreferrer">Tesouro Nacional · RTN · ago/2026 ↗</a></div></details><details class="macro-details"><summary>O que trouxe a publicação fiscal de 1º de outubro?</summary><p>Para o Governo Geral no 2º trimestre de 2026, o Tesouro reportou receita de 40,18% do PIB e despesa de 49,39%, com necessidade de financiamento de 9,21%. Essa metodologia registra despesas por competência e receitas por caixa. É uma janela trimestral e não substitui o resultado nominal de 12 meses do BCB.</p><div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/outubro/segundo-trimestre-de-2026-registra-necessidade-liquida-de-financiamento-do-governo-geral-de-9-2-do-pib" target="_blank" rel="noopener noreferrer">Tesouro / Fazenda · Governo Geral · publicado em 01/10/2026 ↗</a></div></details><details class="macro-details"><summary>Por que superávit primário pode coexistir com dívida crescente?</summary><p>Exemplo hipotético: receita de R$ 100 e despesa sem juros de R$ 95 deixam superávit primário de R$ 5. Com juros de R$ 15, há déficit nominal de R$ 10. Na dívida/PIB, crescimento da economia e outros ajustes também contam.</p><div class="macro-source"><a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a></div></details><details class="macro-details"><summary>Mais dívida significa crise?</summary><p>Não há uma consequência automática. Uma trajetória sem perspectiva de estabilização pode encarecer financiamento e pressionar impostos, serviços e investimento. Crescimento, juros, prazos e credibilidade alteram esses riscos.</p><div class="macro-source"><a href="https://www.gov.br/tesouronacional/pt-br/noticias/tesouro-publica-6a-edicao-do-relatorio-de-projecoes-fiscais-com-cenarios-e-trajetorias-para-avaliar-o-panorama-fiscal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · projeções fiscais e cenários ↗</a></div></details></div>
+</article><article id="economia-futuro" class="economy-block" aria-labelledby="economia-futuro-title">
+  <header><h3 id="economia-futuro-title">Como sustentar as melhorias?</h3><p>Alimentação, crédito e orçamento público se encontram na vida cotidiana. Preservar avanços exige renda, políticas eficazes e financiamento sustentável.</p></header>
+  <div class="stats-grid macro-stats">
     <article class="stat-card macro-stat">
       <h3 class="stat-label">Prevalência de subalimentação</h3>
       <div class="macro-value"><span class="stat-value">&lt; 2,5</span><span class="stat-unit">%</span></div>
-      <p class="macro-period">2022–2024 · média trienal</p>
-      <p class="macro-definition">É a estimativa da população sem acesso habitual a energia alimentar suficiente. Esse patamar caracteriza a saída do Mapa da Fome.</p>
+      <p class="macro-period">2023–2025 · média trienal · SOFI 2026</p>
+      <p class="macro-definition">Estimativa de acesso habitual insuficiente à energia alimentar.</p>
       <details class="macro-details"><summary>Como isso afeta você?</summary>
-        <p>Mostra um avanço no acesso à alimentação, que deve ser preservado.</p><p><strong>Como interpretar:</strong> Não significa fome zero. É diferente de insegurança alimentar e não revela, sozinho, a qualidade da dieta ou o custo fiscal da melhora.</p>
+        <p>O Brasil permanece fora do Mapa da Fome.</p><p><strong>Como interpretar:</strong> Não significa fome zero. A estimativa trienal não descreve um mês de 2026.</p>
       </details>
-      <div class="macro-source"><a href="https://www.fao.org/americas/news/news-detail/erradicacion-del-hambre/en" target="_blank" rel="noopener noreferrer">FAO · Panorama regional 2025, divulgado em 2026 ↗</a></div>
+      <div class="macro-source"><a href="https://www.gov.br/mds/pt-br/noticias/relatorio-da-onu-confirma-que-brasil-permanece-fora-do-mapa-da-fome-e-aponta-melhora-em-indicadores" target="_blank" rel="noopener noreferrer">SOFI 2026 / MDS · Brasil fora do Mapa da Fome ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Insegurança alimentar moderada ou grave</h3>
+      <div class="macro-value"><span class="stat-value">9,6</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">2023–2025 · média trienal · SOFI 2026</p>
+      <p class="macro-definition">Mede dificuldades de acesso regular à alimentação.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Complementa a subalimentação, com conceito e método diferentes.</p><p><strong>Como interpretar:</strong> Não some os dois percentuais. Fora do Mapa da Fome não significa ausência de insegurança alimentar.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/secretariageral/pt-br/consea/relatorio-sofi-2026/relatorio-sofi-2026-o-estado-da-seguranca-alimentar-e-nutricional-no-mundo" target="_blank" rel="noopener noreferrer">SOFI 2026 / Consea · triênio 2023–2025 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Renda comprometida com dívidas</h3>
+      <div class="macro-value"><span class="stat-value">28,7</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">jul/2026 · famílias · BCB</p>
+      <p class="macro-definition">Estimativa da parcela de renda destinada ao serviço da dívida com o sistema financeiro.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Ajuda a dimensionar o espaço que sobra para outras despesas.</p><p><strong>Como interpretar:</strong> É medida agregada, não a situação de toda família; não é o percentual de pessoas endividadas.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.bcb.gov.br/content/estatisticas/hist_estatisticasmonetariascredito/202609_Texto_de_estatisticas_monetarias_e_de_credito.pdf" target="_blank" rel="noopener noreferrer">BCB · nota de 29/09/2026 · p. 3–4 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Meta Selic</h3>
+      <div class="macro-value"><span class="stat-value">13,75</span><span class="stat-unit">% a.a.</span></div>
+      <p class="macro-period">vigente desde 17/09/2026</p>
+      <p class="macro-definition">Taxa básica de juros definida pelo Banco Central.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Influencia crédito, atividade e controle da inflação.</p><p><strong>Como interpretar:</strong> A Selic não é a taxa final do empréstimo: risco, custos e margem também influenciam o crédito.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?numero=45963&amp;tipo=Comunicado" target="_blank" rel="noopener noreferrer">BCB · decisão de 16/09/2026 ↗</a></div>
     </article></div>
 
-  <figure class="macro-chart">
-    <figcaption><h3>A dívida em relação ao tamanho da economia</h3><p>% do PIB · eixo começa em zero</p></figcaption>
-    <div class="macro-bars">
-      <div class="macro-bar-row"><span>dez/2024</span><div class="macro-bar-track" aria-hidden="true"><div style="width:76.27%"></div></div><strong>76,27</strong></div>
-      <div class="macro-bar-row"><span>dez/2025</span><div class="macro-bar-track" aria-hidden="true"><div style="width:78.64%"></div></div><strong>78,64</strong></div>
-      <div class="macro-bar-row"><span>ago/2026</span><div class="macro-bar-track" aria-hidden="true"><div style="width:82.86%"></div></div><strong>82,86</strong></div>
-    </div>
-    <p class="macro-chart-note">Dezembro de 2024 e 2025; agosto de 2026. São estoques em datas específicas, não médias anuais. A série pode ser revisada pelo BCB.</p><div class="macro-source"><a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/12/2024&amp;dataFinal=01/08/2026" target="_blank" rel="noopener noreferrer">BCB · SGS 13762 · ago/2026 ↗</a></div>
-  </figure>
-  <div class="macro-reading"><h3>Como esses dados se conectam</h3>
-    <div class="macro-connections"><article><h4>PIB: o tamanho da produção, não o dinheiro do governo</h4><p>PIB é o valor dos bens e serviços finais produzidos no país em um período. Não é a arrecadação de impostos nem a soma do dinheiro que cada brasileiro possui. A dívida/PIB compara uma obrigação acumulada com a capacidade econômica de gerar renda.</p><div class="macro-source"><a href="https://www.ibge.gov.br/explica/pib.php" target="_blank" rel="noopener noreferrer">IBGE · o que é PIB ↗</a></div></article><article><h4>Menos fome: qual foi o custo?</h4><p>Renda do trabalho, transferências sociais e preços dos alimentos podem melhorar o acesso à comida. Programas custam recursos, mas a saída do Mapa da Fome não demonstra que o aumento da dívida foi causado por eles. Para atribuir esse custo, seria preciso examinar despesas executadas, receitas, juros e uma avaliação do efeito de cada política.</p><div class="macro-source"><a href="https://www.fao.org/americas/news/news-detail/erradicacion-del-hambre/en" target="_blank" rel="noopener noreferrer">FAO · Panorama regional 2025, divulgado em 2026 ↗</a> · <a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a></div></article><article><h4>De onde vem o endividamento?</h4><p>Receitas primárias incluem impostos e outras receitas não financeiras; despesas primárias financiam pessoal, benefícios, serviços e investimentos, sem os juros. Quando essas despesas superam essas receitas, há déficit primário. Ao incluir juros, chega-se ao resultado nominal. Juros, necessidades de financiamento e outros ajustes afetam a dívida; crescer menos também pode elevar a razão dívida/PIB.</p><div class="macro-source"><a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a> · <a href="https://www.gov.br/tesouronacional/pt-br/noticias/tesouro-publica-6a-edicao-do-relatorio-de-projecoes-fiscais-com-cenarios-e-trajetorias-para-avaliar-o-panorama-fiscal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · projeções fiscais e cenários ↗</a></div></article><article><h4>Um exemplo para entender a conta</h4><p>Exemplo hipotético, não um dado do Brasil: arrecadar R$ 100 e gastar R$ 110 antes dos juros gera déficit primário de R$ 10. Com mais R$ 15 de juros, o déficit nominal seria R$ 25. Mesmo arrecadando R$ 100 e gastando R$ 95 antes dos juros, os mesmos juros de R$ 15 deixariam déficit nominal de R$ 10. Por isso, um superávit primário pode coexistir com aumento da dívida.</p><div class="macro-source"><a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a></div></article><article><h4>Se a trajetória não melhorar, o que pode acontecer?</h4><p>Uma dívida crescendo sem perspectiva de estabilização pode elevar o prêmio de risco e o custo de financiamento, limitar investimentos e aumentar a pressão por impostos ou cortes. São riscos, não uma previsão inevitável de crise. Juros, crescimento, credibilidade e composição da dívida alteram o resultado.</p><div class="macro-source"><a href="https://www.gov.br/tesouronacional/pt-br/noticias/tesouro-publica-6a-edicao-do-relatorio-de-projecoes-fiscais-com-cenarios-e-trajetorias-para-avaliar-o-panorama-fiscal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · projeções fiscais e cenários ↗</a></div></article><article><h4>Como preservar avanços sem adiar a conta?</h4><p>Ajustar contas pode envolver reduzir desperdícios, revisar benefícios tributários, melhorar a arrecadação e priorizar despesas eficazes. Cortes em saúde, alimentação ou educação também podem gerar custos futuros. O objetivo é uma trajetória sustentável com serviços que entreguem resultados, e não reduzir toda despesa indiscriminadamente.</p><div class="macro-source"><a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a> · <a href="https://www.gov.br/tesouronacional/pt-br/noticias/tesouro-publica-6a-edicao-do-relatorio-de-projecoes-fiscais-com-cenarios-e-trajetorias-para-avaliar-o-panorama-fiscal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · projeções fiscais e cenários ↗</a></div></article></div>
-  </div>
-  <aside class="macro-flow" aria-label="Relações entre indicadores">
-    <ul><li>Renda e preços → acesso à alimentação</li><li>Políticas e serviços → despesas públicas</li><li>Receitas, despesas e juros → financiamento</li><li>Dívida, juros e crescimento → espaço futuro</li></ul>
-    <p>Esquema de mecanismos econômicos. As setas não calculam correlação estatística nem atribuem a variação da dívida a um programa específico.</p>
-  </aside>
+
+  <div class="economy-reading"><details class="macro-details"><summary>Menos fome: o que explica e quanto custa?</summary><p>Emprego, renda, preços e transferências podem contribuir. Para estimar o custo e o efeito de uma política, é preciso analisar sua execução e avaliar o que teria acontecido sem ela. A melhora alimentar e a alta da dívida, vistas juntas, não provam que uma causou a outra.</p><div class="macro-source"><a href="https://www.gov.br/secretariageral/pt-br/consea/relatorio-sofi-2026/relatorio-sofi-2026-o-estado-da-seguranca-alimentar-e-nutricional-no-mundo" target="_blank" rel="noopener noreferrer">SOFI 2026 / Consea · triênio 2023–2025 ↗</a> · <a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a></div></details><details class="macro-details"><summary>O crédito pode apertar mesmo com renda maior</summary><p>A taxa média do crédito livre às famílias era 61,7% ao ano em agosto. Dívidas e prestações reduzem o dinheiro disponível. Compare o custo efetivo total e o prazo ao avaliar um empréstimo; taxas médias agregadas não são uma oferta para você.</p><div class="macro-source"><a href="https://www.bcb.gov.br/content/estatisticas/hist_estatisticasmonetariascredito/202609_Texto_de_estatisticas_monetarias_e_de_credito.pdf" target="_blank" rel="noopener noreferrer">BCB · nota de 29/09/2026 · p. 3–4 ↗</a></div></details><details class="macro-details"><summary>Quais caminhos ajudam a preservar os resultados?</summary><p>Melhorar a eficiência dos gastos, revisar benefícios tributários, ampliar a base de arrecadação e favorecer produtividade são caminhos possíveis. Cortes e aumentos de impostos têm efeitos diferentes conforme quem atingem e como são executados.</p><div class="macro-source"><a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a> · <a href="https://www.gov.br/tesouronacional/pt-br/noticias/tesouro-publica-6a-edicao-do-relatorio-de-projecoes-fiscais-com-cenarios-e-trajetorias-para-avaliar-o-panorama-fiscal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · projeções fiscais e cenários ↗</a></div></details></div>
+</article>
+  <aside class="macro-flow"><ul><li>Renda e preços → poder de compra</li><li>Trabalho e investimento → capacidade produtiva</li><li>Receitas e despesas → resultado primário</li><li>Juros, crescimento e ajustes → trajetória da dívida</li></ul><p>As setas explicam mecanismos. Não são um cálculo de correlação nem uma atribuição de resultados a um governo ou programa específico.</p></aside>
 </section>
 
 <!-- ══════════════════════════════════════════
@@ -691,7 +892,7 @@
 <!-- SCRIPTS -->
 
 
-<script type="module" src="js/app.js?v=20261002_macro"></script>
+<script type="module" src="js/app.js?v=economia2_20261002_macro"></script>
 
 </body>
 </html>

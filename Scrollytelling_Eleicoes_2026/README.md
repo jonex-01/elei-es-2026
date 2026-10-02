@@ -52,6 +52,12 @@ node generate_macro.mjs
 
 O gerador mantém as outras seções. A faixa de fatos utiliza a mesma base macro, sem duplicar valores. `css/macro.css` adapta os novos blocos aos temas e tamanhos de tela.
 
+A economia usa `js/economy-data.js`, organizada em bolso, trabalho, produção, contas públicas e futuro. Cada indicador inclui unidade, referência, definição, limite e fonte. Os gráficos distinguem variação de contribuição e períodos completos de períodos parciais. Os dados observados de 2026 não são tratados como um mandato encerrado.
+
+O gerador também exporta `dados/economia-2026-10-02.csv` com os indicadores e links. A inflação acumulada de jan/2023 a ago/2026 (17,90%) é calculada pelo produto de 44 fatores mensais da série SGS 433, não pela soma das taxas. A informalidade usa SIDRA 8513, variável 12466; a taxa de investimento usa SIDRA 6727, variável 2517. O SOFI 2026 usa o triênio 2023–2025.
+
+A conta fiscal soma déficit primário (0,62%) e juros nominais (8,86%) no déficit nominal (9,48% do PIB), todos do setor público consolidado nos 12 meses até agosto. A DBGG tem outra abrangência e não é obtida somando esses fluxos. O RTN e o boletim trimestral do Governo Geral aparecem em explicações separadas com seus próprios conceitos e períodos.
+
 O gráfico de dívida usa a série SGS 13762 do BCB (76,27% em dez/2024; 78,64% em dez/2025; 82,86% em ago/2026). A comparação de Ideb usa os resultados nacionais de 2023 e 2025 do Inep. O percentual de estudantes abaixo do nível 2 em matemática no PISA 2025 é calculado como 100% − 28%, conforme a nota da OCDE sobre o Brasil.
 
 Séries e estimativas antigas sem metodologia rastreável deixaram de ser exibidas: filas e tempos médios do SUS, leitos, comparação internacional de médicos, falências, roubos, facções e jovens fora da escola. Os arquivos de pesquisa antigos e os campos macro de `js/data.js` permanecem como material legado, mas não alimentam os quatro blocos nem a faixa macro. Os dados eleitorais e os perfis de candidatos não foram revisados nesta atualização.
