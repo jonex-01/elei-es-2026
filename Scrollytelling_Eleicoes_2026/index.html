@@ -12,6 +12,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/macro.css?v=20261002">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -134,285 +135,270 @@
 <!-- ══════════════════════════════════════════
      CENA 1 — PANORAMA ECONÔMICO
 ══════════════════════════════════════════ -->
-<section id="scene-panorama" class="scene data-scene">
-  <div class="scene-bg"><img src="assets/congresso.jpg" alt="" loading="eager"></div>
-  <div class="scene-header fade-in">
-    <span class="scene-tag">📊 O BRASIL HOJE</span>
-    <h2 class="scene-title">O preço do dia a dia</h2>
-    <p class="scene-description">Os números que definem o custo de vida de cada brasileiro — e que qualquer presidente terá que enfrentar.</p>
+<section id="scene-panorama" class="scene data-scene macro-scene" aria-labelledby="scene-panorama-title">
+  <div class="scene-bg"><img src="assets/congresso.jpg" alt="" loading="lazy"></div>
+  <div class="scene-header">
+    <span class="scene-tag">Economia e alimentação</span>
+    <h2 class="scene-title" id="scene-panorama-title">O bolso de hoje. As contas de amanhã.</h2>
+    <p class="scene-description">Preços, emprego e contas públicas se conectam. Entenda o que melhorou, o que ainda pesa no orçamento e como sustentar os avanços.</p>
+    <p class="macro-review">Revisão: <time datetime="2026-10-02">02/10/2026</time> · período e fonte em cada indicador</p>
   </div>
+  <div class="stats-grid macro-stats">
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">IPCA em 12 meses</h3>
+      <div class="macro-value"><span class="stat-value">4,22</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">ago/2026 · Brasil</p>
+      <p class="macro-definition">É a variação média dos preços de uma cesta de consumo das famílias em 12 meses.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Com renda sem reajuste, preços mais altos reduzem o que você consegue comprar.</p><p><strong>Como interpretar:</strong> O índice de preços recuou 0,32% em agosto; isso não apaga a alta acumulada. Sua cesta pessoal pode variar mais ou menos que a média.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/inflacao/defeso-eleitoral-2026/informativo-ipca-ago2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · ago/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Meta Selic</h3>
+      <div class="macro-value"><span class="stat-value">13,75</span><span class="stat-unit">% a.a.</span></div>
+      <p class="macro-period">vigente desde 17/09/2026</p>
+      <p class="macro-definition">É a taxa básica de juros definida pelo Banco Central para orientar a política monetária.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Juros altos tendem a encarecer crédito e desestimular consumo e investimento, ajudando a conter a inflação.</p><p><strong>Como interpretar:</strong> Não é a taxa cobrada no cartão. Também influencia parte do custo da dívida pública, com efeito que depende dos títulos e seus prazos.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?numero=45963&amp;tipo=Comunicado" target="_blank" rel="noopener noreferrer">BCB · decisão de 16/09/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Desocupação</h3>
+      <div class="macro-value"><span class="stat-value">5,3</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">jun–ago/2026 · Brasil</p>
+      <p class="macro-definition">É a parcela de quem está na força de trabalho e procura emprego, mas não encontra.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Mais emprego pode ampliar a renda das famílias e a arrecadação de impostos.</p><p><strong>Como interpretar:</strong> Não mede qualidade do trabalho, informalidade ou todos que desistiram de procurar emprego. É um trimestre móvel, não o ano inteiro.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/emprego-e-renda/defeso-eleitoral-2026/informativo-pnad-ago2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · jun–ago/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Dívida bruta / PIB</h3>
+      <div class="macro-value"><span class="stat-value">82,9</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">ago/2026 · governo geral</p>
+      <p class="macro-definition">Compara o estoque da dívida federal, estadual e municipal coberto pela DBGG com a produção anual da economia.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Mais dívida e juros podem aumentar a pressão sobre o orçamento e dificultar o financiamento de serviços.</p><p><strong>Como interpretar:</strong> Não significa que 82,9% dos impostos vão para a dívida. A razão também muda com o PIB. Valor da série: 82,86%, arredondado.</p>
+      </details>
+      <div class="macro-source"><a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/12/2024&amp;dataFinal=01/08/2026" target="_blank" rel="noopener noreferrer">BCB · SGS 13762 · ago/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Cesta básica em São Paulo</h3>
+      <div class="macro-value"><span class="stat-unit">R$</span><span class="stat-value">900,59</span><span class="stat-unit"></span></div>
+      <p class="macro-period">ago/2026 · capital paulista</p>
+      <p class="macro-definition">É o custo de uma lista padronizada de alimentos básicos para um adulto.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Ajuda a mostrar quanto da renda é necessário para alimentação.</p><p><strong>Como interpretar:</strong> Não é o custo de vida de uma família nem a média do Brasil. Não inclui aluguel, transporte e todas as necessidades alimentares.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.dieese.org.br/analisecestabasica/2026/202608cestabasica.pdf" target="_blank" rel="noopener noreferrer">Conab / DIEESE · ago/2026 · p. 3 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Prevalência de subalimentação</h3>
+      <div class="macro-value"><span class="stat-value">&lt; 2,5</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">2022–2024 · média trienal</p>
+      <p class="macro-definition">É a estimativa da população sem acesso habitual a energia alimentar suficiente. Esse patamar caracteriza a saída do Mapa da Fome.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Mostra um avanço no acesso à alimentação, que deve ser preservado.</p><p><strong>Como interpretar:</strong> Não significa fome zero. É diferente de insegurança alimentar e não revela, sozinho, a qualidade da dieta ou o custo fiscal da melhora.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.fao.org/americas/news/news-detail/erradicacion-del-hambre/en" target="_blank" rel="noopener noreferrer">FAO · Panorama regional 2025, divulgado em 2026 ↗</a></div>
+    </article></div>
 
-  <div class="stats-grid">
-    <div class="stat-card fade-in">
-      <div class="stat-label">Inflação (IPCA 12 meses)</div>
-      <div><span class="stat-value" id="stat-ipca">—</span><span class="stat-unit">%</span></div>
-      <div class="stat-source">IBGE · Julho/2026</div>
+  <figure class="macro-chart">
+    <figcaption><h3>A dívida em relação ao tamanho da economia</h3><p>% do PIB · eixo começa em zero</p></figcaption>
+    <div class="macro-bars">
+      <div class="macro-bar-row"><span>dez/2024</span><div class="macro-bar-track" aria-hidden="true"><div style="width:76.27%"></div></div><strong>76,27</strong></div>
+      <div class="macro-bar-row"><span>dez/2025</span><div class="macro-bar-track" aria-hidden="true"><div style="width:78.64%"></div></div><strong>78,64</strong></div>
+      <div class="macro-bar-row"><span>ago/2026</span><div class="macro-bar-track" aria-hidden="true"><div style="width:82.86%"></div></div><strong>82,86</strong></div>
     </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Taxa Selic (juros)</div>
-      <div><span class="stat-value" id="stat-selic">—</span><span class="stat-unit">% a.a.</span></div>
-      <div class="stat-source">BCB (Copom) · Agosto/2026</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Desemprego</div>
-      <div><span class="stat-value" id="stat-desemprego">—</span><span class="stat-unit">%</span></div>
-      <div class="stat-source">IBGE PNAD · 2º tri 2026</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Cesta Básica (SP)</div>
-      <div><span class="stat-value" id="stat-cesta">—</span></div>
-      <div class="stat-source">DIEESE · Julho/2026</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Dívida Pública / PIB</div>
-      <div><span class="stat-value" id="stat-divida">—</span></div>
-      <div class="stat-source">BCB · Junho/2026</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">R$ 100 em 2022 valem hoje</div>
-      <div><span style="font-size:1.1rem;color:var(--text-muted)">R$&nbsp;</span><span class="stat-value" id="stat-poder">—</span></div>
-      <div class="stat-source">Cálculo IPCA acumulado</div>
-    </div>
+    <p class="macro-chart-note">Dezembro de 2024 e 2025; agosto de 2026. São estoques em datas específicas, não médias anuais. A série pode ser revisada pelo BCB.</p><div class="macro-source"><a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/12/2024&amp;dataFinal=01/08/2026" target="_blank" rel="noopener noreferrer">BCB · SGS 13762 · ago/2026 ↗</a></div>
+  </figure>
+  <div class="macro-reading"><h3>Como esses dados se conectam</h3>
+    <div class="macro-connections"><article><h4>PIB: o tamanho da produção, não o dinheiro do governo</h4><p>PIB é o valor dos bens e serviços finais produzidos no país em um período. Não é a arrecadação de impostos nem a soma do dinheiro que cada brasileiro possui. A dívida/PIB compara uma obrigação acumulada com a capacidade econômica de gerar renda.</p><div class="macro-source"><a href="https://www.ibge.gov.br/explica/pib.php" target="_blank" rel="noopener noreferrer">IBGE · o que é PIB ↗</a></div></article><article><h4>Menos fome: qual foi o custo?</h4><p>Renda do trabalho, transferências sociais e preços dos alimentos podem melhorar o acesso à comida. Programas custam recursos, mas a saída do Mapa da Fome não demonstra que o aumento da dívida foi causado por eles. Para atribuir esse custo, seria preciso examinar despesas executadas, receitas, juros e uma avaliação do efeito de cada política.</p><div class="macro-source"><a href="https://www.fao.org/americas/news/news-detail/erradicacion-del-hambre/en" target="_blank" rel="noopener noreferrer">FAO · Panorama regional 2025, divulgado em 2026 ↗</a> · <a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a></div></article><article><h4>De onde vem o endividamento?</h4><p>Receitas primárias incluem impostos e outras receitas não financeiras; despesas primárias financiam pessoal, benefícios, serviços e investimentos, sem os juros. Quando essas despesas superam essas receitas, há déficit primário. Ao incluir juros, chega-se ao resultado nominal. Juros, necessidades de financiamento e outros ajustes afetam a dívida; crescer menos também pode elevar a razão dívida/PIB.</p><div class="macro-source"><a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a> · <a href="https://www.gov.br/tesouronacional/pt-br/noticias/tesouro-publica-6a-edicao-do-relatorio-de-projecoes-fiscais-com-cenarios-e-trajetorias-para-avaliar-o-panorama-fiscal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · projeções fiscais e cenários ↗</a></div></article><article><h4>Um exemplo para entender a conta</h4><p>Exemplo hipotético, não um dado do Brasil: arrecadar R$ 100 e gastar R$ 110 antes dos juros gera déficit primário de R$ 10. Com mais R$ 15 de juros, o déficit nominal seria R$ 25. Mesmo arrecadando R$ 100 e gastando R$ 95 antes dos juros, os mesmos juros de R$ 15 deixariam déficit nominal de R$ 10. Por isso, um superávit primário pode coexistir com aumento da dívida.</p><div class="macro-source"><a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a></div></article><article><h4>Se a trajetória não melhorar, o que pode acontecer?</h4><p>Uma dívida crescendo sem perspectiva de estabilização pode elevar o prêmio de risco e o custo de financiamento, limitar investimentos e aumentar a pressão por impostos ou cortes. São riscos, não uma previsão inevitável de crise. Juros, crescimento, credibilidade e composição da dívida alteram o resultado.</p><div class="macro-source"><a href="https://www.gov.br/tesouronacional/pt-br/noticias/tesouro-publica-6a-edicao-do-relatorio-de-projecoes-fiscais-com-cenarios-e-trajetorias-para-avaliar-o-panorama-fiscal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · projeções fiscais e cenários ↗</a></div></article><article><h4>Como preservar avanços sem adiar a conta?</h4><p>Ajustar contas pode envolver reduzir desperdícios, revisar benefícios tributários, melhorar a arrecadação e priorizar despesas eficazes. Cortes em saúde, alimentação ou educação também podem gerar custos futuros. O objetivo é uma trajetória sustentável com serviços que entreguem resultados, e não reduzir toda despesa indiscriminadamente.</p><div class="macro-source"><a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a> · <a href="https://www.gov.br/tesouronacional/pt-br/noticias/tesouro-publica-6a-edicao-do-relatorio-de-projecoes-fiscais-com-cenarios-e-trajetorias-para-avaliar-o-panorama-fiscal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · projeções fiscais e cenários ↗</a></div></article></div>
   </div>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:24px;margin-bottom:24px" class="fade-in">
-    <div class="chart-container" style="margin-bottom:0">
-      <div class="chart-title">📈 Dívida Bruta do Governo como % do PIB (2014–2026)</div>
-      <div class="chart-wrap" style="height:280px">
-        <canvas id="chart-divida" data-chart-id="chart-divida"></canvas>
-      </div>
-      <p class="text-muted" style="margin-top:8px">Fonte: Banco Central do Brasil (BCB) · Nota: 2020 inclui gastos pandêmicos</p>
-    </div>
-
-    <div class="chart-container" style="margin-bottom:0">
-      <div class="chart-title">📉 Taxa de Desemprego (2014–2026)</div>
-      <div class="chart-wrap" style="height:280px">
-        <canvas id="chart-desemprego" data-chart-id="chart-desemprego"></canvas>
-      </div>
-      <p class="text-muted" style="margin-top:8px">Fonte: IBGE PNAD Contínua (Taxa média anual)</p>
-    </div>
-    
-    <div class="chart-container" style="margin-bottom:0">
-      <div class="chart-title">🏢 Falências e Recuperações Judiciais</div>
-      <div class="chart-wrap" style="height:280px">
-        <canvas id="chart-falencias" data-chart-id="chart-falencias"></canvas>
-      </div>
-      <p class="text-muted" style="margin-top:8px">Fonte: Serasa Experian</p>
-    </div>
-  </div>
+  <aside class="macro-flow" aria-label="Relações entre indicadores">
+    <ul><li>Renda e preços → acesso à alimentação</li><li>Políticas e serviços → despesas públicas</li><li>Receitas, despesas e juros → financiamento</li><li>Dívida, juros e crescimento → espaço futuro</li></ul>
+    <p>Esquema de mecanismos econômicos. As setas não calculam correlação estatística nem atribuem a variação da dívida a um programa específico.</p>
+  </aside>
 </section>
 
 <!-- ══════════════════════════════════════════
      CENA 2 — SAÚDE
 ══════════════════════════════════════════ -->
-<section id="scene-saude" class="scene data-scene">
-  <div class="scene-bg"><img src="assets/bg_saude_clara.jpg?v=2" alt="" loading="eager"></div>
-  <div class="scene-header fade-in">
-    <span class="scene-tag">🏥 SAÚDE PÚBLICA</span>
-    <h2 class="scene-title">A fila que não anda</h2>
-    <p class="scene-description">O SUS atende mais de 150 milhões de brasileiros. Mas os números revelam um sistema sob pressão crônica.</p>
+<section id="scene-saude" class="scene data-scene macro-scene" aria-labelledby="scene-saude-title">
+  <div class="scene-bg"><img src="assets/bg_saude_clara.jpg?v=2" alt="" loading="lazy"></div>
+  <div class="scene-header">
+    <span class="scene-tag">Saúde pública</span>
+    <h2 class="scene-title" id="scene-saude-title">Atender mais. Fazer a espera diminuir.</h2>
+    <p class="scene-description">Dinheiro autorizado e procedimentos realizados medem partes diferentes do SUS. O resultado para o paciente depende também de acesso, profissionais e gestão.</p>
+    <p class="macro-review">Revisão: <time datetime="2026-10-02">02/10/2026</time> · período e fonte em cada indicador</p>
   </div>
+  <div class="stats-grid macro-stats">
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Orçamento federal da Saúde</h3>
+      <div class="macro-value"><span class="stat-unit">R$</span><span class="stat-value">271,3</span><span class="stat-unit">bi</span></div>
+      <p class="macro-period">LOA 2026 · autorização inicial</p>
+      <p class="macro-definition">É o valor previsto para a Saúde no orçamento federal sancionado para 2026.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Autoriza o financiamento de serviços, medicamentos e ações do SUS.</p><p><strong>Como interpretar:</strong> Autorização não é gasto pago nem atendimento realizado. Estados e municípios também financiam o SUS; este número não soma as três esferas.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/planejamento/pt-br/assuntos/noticias/2026/janeiro/presidente-sanciona-orcamento-de-2026-com-foco-em-desenvolvimento-social-e-equilibrio-fiscal" target="_blank" rel="noopener noreferrer">MPO · LOA sancionada · jan/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Cirurgias eletivas realizadas</h3>
+      <div class="macro-value"><span class="stat-value">7,55</span><span class="stat-unit">milhões</span></div>
+      <p class="macro-period">1º semestre/2026 · SUS</p>
+      <p class="macro-definition">São procedimentos cirúrgicos programados registrados no período, distintos de atendimentos de emergência.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Mostram a capacidade de realizar tratamentos que podem reduzir dor, limitações e afastamentos.</p><p><strong>Como interpretar:</strong> O total informado é 7.552.260 procedimentos. Procedimentos não são necessariamente pessoas únicas, e produção maior não comprova fila menor.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/goias-realiza-242-mil-cirurgias-eletivas-no-primeiro-semestre-e-cresce-12-em-relacao-a-2025" target="_blank" rel="noopener noreferrer">Ministério da Saúde · balanço do 1º semestre/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Variação das cirurgias eletivas</h3>
+      <div class="macro-value"><span class="stat-value">+8</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">1º semestre/2026 contra 2025</p>
+      <p class="macro-definition">Compara o volume realizado com o mesmo semestre do ano anterior.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Mostra aumento da produção, sem misturar um semestre com um ano completo.</p><p><strong>Como interpretar:</strong> Para avaliar espera, também precisamos das novas solicitações, do estoque da fila e do tempo até o atendimento.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/goias-realiza-242-mil-cirurgias-eletivas-no-primeiro-semestre-e-cresce-12-em-relacao-a-2025" target="_blank" rel="noopener noreferrer">Ministério da Saúde · balanço do 1º semestre/2026 ↗</a></div>
+    </article></div>
 
-  <div class="stats-grid">
-    <div class="stat-card fade-in">
-      <div class="stat-label">Médicos por 1.000 hab.</div>
-      <div><span class="stat-value" id="stat-medicos">—</span></div>
-      <div class="stat-source">CFM · Demografia Médica 2025</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Leitos SUS por 1.000 hab.</div>
-      <div><span class="stat-value" id="stat-leitos">—</span></div>
-      <div class="stat-source">DataSUS / CNES</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Fila do SUS</div>
-      <div><span class="stat-value" id="stat-fila-sus">—</span><span class="stat-unit"> proc.</span></div>
-      <div class="stat-source">DataSUS</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Orçamento Saúde 2026</div>
-      <div><span class="stat-value" id="stat-orcamento-saude">—</span></div>
-      <div class="stat-source">LOA 2026</div>
-    </div>
+  <div class="macro-reading"><h3>Como esses dados se conectam</h3>
+    <div class="macro-connections"><article><h4>Por que mais cirurgias podem não acabar com a fila?</h4><p>A fila aumenta quando entram mais solicitações do que atendimentos concluídos. Novos diagnósticos, demanda reprimida e cadastros desatualizados também mudam o total. É preciso acompanhar o tempo de espera por especialidade e região, além da produção.</p><div class="macro-source"><a href="https://wiki.saude.gov.br/regulacao/index.php/Orienta%C3%A7%C3%B5es_para_Gest%C3%A3o_da_Fila_de_Espera" target="_blank" rel="noopener noreferrer">Ministério da Saúde · gestão da fila de espera ↗</a></div></article><article><h4>O que faz um orçamento virar atendimento?</h4><p>Recursos precisam se transformar em equipes, exames, equipamentos, medicamentos e encaminhamentos. Um leito sem equipe não tem a mesma capacidade de um leito em funcionamento. A distribuição territorial e a atenção básica influenciam o acesso.</p><div class="macro-source"><a href="https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/ministerio-da-saude-trabalha-o-fortalecimento-das-capacidades-nacionais-para-ampliar-eficiencia-e-equidade-no-sus/" target="_blank" rel="noopener noreferrer">Ministério da Saúde · eficiência e equidade · set/2026 ↗</a> · <a href="https://wiki.saude.gov.br/regulacao/index.php/Orienta%C3%A7%C3%B5es_para_Gest%C3%A3o_da_Fila_de_Espera" target="_blank" rel="noopener noreferrer">Ministério da Saúde · gestão da fila de espera ↗</a></div></article><article><h4>Como a saúde se conecta às contas públicas?</h4><p>Juros e despesas obrigatórias disputam espaço no orçamento. Ao mesmo tempo, prevenção e atendimento oportuno podem evitar agravamentos e gastos posteriores. Avaliar uma política exige custo e resultado: aumentar ou cortar recursos não garante, sozinho, mais eficiência.</p><div class="macro-source"><a href="https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/ministerio-da-saude-trabalha-o-fortalecimento-das-capacidades-nacionais-para-ampliar-eficiencia-e-equidade-no-sus/" target="_blank" rel="noopener noreferrer">Ministério da Saúde · eficiência e equidade · set/2026 ↗</a> · <a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a></div></article></div>
   </div>
-
-  <div class="chart-container fade-in" style="margin-bottom:24px">
-    <div class="chart-title">👨‍⚕️ Médicos por 1.000 habitantes — Brasil vs. referências</div>
-    <div class="chart-wrap" style="height:260px">
-      <canvas id="chart-medicos" data-chart-id="chart-medicos"></canvas>
-    </div>
-    <p class="text-muted" style="margin-top:8px">Fonte: CFM / OCDE · O Brasil está abaixo da média OCDE, com graves desigualdades regionais internas.</p>
-  </div>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:24px;margin-bottom:24px" class="fade-in">
-    <div class="chart-container" style="margin-bottom:0">
-      <div class="chart-title">🛏️ Leitos SUS por 1.000 habitantes (2014–2026)</div>
-      <div class="chart-wrap" style="height:260px">
-        <canvas id="chart-leitos" data-chart-id="chart-leitos"></canvas>
-      </div>
-      <p class="text-muted" style="margin-top:8px">Fonte: DataSUS / CNES</p>
-    </div>
-
-    <div class="chart-container" style="margin-bottom:0">
-      <div class="chart-title">⏳ Fila do SUS (Milhões de procedimentos)</div>
-      <div class="chart-wrap" style="height:260px">
-        <canvas id="chart-fila" data-chart-id="chart-fila"></canvas>
-      </div>
-      <p class="text-muted" style="margin-top:8px">Fonte: DataSUS</p>
-    </div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px">
-    <div class="info-card fade-in">
-      <div style="font-size:2rem;margin-bottom:8px">⏳</div>
-      <h3 style="margin-bottom:8px;font-size:1rem">Espera por consulta especializada</h3>
-      <p style="font-size:1.4rem;font-weight:800;color:var(--accent-primary);font-family:'Cabinet Grotesk',sans-serif">120–180 dias</p>
-      <p class="text-muted">Média estimada · DataSUS</p>
-    </div>
-    <div class="info-card fade-in">
-      <div style="font-size:2rem;margin-bottom:8px">🔪</div>
-      <h3 style="margin-bottom:8px;font-size:1rem">Espera por cirurgia eletiva</h3>
-      <p style="font-size:1.4rem;font-weight:800;color:var(--accent-primary);font-family:'Cabinet Grotesk',sans-serif">8–14 meses</p>
-      <p class="text-muted">Média estimada · DataSUS</p>
-    </div>
-  </div>
+  <aside class="macro-flow" aria-label="Relações entre indicadores">
+    <ul><li>Novas solicitações entram</li><li>Atendimentos concluídos saem</li><li>O saldo altera o tamanho da fila</li></ul>
+    <p>Para comparar filas, verifique o procedimento, a região, a data e a forma de contar pessoas e solicitações. O volume de cirurgias não substitui uma medida de tempo de espera.</p>
+  </aside>
 </section>
 
 <!-- ══════════════════════════════════════════
      CENA 3 — SEGURANÇA
 ══════════════════════════════════════════ -->
-<section id="scene-seguranca" class="scene data-scene">
-  <div class="scene-bg"><img src="assets/bg_seguranca.jpg" alt="" loading="eager"></div>
-  <div class="scene-header fade-in">
-    <span class="scene-tag">🚨 SEGURANÇA PÚBLICA</span>
-    <h2 class="scene-title">O mapa da violência</h2>
-    <p class="scene-description">O Brasil registrou queda histórica em 2025, mas ainda tem uma das maiores taxas de homicídios do mundo.</p>
+<section id="scene-seguranca" class="scene data-scene macro-scene" aria-labelledby="scene-seguranca-title">
+  <div class="scene-bg"><img src="assets/bg_seguranca.jpg" alt="" loading="lazy"></div>
+  <div class="scene-header">
+    <span class="scene-tag">Segurança pública</span>
+    <h2 class="scene-title" id="scene-seguranca-title">Menos mortes. Riscos que persistem.</h2>
+    <p class="scene-description">A média nacional melhorou, mas formas de violência podem seguir caminhos diferentes. Compare categorias e períodos antes de atribuir o resultado a uma política.</p>
+    <p class="macro-review">Revisão: <time datetime="2026-10-02">02/10/2026</time> · período e fonte em cada indicador</p>
   </div>
+  <div class="stats-grid macro-stats">
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Mortes violentas intencionais</h3>
+      <div class="macro-value"><span class="stat-value">40.775</span><span class="stat-unit">vítimas</span></div>
+      <p class="macro-period">2025 · Brasil</p>
+      <p class="macro-definition">A categoria MVI reúne homicídios dolosos, feminicídios, latrocínios, lesões seguidas de morte e mortes por intervenção policial.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Mede a violência letal intencional registrada no país.</p><p><strong>Como interpretar:</strong> É uma categoria mais ampla que homicídio doloso. Não misture esta série com a mortalidade do SIM/Atlas da Violência sem harmonizar definições.</p>
+      </details>
+      <div class="macro-source"><a href="https://fontesegura.forumseguranca.org.br/mortes-violentas-intencionais-no-brasil-em-2025-entre-avancos-historicos-e-desafios-persistentes/" target="_blank" rel="noopener noreferrer">FBSP · Anuário 2026 · ano-base 2025 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Taxa de mortes violentas</h3>
+      <div class="macro-value"><span class="stat-value">19,1</span><span class="stat-unit">por 100 mil</span></div>
+      <p class="macro-period">2025 · Brasil</p>
+      <p class="macro-definition">Relaciona as vítimas à população: em média, 19,1 para cada 100 mil habitantes.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Permite comparar localidades com tamanhos diferentes melhor que o total absoluto.</p><p><strong>Como interpretar:</strong> A média esconde diferenças entre territórios e grupos. Não representa a probabilidade individual de qualquer pessoa ser vítima.</p>
+      </details>
+      <div class="macro-source"><a href="https://fontesegura.forumseguranca.org.br/mortes-violentas-intencionais-no-brasil-em-2025-entre-avancos-historicos-e-desafios-persistentes/" target="_blank" rel="noopener noreferrer">FBSP · Anuário 2026 · ano-base 2025 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Variação das MVI</h3>
+      <div class="macro-value"><span class="stat-value">−8,2</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">2025 em relação a 2024</p>
+      <p class="macro-definition">É a redução do total de mortes violentas intencionais entre os dois anos.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Indica melhora nacional no indicador de violência letal.</p><p><strong>Como interpretar:</strong> Não explica por que houve queda nem demonstra que todos os crimes ou estados melhoraram.</p>
+      </details>
+      <div class="macro-source"><a href="https://fontesegura.forumseguranca.org.br/mortes-violentas-intencionais-no-brasil-em-2025-entre-avancos-historicos-e-desafios-persistentes/" target="_blank" rel="noopener noreferrer">FBSP · Anuário 2026 · ano-base 2025 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Feminicídios registrados</h3>
+      <div class="macro-value"><span class="stat-value">1.571</span><span class="stat-unit">vítimas</span></div>
+      <p class="macro-period">2025 · alta de 4% sobre 2024</p>
+      <p class="macro-definition">São mortes de mulheres classificadas como feminicídio, por razões da condição do sexo feminino.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Revelam a necessidade de proteção e resposta à violência contra mulheres.</p><p><strong>Como interpretar:</strong> São parte das mortes violentas; não devem ser somados novamente ao total de MVI. Registros e classificação também afetam comparações.</p>
+      </details>
+      <div class="macro-source"><a href="https://fontesegura.forumseguranca.org.br/mortes-violentas-intencionais-no-brasil-em-2025-entre-avancos-historicos-e-desafios-persistentes/" target="_blank" rel="noopener noreferrer">FBSP · Anuário 2026 · ano-base 2025 ↗</a></div>
+    </article></div>
 
-  <div class="stats-grid">
-    <div class="stat-card fade-in">
-      <div class="stat-label">Mortes violentas em 2025</div>
-      <div><span class="stat-value" id="stat-homicidios">—</span></div>
-      <div class="stat-source">FBSP · Anuário 2026</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Taxa por 100 mil hab.</div>
-      <div><span class="stat-value" id="stat-taxa-hom">—</span></div>
-      <div class="stat-source">FBSP · Anuário 2026</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Veículos roubados/ano</div>
-      <div><span class="stat-value" id="stat-roubos">—</span></div>
-      <div class="stat-source">FBSP · 2025</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Primeira vez abaixo de 20/100 mil</div>
-      <div><span class="stat-value" style="font-size:1.4rem">✅ 2025</span></div>
-      <div class="stat-source">Série histórica FBSP desde 2012</div>
-    </div>
+  <div class="macro-reading"><h3>Como esses dados se conectam</h3>
+    <div class="macro-connections"><article><h4>Como mortes caem e feminicídios sobem ao mesmo tempo?</h4><p>Um total agrega diferentes tipos de violência. A melhora em categorias mais numerosas pode superar a piora em outras. Por isso, a queda geral não dispensa políticas específicas de proteção às mulheres e monitoramento da letalidade policial.</p><div class="macro-source"><a href="https://fontesegura.forumseguranca.org.br/mortes-violentas-intencionais-no-brasil-em-2025-entre-avancos-historicos-e-desafios-persistentes/" target="_blank" rel="noopener noreferrer">FBSP · Anuário 2026 · ano-base 2025 ↗</a> · <a href="https://fontesegura.forumseguranca.org.br/policia-para-quem-precisa-de-policia-o-que-os-numeros-do-anuario-brasileiro-de-seguranca-publica-2026-apontam-sobre-a-atividade-policial/" target="_blank" rel="noopener noreferrer">FBSP · atividade policial · Anuário 2026 ↗</a></div></article><article><h4>Segurança, saúde e educação se cruzam</h4><p>A violência demanda atendimento e afeta circulação e rotinas escolares. Prevenção, investigação e proteção precisam funcionar em conjunto. A comparação desses números nacionais não permite calcular quanto uma mudança na educação causou de redução do crime.</p><div class="macro-source"><a href="https://fontesegura.forumseguranca.org.br/mortes-violentas-intencionais-no-brasil-em-2025-entre-avancos-historicos-e-desafios-persistentes/" target="_blank" rel="noopener noreferrer">FBSP · Anuário 2026 · ano-base 2025 ↗</a></div></article><article><h4>Quem responde pelo resultado?</h4><p>A segurança envolve atuação estadual, municipal e federal. Para avaliar uma intervenção, precisamos comparar territórios, períodos, registros e contexto. Uma mudança nacional não identifica, sozinha, o efeito de um presidente ou de uma medida isolada.</p><div class="macro-source"><a href="https://fontesegura.forumseguranca.org.br/policia-para-quem-precisa-de-policia-o-que-os-numeros-do-anuario-brasileiro-de-seguranca-publica-2026-apontam-sobre-a-atividade-policial/" target="_blank" rel="noopener noreferrer">FBSP · atividade policial · Anuário 2026 ↗</a></div></article></div>
   </div>
-
-  <div class="chart-container fade-in" style="margin-bottom:24px">
-    <div class="chart-title">📉 Evolução dos Homicídios no Brasil (2014–2025)</div>
-    <div class="chart-wrap" style="height:260px">
-      <canvas id="chart-homicidios" data-chart-id="chart-homicidios"></canvas>
-    </div>
-    <p class="text-muted" style="margin-top:8px">Fonte: FBSP / Atlas da Violência (IPEA)</p>
-  </div>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:24px;margin-bottom:24px" class="fade-in">
-    <div class="chart-container" style="margin-bottom:0">
-      <div class="chart-title">🚗 Roubos e Furtos em Geral (Milhões de Registros)</div>
-      <div class="chart-wrap" style="height:260px">
-        <canvas id="chart-roubos" data-chart-id="chart-roubos"></canvas>
-      </div>
-      <p class="text-muted" style="margin-top:8px">Fonte: Estimativa FBSP</p>
-    </div>
-
-    <div class="chart-container" style="margin-bottom:0">
-      <div class="chart-title">🏴 Presença de Facções Criminosas (Nº de Estados)</div>
-      <div class="chart-wrap" style="height:260px">
-        <canvas id="chart-faccoes" data-chart-id="chart-faccoes"></canvas>
-      </div>
-      <p class="text-muted" style="margin-top:8px">Fonte: Levantamento da Inteligência Policial</p>
-    </div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px">
-    <div class="info-card fade-in">
-      <div style="font-size:1.5rem;margin-bottom:12px">🔴 Maiores taxas</div>
-      <ul style="list-style:none;color:var(--text-secondary);font-size:0.85rem;line-height:2">
-        <li>🥇 Amapá</li><li>🥈 Bahia</li><li>🥉 Pernambuco</li><li>4. Ceará</li><li>5. Alagoas</li>
-      </ul>
-    </div>
-    <div class="info-card fade-in">
-      <div style="font-size:1.5rem;margin-bottom:12px">🟢 Maior redução</div>
-      <ul style="list-style:none;color:var(--text-secondary);font-size:0.85rem;line-height:2">
-        <li>🥇 Goiás</li><li>🥈 São Paulo</li><li>🥉 Ceará</li><li>4. Rio Grande do Norte</li><li>5. Pará</li>
-      </ul>
-    </div>
-  </div>
+  <aside class="macro-flow" aria-label="Relações entre indicadores">
+    <ul><li>Queda no total de mortes</li><li>Análise por território e tipo de violência</li><li>Proteção direcionada a quem segue em risco</li></ul>
+    <p>Mortes violentas, roubos e presença de facções medem fenômenos diferentes. Uma melhora na violência letal não descreve toda a experiência de segurança da população.</p>
+  </aside>
 </section>
 
 <!-- ══════════════════════════════════════════
      CENA 4 — EDUCAÇÃO
 ══════════════════════════════════════════ -->
-<section id="scene-educacao" class="scene data-scene">
-  <div class="scene-bg"><img src="assets/bg_educacao.jpg" alt="" loading="eager"></div>
-  <div class="scene-header fade-in">
-    <span class="scene-tag">📚 EDUCAÇÃO</span>
-    <h2 class="scene-title">O alicerce que falta</h2>
-    <p class="scene-description">Nenhum país se desenvolveu sem investir primeiro em educação básica de qualidade. Os dados do Brasil revelam um desafio estrutural.</p>
+<section id="scene-educacao" class="scene data-scene macro-scene" aria-labelledby="scene-educacao-title">
+  <div class="scene-bg"><img src="assets/bg_educacao.jpg" alt="" loading="lazy"></div>
+  <div class="scene-header">
+    <span class="scene-tag">Educação</span>
+    <h2 class="scene-title" id="scene-educacao-title">Estar na escola. Conseguir aprender.</h2>
+    <p class="scene-description">Aprovação, aprendizagem e uso da leitura na vida adulta são medidas diferentes. Entenda o que cada uma revela e por que seus efeitos vão além da sala de aula.</p>
+    <p class="macro-review">Revisão: <time datetime="2026-10-02">02/10/2026</time> · período e fonte em cada indicador</p>
   </div>
+  <div class="stats-grid macro-stats">
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Ideb do ensino médio</h3>
+      <div class="macro-value"><span class="stat-value">4,5</span><span class="stat-unit">de 10</span></div>
+      <p class="macro-period">2025 · redes públicas e privadas</p>
+      <p class="macro-definition">O Índice de Desenvolvimento da Educação Básica combina desempenho em provas do Saeb e aprovação escolar.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Acompanha a aprendizagem junto com o avanço dos alunos pelas séries.</p><p><strong>Como interpretar:</strong> Não é uma nota individual. Aumento da aprovação também pode elevar o índice; é preciso examinar a aprendizagem separadamente.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/ideb/ideb-avanca-em-todas-as-etapas-da-educacao-basica" target="_blank" rel="noopener noreferrer">Inep · resultados do Ideb 2025 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">PISA: abaixo do básico em matemática</h3>
+      <div class="macro-value"><span class="stat-value">72</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">PISA 2025 · estudantes de 15 anos</p>
+      <p class="macro-definition">O Programa Internacional de Avaliação de Estudantes testa como alunos usam conhecimentos em situações práticas. 28% atingiram ao menos o nível 2; portanto, 72% ficaram abaixo.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>O nível 2 envolve reconhecer uma situação matemática simples, como comparar trajetos ou converter preços.</p><p><strong>Como interpretar:</strong> Não é 72% de todos os brasileiros e não significa incapacidade em qualquer cálculo. A amostra representa estudantes elegíveis de 15 anos.</p>
+      </details>
+      <div class="macro-source"><a href="https://www.oecd.org/en/publications/pisa-2025-results-volume-i-country-notes_2d4ff9ea-en/brazil_d65ba095-en.html" target="_blank" rel="noopener noreferrer">OCDE · PISA 2025 · nota sobre o Brasil ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Analfabetismo funcional</h3>
+      <div class="macro-value"><span class="stat-value">29</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">Inaf 2024 · população de 15–64 anos</p>
+      <p class="macro-definition">É a parcela classificada nos níveis analfabeto ou rudimentar em atividades de leitura e matemática do cotidiano.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Dificuldades de interpretação podem afetar contratos, instruções, contas e acesso a direitos.</p><p><strong>Como interpretar:</strong> É diferente de não saber ler e escrever. Usa outra população e outro instrumento que o PISA, então não se deve comparar diretamente os percentuais.</p>
+      </details>
+      <div class="macro-source"><a href="https://acaoeducativa.org.br/wp-content/uploads/2025/11/Relatorio-INAF-Brasil-2024-Alfabetismo-do-analogico-ao-digital_compressed.pdf" target="_blank" rel="noopener noreferrer">Ação Educativa / Conhecimento Social · Inaf 2024 · p. 19 ↗</a></div>
+    </article></div>
 
-  <div class="stats-grid">
-    <div class="stat-card fade-in">
-      <div class="stat-label">IDEB — Ensino Médio (2023)</div>
-      <div><span class="stat-value" id="stat-ideb-medio">—</span><span class="stat-unit"> / 10</span></div>
-      <div class="stat-source">INEP · 2023</div>
+  <figure class="macro-chart">
+    <figcaption><h3>Ideb: o avanço depende da etapa</h3><p>escala de 0 a 10 · eixo começa em zero</p></figcaption>
+    <div class="macro-bars">
+      <div class="macro-bar-row"><span>Anos iniciais · 2023</span><div class="macro-bar-track" aria-hidden="true"><div style="width:60%"></div></div><strong>6</strong></div>
+      <div class="macro-bar-row"><span>Anos iniciais · 2025</span><div class="macro-bar-track" aria-hidden="true"><div style="width:63%"></div></div><strong>6,3</strong></div>
+      <div class="macro-bar-row"><span>Anos finais · 2023</span><div class="macro-bar-track" aria-hidden="true"><div style="width:50%"></div></div><strong>5</strong></div>
+      <div class="macro-bar-row"><span>Anos finais · 2025</span><div class="macro-bar-track" aria-hidden="true"><div style="width:53%"></div></div><strong>5,3</strong></div>
+      <div class="macro-bar-row"><span>Ensino médio · 2023</span><div class="macro-bar-track" aria-hidden="true"><div style="width:43%"></div></div><strong>4,3</strong></div>
+      <div class="macro-bar-row"><span>Ensino médio · 2025</span><div class="macro-bar-track" aria-hidden="true"><div style="width:45%"></div></div><strong>4,5</strong></div>
     </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">PISA Matemática</div>
-      <div><span class="stat-value" id="stat-pisa-mat">—</span><span class="stat-unit"> pts</span></div>
-      <div class="stat-source">OCDE · PISA 2022 (65º de 81)</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Analfabetismo funcional</div>
-      <div><span class="stat-value" id="stat-analfab">—</span></div>
-      <div class="stat-source">INAF</div>
-    </div>
-    <div class="stat-card fade-in">
-      <div class="stat-label">Jovens 15–17 fora da escola</div>
-      <div><span class="stat-value" id="stat-jovens-fora">—</span></div>
-      <div class="stat-source">IBGE PNAD</div>
-    </div>
+    <p class="macro-chart-note">Brasil, redes públicas e privadas. Comparação de 2023 e 2025, sem confundir resultados com metas.</p><div class="macro-source"><a href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/ideb/ideb-avanca-em-todas-as-etapas-da-educacao-basica" target="_blank" rel="noopener noreferrer">Inep · resultados do Ideb 2025 ↗</a></div>
+  </figure>
+  <div class="macro-reading"><h3>Como esses dados se conectam</h3>
+    <div class="macro-connections"><article><h4>Matemática que aparece na vida real</h4><p>Comparar o preço por quilo de duas embalagens, entender um desconto e interpretar um gráfico são exemplos de uso cotidiano da matemática. São exemplos didáticos, não itens oficiais nem uma conversão dos níveis do PISA em habilidades garantidas de cada pessoa.</p><div class="macro-source"><a href="https://www.oecd.org/en/publications/pisa-2025-results-volume-i-country-notes_2d4ff9ea-en/brazil_d65ba095-en.html" target="_blank" rel="noopener noreferrer">OCDE · PISA 2025 · nota sobre o Brasil ↗</a></div></article><article><h4>Aprendizagem, trabalho e arrecadação</h4><p>Aprender pode ampliar oportunidades e a capacidade de usar tecnologias. Esses efeitos dependem também de vagas, investimentos e condições sociais. Melhorar a educação não aumenta a arrecadação imediatamente: seus resultados amadurecem por anos.</p><div class="macro-source"><a href="https://www.oecd.org/en/publications/pisa-2025-results-volume-i-country-notes_2d4ff9ea-en/brazil_d65ba095-en.html" target="_blank" rel="noopener noreferrer">OCDE · PISA 2025 · nota sobre o Brasil ↗</a> · <a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a></div></article><article><h4>Alimentação e saúde também entram na sala de aula</h4><p>Aprender exige condições para frequentar a escola e participar das atividades. Alimentação, saúde e segurança podem influenciar essas condições. Os indicadores apresentados não isolam o efeito causal de cada fator nem substituem a avaliação de programas.</p><div class="macro-source"><a href="https://www.oecd.org/en/publications/pisa-2025-results-volume-i-country-notes_2d4ff9ea-en/brazil_d65ba095-en.html" target="_blank" rel="noopener noreferrer">OCDE · PISA 2025 · nota sobre o Brasil ↗</a> · <a href="https://www.fao.org/americas/news/news-detail/erradicacion-del-hambre/en" target="_blank" rel="noopener noreferrer">FAO · Panorama regional 2025, divulgado em 2026 ↗</a></div></article><article><h4>Mais recursos precisam chegar à aprendizagem</h4><p>Financiar professores, infraestrutura e apoio aos alunos importa. Para avaliar eficácia, precisamos olhar execução, distribuição e aprendizagem, não apenas o orçamento. Uma média nacional pode melhorar enquanto desigualdades persistem.</p><div class="macro-source"><a href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/ideb/ideb-avanca-em-todas-as-etapas-da-educacao-basica" target="_blank" rel="noopener noreferrer">Inep · resultados do Ideb 2025 ↗</a> · <a href="https://www.oecd.org/en/publications/pisa-2025-results-volume-i-country-notes_2d4ff9ea-en/brazil_d65ba095-en.html" target="_blank" rel="noopener noreferrer">OCDE · PISA 2025 · nota sobre o Brasil ↗</a></div></article></div>
   </div>
-
-  <div class="chart-container fade-in" style="margin-bottom:24px">
-    <div class="chart-title">🎓 IDEB — Brasil vs. Metas Nacionais</div>
-    <div class="chart-wrap" style="height:260px">
-      <canvas id="chart-educacao" data-chart-id="chart-educacao"></canvas>
-    </div>
-    <p class="text-muted" style="margin-top:8px">Fonte: INEP 2023 · Brasil gasta ~R$ 3.500/aluno/ano, vs. ~US$ 10.500 (OCDE)</p>
-  </div>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:24px;margin-bottom:24px" class="fade-in">
-    <div class="chart-container" style="margin-bottom:0">
-      <div class="chart-title">📖 Analfabetismo Funcional (%)</div>
-      <div class="chart-wrap" style="height:260px">
-        <canvas id="chart-analfabetismo" data-chart-id="chart-analfabetismo"></canvas>
-      </div>
-      <p class="text-muted" style="margin-top:8px">Fonte: INAF (Indicador de Alfabetismo Funcional)</p>
-    </div>
-
-    <div class="chart-container" style="margin-bottom:0">
-      <div class="chart-title">🎒 Jovens de 15 a 17 anos fora da escola (Milhões)</div>
-      <div class="chart-wrap" style="height:260px">
-        <canvas id="chart-evasao" data-chart-id="chart-evasao"></canvas>
-      </div>
-      <p class="text-muted" style="margin-top:8px">Fonte: IBGE / PNAD Contínua</p>
-    </div>
-  </div>
+  <aside class="macro-flow" aria-label="Relações entre indicadores">
+    <ul><li>Acesso e permanência</li><li>Ensino e condições de aprendizagem</li><li>Habilidades para a vida e o trabalho</li></ul>
+    <p>Dados de anos diferentes refletem calendários de divulgação diferentes. PISA, Ideb e Inaf não são medidas intercambiáveis.</p>
+  </aside>
 </section>
 
 <!-- ══════════════════════════════════════════
@@ -435,26 +421,26 @@
     <div class="pilar-card">
       <span class="pilar-icon">🏦</span>
       <div class="pilar-title">Responsabilidade Fiscal</div>
-      <div class="pilar-desc">Um país precisa parar de gastar mais do que arrecada. O efeito cascata afeta juros, inflação e serviços públicos.</div>
-      <span class="pilar-dado">Déficit primário projetado: -0,45% PIB (2026)</span>
+      <div class="pilar-desc">Receitas, despesas, juros e crescimento precisam sustentar os serviços ao longo do tempo. Avalie também a qualidade do gasto e os efeitos de cada ajuste.</div>
+      <span class="pilar-dado">Dívida bruta: 82,9% do PIB · BCB, ago/2026</span>
     </div>
     <div class="pilar-card">
       <span class="pilar-icon">📚</span>
       <div class="pilar-title">Educação de Base</div>
       <div class="pilar-desc">Investir no ensino fundamental e médio gera retorno econômico mensurável por décadas.</div>
-      <span class="pilar-dado">Brasil gasta 5,5% do orçamento em educação</span>
+      <span class="pilar-dado">Ideb do ensino médio: 4,5 de 10 · Inep, 2025</span>
     </div>
     <div class="pilar-card">
       <span class="pilar-icon">⚖️</span>
       <div class="pilar-title">Segurança Jurídica</div>
       <div class="pilar-desc">Regras claras e estáveis atraem investimentos e geram empregos de qualidade.</div>
-      <span class="pilar-dado">Brasil: 124º no ranking de ambiente de negócios</span>
+      <span class="pilar-dado">Avalie previsibilidade das regras e acesso à Justiça</span>
     </div>
     <div class="pilar-card">
       <span class="pilar-icon">💰</span>
       <div class="pilar-title">Reforma Tributária</div>
-      <div class="pilar-desc">43% da arrecadação vem do consumo — imposto que pesa mais nos pobres. Reforma em andamento.</div>
-      <span class="pilar-dado">Carga tributária: 32,4% do PIB (2025)</span>
+      <div class="pilar-desc">A forma de arrecadar afeta preços, renda e atividade econômica. Compare quem paga, a complexidade das regras e o financiamento dos serviços.</div>
+      <span class="pilar-dado">Arrecadação e distribuição do custo precisam ser avaliadas juntas</span>
     </div>
   </div>
 </section>
@@ -691,7 +677,9 @@
 <!-- FOOTER -->
 <footer class="fontes-footer">
   <p>
-    <strong>Fontes dos dados:</strong> IBGE · BCB (Banco Central) · TSE · IPEA · FBSP (Anuário Brasileiro de Segurança Pública 2026) ·
+    <strong>Indicadores de economia, saúde, educação e segurança:</strong> revisados em 02/10/2026. Períodos, definições e links para as fontes acompanham cada indicador. Relações explicativas não equivalem a estimativas de causalidade.
+    <br>
+    <strong>Outras fontes citadas no projeto:</strong> IBGE · BCB (Banco Central) · TSE · IPEA · FBSP (Anuário Brasileiro de Segurança Pública 2026) ·
     INEP · OCDE · DataSUS · CNES · CFM · DIEESE · Tesouro Nacional · Receita Federal · Boletim Focus (BCB) · LOA 2026
     <br>
     <strong>Dados de pesquisa eleitoral:</strong> Datafolha (Registro TSE nº BR-03669/2026) · Quaest (Registro TSE nº BR-07065/2026) · Setembro/2026
@@ -703,7 +691,7 @@
 <!-- SCRIPTS -->
 
 
-<script type="module" src="js/app.js?v=20260906_tse_v5"></script>
+<script type="module" src="js/app.js?v=20261002_macro"></script>
 
 </body>
 </html>
