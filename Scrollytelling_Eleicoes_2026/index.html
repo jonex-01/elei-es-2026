@@ -12,7 +12,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/macro.css?v=20261002_economia2">
+  <link rel="stylesheet" href="css/macro.css?v=20261002_renda3">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -144,7 +144,7 @@
     <p class="macro-review">Revisão: <time datetime="2026-10-02">02/10/2026</time> · período e fonte em cada indicador</p>
   </div>
   <nav class="economy-nav" aria-label="Explore os temas de economia"><a href="#economia-bolso"><span>Bolso</span></a><a href="#economia-trabalho"><span>Trabalho</span></a><a href="#economia-producao"><span>Produção</span></a><a href="#economia-contas"><span>Contas públicas</span></a><a href="#economia-futuro"><span>Futuro</span></a></nav>
-  <aside class="economy-context"><strong>Como ler este retrato</strong><p>2026 ainda está em andamento. Cada indicador usa o último período verificado até 02/10/2026: inflação e contas públicas até agosto, crédito das famílias até julho, PIB até junho e alimentação no triênio 2023–2025. São dados observados, não previsões para o fim do ano.</p><a href="dados/economia-2026-10-02.csv" download>Baixar indicadores e fontes (CSV)</a></aside>
+  <aside class="economy-context"><strong>Como ler este retrato</strong><p>2026 ainda está em andamento. Cada indicador usa o último período verificado até 02/10/2026: inflação e contas públicas até agosto, crédito das famílias até julho, PIB até junho e alimentação no triênio 2023–2025. A mediana usa os microdados de abril–junho, com uma comparação no mesmo período. São dados observados, não previsões para o fim do ano.</p><a href="dados/economia-2026-10-02.csv" download>Baixar indicadores e fontes (CSV)</a></aside>
   <article id="economia-bolso" class="economy-block" aria-labelledby="economia-bolso-title">
   <header><h3 id="economia-bolso-title">Seu dinheiro compra mais?</h3><p>A renda precisa acompanhar o custo de vida. Inflação menor é uma alta mais lenta dos preços; renda real já desconta a inflação.</p></header>
   <div class="stats-grid macro-stats">
@@ -169,6 +169,16 @@
       <div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/emprego-e-renda/defeso-eleitoral-2026/informativo-pnad-ago2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · jun–ago/2026 ↗</a></div>
     </article>
     <article class="stat-card macro-stat">
+      <h3 class="stat-label">Rendimento mediano estimado</h3>
+      <div class="macro-value"><span class="stat-unit">R$</span><span class="stat-value">2.300</span><span class="stat-unit"></span></div>
+      <p class="macro-period">abr–jun/2026 · nominal · cálculo do projeto</p>
+      <p class="macro-definition">Ponto central da distribuição ponderada dos rendimentos positivos do trabalho.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Metade da distribuição ponderada fica até esse ponto, considerando os empates. No mesmo trimestre, a média era R$ 3.738.</p><p><strong>Como interpretar:</strong> Usa microdados trimestrais, não o trimestre móvel junho–agosto. Não compare diretamente com R$ 3.777; os períodos e bases de preços diferem. Sem intervalo de confiança.</p>
+      </details>
+      <div class="macro-source"><a href="dados/renda-pnad-2026-2tri.json" target="_blank" rel="noopener noreferrer">Estimativa do projeto · microdados IBGE · abr–jun/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
       <h3 class="stat-label">Cesta / salário mínimo líquido</h3>
       <div class="macro-value"><span class="stat-value">60,06</span><span class="stat-unit">%</span></div>
       <p class="macro-period">ago/2026 · São Paulo</p>
@@ -178,6 +188,21 @@
       </details>
       <div class="macro-source"><a href="https://www.dieese.org.br/analisecestabasica/2026/202608cestabasica.pdf" target="_blank" rel="noopener noreferrer">Conab / DIEESE · ago/2026 · p. 3 ↗</a></div>
     </article></div>
+  <div class="economy-analysis">
+  <h4>R$ 3.777 não é o que recebe o trabalhador do meio</h4>
+  <p>A média soma todos os rendimentos e divide pelo número de trabalhadores. Rendimentos muito altos puxam esse valor para cima. A mediana procura o meio da distribuição: é mais adequada para perguntar quanto recebe quem está na posição central, mas também não descreve todas as famílias.</p><p>Para comparar as duas medidas corretamente, usamos o mesmo recorte: pessoas ocupadas de 14 anos ou mais com rendimento habitual positivo em todos os trabalhos, no segundo trimestre de 2026. Nesse grupo, a média nominal foi R$ 3.738 e a mediana estimada pelo projeto foi R$ 2.300. Cerca de 73,0% ficaram abaixo da média. A média recente de R$ 3.777 continua válida para junho–agosto; ela responde a outra janela da pesquisa.</p><p>No mesmo cálculo, aproximadamente 31,5% tinham rendimento habitual até R$ 1.621, o salário mínimo vigente. Isso não permite concluir que todos tinham uma jornada integral ou que houve descumprimento do piso: o grupo inclui diferentes jornadas e posições na ocupação.</p>
+  <div class="macro-source"><a href="dados/renda-pnad-2026-2tri.json" target="_blank" rel="noopener noreferrer">Estimativa do projeto · microdados IBGE · abr–jun/2026 ↗</a> · <a href="https://apisidra.ibge.gov.br/values/t/6472/n1/all/v/5929/p/202602" target="_blank" rel="noopener noreferrer">IBGE · SIDRA 6472 · renda nominal · abr–jun/2026 ↗</a></div>
+
+  <div class="income-distribution"><table><caption>A renda ao longo da distribuição</caption><thead><tr><th scope="col">Ponto da distribuição</th><th scope="col">Rendimento mensal</th></tr></thead><tbody><tr><th scope="row">Média · não é percentil</th><td>R$ 3.738</td></tr><tr><th scope="row">Percentil 10</th><td>R$ 900</td></tr><tr><th scope="row">Percentil 25</th><td>R$ 1.621</td></tr><tr><th scope="row">Percentil 50 · mediana</th><td>R$ 2.300</td></tr><tr><th scope="row">Percentil 75</th><td>R$ 4.000</td></tr><tr><th scope="row">Percentil 90</th><td>R$ 7.000</td></tr></tbody></table><p class="macro-chart-note">Abr–jun/2026, valores nominais. Ordenamos os rendimentos do menor para o maior: o P10 marca o ponto alcançado pelos primeiros 10% da distribuição ponderada, o P50 é a mediana e o P90 marca os 90%. Empates podem ampliar a parcela até um valor. P90 não é renda máxima. Estimativas do projeto; sem pessoas sem rendimento ou benefícios sociais.</p><div class="macro-source"><a href="dados/renda-pnad-2026-2tri.json" target="_blank" rel="noopener noreferrer">Estimativa do projeto · microdados IBGE · abr–jun/2026 ↗</a> · <a href="https://github.com/jonex-01/elei-es-2026/blob/main/Scrollytelling_Eleicoes_2026/scripts/calculate_income.py" target="_blank" rel="noopener noreferrer">Código e critérios do cálculo · projeto Eleições 2026 ↗</a></div></div>
+  <figure class="economy-demo" data-income-demo>
+  <figcaption><h4>Uma renda muito alta muda a média. E a mediana?</h4><p>Exemplo fictício: cinco trabalhadores; quatro recebem R$ 2.000 cada.</p></figcaption>
+  <label for="income-high">Renda do quinto trabalhador</label>
+  <input id="income-high" type="range" min="2000" max="30000" step="500" value="12000" disabled>
+  <div class="demo-results" aria-live="polite" aria-atomic="true"><p>Quinto rendimento <output data-high>R$ 12.000</output></p><p>Média <output data-mean>R$ 4.000</output></p><p>Mediana <output>R$ 2.000</output></p></div>
+  <p class="macro-chart-note">Cada pessoa tem o mesmo peso neste exemplo. A mediana permanece R$ 2.000 porque quatro dos cinco rendimentos são iguais. Na PNAD, usamos os pesos da amostra, não contamos todos os entrevistados como se representassem o mesmo número de pessoas.</p>
+</figure>
+  <div class="economy-reading"><details class="macro-details"><summary>Como fizemos o cálculo?</summary><p>Lemos 231.474 observações de ocupados com renda habitual positiva no arquivo público PNADC_022026.zip. Usamos VD4019 (renda de todos os trabalhos), VD4002=1 (ocupação) e V1028 (peso calibrado). A média resultante foi R$ 3.738,16, reproduzindo os R$ 3.738 arredondados do SIDRA 6472. A mediana ponderada é o menor valor cuja soma acumulada dos pesos chega a 50%. O resultado e a identificação do arquivo estão disponíveis para download. Não estimamos intervalo de confiança.</p><div class="macro-source"><a href="dados/renda-pnad-2026-2tri.json" target="_blank" rel="noopener noreferrer">Estimativa do projeto · microdados IBGE · abr–jun/2026 ↗</a> · <a href="https://apisidra.ibge.gov.br/values/t/6472/n1/all/v/5929/p/202602" target="_blank" rel="noopener noreferrer">IBGE · SIDRA 6472 · renda nominal · abr–jun/2026 ↗</a></div></details><details class="macro-details"><summary>O que a média e a mediana ainda não contam?</summary><p>Os rendimentos são do trabalho, antes de interpretar despesas familiares, e não incluem transferências nessa variável. Uma pessoa pode sustentar dependentes; outra pode dividir despesas com alguém que também trabalha. Para estudar padrão de vida e pobreza, precisamos da renda domiciliar por pessoa, da distribuição, de preços e de acesso a serviços. O crescimento da média não prova que todos ganharam mais.</p></details><details class="macro-details"><summary>Por que não usamos uma mediana de junho–agosto?</summary><p>Os microdados trimestrais verificados mais recentes cobrem abril–junho. Não inferimos a mediana de junho–agosto a partir da média e não transportamos uma razão antiga entre média e mediana. A comparação mostrada mantém período, população e conceito iguais. Não descontamos inflação de uma renda que já foi apresentada como real.</p></details></div>
+</div>
 
 
   <figure class="macro-chart">
@@ -236,7 +261,53 @@
         <p>Ajuda a avaliar a proteção e a qualidade das ocupações.</p><p><strong>Como interpretar:</strong> Inclui empregados sem carteira e trabalhadores por conta própria ou empregadores sem CNPJ, entre outros. Não é taxa de desemprego.</p>
       </details>
       <div class="macro-source"><a href="https://apisidra.ibge.gov.br/values/t/8513/n1/all/v/12466/p/202608" target="_blank" rel="noopener noreferrer">IBGE · SIDRA 8513 · jun–ago/2026 ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Pessoas desalentadas</h3>
+      <div class="macro-value"><span class="stat-value">2,4</span><span class="stat-unit">milhões</span></div>
+      <p class="macro-period">jun–ago/2026 · Brasil</p>
+      <p class="macro-definition">Queriam trabalhar e estavam disponíveis, mas não buscaram por razões ligadas à falta de perspectiva de conseguir trabalho.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Ficam fora do numerador e do denominador da taxa de desocupação. O contingente caiu 11,9% em um ano.</p><p><strong>Como interpretar:</strong> São parte da força de trabalho potencial, não todas as pessoas que não procuraram. Já integram a medida de subutilização; não some novamente.</p>
+      </details>
+      <div class="macro-source"><a href="https://agenciagov.ebc.com.br/noticias/202609/desemprego-cai-no-trimestre-e-numero-de-pessoas-ocupadas-e-o-maior-da-serie-historica" target="_blank" rel="noopener noreferrer">IBGE · divulgação de 29/09/2026 · via Agência Gov ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Subocupação por horas</h3>
+      <div class="macro-value"><span class="stat-value">4,3</span><span class="stat-unit">milhões</span></div>
+      <p class="macro-period">jun–ago/2026 · Brasil</p>
+      <p class="macro-definition">Pessoas ocupadas com horas insuficientes que queriam e estavam disponíveis para trabalhar mais.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Ter ocupação não garante conseguir a jornada desejada.</p><p><strong>Como interpretar:</strong> Não mede, sozinho, trabalho abaixo da qualificação, salário baixo ou precariedade. Já está dentro dos 15 milhões de subutilizados.</p>
+      </details>
+      <div class="macro-source"><a href="https://agenciagov.ebc.com.br/noticias/202609/desemprego-cai-no-trimestre-e-numero-de-pessoas-ocupadas-e-o-maior-da-serie-historica" target="_blank" rel="noopener noreferrer">IBGE · divulgação de 29/09/2026 · via Agência Gov ↗</a></div>
+    </article>
+    <article class="stat-card macro-stat">
+      <h3 class="stat-label">Nível de ocupação</h3>
+      <div class="macro-value"><span class="stat-value">58,9</span><span class="stat-unit">%</span></div>
+      <p class="macro-period">jun–ago/2026 · população de 14 anos ou mais</p>
+      <p class="macro-definition">Percentual das pessoas em idade de trabalhar que tinham uma ocupação.</p>
+      <details class="macro-details"><summary>Como isso afeta você?</summary>
+        <p>Usa uma população mais ampla que a taxa de desocupação.</p><p><strong>Como interpretar:</strong> Não é 100% menos desemprego. O restante inclui desocupados e pessoas fora da força de trabalho.</p>
+      </details>
+      <div class="macro-source"><a href="https://agenciagov.ebc.com.br/noticias/202609/desemprego-cai-no-trimestre-e-numero-de-pessoas-ocupadas-e-o-maior-da-serie-historica" target="_blank" rel="noopener noreferrer">IBGE · divulgação de 29/09/2026 · via Agência Gov ↗</a></div>
     </article></div>
+  <div class="economy-analysis">
+  <h4>5,3% de desemprego não significa que 94,7% dos brasileiros têm trabalho</h4>
+  <p>A taxa divide quem está desocupado pela força de trabalho, formada por ocupados e desocupados. Em regra, a pessoa desocupada não tinha ocupação, tomou providências para conseguir trabalho nos 30 dias anteriores e estava disponível para começar na semana de referência. Em junho–agosto, eram aproximadamente 5,8 milhões de desocupados entre 109,3 milhões na força de trabalho. Quem está fora dela não entra nessa divisão. Há ainda a exceção metodológica de quem já conseguiu trabalho para começar em breve, sob os critérios da pesquisa.</p><p>Fora da força de trabalho havia 66,4 milhões de pessoas. Esse grupo inclui situações diferentes, como estudo, aposentadoria, cuidados, limitações de saúde e falta de busca por trabalho. Dentro dele estavam 2,4 milhões de desalentados. Não é correto tratar os 66,4 milhões como desempregados ocultos, nem ignorar quem gostaria de trabalhar e perdeu a perspectiva de conseguir uma vaga.</p>
+  <div class="macro-source"><a href="https://agenciagov.ebc.com.br/noticias/202609/desemprego-cai-no-trimestre-e-numero-de-pessoas-ocupadas-e-o-maior-da-serie-historica" target="_blank" rel="noopener noreferrer">IBGE · divulgação de 29/09/2026 · via Agência Gov ↗</a> · <a href="https://anuario.ibge.gov.br/2023/glossario-2023.html" target="_blank" rel="noopener noreferrer">IBGE · conceitos de ocupação · glossário ↗</a></div>
+  <figure class="work-population"><figcaption>Quem entra na conta da desocupação?</figcaption><div><article><h5>Ocupados</h5><strong>103,5 milhões</strong><p>Inclui empregados, conta própria e outras posições; não exige carteira assinada.</p></article><article><h5>Desocupados</h5><strong>5,8 milhões</strong><p>Sem ocupação, disponíveis e com busca, ressalvadas as exceções metodológicas.</p></article><article><h5>Fora da força de trabalho</h5><strong>66,4 milhões</strong><p>Grupo amplo. Os desalentados são um subconjunto, não uma categoria a somar ao total.</p></article></div><p class="macro-chart-note">Jun–ago/2026 · pessoas de 14 anos ou mais. Valores arredondados. A força de trabalho soma os dois primeiros grupos: 103,5 + 5,8 ≈ 109,3 milhões. Os 4,3 milhões subocupados por horas estão dentro dos ocupados.</p></figure>
+
+  <figure class="economy-demo" data-work-demo>
+  <figcaption><h4>O desemprego pode cair sem nenhuma contratação</h4><p>Exemplo fictício: 90 pessoas ocupadas e 10 desocupadas. A taxa inicial é 10 ÷ 100 = 10%.</p></figcaption>
+  <label for="work-leavers">Das 10 pessoas desocupadas, quantas deixam de buscar e saem da força de trabalho?</label>
+  <input id="work-leavers" type="range" min="0" max="10" step="1" value="5" disabled>
+  <div class="demo-results" aria-live="polite" aria-atomic="true"><p>Ocupados <output>90</output></p><p>Desocupados <output data-seekers>5</output></p><p>Fora da força <output data-leavers>5</output></p><p>Desocupação <output data-rate>5,3%</output></p></div>
+  <p class="demo-formula" data-work-formula>5 ÷ (90 + 5) × 100 = 5,3%</p>
+  <p class="macro-chart-note">Nenhuma pessoa foi contratada neste cenário. Se, em vez de saírem da busca, cinco conseguissem emprego, teríamos 95 ocupados e 5 desocupados, taxa de 5%. São mecanismos diferentes. O exemplo não explica automaticamente a trajetória real do Brasil.</p>
+</figure>
+  <div class="economy-reading"><details class="macro-details"><summary>Quem desistiu some da pesquisa?</summary><p>A pessoa pode sair da conta da desocupação, mas continua sendo medida pela PNAD em outras categorias. Desalento exige querer trabalhar, estar disponível e não buscar por motivos como falta de trabalho na localidade, experiência ou qualificação, ou percepção de não conseguir pela idade. Nem toda pessoa que não procurou é desalentada. A força de trabalho potencial também inclui outras situações de desejo, busca e disponibilidade.</p><div class="macro-source"><a href="https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/9915-ibge-produz-novos-indicadores-de-mercado-de-trabalho" target="_blank" rel="noopener noreferrer">IBGE · medidas de subutilização ↗</a></div></details><details class="macro-details"><summary>Uma hora de bico já pode contar como ocupação?</summary><p>Sim: ao menos uma hora completa de trabalho remunerado na semana de referência pode caracterizar ocupação. A definição também abrange ajuda sem remuneração direta em atividade econômica familiar e afastamentos temporários conforme os critérios. Isso identifica atividade econômica; não certifica renda suficiente, emprego formal ou estabilidade. Por isso, analisamos horas, rendimentos e informalidade em conjunto.</p><div class="macro-source"><a href="https://anuario.ibge.gov.br/2023/glossario-2023.html" target="_blank" rel="noopener noreferrer">IBGE · conceitos de ocupação · glossário ↗</a></div></details><details class="macro-details"><summary>Subutilização mede emprego abaixo da qualificação?</summary><p>A taxa de 13,1% junta desocupação, subocupação por insuficiência de horas e força de trabalho potencial. Ela é mais ampla que desemprego, mas não mede todas as formas de precariedade ou o desencontro entre formação e função. Quem trabalha 40 horas com baixa remuneração pode estar ocupado sem aparecer como subocupado por horas.</p><div class="macro-source"><a href="https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/9915-ibge-produz-novos-indicadores-de-mercado-de-trabalho" target="_blank" rel="noopener noreferrer">IBGE · medidas de subutilização ↗</a></div></details><details class="macro-details"><summary>A queda recente veio apenas de desistência?</summary><p>Os indicadores não sustentam essa conclusão: em um ano, a ocupação cresceu 1,0%, o contingente desocupado caiu 4,9%, o desalento caiu 11,9% e a subutilização passou de 14,1% para 13,1%. Isso indica melhora em várias dimensões, embora não elimine informalidade e insuficiência de horas. Não permite atribuir os resultados a uma medida isolada.</p><div class="macro-source"><a href="https://agenciagov.ebc.com.br/noticias/202609/desemprego-cai-no-trimestre-e-numero-de-pessoas-ocupadas-e-o-maior-da-serie-historica" target="_blank" rel="noopener noreferrer">IBGE · divulgação de 29/09/2026 · via Agência Gov ↗</a></div></details><details class="macro-details"><summary>Carteira assinada: pessoas ocupadas e saldo de vagas são a mesma coisa?</summary><p>A PNAD estimou 39,5 milhões de empregados do setor privado com carteira, excluindo domésticos. É um estoque de pessoas estimado pela pesquisa. O saldo de admissões menos desligamentos do Novo Caged conta vínculos formais e suas movimentações. Uma pessoa pode ter mais de um vínculo; por isso não somamos essas séries nem usamos o saldo como se fosse o total de pessoas empregadas.</p><div class="macro-source"><a href="https://agenciagov.ebc.com.br/noticias/202609/desemprego-cai-no-trimestre-e-numero-de-pessoas-ocupadas-e-o-maior-da-serie-historica" target="_blank" rel="noopener noreferrer">IBGE · divulgação de 29/09/2026 · via Agência Gov ↗</a> · <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/estatisticas-trabalho/novo-caged" target="_blank" rel="noopener noreferrer">Ministério do Trabalho · Novo Caged ↗</a></div></details><details class="macro-details"><summary>Receber benefício social muda a classificação?</summary><p>Receber um benefício não é exercer trabalho e não transforma automaticamente alguém em ocupado. Para a situação de trabalho, importam ocupação, busca e disponibilidade. Uma pessoa beneficiária pode estar ocupada, desocupada ou fora da força de trabalho. O rendimento do benefício e o rendimento do trabalho também são conceitos distintos.</p><div class="macro-source"><a href="https://www.ibge.gov.br/explica/desemprego.php?screening=true" target="_blank" rel="noopener noreferrer">IBGE Explica · desemprego e benefícios sociais ↗</a></div></details><details class="macro-details"><summary>Como ler uma queda do desemprego com cuidado?</summary><p>Compare o mesmo período do ano e observe ocupação, participação, desalento, horas, formalização e renda. A participação era 62,2%, contra 62,3% um ano antes: o movimento pequeno dessa taxa não demonstra que toda a melhora seja resultado de desistência. Também não basta haver mais ocupação para afirmar que todas as vagas ficaram melhores.</p><div class="macro-source"><a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/emprego-e-renda/defeso-eleitoral-2026/informativo-pnad-ago2026.html" target="_blank" rel="noopener noreferrer">IBGE / informativo da Fazenda · jun–ago/2026 ↗</a></div></details></div>
+</div>
 
 
   <figure class="macro-chart">
@@ -295,6 +366,7 @@
     </article></div>
 
 
+
   <figure class="macro-chart">
     <figcaption><h3>Os setores cresceram em ritmos diferentes</h3><p>2º tri/2026 contra 2º tri/2025 · % · eixo começa em zero</p></figcaption>
     <div class="macro-bars">
@@ -348,6 +420,7 @@
       </details>
       <div class="macro-source"><a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/12/2010&amp;dataFinal=01/08/2026" target="_blank" rel="noopener noreferrer">BCB · SGS 13762 · dez/2010–ago/2026 ↗</a></div>
     </article></div>
+
   <figure class="economy-equation"><figcaption>A conta em 12 meses até agosto de 2026 · % do PIB · setor público consolidado</figcaption><div><p><strong>0,62%</strong><span>Déficit primário</span></p><span class="equation-operator" aria-hidden="true">+</span><p><strong>8,86%</strong><span>Juros nominais</span></p><span class="equation-operator" aria-hidden="true">=</span><p><strong>9,48%</strong><span>Déficit nominal</span></p></div><p class="macro-chart-note">Valores arredondados pelo BCB. Todos os componentes usam o mesmo período e abrangência.</p><div class="macro-source"><a href="https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202609_Texto_de_estatisticas_fiscais.pdf" target="_blank" rel="noopener noreferrer">BCB · nota de 30/09/2026 · p. 2–3 ↗</a></div></figure>
 
   <figure class="macro-chart">
@@ -417,6 +490,7 @@
       </details>
       <div class="macro-source"><a href="https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?numero=45963&amp;tipo=Comunicado" target="_blank" rel="noopener noreferrer">BCB · decisão de 16/09/2026 ↗</a></div>
     </article></div>
+
 
 
   <div class="economy-reading"><details class="macro-details"><summary>Menos fome: o que explica e quanto custa?</summary><p>Emprego, renda, preços e transferências podem contribuir. Para estimar o custo e o efeito de uma política, é preciso analisar sua execução e avaliar o que teria acontecido sem ela. A melhora alimentar e a alta da dívida, vistas juntas, não provam que uma causou a outra.</p><div class="macro-source"><a href="https://www.gov.br/secretariageral/pt-br/consea/relatorio-sofi-2026/relatorio-sofi-2026-o-estado-da-seguranca-alimentar-e-nutricional-no-mundo" target="_blank" rel="noopener noreferrer">SOFI 2026 / Consea · triênio 2023–2025 ↗</a> · <a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a></div></details><details class="macro-details"><summary>O crédito pode apertar mesmo com renda maior</summary><p>A taxa média do crédito livre às famílias era 61,7% ao ano em agosto. Dívidas e prestações reduzem o dinheiro disponível. Compare o custo efetivo total e o prazo ao avaliar um empréstimo; taxas médias agregadas não são uma oferta para você.</p><div class="macro-source"><a href="https://www.bcb.gov.br/content/estatisticas/hist_estatisticasmonetariascredito/202609_Texto_de_estatisticas_monetarias_e_de_credito.pdf" target="_blank" rel="noopener noreferrer">BCB · nota de 29/09/2026 · p. 3–4 ↗</a></div></details><details class="macro-details"><summary>Quais caminhos ajudam a preservar os resultados?</summary><p>Melhorar a eficiência dos gastos, revisar benefícios tributários, ampliar a base de arrecadação e favorecer produtividade são caminhos possíveis. Cortes e aumentos de impostos têm efeitos diferentes conforme quem atingem e como são executados.</p><div class="macro-source"><a href="https://www.tesourotransparente.gov.br/historias/entendendo-os-graficos-resultado-primario-e-estoque-da-divida-publica-federal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · resultado primário e dívida ↗</a> · <a href="https://www.gov.br/tesouronacional/pt-br/noticias/tesouro-publica-6a-edicao-do-relatorio-de-projecoes-fiscais-com-cenarios-e-trajetorias-para-avaliar-o-panorama-fiscal" target="_blank" rel="noopener noreferrer">Tesouro Nacional · projeções fiscais e cenários ↗</a></div></details></div>
@@ -892,7 +966,7 @@
 <!-- SCRIPTS -->
 
 
-<script type="module" src="js/app.js?v=economia2_20261002_macro"></script>
+<script type="module" src="js/app.js?v=renda3_20261002_macro"></script>
 
 </body>
 </html>

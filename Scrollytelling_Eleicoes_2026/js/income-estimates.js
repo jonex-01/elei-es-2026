@@ -1,0 +1,31 @@
+// Gerado por scripts/calculate_income.py.
+export const INCOME_ESTIMATES = {
+  "period": "2026-Q2",
+  "reference": "abr–jun/2026",
+  "currency": "BRL nominal; preços do próprio trimestre",
+  "population": "Pessoas de 14 anos ou mais ocupadas, com rendimento habitual positivo em todos os trabalhos",
+  "income_variable": "VD4019",
+  "occupation_variable": "VD4002=1",
+  "weight_variable": "V1028",
+  "method": "Quantil ponderado: menor renda cuja soma acumulada dos pesos alcança a fração do percentil. Não interpolado.",
+  "sample_count": 231474,
+  "weighted_people": 101736857.53131545,
+  "occupied_people_validation": 103057247.84635654,
+  "mean": 3738.1608991173684,
+  "percentiles": {
+    "10": 900,
+    "25": 1621,
+    "50": 2300,
+    "75": 4000,
+    "90": 7000
+  },
+  "share_at_most_minimum_wage_1621": 31.459669698352936,
+  "share_below_mean": 73.00260482572935,
+  "official_nominal_mean_validation": 3738,
+  "validation_url": "https://apisidra.ibge.gov.br/values/t/6472/n1/all/v/5929/p/202602",
+  "source_url": "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/2026/PNADC_022026.zip",
+  "dictionary_url": "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/Documentacao/Dicionario_e_input_20221031.zip",
+  "source_sha256": "53f813034dc6d18268e8962716a05a1b374e3f23fc2f596fafc7146cf3bb0b0a",
+  "review": "2026-10-02",
+  "limits": "Estimativas pontuais calculadas pelo projeto, sem intervalos de confiança. Não são renda domiciliar per capita nem mediana oficial do trimestre móvel jun–ago/2026. Sem renda de transferências; rendimentos não são líquidos."
+};
