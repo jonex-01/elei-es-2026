@@ -1,7 +1,9 @@
+import { SOCIAL_SOURCES, SOCIAL_BLOCKS } from './social-data.js?v=20261002_social1';
 import { ECONOMY_SOURCES, ECONOMY_BLOCKS } from './economy-data.js?v=20261002_empresas5';
 // Fontes consultadas em 02/10/2026. Conteúdo publicado por generate_macro.mjs.
 export const SOURCES = {
   ...ECONOMY_SOURCES,
+  ...SOCIAL_SOURCES,
   ipca: ['IBGE / informativo da Fazenda · ago/2026', 'https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/inflacao/defeso-eleitoral-2026/informativo-ipca-ago2026.html'],
   emprego: ['IBGE / informativo da Fazenda · jun–ago/2026', 'https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/emprego-e-renda/defeso-eleitoral-2026/informativo-pnad-ago2026.html'],
   selic: ['BCB · decisão de 16/09/2026', 'https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?numero=45963&tipo=Comunicado'],
@@ -52,8 +54,8 @@ export const MACRO = [
     stats: [
       ['Mortes violentas intencionais', '40.775', 'vítimas', '2025 · Brasil', 'violencia', 'A categoria MVI reúne homicídios dolosos, feminicídios, latrocínios, lesões seguidas de morte e mortes por intervenção policial.', 'Mede a violência letal intencional registrada no país.', 'É uma categoria mais ampla que homicídio doloso. Não misture esta série com a mortalidade do SIM/Atlas da Violência sem harmonizar definições.'],
       ['Taxa de mortes violentas', '19,1', 'por 100 mil', '2025 · Brasil', 'violencia', 'Relaciona as vítimas à população: em média, 19,1 para cada 100 mil habitantes.', 'Permite comparar localidades com tamanhos diferentes melhor que o total absoluto.', 'A média esconde diferenças entre territórios e grupos. Não representa a probabilidade individual de qualquer pessoa ser vítima.'],
-      ['Variação das MVI', '−8,2', '%', '2025 em relação a 2024', 'violencia', 'É a redução do total de mortes violentas intencionais entre os dois anos.', 'Indica melhora nacional no indicador de violência letal.', 'Não explica por que houve queda nem demonstra que todos os crimes ou estados melhoraram.'],
-      ['Feminicídios registrados', '1.571', 'vítimas', '2025 · alta de 4% sobre 2024', 'violencia', 'São mortes de mulheres classificadas como feminicídio, por razões da condição do sexo feminino.', 'Revelam a necessidade de proteção e resposta à violência contra mulheres.', 'São parte das mortes violentas; não devem ser somados novamente ao total de MVI. Registros e classificação também afetam comparações.']
+      ['Variação da taxa de MVI', '−8,2', '%', '2025 em relação a 2024', 'violencia', 'É a redução da taxa por habitante entre os dois anos; o total de vítimas caiu cerca de 7,8%.', 'Indica melhora nacional no indicador de violência letal.', 'Não explica por que houve queda nem demonstra que todos os crimes ou estados melhoraram.'],
+      ['Feminicídios registrados', '1.571', 'vítimas', '2025 · Brasil', 'violencia', 'São mortes de mulheres classificadas como feminicídio, por razões da condição do sexo feminino.', 'Revelam a necessidade de proteção e resposta à violência contra mulheres.', 'São parte das mortes violentas; não devem ser somados novamente ao total de MVI. Registros e classificação também afetam comparações.']
     ],
     connections: [
       ['Como mortes caem e feminicídios sobem ao mesmo tempo?', 'Um total agrega diferentes tipos de violência. A melhora em categorias mais numerosas pode superar a piora em outras. Por isso, a queda geral não dispensa políticas específicas de proteção às mulheres e monitoramento da letalidade policial.', ['violencia', 'policia']],
@@ -82,3 +84,19 @@ export const MACRO = [
     flowNote: 'Dados de anos diferentes refletem calendários de divulgação diferentes. PISA, Ideb e Inaf não são medidas intercambiáveis.'
   }
 ];
+
+// As perguntas reutilizam os indicadores explicados, sem duplicar bases de dados.
+for (const area of MACRO) {
+  if (!SOCIAL_BLOCKS[area.id]) continue;
+  area.blocks = SOCIAL_BLOCKS[area.id];
+  if (area.id === 'scene-saude') {
+    area.blocks[0].stats = area.stats.slice(1);
+    area.blocks[1].stats = area.stats.slice(0, 1);
+  } else if (area.id === 'scene-educacao') {
+    area.blocks[0].stats = area.stats.slice(0, 1);
+    area.blocks[1].stats = area.stats.slice(1);
+  } else {
+    area.blocks[0].stats = area.stats.slice(0, 3);
+    area.blocks[1].stats = area.stats.slice(3);
+  }
+}

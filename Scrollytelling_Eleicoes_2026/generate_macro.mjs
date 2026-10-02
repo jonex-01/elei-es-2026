@@ -53,30 +53,34 @@ const analysis = data => !data ? '' : `<div class="economy-analysis">
   <div class="economy-reading">${data.reading.map(([title, text, keys = []]) => `<details class="macro-details"><summary>${escape(title)}</summary><p>${escape(text)}</p>${keys.length ? `<div class="macro-source">${keys.map(source).join(' · ')}</div>` : ''}</details>`).join('')}</div>
 </div>`;
 const historyChart = data => {
+  const id = data.id || 'business-history';
+  const labels = data.labels || ['Recuperação judicial requerida', 'Falência requerida'];
+  const unit = data.unit || 'CNPJs por ano';
+  const kinds = ['recovery', 'bankruptcy', 'third'];
   const ticks = Array.from({ length: 6 }, (_, i) => i * data.chartMax / 5);
-  const x = index => index / (data.chartRows.length - 1) * 100;
+  const firstYear = data.chartRows[0][0], lastYear = data.chartRows.at(-1)[0];
+  const x = index => (data.chartRows[index][0] - firstYear) / (lastYear - firstYear) * 100;
   const y = value => (1 - value / data.chartMax) * 100;
   const line = column => data.chartRows.map((row, i) => `${x(i) * 10},${y(row[column]) * 3}`).join(' ');
   const latest = data.chartRows.at(-1);
-  return `<figure class="cycle-evidence business-history" aria-labelledby="business-history-title">
-  <figcaption id="business-history-title">${escape(data.caption)}</figcaption>
-  <p class="business-chart-unit">CNPJs por ano · mesma escala nas duas séries · eixo começa em zero</p>
-  <ul class="business-chart-legend"><li><i class="business-recovery" aria-hidden="true"></i>Recuperação judicial requerida</li><li><i class="business-bankruptcy" aria-hidden="true"></i>Falência requerida</li></ul>
+  return `<figure class="cycle-evidence business-history" aria-labelledby="${id}-title">
+  <figcaption id="${id}-title">${escape(data.caption)}</figcaption>
+  <p class="business-chart-unit">${escape(unit)} · eixo começa em zero · anos no eixo horizontal</p>
+  <ul class="business-chart-legend">${labels.map((label,i)=>`<li><i class="business-${kinds[i]}" aria-hidden="true"></i>${escape(label)}</li>`).join('')}</ul>
   <div class="business-line-chart">
     <div class="business-line-y" aria-hidden="true">${ticks.map(value => `<span style="top:${y(value)}%">${number(value)}</span>`).join('')}</div>
     <div class="business-line-plot">
       ${ticks.map(value => `<span class="business-line-grid" style="top:${y(value)}%" aria-hidden="true"></span>`).join('')}
-      <svg viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-labelledby="business-line-title business-line-description">
-        <title id="business-line-title">Recuperação judicial e falência requeridas, de 2012 a 2025</title>
-        <desc id="business-line-description">Anos no eixo horizontal e CNPJs no eixo vertical, de zero a ${data.chartMax}. Duas linhas ligam observações anuais. Valores completos disponíveis na tabela abaixo.</desc>
-        <polyline class="business-line-recovery" points="${line(1)}" vector-effect="non-scaling-stroke"/>
-        <polyline class="business-line-bankruptcy" points="${line(2)}" vector-effect="non-scaling-stroke"/>
+      <svg viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-labelledby="${id}-line-title ${id}-line-description">
+        <title id="${id}-line-title">${escape(data.caption)}</title>
+        <desc id="${id}-line-description">Anos no eixo horizontal e ${escape(unit)} no eixo vertical, de zero a ${data.chartMax}. As linhas ligam apenas observações disponíveis. Consulte todos os valores na tabela abaixo.</desc>
+        ${labels.map((_,i)=>`<polyline class="business-line-${kinds[i]}" points="${line(i+1)}" vector-effect="non-scaling-stroke"/>`).join('')}
       </svg>
-      ${data.chartRows.map(([year, recovery, bankruptcy], i) => [[recovery, 'recovery', 'Recuperação judicial'], [bankruptcy, 'bankruptcy', 'Falência requerida']].map(([value, kind, label]) => `<span class="business-line-dot business-${kind}" style="left:${x(i)}%;top:${y(value)}%" title="${year} · ${label}: ${number(value)} CNPJs" aria-hidden="true"></span>`).join('')).join('')}
+      ${data.chartRows.map((row,i)=>labels.map((label,j)=>`<span class="business-line-dot business-${kinds[j]}" style="left:${x(i)}%;top:${y(row[j+1])}%" title="${row[0]} · ${escape(label)}: ${number(row[j+1])}" aria-hidden="true"></span>`).join('')).join('')}
     </div>
-    <div class="business-line-x" aria-hidden="true">${data.chartRows.map(([year], i) => (i % 3 === 0 && i < data.chartRows.length - 2) || i === data.chartRows.length - 1 ? `<span class="${i === 0 ? 'first' : i === data.chartRows.length - 1 ? 'last' : ''}" style="left:${x(i)}%">${year}</span>` : '').join('')}</div>
+    <div class="business-line-x" aria-hidden="true">${data.chartRows.map(([year], i) => (i % Math.max(1,Math.ceil(data.chartRows.length/5)) === 0 && i < data.chartRows.length - 2) || i === data.chartRows.length - 1 || data.chartRows.length <= 3 ? `<span class="${i === 0 ? 'first' : i === data.chartRows.length - 1 ? 'last' : ''}" style="left:${x(i)}%">${year}</span>` : '').join('')}</div>
   </div>
-  <p class="business-line-latest"><strong>${latest[0]}:</strong> recuperação judicial ${number(latest[1])} · falência requerida ${number(latest[2])} CNPJs.</p>
+  <p class="business-line-latest"><strong>${latest[0]}:</strong> ${labels.map((label,i)=>`${escape(label)}: ${number(latest[i+1])}`).join(' · ')}.</p>
   <p class="macro-chart-note">${escape(data.note)}</p><div class="macro-source">${data.sources.map(source).join(' · ')}</div>
   <details class="macro-details business-chart-data"><summary>Consultar valores em tabela</summary>${cycleTable({ ...data, presentation: 'table' })}</details>
 </figure>`;
@@ -111,6 +115,9 @@ const economy = data => `<nav class="economy-nav" aria-label="Explore os temas d
   <aside class="economy-context"><strong>Como ler este retrato</strong><p>Cada tema parte de uma pergunta, compara dados, explica mecanismos, examina outra interpretação e conclui dentro dos limites da evidência. Os períodos estão em cada tabela. 2026 está em andamento: os resultados parciais não são previsões para o fim do ano. As conclusões ficam visíveis; indicadores completos, exemplos e metodologia estão nos detalhes.</p><a href="dados/economia-2026-10-02.csv" download>Baixar indicadores e fontes (CSV)</a> · <a href="dados/analises-economia-2026-10-02.csv" download>Baixar comparações da análise (CSV)</a></aside>
   ${data.blocks.map(block).join('')}
   <aside class="macro-flow"><ul><li>Renda e preços → poder de compra</li><li>Trabalho e investimento → capacidade produtiva</li><li>Receitas e despesas → resultado primário</li><li>Juros, crescimento e ajustes → trajetória da dívida</li></ul><p>As setas explicam mecanismos. Não são um cálculo de correlação nem uma atribuição de resultados a um governo ou programa específico.</p></aside>`;
+const topicArea = data => `<nav class="economy-nav" aria-label="Explore os temas de ${escape(data.tag)}">${data.blocks.map(item=>`<a href="#${item.id}">${escape(item.navLabel)}</a>`).join('')}</nav>
+  <aside class="economy-context"><strong>Como ler esta análise</strong><p>Cada pergunta segue a mesma sequência: dados comparáveis, explicação, interpretação alternativa e conclusão. O período, a população e os limites aparecem junto de cada comparação. Dados parciais de 2026 não são resultados do ano inteiro. Quando falta uma medida, a lacuna fica explícita.</p><a href="dados/${data.id.replace('scene-','')}-2026-10-02.csv" download>Baixar comparações e fontes (CSV)</a></aside>
+  ${data.blocks.map(block).join('')}`;
 const section = data => `<section id="${data.id}" class="scene data-scene macro-scene" aria-labelledby="${data.id}-title">
   <div class="scene-bg"><img src="assets/${data.image}" alt="" loading="lazy"></div>
   <div class="scene-header">
@@ -119,7 +126,7 @@ const section = data => `<section id="${data.id}" class="scene data-scene macro-
     <p class="scene-description">${escape(data.intro)}</p>
     <p class="macro-review">Revisão: <time datetime="2026-10-02">02/10/2026</time> · período e fonte em cada indicador</p>
   </div>
-  ${data.blocks ? economy(data) : `<div class="stats-grid macro-stats">${data.stats.map(card).join('')}</div>
+  ${data.blocks ? (data.id === 'scene-panorama' ? economy(data) : topicArea(data)) : `<div class="stats-grid macro-stats">${data.stats.map(card).join('')}</div>
   ${chart(data.chart)}
   <div class="macro-reading"><h3>Como esses dados se conectam</h3>
     <div class="macro-connections">${data.connections.map(([title, text, keys]) => `<article><h4>${escape(title)}</h4><p>${escape(text)}</p><div class="macro-source">${keys.map(source).join(' · ')}</div></article>`).join('')}</div>
@@ -131,9 +138,10 @@ const section = data => `<section id="${data.id}" class="scene data-scene macro-
 </section>`;
 
 const economyData = MACRO.find(item => item.blocks);
-for (const item of economyData.blocks) {
+for (const item of MACRO.flatMap(area => area.blocks || [])) {
   if (!item.cycle) throw new Error(`Ciclo ausente: ${item.id}`);
   for (const table of item.cycle.tables) {
+    if (table.chartRows && (table.chartRows.length < 2 || table.chartRows.some((row,i) => row.slice(1).some(value => !Number.isFinite(value) || value < 0 || value > table.chartMax) || (i && row[0] <= table.chartRows[i-1][0])))) throw new Error(`Gráfico inconsistente: ${table.caption}`);
     if (table.rows.some(row => row.length !== table.headers.length)) throw new Error(`Tabela inconsistente: ${table.caption}`);
   }
 }
@@ -163,3 +171,8 @@ writeFileSync(fileURLToPath(new URL('./dados/empresas-historico-2026-10-02.json'
   rows: BUSINESS_HISTORY.map(([year, recovery_processes, recovery_cnpjs, bankruptcy_processes, bankruptcy_cnpjs]) => ({ year, recovery_processes, recovery_cnpjs, bankruptcy_processes, bankruptcy_cnpjs }))
 }, null, 2) + '\n', 'utf8');
 console.log('Quatro seções macro geradas com fontes e explicações.');
+
+for (const area of MACRO.filter(item => item.id !== 'scene-panorama')) {
+  const rows = [['area','pergunta','comparacao','indicador','referencia','valor','limites','fontes','revisao'], ...area.blocks.flatMap(item => item.cycle.tables.flatMap(table => table.rows.flatMap(row => row.slice(1).map((value,i) => [area.tag,item.cycle.question,table.caption,row[0],table.headers[i+1],value,table.note,table.sources.map(key=>SOURCES[key][1]).join(' | '),'2026-10-02']))))];
+  writeFileSync(fileURLToPath(new URL(`./dados/${area.id.replace('scene-','')}-2026-10-02.csv`, import.meta.url)), '\uFEFF' + rows.map(row=>row.map(csvCell).join(';')).join('\n') + '\n','utf8');
+}
