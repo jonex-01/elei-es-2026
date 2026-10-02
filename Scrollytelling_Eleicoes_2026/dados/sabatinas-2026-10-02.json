@@ -1,0 +1,174 @@
+{
+  "reviewDate": "02/10/2026",
+  "method": "Três recortes por candidato das checagens publicadas pela Lupa. Falas em paráfrases, vereditos atribuídos à fonte. Sem auditoria independente da íntegra, contagem ou nota geral.",
+  "interviews": {
+    "lula": {
+      "date": "27/08/2026",
+      "source": "https://www.agencialupa.org/checagem/2026/08/27/ao-vivo-checagem-da-entrevista-de-lula-ao-jornal-nacional/",
+      "items": [
+        {
+          "topic": "Crescimento econômico",
+          "claim": "O crescimento de 3% só teria retornado a partir de 2023.",
+          "rating": "Falso",
+          "finding": "A Lupa aponta anos anteriores com crescimento de 3% ou mais, incluindo 2021 e 2022.",
+          "interpretation": "Compare cada ano, a média do mandato e a base de comparação. Recuperação após uma recessão pode elevar a taxa sem representar igual avanço acumulado."
+        },
+        {
+          "topic": "Fome",
+          "claim": "A fome teria sido eliminada em duas ocasiões.",
+          "rating": "Exagerado",
+          "finding": "A checagem distingue redução da subalimentação de eliminação da fome.",
+          "interpretation": "Sair do Mapa da Fome é um marco estatístico; ainda é preciso medir insegurança alimentar, desigualdade regional e continuidade das políticas."
+        },
+        {
+          "topic": "PIB de 2010",
+          "claim": "A economia cresceu 7,5% em 2010.",
+          "rating": "Verdadeiro",
+          "finding": "A Lupa confirma o valor na série do IBGE.",
+          "interpretation": "Um resultado anual correto não estabelece sozinho sustentabilidade, distribuição dos ganhos ou responsabilidade exclusiva de um governo."
+        }
+      ],
+      "conclusion": "O recorte reúne um dado confirmado e alegações que precisam de correção ou contexto. Não permite resumir toda a gestão nem toda a entrevista a um único veredito."
+    },
+    "flavio_bolsonaro": {
+      "date": "28/08/2026",
+      "source": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
+      "items": [
+        {
+          "topic": "Pix",
+          "claim": "A criação do Pix foi atribuída ao governo Bolsonaro.",
+          "rating": "Falso",
+          "finding": "A Lupa diferencia o desenvolvimento iniciado no Banco Central em 2018 do lançamento em 2020.",
+          "interpretation": "Criação, regulamentação e lançamento são etapas distintas. Identifique o papel das instituições antes de atribuir todo o resultado a um presidente."
+        },
+        {
+          "topic": "Cargos comissionados",
+          "claim": "O governo atual teria criado 22 mil cargos comissionados.",
+          "rating": "Exagerado",
+          "finding": "Segundo a checagem, o número citado refere-se a novos servidores, não exclusivamente a comissionados.",
+          "interpretation": "Servidor concursado e cargo de livre nomeação não são equivalentes. Avaliar economia exige quantidade, remuneração e custo recorrente de cada categoria."
+        },
+        {
+          "topic": "Juros",
+          "claim": "O Brasil teria o maior juro real do mundo.",
+          "rating": "Verdadeiro",
+          "finding": "A Lupa confirma a afirmação no ranking considerado à época.",
+          "interpretation": "A conclusão depende da amostra, da data e da inflação usada. Taxa nominal e taxa real precisam aparecer separadamente."
+        }
+      ],
+      "conclusion": "O dado sobre juros é confirmado pela fonte, mas não valida automaticamente as atribuições sobre Pix e pessoal. Cada afirmação exige uma definição própria."
+    },
+    "zema": {
+      "date": "24/08/2026",
+      "source": "https://www.agencialupa.org/checagem/2026/08/24/ao-vivo-checagem-da-entrevista-de-romeu-zema-ao-jornal-nacional/",
+      "items": [
+        {
+          "topic": "Resultado fiscal de Minas",
+          "claim": "Minas passou de déficit de cerca de R$ 11 bilhões a superávit de cerca de R$ 5 bilhões.",
+          "rating": "Verdadeiro",
+          "finding": "A Lupa confirma a comparação apresentada, mas registra aumento da dívida estadual no período.",
+          "interpretation": "Superávit é um fluxo anual; dívida é um estoque. Ambos podem crescer ao mesmo tempo por juros, renegociações e obrigações acumuladas."
+        },
+        {
+          "topic": "Criminalidade",
+          "claim": "A criminalidade teria caído continuamente durante toda a gestão.",
+          "rating": "Falso",
+          "finding": "A checagem identifica aumento das mortes violentas entre 2021 e 2024, seguido de queda em 2025.",
+          "interpretation": "Compare a série completa e a mesma categoria de crime. Uma queda no último ano não demonstra redução em todos os anteriores."
+        },
+        {
+          "topic": "Feminicídio",
+          "claim": "A taxa de Minas seria inferior à média brasileira.",
+          "rating": "Falso",
+          "finding": "A Lupa aponta taxa estadual superior à nacional no levantamento consultado.",
+          "interpretation": "Use taxas com o mesmo denominador e período; números absolutos de estados com populações diferentes não são diretamente comparáveis."
+        }
+      ],
+      "conclusion": "O avanço no resultado orçamentário é confirmado no recorte; a dívida e a trajetória da violência exigem indicadores adicionais. Uma dimensão não comprova melhora em todas as outras."
+    },
+    "caiado": {
+      "date": "25/08/2026",
+      "source": "https://www.agencialupa.org/checagem/2026/08/25/ao-vivo-checagem-da-entrevista-de-ronaldo-caiado-ao-jornal-nacional/",
+      "items": [
+        {
+          "topic": "Endividamento das famílias",
+          "claim": "Cerca de 80% da população estaria tomada por dívidas.",
+          "rating": "Falta contexto",
+          "finding": "A Lupa distingue famílias com dívidas de pessoas inadimplentes: compromissos a vencer não significam atraso.",
+          "interpretation": "Separe endividamento, inadimplência e comprometimento da renda. Crédito para uma compra planejada tem significado diferente de contas vencidas."
+        },
+        {
+          "topic": "Modelo da Europol",
+          "claim": "A Europol poderia realizar prisões diretamente.",
+          "rating": "Falso",
+          "finding": "A checagem informa que a agência não possui poderes executivos para prender suspeitos.",
+          "interpretation": "Importar um modelo exige conhecer suas competências. Cooperação e inteligência não equivalem a uma polícia com poder operacional próprio."
+        },
+        {
+          "topic": "Alfabetização",
+          "claim": "Goiás estaria entre os melhores resultados de alfabetização na idade certa.",
+          "rating": "Verdadeiro",
+          "finding": "A Lupa confirma a afirmação no indicador consultado.",
+          "interpretation": "Um bom resultado estadual é relevante, mas a ampliação nacional depende de financiamento, professores, gestão e condições locais."
+        }
+      ],
+      "conclusion": "A fonte confirma o resultado de alfabetização e aponta limites em duas premissas usadas no discurso. Isso permite avaliar essas falas, sem comprovar a viabilidade de todo o programa."
+    },
+    "renan_santos": {
+      "date": "26/08/2026",
+      "source": "https://www.agencialupa.org/checagem/2026/08/26/ao-vivo-checagem-da-entrevista-de-renan-santos-ao-jornal-nacional/",
+      "items": [
+        {
+          "topic": "Proteção contra violência",
+          "claim": "A formulação de políticas de violência e feminicídio caberia aos estados.",
+          "rating": "Falso",
+          "finding": "A Lupa aponta atuação também federal, incluindo a Lei Maria da Penha.",
+          "interpretation": "Execução policial estadual não elimina competências da União. Avalie legislação, financiamento, coordenação e atendimento em cada esfera."
+        },
+        {
+          "topic": "Perfil das vítimas",
+          "claim": "A maioria das vítimas de homicídio seria formada por jovens negros do sexo masculino.",
+          "rating": "Verdadeiro",
+          "finding": "A checagem confirma esse perfil predominante.",
+          "interpretation": "O perfil ajuda a direcionar prevenção e proteção. Não demonstra, por si só, que uma medida penal específica reduzirá os homicídios."
+        },
+        {
+          "topic": "Adaptação climática",
+          "claim": "Políticas específicas já estariam previstas em todos os locais com problemas climáticos.",
+          "rating": "Falso",
+          "finding": "A Lupa cita estudos indicando ausência de planos de adaptação em 85% ou mais dos municípios.",
+          "interpretation": "Obras e metas genéricas de infraestrutura não substituem planos de risco, prevenção e resposta com orçamento e responsáveis definidos."
+        }
+      ],
+      "conclusion": "O diagnóstico sobre vítimas é confirmado; as falas sobre competências e adaptação precisam de correção. Diagnóstico correto e solução eficaz devem ser avaliados separadamente."
+    },
+    "augusto_cury": {
+      "date": "29/08/2026",
+      "source": "https://www.agencialupa.org/checagem/2026/08/29/ao-vivo-checagem-da-entrevista-de-augusto-cury-ao-jornal-nacional/",
+      "items": [
+        {
+          "topic": "Dívida por pessoa",
+          "claim": "Cada criança ou adolescente já nasceria devendo pelo menos R$ 50 mil.",
+          "rating": "Falso",
+          "finding": "A Lupa considera incorreto o valor apresentado para a dívida pública por pessoa.",
+          "interpretation": "Dividir dívida pela população é uma ilustração contábil, não uma obrigação individual. Avalie também dívida/PIB, juros, receita e capacidade de financiamento."
+        },
+        {
+          "topic": "Bolsa Família e trabalho",
+          "claim": "Seria criada a possibilidade de receber o benefício junto com outra renda.",
+          "rating": "Regra já existente",
+          "finding": "A checagem aponta que essa possibilidade já existe no programa.",
+          "interpretation": "Compare a proposta com as regras atuais de renda e permanência. Ampliar uma política e criar uma política são mudanças diferentes."
+        },
+        {
+          "topic": "Cargos comissionados",
+          "claim": "Seria necessário rever cerca de 50 mil cargos comissionados.",
+          "rating": "Verdadeiro",
+          "finding": "A Lupa confirma a ordem de grandeza no painel federal de pessoal consultado.",
+          "interpretation": "A quantidade não determina a economia possível. É preciso distinguir funções essenciais, remuneração, substituições e custos de reorganização."
+        }
+      ],
+      "conclusion": "O número de cargos tem respaldo no recorte, enquanto dívida e Bolsa Família requerem correção ou comparação com regras existentes. Promessa de economia exige cálculo adicional."
+    }
+  }
+}

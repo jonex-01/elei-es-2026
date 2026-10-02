@@ -1,4 +1,13 @@
 /* Hierarquia documental comum às 13 candidaturas. */
+.candidate-interview{padding:40px 0;scroll-margin-top:110px;border-bottom:1px solid var(--border-strong)}
+.candidate-interview h2{font:600 clamp(1.5rem,3vw,2.4rem)/1.25 'Outfit',sans-serif;margin:14px 0 24px;letter-spacing:-.025em}
+.candidate-interview h3{font:600 1.1rem/1.4 'Outfit',sans-serif;margin-bottom:14px}
+.interview-claims{margin:28px 0}
+.interview-claim{padding:24px 0;border-top:1px solid var(--border-strong)}
+.interview-verdict{font-family:'Outfit',sans-serif}
+.interview-claim details{margin-top:18px;border:1px solid var(--border-strong);padding:16px 20px;border-radius:8px;background:var(--bg-secondary)}
+.interview-claim summary{font:600 .95rem/1.5 'Outfit',sans-serif;cursor:pointer}
+.interview-claim .analysis-label{margin:16px 0 0;display:block}
 .candidate-introduction{padding-bottom:40px}
 .candidate-jump-links{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:28px;font-family:'Outfit',sans-serif}
 .candidate-presentation .candidate-header{min-height:340px}
