@@ -1,3 +1,6 @@
+// LEGADO: não importado pelo site desde a revisão documental de 02/10/2026.
+// Contém estimativas e avaliações antigas não auditadas. Não reutilizar como fonte.
+// Dados ativos: candidates-data.mjs e macro-data.js.
 export const ELECTION_DATA = {
   "metadata": {
     "data_pesquisa": "2026-09-06",

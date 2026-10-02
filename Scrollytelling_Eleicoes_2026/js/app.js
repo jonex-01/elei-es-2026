@@ -1,10 +1,12 @@
-import { ELECTION_DATA, CANDIDATOS_ORDEM } from './data.js?v=20260906_tse_v5';
+import { initComparator } from './candidate-view.mjs';
 import { MACRO } from './macro-data.js?v=20261002_evidence1';
 
 // ── GLOBAL STATE ──
-let currentTheme = localStorage.getItem('theme') || 
+let savedTheme;
+try { savedTheme = localStorage.getItem('theme'); } catch {}
+let currentTheme = savedTheme ||
   (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-let chartInstances = {};
+
 
 // ── INIT ──
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,8 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initEconomyDemonstrations();
   initScrollProgress();
   initChapterRoute();
-  buildCandidatos();
-  buildEncerramento();
+  initComparator();
   initScrollObserver();
   initCountdown();
   startParticles();
@@ -97,13 +98,12 @@ function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   const btn = document.getElementById('theme-toggle');
   if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
-  localStorage.setItem('theme', theme);
+  try { localStorage.setItem('theme', theme); } catch {}
 }
 
 document.getElementById('theme-toggle')?.addEventListener('click', () => {
   currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
   applyTheme(currentTheme);
-  setTimeout(() => Object.values(chartInstances).forEach(c => { if(c) c.update(); }), 100);
 });
 
 // ── PARTICLES ──
@@ -127,7 +127,7 @@ function startParticles() {
 
 // ── COUNTDOWN ──
 function initCountdown() {
-  const target = new Date(ELECTION_DATA.data_eleicao_1t + 'T06:00:00');
+  const target = new Date('2026-10-04T06:00:00-03:00');
   function update() {
     const now = new Date();
     const diff = target - now;
@@ -194,15 +194,6 @@ function updateChapterRoute(activeId) {
 
 // ── SCROLL OBSERVER ──
 function initScrollObserver() {
-  const candidatoScenes = {
-    'scene-lula':  'lula',
-    'scene-flavio':'flavio_bolsonaro',
-    'scene-zema':  'zema',
-    'scene-caiado':'caiado',
-    'scene-renan': 'renan_santos',
-    'scene-cury':  'augusto_cury',
-  };
-
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -213,25 +204,13 @@ function initScrollObserver() {
         if (id === 'scene-panorama' && currentTheme !== 'dark') {
           currentTheme = 'dark';
           applyTheme('dark');
-          setTimeout(() => Object.values(chartInstances).forEach(c => { if(c) c.update(); }), 100);
         } else if (['scene-saude', 'scene-seguranca', 'scene-educacao'].includes(id) && currentTheme !== 'light') {
           currentTheme = 'light';
           applyTheme('light');
-          setTimeout(() => Object.values(chartInstances).forEach(c => { if(c) c.update(); }), 100);
         }
 
-        // Color shifting for candidates
-        if (candidatoScenes[id]) {
-          const key = candidatoScenes[id];
-          const c = ELECTION_DATA.candidatos[key];
-          setAccentColor(c.cor_partido);
-        } else {
-          const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-          const defaultColor = isLight ? '#B8860B' : '#D4A843';
-          if (!Object.keys(candidatoScenes).includes(id)) {
-            setAccentColor(defaultColor);
-          }
-        }
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        setAccentColor(isLight ? '#B8860B' : '#D4A843');
       }
     });
   // Uma seção longa deve continuar ativa quando cruza o centro da tela.
@@ -250,18 +229,7 @@ function initScrollObserver() {
   document.querySelectorAll('.scene').forEach(s => io.observe(s));
   document.querySelectorAll('.fade-in, .pilar-card, .timeline-item, .proposta-card').forEach(el => animIO.observe(el));
 
-  // Lazy chart init
-  const chartIO = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.dataset.chartId;
-        if (id && !chartInstances[id]) initChart(id);
-        chartIO.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
 
-  document.querySelectorAll('[data-chart-id]').forEach(el => chartIO.observe(el));
 }
 
 // ── DYNAMIC COLORS ──
@@ -305,204 +273,14 @@ function observeCounter(el, target, decimals = 0, suffix = '') {
 
 // Macro indicators are rendered statically by generate_macro.mjs.
 
-// ── CANDIDATES ──
-function buildCandidatos() {
-  const mapa = {
-    'lula': 'scene-lula',
-    'flavio_bolsonaro': 'scene-flavio',
-    'zema': 'scene-zema',
-    'caiado': 'scene-caiado',
-    'renan_santos': 'scene-renan',
-    'augusto_cury': 'scene-cury',
-  };
-  CANDIDATOS_ORDEM.forEach(key => {
-    const c = ELECTION_DATA.candidatos[key];
-    const sceneEl = document.getElementById(mapa[key]);
-    if (!sceneEl) return;
-    populateCandidato(sceneEl, c, key);
-  });
-}
-
-function populateCandidato(el, c, key) {
-  const nameEl = el.querySelector('.candidate-name');
-  if (nameEl) nameEl.textContent = c.nome_completo;
-
-  const badgeEl = el.querySelector('.candidate-partido-badge');
-  if (badgeEl) badgeEl.textContent = `${c.partido} • Urna ${c.numero_urna}`;
-
-  setTextInEl(el, '.info-idade span', c.idade);
-  setTextInEl(el, '.info-estado span', c.estado_natal);
-  setTextInEl(el, '.info-cargo span', c.cargo_atual);
-  setTextInEl(el, '.info-formacao span', c.formacao);
-  setTextInEl(el, '.info-ideologia-txt', c.ideologia);
-
-  const marker = el.querySelector('.ideologia-marker');
-  if (marker) marker.style.left = c.ideologia_valor + '%';
-
-  const bioEl = el.querySelector('.candidate-bio');
-  if (bioEl) bioEl.textContent = c.bio;
-
-  // Saiba Mais Button
-  const btnSaibaMais = el.querySelector('.btn-saiba-mais');
-  if (btnSaibaMais) {
-    btnSaibaMais.onclick = () => { window.location.href = `${key}.html`; };
-  }
-
-  // Timeline
-  const tl = el.querySelector('.timeline-horiz');
-  if (tl) {
-    tl.innerHTML = '';
-    c.timeline.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'timeline-item';
-      div.innerHTML = `<div class="timeline-dot"></div><div class="timeline-ano">${item.ano}</div><div class="timeline-evento">${item.evento}</div>`;
-      tl.appendChild(div);
-    });
-  }
-
-  // Proposals
-  const pg = el.querySelector('.propostas-grid');
-  if (pg) {
-    pg.innerHTML = '';
-    c.propostas.forEach(p => {
-      const div = document.createElement('div');
-      div.className = 'proposta-card';
-      div.innerHTML = `<span class="proposta-icon">${p.icone}</span><div class="proposta-tema">${p.tema}</div><div class="proposta-desc">${p.descricao}</div>`;
-      pg.appendChild(div);
-    });
-  }
-
-  // Pros
-  const pfEl = el.querySelector('.col-fortes');
-  if (pfEl) {
-    pfEl.innerHTML = '';
-    c.pontos_fortes.forEach(p => {
-      pfEl.innerHTML += `<div class="realidade-item"><span class="icon">✅</span><div><div>${p.fato}</div><div class="fonte">Fonte: ${p.fonte}</div></div></div>`;
-    });
-  }
-
-  // Cons
-  const paEl = el.querySelector('.col-atencao');
-  if (paEl) {
-    paEl.innerHTML = '';
-    c.pontos_atencao.forEach(p => {
-      paEl.innerHTML += `<div class="realidade-item"><span class="icon">⚠️</span><div><div>${p.fato}</div><div class="fonte">Fonte: ${p.fonte}</div></div></div>`;
-    });
-  }
-
-  // Poll data
-  const intEl = el.querySelector('.intencao');
-  const rejEl = el.querySelector('.rejeicao');
-  const intBar = el.querySelector('.bar-intencao');
-  const rejBar = el.querySelector('.bar-rejeicao');
-  const srcEl = el.querySelector('.pesquisa-source');
-
-  if (intEl && c.pesquisa_eleitoral) {
-    const io = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        animateCounter(intEl, c.pesquisa_eleitoral.intencao_voto_1t_pct, 1500, 0, '', '%');
-        animateCounter(rejEl, c.pesquisa_eleitoral.rejeicao_pct, 1500, 0, '', '%');
-        if (intBar) setTimeout(() => intBar.style.width = c.pesquisa_eleitoral.intencao_voto_1t_pct + '%', 200);
-        if (rejBar) setTimeout(() => rejBar.style.width = c.pesquisa_eleitoral.rejeicao_pct + '%', 200);
-        io.disconnect();
-      }
-    }, { threshold: 0.1 });
-    io.observe(intEl);
-  }
-
-  if (srcEl && c.pesquisa_eleitoral) {
-    srcEl.innerHTML = `<strong>${c.pesquisa_eleitoral.instituto}</strong> — ${c.pesquisa_eleitoral.data_pesquisa}${c.pesquisa_eleitoral.outras_fontes ? `<div style="font-size:0.75rem;margin-top:4px;opacity:0.85;color:var(--text-secondary)">Comparativo: ${c.pesquisa_eleitoral.outras_fontes}</div>` : ''}`;
-  }
-}
-
-// ── CHARTS ──
-function getChartColors() {
-  const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-  return {
-    isDark,
-    grid: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.06)',
-    text: isDark ? '#A8A29E' : '#57534E',
-    accent: getComputedStyle(document.documentElement).getPropertyValue('--accent-primary').trim() || (isDark ? '#D4A843' : '#B8860B'),
-    whiteOrDark: isDark ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.25)',
-    whiteOrDarkBg: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.04)',
-  };
-}
-
-function initChart(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const ctx = el.getContext('2d');
-  const c = getChartColors();
-
-  const baseOpts = {
-    responsive: true,
-    maintainAspectRatio: true,
-    plugins: {
-      legend: { labels: { color: c.text, font: { family: 'Inter Tight', size: 11 } } },
-      tooltip: { titleFont: { family: 'Inter Tight' }, bodyFont: { family: 'Inter Tight' } }
-    },
-    scales: {
-      x: { ticks: { color: c.text, font: { family: 'Inter Tight', size: 10 } }, grid: { color: c.grid } },
-      y: { ticks: { color: c.text, font: { family: 'Inter Tight', size: 10 } }, grid: { color: c.grid } }
-    }
-  };
-
-  if (id === 'chart-pesquisa') {
-    const cands = CANDIDATOS_ORDEM.map(k => ELECTION_DATA.candidatos[k]);
-    chartInstances[id] = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: cands.map(c => c.nome_completo.split(' ')[0]),
-        datasets: [
-          {
-            label: 'Intenção de Voto (%)',
-            data: cands.map(c => c.pesquisa_eleitoral.intencao_voto_1t_pct),
-            backgroundColor: cands.map(c => c.cor_partido + 'CC'),
-            borderRadius: 8,
-          },
-          {
-            label: 'Rejeição (%)',
-            data: cands.map(c => c.pesquisa_eleitoral.rejeicao_pct),
-            backgroundColor: cands.map(c => c.cor_partido + '44'),
-            borderRadius: 8,
-          }
-        ]
-      },
-      options: { ...baseOpts }
-    });
-  }
-}
-
-// ── ENCERRAMENTO ──
-function buildEncerramento() {
-  const tbody = document.getElementById('comparativo-tbody');
-  if (tbody) {
-    const temas = [
-      { label: '⭐ Prioridade 1', fn: c => `<span style="font-size:0.75rem; color:${c.cor_partido}; text-transform:uppercase; font-weight:800; display:block; margin-bottom:4px">${c.propostas[0].tema}</span>${c.propostas[0].descricao}` },
-      { label: '⭐ Prioridade 2', fn: c => `<span style="font-size:0.75rem; color:${c.cor_partido}; text-transform:uppercase; font-weight:800; display:block; margin-bottom:4px">${c.propostas[1].tema}</span>${c.propostas[1].descricao}` },
-      { label: '⭐ Prioridade 3', fn: c => `<span style="font-size:0.75rem; color:${c.cor_partido}; text-transform:uppercase; font-weight:800; display:block; margin-bottom:4px">${c.propostas[2].tema}</span>${c.propostas[2].descricao}` },
-      { label: '⭐ Prioridade 4', fn: c => `<span style="font-size:0.75rem; color:${c.cor_partido}; text-transform:uppercase; font-weight:800; display:block; margin-bottom:4px">${c.propostas[3].tema}</span>${c.propostas[3].descricao}` },
-      { label: '📊 Voto', fn: c => `<span class="pesquisa-pct-cell">${c.pesquisa_eleitoral.intencao_voto_1t_pct}%</span>` },
-    ];
-
-    const cands = CANDIDATOS_ORDEM.map(k => ELECTION_DATA.candidatos[k]);
-    temas.forEach(tema => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `<td class="tema-cell">${tema.label}</td>` +
-        cands.map(c => `<td>${tema.fn(c)}</td>`).join('');
-      tbody.appendChild(tr);
-    });
-  }
-}
-
 // ── SHARING ──
 window.shareWhatsApp = function() {
-  const text = encodeURIComponent('🗳️ Eleições 2026: veja o guia interativo e imparcial sobre os candidatos!\n\nAcesse: ' + window.location.href);
+  const text = encodeURIComponent('🗳️ Eleições 2026: veja o guia com propostas documentadas e indicadores sobre os candidatos!\n\nAcesse: ' + window.location.href);
   window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
 };
 
 window.shareTwitter = function() {
-  const text = encodeURIComponent('🗳️ Eleições 2026 — Guia interativo e 100% imparcial dos candidatos à Presidência do Brasil. Dados reais, sem viés!');
+  const text = encodeURIComponent('🗳️ Eleições 2026 — Compare propostas documentadas, indicadores e limites das análises dos candidatos à Presidência do Brasil.');
   const url = encodeURIComponent(window.location.href);
   window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
 };
@@ -530,14 +308,14 @@ function buildFooter() {} // Footer is static in HTML
 // ── DYNAMIC MARQUEE ──
 const MARQUEE_DATA = {
   default: [
-    { text: "150 milhões de eleitores aptos", type: 'neutral' },
-    { text: "6 candidatos confirmados", type: 'neutral' },
+    { text: "Planos e indicadores com fontes", type: 'neutral' },
+    { text: "13 candidaturas na página de planos do TSE", type: 'neutral' },
     { text: "1º turno em Outubro 2026", type: 'neutral' },
     { text: "Indicadores macro revisados em 02/10/2026", type: 'neutral' },
-    { text: "100% imparcial e independente", type: 'neutral' },
+    { text: "Projeto independente · análises identificadas", type: 'neutral' },
     { text: "Fontes: IBGE, BCB, TSE, IPEA", type: 'neutral' },
     { text: "Voto consciente é voto informado", type: 'neutral' },
-    { text: "Compare propostas sem viés", type: 'neutral' }
+    { text: "Compare propostas e seus limites", type: 'neutral' }
   ],
   ...Object.fromEntries(MACRO.map(scene => [scene.id, scene.stats.map(([label, value, unit, period]) => ({ text: `${label}: ${value} ${unit} · ${period}`, type: 'neutral' }))]))
 };
@@ -549,8 +327,6 @@ function updateMarquee(sceneId) {
   
   const root = document.documentElement;
   const isDark = root.getAttribute('data-theme') !== 'light';
-  
-  const candidatoScenes = { 'scene-lula': 'lula', 'scene-flavio': 'flavio_bolsonaro', 'scene-zema': 'zema', 'scene-caiado': 'caiado', 'scene-renan': 'renan_santos', 'scene-cury': 'augusto_cury' };
   
   let data = [];
   if (sceneId === 'scene-saude') {
@@ -565,14 +341,6 @@ function updateMarquee(sceneId) {
   } else if (sceneId === 'scene-panorama') {
     marquee.style.setProperty('--marquee-color', isDark ? '#D4A843' : '#B8860B'); 
     data = MARQUEE_DATA['scene-panorama'];
-  } else if (candidatoScenes[sceneId]) {
-    const c = ELECTION_DATA.candidatos[candidatoScenes[sceneId]];
-    marquee.style.setProperty('--marquee-color', c.cor_partido);
-    data = [
-      { text: `CANDIDATO: ${c.nome_completo.toUpperCase()}`, type: 'neutral' },
-      ...c.pontos_fortes.map(p => ({ text: p.fato, type: 'good' })),
-      ...c.pontos_atencao.map(p => ({ text: p.fato, type: 'bad' }))
-    ];
   } else {
     marquee.style.removeProperty('--marquee-color');
     data = MARQUEE_DATA[sceneId] || MARQUEE_DATA.default;
