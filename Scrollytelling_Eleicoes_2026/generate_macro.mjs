@@ -78,7 +78,7 @@ const historyChart = data => {
       </svg>
       ${data.chartRows.map((row,i)=>labels.map((label,j)=>`<span class="business-line-dot business-${kinds[j]}" style="left:${x(i)}%;top:${y(row[j+1])}%" title="${row[0]} · ${escape(label)}: ${number(row[j+1])}" aria-hidden="true"></span>`).join('')).join('')}
     </div>
-    <div class="business-line-x" aria-hidden="true">${data.chartRows.map(([year], i) => (i % Math.max(1,Math.ceil(data.chartRows.length/5)) === 0 && i < data.chartRows.length - 2) || i === data.chartRows.length - 1 || data.chartRows.length <= 3 ? `<span class="${i === 0 ? 'first' : i === data.chartRows.length - 1 ? 'last' : ''}" style="left:${x(i)}%">${year}</span>` : '').join('')}</div>
+    <div class="business-line-x" aria-hidden="true">${data.chartRows.map(([year], i) => (i % Math.max(1,Math.ceil(data.chartRows.length/5)) === 0 && i < data.chartRows.length - 2) || i === data.chartRows.length - 1 || data.chartRows.length <= 5 ? `<span class="${i === 0 ? 'first' : i === data.chartRows.length - 1 ? 'last' : ''}" style="left:${x(i)}%">${year}</span>` : '').join('')}</div>
   </div>
   <p class="business-line-latest"><strong>${latest[0]}:</strong> ${labels.map((label,i)=>`${escape(label)}: ${number(latest[i+1])}`).join(' · ')}.</p>
   <p class="macro-chart-note">${escape(data.note)}</p><div class="macro-source">${data.sources.map(source).join(' · ')}</div>
@@ -92,9 +92,9 @@ const cycleTable = data => data.presentation === 'lines' ? historyChart(data) : 
   </table>
   <p class="macro-chart-note">${escape(data.note)}</p><div class="macro-source">${data.sources.map(source).join(' · ')}</div>
 </figure>`;
-const cycleText = data => `<h4>${escape(data.title)}</h4>${data.paragraphs.map(text => `<p>${escape(text)}</p>`).join('')}<div class="macro-source">${data.sources.map(source).join(' · ')}</div>`;
+const cycleText = data => `<h4>${escape(data.title)}</h4>${data.status ? `<p class="evidence-status"><strong>Estado da hipótese:</strong> ${escape(data.status)}</p>` : ''}${data.paragraphs.map(text => `<p>${escape(text)}</p>`).join('')}<div class="macro-source">${data.sources.map(source).join(' · ')}</div>`;
 const cycle = data => `<ol class="economy-cycle" start="2" aria-label="Da comparação à conclusão">
-  <li class="cycle-step"><span class="cycle-label">Dados comparáveis</span><div>${data.tables.map(cycleTable).join('')}</div></li>
+  <li class="cycle-step"><span class="cycle-label">Dados comparáveis</span><div>${data.tables.map(cycleTable).join('')}${data.stateTable ? `<details class="macro-details"><summary>Consultar todas as taxas estaduais</summary>${cycleTable(data.stateTable)}</details>` : ''}</div></li>
   <li class="cycle-step"><span class="cycle-label">Explicação</span><div>${cycleText(data.explanation)}</div></li>
   <li class="cycle-step"><span class="cycle-label">Interpretação alternativa</span><div>${cycleText(data.alternative)}</div></li>
   <li class="cycle-step cycle-conclusion"><span class="cycle-label">Conclusão que os dados permitem</span><div><p>${escape(data.conclusion)}</p><p class="cycle-next"><strong>O que acompanhar:</strong> ${escape(data.nextEvidence)}</p><div class="macro-source">${data.sources.map(source).join(' · ')}</div></div></li>
@@ -156,13 +156,12 @@ writeFileSync(path, html.replace(/ +$/gm, ''), 'utf8');
 const csvCell = value => `"${String(value).replaceAll('"', '""')}"`;
 const csv = [['tema', 'indicador', 'valor', 'unidade', 'periodo', 'fonte', 'url', 'revisao'], ...economyData.blocks.flatMap(item => item.stats.map(([label, value, unit, period, key]) => [item.title, label, value, unit, period, SOURCES[key][0], new URL(SOURCES[key][1], 'https://jonex-01.github.io/elei-es-2026/Scrollytelling_Eleicoes_2026/').href, '2026-10-02']))];
 writeFileSync(fileURLToPath(new URL('./dados/economia-2026-10-02.csv', import.meta.url)), '\uFEFF' + csv.map(row => row.map(csvCell).join(';')).join('\n') + '\n', 'utf8');
-const comparisonRows = economyData.blocks.flatMap(item => item.cycle.tables.flatMap(table => table.rows.map(row => [
-  item.cycle.question, table.caption, row[0], table.headers[1], row[1],
-  table.headers[2] || '', row[2] || '', table.note,
+const comparisonRows = economyData.blocks.flatMap(item => item.cycle.tables.flatMap(table => table.rows.flatMap(row => row.slice(1).map((value,i) => [
+  item.cycle.question, table.caption, row[0], table.headers[i+1], value, table.note,
   table.sources.map(key => new URL(SOURCES[key][1], 'https://jonex-01.github.io/elei-es-2026/Scrollytelling_Eleicoes_2026/').href).join(' | '),
   '2026-10-02'
-])));
-const comparisons = [['tema', 'comparacao', 'indicador', 'referencia_1', 'valor_1', 'referencia_2', 'valor_2', 'limites', 'fontes', 'revisao'], ...comparisonRows];
+]))));
+const comparisons = [['tema', 'comparacao', 'indicador', 'referencia', 'valor', 'limites', 'fontes', 'revisao'], ...comparisonRows];
 writeFileSync(fileURLToPath(new URL('./dados/analises-economia-2026-10-02.csv', import.meta.url)), '\uFEFF' + comparisons.map(row => row.map(csvCell).join(';')).join('\n') + '\n', 'utf8');
 writeFileSync(fileURLToPath(new URL('./dados/empresas-historico-2026-10-02.json', import.meta.url)), JSON.stringify({
   review: '2026-10-02', publisher: 'Serasa Experian', release_date: '2026-04-07',
@@ -173,6 +172,6 @@ writeFileSync(fileURLToPath(new URL('./dados/empresas-historico-2026-10-02.json'
 console.log('Quatro seções macro geradas com fontes e explicações.');
 
 for (const area of MACRO.filter(item => item.id !== 'scene-panorama')) {
-  const rows = [['area','pergunta','comparacao','indicador','referencia','valor','limites','fontes','revisao'], ...area.blocks.flatMap(item => item.cycle.tables.flatMap(table => table.rows.flatMap(row => row.slice(1).map((value,i) => [area.tag,item.cycle.question,table.caption,row[0],table.headers[i+1],value,table.note,table.sources.map(key=>SOURCES[key][1]).join(' | '),'2026-10-02']))))];
+  const rows = [['area','pergunta','comparacao','indicador','referencia','valor','limites','fontes','revisao'], ...area.blocks.flatMap(item => [...item.cycle.tables,...(item.cycle.stateTable?[item.cycle.stateTable]:[])].flatMap(table => table.rows.flatMap(row => row.slice(1).map((value,i) => [area.tag,item.cycle.question,table.caption,row[0],table.headers[i+1],value,table.note,table.sources.map(key=>SOURCES[key][1]).join(' | '),'2026-10-02']))))];
   writeFileSync(fileURLToPath(new URL(`./dados/${area.id.replace('scene-','')}-2026-10-02.csv`, import.meta.url)), '\uFEFF' + rows.map(row=>row.map(csvCell).join(';')).join('\n') + '\n','utf8');
 }
