@@ -101,6 +101,7 @@
 .cycle-table th, .cycle-table td { text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--border-strong); vertical-align: top; overflow-wrap: anywhere; }
 .cycle-table th:first-child { width: 58%; }
 .cycle-table[data-columns="3"] th:first-child { width: 46%; }
+.cycle-table[data-layout="year"] th:first-child { width: 20%; }
 .cycle-table td { font-variant-numeric: tabular-nums; }
 .cycle-conclusion { border-left: 3px solid var(--accent-primary); padding: 26px; background: var(--bg-card-solid); margin: 12px 0 28px; }
 .cycle-conclusion .cycle-label { color: var(--text-primary); }

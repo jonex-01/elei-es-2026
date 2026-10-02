@@ -1,8 +1,10 @@
 import { INCOME_ESTIMATES as income } from './income-estimates.js';
+import { BUSINESS_CYCLE } from './business-data.js';
 
 // Uma comparação tem período, população e conceito próprios.
 // Interpretações alternativas são confrontadas com evidências, não equiparadas a elas.
 export const ECONOMY_CYCLES = {
+  'economia-empresas': BUSINESS_CYCLE,
   'economia-bolso': {
     question: 'A renda melhorou para quem?',
     purpose: 'Distinguir ganho médio de poder de compra e posição central da distribuição.',

@@ -1,0 +1,111 @@
+{
+  "review": "2026-10-02",
+  "publisher": "Serasa Experian",
+  "release_date": "2026-04-07",
+  "methodology": "Série revisada que separa processos e CNPJs envolvidos nos pedidos de cada ano. Valores transcritos dos gráficos publicados; 2025 preliminar. Não mede estoque de recuperações em andamento, falências decretadas, baixas ou empregos perdidos.",
+  "sources": [
+    "https://www.serasaexperian.com.br/sala-de-imprensa/indicadores/recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta-serasa-experian/",
+    "https://www.serasaexperian.com.br/content/dam/serasa-institucional/releases-images-2025/indicadores/01-recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta.png",
+    "https://www.serasaexperian.com.br/content/dam/serasa-institucional/releases-images-2025/indicadores/06-recuperacoes-judiciais-avancam-no-brasil-e-atingem-25-mil-empresas-em-2025-maior-nivel-da-serie-aponta.png"
+  ],
+  "rows": [
+    {
+      "year": 2012,
+      "recovery_processes": 547,
+      "recovery_cnpjs": 779,
+      "bankruptcy_processes": 1879,
+      "bankruptcy_cnpjs": 1810
+    },
+    {
+      "year": 2013,
+      "recovery_processes": 522,
+      "recovery_cnpjs": 783,
+      "bankruptcy_processes": 1641,
+      "bankruptcy_cnpjs": 1607
+    },
+    {
+      "year": 2014,
+      "recovery_processes": 526,
+      "recovery_cnpjs": 822,
+      "bankruptcy_processes": 1749,
+      "bankruptcy_cnpjs": 1706
+    },
+    {
+      "year": 2015,
+      "recovery_processes": 826,
+      "recovery_cnpjs": 1412,
+      "bankruptcy_processes": 1861,
+      "bankruptcy_cnpjs": 1828
+    },
+    {
+      "year": 2016,
+      "recovery_processes": 1011,
+      "recovery_cnpjs": 1738,
+      "bankruptcy_processes": 1807,
+      "bankruptcy_cnpjs": 1797
+    },
+    {
+      "year": 2017,
+      "recovery_processes": 769,
+      "recovery_cnpjs": 1814,
+      "bankruptcy_processes": 1562,
+      "bankruptcy_cnpjs": 1571
+    },
+    {
+      "year": 2018,
+      "recovery_processes": 657,
+      "recovery_cnpjs": 1382,
+      "bankruptcy_processes": 1360,
+      "bankruptcy_cnpjs": 1377
+    },
+    {
+      "year": 2019,
+      "recovery_processes": 632,
+      "recovery_cnpjs": 1441,
+      "bankruptcy_processes": 1257,
+      "bankruptcy_cnpjs": 1302
+    },
+    {
+      "year": 2020,
+      "recovery_processes": 517,
+      "recovery_cnpjs": 1155,
+      "bankruptcy_processes": 764,
+      "bankruptcy_cnpjs": 814
+    },
+    {
+      "year": 2021,
+      "recovery_processes": 402,
+      "recovery_cnpjs": 911,
+      "bankruptcy_processes": 747,
+      "bankruptcy_cnpjs": 817
+    },
+    {
+      "year": 2022,
+      "recovery_processes": 464,
+      "recovery_cnpjs": 1269,
+      "bankruptcy_processes": 787,
+      "bankruptcy_cnpjs": 826
+    },
+    {
+      "year": 2023,
+      "recovery_processes": 772,
+      "recovery_cnpjs": 1728,
+      "bankruptcy_processes": 823,
+      "bankruptcy_cnpjs": 846
+    },
+    {
+      "year": 2024,
+      "recovery_processes": 926,
+      "recovery_cnpjs": 2184,
+      "bankruptcy_processes": 812,
+      "bankruptcy_cnpjs": 862
+    },
+    {
+      "year": 2025,
+      "recovery_processes": 977,
+      "recovery_cnpjs": 2466,
+      "bankruptcy_processes": 686,
+      "bankruptcy_cnpjs": 698
+    }
+  ]
+}

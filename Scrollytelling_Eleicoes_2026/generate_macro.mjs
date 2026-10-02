@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { MACRO, SOURCES } from './js/macro-data.js';
+import { BUSINESS_HISTORY, BUSINESS_SOURCES } from './js/business-data.js';
 
 const path = fileURLToPath(new URL('./index.html', import.meta.url));
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
@@ -52,7 +53,7 @@ const analysis = data => !data ? '' : `<div class="economy-analysis">
   <div class="economy-reading">${data.reading.map(([title, text, keys = []]) => `<details class="macro-details"><summary>${escape(title)}</summary><p>${escape(text)}</p>${keys.length ? `<div class="macro-source">${keys.map(source).join(' · ')}</div>` : ''}</details>`).join('')}</div>
 </div>`;
 const cycleTable = data => `<figure class="cycle-evidence">
-  <table class="cycle-table" data-columns="${data.headers.length}"><caption>${escape(data.caption)}</caption>
+  <table class="cycle-table" data-columns="${data.headers.length}" data-layout="${escape(data.layout || 'indicator')}"><caption>${escape(data.caption)}</caption>
     <thead><tr>${data.headers.map(label => `<th scope="col">${escape(label)}</th>`).join('')}</tr></thead>
     <tbody>${data.rows.map(row => `<tr>${row.map((value, i) => i === 0 ? `<th scope="row">${escape(value)}</th>` : `<td>${escape(value)}</td>`).join('')}</tr>`).join('')}</tbody>
   </table>
@@ -76,7 +77,8 @@ const block = data => `<article id="${data.id}" class="economy-block" aria-label
   <div class="economy-reading">${data.reading.map(([title, text, keys = []]) => `<details class="macro-details"><summary>${escape(title)}</summary><p>${escape(text)}</p>${keys.length ? `<div class="macro-source">${keys.map(source).join(' · ')}</div>` : ''}</details>`).join('')}</div>
   </div></details>
 </article>`;
-const economy = data => `<nav class="economy-nav" aria-label="Explore os temas de economia">${data.blocks.map((item, i) => `<a href="#${item.id}"><span>${['Bolso', 'Trabalho', 'Produção', 'Contas públicas', 'Futuro'][i]}</span></a>`).join('')}</nav>
+const economyLabels = { 'economia-bolso': 'Bolso', 'economia-trabalho': 'Trabalho', 'economia-producao': 'Produção', 'economia-contas': 'Contas públicas', 'economia-futuro': 'Futuro' };
+const economy = data => `<nav class="economy-nav" aria-label="Explore os temas de economia">${data.blocks.map(item => `<a href="#${item.id}"><span>${escape(item.navLabel || economyLabels[item.id] || item.title)}</span></a>`).join('')}</nav>
   <aside class="economy-context"><strong>Como ler este retrato</strong><p>Cada tema parte de uma pergunta, compara dados, explica mecanismos, examina outra interpretação e conclui dentro dos limites da evidência. Os períodos estão em cada tabela. 2026 está em andamento: os resultados parciais não são previsões para o fim do ano. As conclusões ficam visíveis; indicadores completos, exemplos e metodologia estão nos detalhes.</p><a href="dados/economia-2026-10-02.csv" download>Baixar indicadores e fontes (CSV)</a> · <a href="dados/analises-economia-2026-10-02.csv" download>Baixar comparações da análise (CSV)</a></aside>
   ${data.blocks.map(block).join('')}
   <aside class="macro-flow"><ul><li>Renda e preços → poder de compra</li><li>Trabalho e investimento → capacidade produtiva</li><li>Receitas e despesas → resultado primário</li><li>Juros, crescimento e ajustes → trajetória da dívida</li></ul><p>As setas explicam mecanismos. Não são um cálculo de correlação nem uma atribuição de resultados a um governo ou programa específico.</p></aside>`;
@@ -125,4 +127,10 @@ const comparisonRows = economyData.blocks.flatMap(item => item.cycle.tables.flat
 ])));
 const comparisons = [['tema', 'comparacao', 'indicador', 'referencia_1', 'valor_1', 'referencia_2', 'valor_2', 'limites', 'fontes', 'revisao'], ...comparisonRows];
 writeFileSync(fileURLToPath(new URL('./dados/analises-economia-2026-10-02.csv', import.meta.url)), '\uFEFF' + comparisons.map(row => row.map(csvCell).join(';')).join('\n') + '\n', 'utf8');
+writeFileSync(fileURLToPath(new URL('./dados/empresas-historico-2026-10-02.json', import.meta.url)), JSON.stringify({
+  review: '2026-10-02', publisher: 'Serasa Experian', release_date: '2026-04-07',
+  methodology: 'Série revisada que separa processos e CNPJs envolvidos nos pedidos de cada ano. Valores transcritos dos gráficos publicados; 2025 preliminar. Não mede estoque de recuperações em andamento, falências decretadas, baixas ou empregos perdidos.',
+  sources: ['empresasJudicial', 'empresasRJHistoria', 'empresasFalHistoria'].map(key => BUSINESS_SOURCES[key][1]),
+  rows: BUSINESS_HISTORY.map(([year, recovery_processes, recovery_cnpjs, bankruptcy_processes, bankruptcy_cnpjs]) => ({ year, recovery_processes, recovery_cnpjs, bankruptcy_processes, bankruptcy_cnpjs }))
+}, null, 2) + '\n', 'utf8');
 console.log('Quatro seções macro geradas com fontes e explicações.');
