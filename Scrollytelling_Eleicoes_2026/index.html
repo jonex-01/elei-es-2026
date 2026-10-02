@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eleições 2026 — Guia Interativo e Imparcial dos Candidatos à Presidência</title>
-  <meta name="description" content="Compare propostas, dados e histórico dos 6 principais candidatos à Presidência do Brasil em 2026. Dados reais e análise 100% imparcial.">
-  <meta property="og:title" content="Eleições 2026 — Guia Interativo e Imparcial">
-  <meta property="og:description" content="Guia visual e imparcial sobre os candidatos à Presidência do Brasil em 2026.">
+  <title>Eleições 2026 — Propostas, Indicadores e Contexto</title>
+  <meta name="description" content="Compare 13 planos presidenciais de 2026, com propostas documentadas, indicadores, explicações e limites das análises.">
+  <meta property="og:title" content="Eleições 2026 — Propostas, Indicadores e Contexto">
+  <meta property="og:description" content="Guia independente com propostas documentadas e indicadores para comparar candidaturas à Presidência em 2026.">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/macro.css?v=20261002_evidence1">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/candidatos.css?v=20261002_candidates1">
 </head>
 <body>
 
@@ -41,6 +41,8 @@
   <a href="#scene-seguranca" class="nav-overlay-link" style="transition-delay: 0.2s">Segurança</a>
   <a href="#scene-educacao" class="nav-overlay-link" style="transition-delay: 0.25s">Educação</a>
   <a href="#scene-transicao" class="nav-overlay-link" style="transition-delay: 0.3s">Os Pilares</a>
+  <a href="#scene-candidatos" class="nav-overlay-link">Candidaturas</a>
+  <a href="#scene-encerramento" class="nav-overlay-link">Comparar propostas</a>
 </div>
 
 <!-- CHAPTER ROUTE NAV -->
@@ -51,12 +53,7 @@
   <button class="chapter-route__btn" data-target="scene-seguranca"><span>Segurança</span></button>
   <button class="chapter-route__btn" data-target="scene-educacao"><span>Educação</span></button>
   <button class="chapter-route__btn" data-target="scene-transicao"><span>Os pilares</span></button>
-  <button class="chapter-route__btn" data-target="scene-lula"><span>Lula</span></button>
-  <button class="chapter-route__btn" data-target="scene-flavio"><span>Flávio</span></button>
-  <button class="chapter-route__btn" data-target="scene-zema"><span>Zema</span></button>
-  <button class="chapter-route__btn" data-target="scene-caiado"><span>Caiado</span></button>
-  <button class="chapter-route__btn" data-target="scene-renan"><span>Renan</span></button>
-  <button class="chapter-route__btn" data-target="scene-cury"><span>Cury</span></button>
+  <button class="chapter-route__btn" data-target="scene-candidatos"><span>Candidaturas</span></button>
   <button class="chapter-route__btn" data-target="scene-encerramento"><span>Comparativo</span></button>
 </nav>
 
@@ -74,7 +71,7 @@
 
     <p class="hero-eyebrow">Brasil · Outubro 2026</p>
     <h1 class="hero-title">ELEIÇÕES <span>2026</span></h1>
-    <p class="hero-subtitle">O guia interativo, imparcial e baseado em dados reais<br>para o eleitor informado.</p>
+    <p class="hero-subtitle">Dados com contexto. Propostas com fonte.<br>Um guia independente para comparar caminhos.</p>
 
     <!-- COUNTDOWN -->
     <div class="countdown-wrapper">
@@ -112,23 +109,23 @@
 <!-- MARQUEE — FATOS ELEITORAIS -->
 <div class="facts-marquee" id="marquee-facts">
   <div class="facts-marquee__track">
-    <span class="facts-marquee__item">150 milhões de eleitores aptos</span>
-    <span class="facts-marquee__item">6 candidatos confirmados</span>
+    <span class="facts-marquee__item">Planos e indicadores com fontes</span>
+    <span class="facts-marquee__item">13 candidaturas na página de planos do TSE</span>
     <span class="facts-marquee__item">1º turno em Outubro 2026</span>
-    <span class="facts-marquee__item">Dados de Ago/2026</span>
-    <span class="facts-marquee__item">100% imparcial e independente</span>
+    <span class="facts-marquee__item">Consulta dos planos: 02/10/2026</span>
+    <span class="facts-marquee__item">Projeto independente · análises identificadas</span>
     <span class="facts-marquee__item">Fontes: IBGE, BCB, TSE, IPEA</span>
     <span class="facts-marquee__item">Voto consciente é voto informado</span>
-    <span class="facts-marquee__item">Compare propostas sem viés</span>
+    <span class="facts-marquee__item">Compare propostas e seus limites</span>
     <!-- Duplicate for seamless loop -->
-    <span class="facts-marquee__item">150 milhões de eleitores aptos</span>
-    <span class="facts-marquee__item">6 candidatos confirmados</span>
+    <span class="facts-marquee__item">Planos e indicadores com fontes</span>
+    <span class="facts-marquee__item">13 candidaturas na página de planos do TSE</span>
     <span class="facts-marquee__item">1º turno em Outubro 2026</span>
-    <span class="facts-marquee__item">Dados de Ago/2026</span>
-    <span class="facts-marquee__item">100% imparcial e independente</span>
+    <span class="facts-marquee__item">Consulta dos planos: 02/10/2026</span>
+    <span class="facts-marquee__item">Projeto independente · análises identificadas</span>
     <span class="facts-marquee__item">Fontes: IBGE, BCB, TSE, IPEA</span>
     <span class="facts-marquee__item">Voto consciente é voto informado</span>
-    <span class="facts-marquee__item">Compare propostas sem viés</span>
+    <span class="facts-marquee__item">Compare propostas e seus limites</span>
   </div>
 </div>
 
@@ -1453,9 +1450,9 @@
   <div class="transicao-headline" style="text-align:left;max-width:800px;margin:0 auto 60px;padding-top:var(--section-pad-y)">
     <span class="scene-tag fade-in">🌎 O CAMINHO</span>
     <div class="quote fade-in" style="margin-top:24px">
-      "Nenhum candidato será o 'salvador da pátria'. Mas alguns caminhos já foram testados pelo mundo."
+      "Qual problema a proposta enfrenta, como ela funciona e o que permite avaliar seu resultado?"
     </div>
-    <p class="fade-in" style="color:var(--text-secondary)">Países que prosperaram focaram em quatro pilares fundamentais. Veja onde o Brasil está em cada um deles:</p>
+    <p class="fade-in" style="color:var(--text-secondary)">Antes de comparar os planos, considere financiamento, aprendizagem, regras e distribuição dos custos. Nenhum desses critérios, isoladamente, resolve todos os problemas.</p>
   </div>
 
   <div class="pilares-grid" style="max-width:1100px;margin:0 auto;padding-bottom:var(--section-pad-y)">
@@ -1486,232 +1483,26 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     CANDIDATOS (6 seções idênticas)
-══════════════════════════════════════════ -->
-
-<!-- LULA -->
-<section id="scene-lula" class="scene candidate-scene">
-  <div class="candidate-header">
-    <div class="candidate-avatar"><div class="candidate-avatar-inner"><img src="assets/lula.jpg" alt="Lula" style="width:100%; height:100%; object-fit:cover;"></div></div>
-    <div class="candidate-meta">
-      <h2 class="candidate-name">—</h2>
-      <div class="candidate-partido-badge">—</div>
-      <div class="candidate-info-row">
-        <span class="candidate-info-item info-idade">Idade: <span>—</span></span>
-        <span class="candidate-info-item info-estado">Estado: <span>—</span></span>
-        <span class="candidate-info-item info-cargo">Cargo: <span>—</span></span>
-      </div>
-      <div class="candidate-info-row">
-        <span class="candidate-info-item info-formacao">Formação: <span>—</span></span>
-        <span class="candidate-info-item info-ideologia-txt">—</span>
-      </div>
-      <div class="ideologia-bar-wrap" style="max-width:380px">
-        <div class="ideologia-label-row"><span>Esquerda</span><span>Centro</span><span>Direita</span></div>
-        <div class="ideologia-bar"><div class="ideologia-marker" style="left:25%"></div></div>
-      </div>
-    </div>
-  </div>
-  <p class="candidate-bio">—</p>
-  <div style="margin: 24px 0 40px 0; text-align: center;">
-    <button class="btn-magnetic btn-saiba-mais" data-candidate-id="lula" style="width:100%; justify-content: space-between;">
-      <span>Explorar Plano e Histórico</span>
-      <div class="btn-magnetic-icon-wrapper">↗</div>
-    </button>
-  </div>
-  <div class="candidate-section-title">📅 TRAJETÓRIA</div><div class="timeline-horiz"></div>
-  <div class="candidate-section-title">🎯 PROPOSTAS-CHAVE</div><div class="propostas-grid"></div>
-  <div class="candidate-section-title">⚖️ TESTE DE REALIDADE</div>
-  <div class="realidade-grid">
-    <div><div class="realidade-col-title forte">✅ Pontos Factuais Favoráveis</div><div class="col-fortes"></div></div>
-    <div><div class="realidade-col-title atencao">⚠️ Pontos de Atenção</div><div class="col-atencao"></div></div>
-  </div>
-  <div class="candidate-section-title">📊 PESQUISAS ELEITORAIS</div>
-  <div class="pesquisa-row">
-    <div class="pesquisa-card"><div class="stat-label">Intenção de Voto (1º Turno)</div><div class="pesquisa-pct intencao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-intencao" style="width:0%;background:var(--accent-primary)"></div></div><div class="pesquisa-source">—</div></div>
-    <div class="pesquisa-card"><div class="stat-label">Rejeição</div><div class="pesquisa-pct rejeicao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-rejeicao" style="width:0%;background:#F87171"></div></div></div>
-  </div>
-</section>
-
-<!-- FLÁVIO BOLSONARO -->
-<section id="scene-flavio" class="scene candidate-scene" style="background:var(--bg-secondary)">
-  <div class="candidate-header">
-    <div class="candidate-avatar"><div class="candidate-avatar-inner"><img src="assets/flavio.jpg" alt="Flávio Bolsonaro" style="width:100%; height:100%; object-fit:cover;"></div></div>
-    <div class="candidate-meta">
-      <h2 class="candidate-name">—</h2><div class="candidate-partido-badge">—</div>
-      <div class="candidate-info-row"><span class="candidate-info-item info-idade">Idade: <span>—</span></span><span class="candidate-info-item info-estado">Estado: <span>—</span></span><span class="candidate-info-item info-cargo">Cargo: <span>—</span></span></div>
-      <div class="candidate-info-row"><span class="candidate-info-item info-formacao">Formação: <span>—</span></span><span class="candidate-info-item info-ideologia-txt">—</span></div>
-      <div class="ideologia-bar-wrap" style="max-width:380px"><div class="ideologia-label-row"><span>Esquerda</span><span>Centro</span><span>Direita</span></div><div class="ideologia-bar"><div class="ideologia-marker"></div></div></div>
-    </div>
-  </div>
-  <p class="candidate-bio">—</p>
-  <div style="margin: 24px 0 40px 0; text-align: center;">
-    <button class="btn-magnetic btn-saiba-mais" data-candidate-id="flavio_bolsonaro" style="width:100%; justify-content: space-between;">
-      <span>Explorar Plano e Histórico</span>
-      <div class="btn-magnetic-icon-wrapper">↗</div>
-    </button>
-  </div>
-  <div class="candidate-section-title">📅 TRAJETÓRIA</div><div class="timeline-horiz"></div>
-  <div class="candidate-section-title">🎯 PROPOSTAS-CHAVE</div><div class="propostas-grid"></div>
-  <div class="candidate-section-title">⚖️ TESTE DE REALIDADE</div>
-  <div class="realidade-grid"><div><div class="realidade-col-title forte">✅ Pontos Factuais Favoráveis</div><div class="col-fortes"></div></div><div><div class="realidade-col-title atencao">⚠️ Pontos de Atenção</div><div class="col-atencao"></div></div></div>
-  <div class="candidate-section-title">📊 PESQUISAS ELEITORAIS</div>
-  <div class="pesquisa-row"><div class="pesquisa-card"><div class="stat-label">Intenção de Voto (1º Turno)</div><div class="pesquisa-pct intencao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-intencao" style="width:0%;background:var(--accent-primary)"></div></div><div class="pesquisa-source">—</div></div><div class="pesquisa-card"><div class="stat-label">Rejeição</div><div class="pesquisa-pct rejeicao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-rejeicao" style="width:0%;background:#F87171"></div></div></div></div>
-</section>
-
-<!-- ZEMA -->
-<section id="scene-zema" class="scene candidate-scene">
-  <div class="candidate-header">
-    <div class="candidate-avatar"><div class="candidate-avatar-inner"><img src="assets/zema.jpg?v=final" alt="Romeu Zema" style="width:100%; height:100%; object-fit:cover;"></div></div>
-    <div class="candidate-meta">
-      <h2 class="candidate-name">—</h2><div class="candidate-partido-badge">—</div>
-      <div class="candidate-info-row"><span class="candidate-info-item info-idade">Idade: <span>—</span></span><span class="candidate-info-item info-estado">Estado: <span>—</span></span><span class="candidate-info-item info-cargo">Cargo: <span>—</span></span></div>
-      <div class="candidate-info-row"><span class="candidate-info-item info-formacao">Formação: <span>—</span></span><span class="candidate-info-item info-ideologia-txt">—</span></div>
-      <div class="ideologia-bar-wrap" style="max-width:380px"><div class="ideologia-label-row"><span>Esquerda</span><span>Centro</span><span>Direita</span></div><div class="ideologia-bar"><div class="ideologia-marker"></div></div></div>
-    </div>
-  </div>
-  <p class="candidate-bio">—</p>
-  <div style="margin: 24px 0 40px 0; text-align: center;">
-    <button class="btn-magnetic btn-saiba-mais" data-candidate-id="zema" style="width:100%; justify-content: space-between;">
-      <span>Explorar Plano e Histórico</span>
-      <div class="btn-magnetic-icon-wrapper">↗</div>
-    </button>
-  </div>
-  <div class="candidate-section-title">📅 TRAJETÓRIA</div><div class="timeline-horiz"></div>
-  <div class="candidate-section-title">🎯 PROPOSTAS-CHAVE</div><div class="propostas-grid"></div>
-  <div class="candidate-section-title">⚖️ TESTE DE REALIDADE</div>
-  <div class="realidade-grid"><div><div class="realidade-col-title forte">✅ Pontos Factuais Favoráveis</div><div class="col-fortes"></div></div><div><div class="realidade-col-title atencao">⚠️ Pontos de Atenção</div><div class="col-atencao"></div></div></div>
-  <div class="candidate-section-title">📊 PESQUISAS ELEITORAIS</div>
-  <div class="pesquisa-row"><div class="pesquisa-card"><div class="stat-label">Intenção de Voto (1º Turno)</div><div class="pesquisa-pct intencao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-intencao" style="width:0%;background:var(--accent-primary)"></div></div><div class="pesquisa-source">—</div></div><div class="pesquisa-card"><div class="stat-label">Rejeição</div><div class="pesquisa-pct rejeicao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-rejeicao" style="width:0%;background:#F87171"></div></div></div></div>
-</section>
-
-<!-- CAIADO -->
-<section id="scene-caiado" class="scene candidate-scene" style="background:var(--bg-secondary)">
-  <div class="candidate-header">
-    <div class="candidate-avatar"><div class="candidate-avatar-inner"><img src="assets/caiado.jpg?v=final" alt="Ronaldo Caiado" style="width:100%; height:100%; object-fit:cover;"></div></div>
-    <div class="candidate-meta">
-      <h2 class="candidate-name">—</h2><div class="candidate-partido-badge">—</div>
-      <div class="candidate-info-row"><span class="candidate-info-item info-idade">Idade: <span>—</span></span><span class="candidate-info-item info-estado">Estado: <span>—</span></span><span class="candidate-info-item info-cargo">Cargo: <span>—</span></span></div>
-      <div class="candidate-info-row"><span class="candidate-info-item info-formacao">Formação: <span>—</span></span><span class="candidate-info-item info-ideologia-txt">—</span></div>
-      <div class="ideologia-bar-wrap" style="max-width:380px"><div class="ideologia-label-row"><span>Esquerda</span><span>Centro</span><span>Direita</span></div><div class="ideologia-bar"><div class="ideologia-marker"></div></div></div>
-    </div>
-  </div>
-  <p class="candidate-bio">—</p>
-  <div style="margin: 24px 0 40px 0; text-align: center;">
-    <button class="btn-magnetic btn-saiba-mais" data-candidate-id="caiado" style="width:100%; justify-content: space-between;">
-      <span>Explorar Plano e Histórico</span>
-      <div class="btn-magnetic-icon-wrapper">↗</div>
-    </button>
-  </div>
-  <div class="candidate-section-title">📅 TRAJETÓRIA</div><div class="timeline-horiz"></div>
-  <div class="candidate-section-title">🎯 PROPOSTAS-CHAVE</div><div class="propostas-grid"></div>
-  <div class="candidate-section-title">⚖️ TESTE DE REALIDADE</div>
-  <div class="realidade-grid"><div><div class="realidade-col-title forte">✅ Pontos Factuais Favoráveis</div><div class="col-fortes"></div></div><div><div class="realidade-col-title atencao">⚠️ Pontos de Atenção</div><div class="col-atencao"></div></div></div>
-  <div class="candidate-section-title">📊 PESQUISAS ELEITORAIS</div>
-  <div class="pesquisa-row"><div class="pesquisa-card"><div class="stat-label">Intenção de Voto (1º Turno)</div><div class="pesquisa-pct intencao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-intencao" style="width:0%;background:var(--accent-primary)"></div></div><div class="pesquisa-source">—</div></div><div class="pesquisa-card"><div class="stat-label">Rejeição</div><div class="pesquisa-pct rejeicao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-rejeicao" style="width:0%;background:#F87171"></div></div></div></div>
-</section>
-
-<!-- RENAN SANTOS -->
-<section id="scene-renan" class="scene candidate-scene">
-  <div class="candidate-header">
-    <div class="candidate-avatar"><div class="candidate-avatar-inner"><img src="assets/renan.jpg?v=final" alt="Renan Santos" style="width:100%; height:100%; object-fit:cover;"></div></div>
-    <div class="candidate-meta">
-      <h2 class="candidate-name">—</h2><div class="candidate-partido-badge">—</div>
-      <div class="candidate-info-row"><span class="candidate-info-item info-idade">Idade: <span>—</span></span><span class="candidate-info-item info-estado">Estado: <span>—</span></span><span class="candidate-info-item info-cargo">Cargo: <span>—</span></span></div>
-      <div class="candidate-info-row"><span class="candidate-info-item info-formacao">Formação: <span>—</span></span><span class="candidate-info-item info-ideologia-txt">—</span></div>
-      <div class="ideologia-bar-wrap" style="max-width:380px"><div class="ideologia-label-row"><span>Esquerda</span><span>Centro</span><span>Direita</span></div><div class="ideologia-bar"><div class="ideologia-marker"></div></div></div>
-    </div>
-  </div>
-  <p class="candidate-bio">—</p>
-  <div style="margin: 24px 0 40px 0; text-align: center;">
-    <button class="btn-magnetic btn-saiba-mais" data-candidate-id="renan_santos" style="width:100%; justify-content: space-between;">
-      <span>Explorar Plano e Histórico</span>
-      <div class="btn-magnetic-icon-wrapper">↗</div>
-    </button>
-  </div>
-  <div class="candidate-section-title">📅 TRAJETÓRIA</div><div class="timeline-horiz"></div>
-  <div class="candidate-section-title">🎯 PROPOSTAS-CHAVE</div><div class="propostas-grid"></div>
-  <div class="candidate-section-title">⚖️ TESTE DE REALIDADE</div>
-  <div class="realidade-grid"><div><div class="realidade-col-title forte">✅ Pontos Factuais Favoráveis</div><div class="col-fortes"></div></div><div><div class="realidade-col-title atencao">⚠️ Pontos de Atenção</div><div class="col-atencao"></div></div></div>
-  <div class="candidate-section-title">📊 PESQUISAS ELEITORAIS</div>
-  <div class="pesquisa-row"><div class="pesquisa-card"><div class="stat-label">Intenção de Voto (1º Turno)</div><div class="pesquisa-pct intencao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-intencao" style="width:0%;background:var(--accent-primary)"></div></div><div class="pesquisa-source">—</div></div><div class="pesquisa-card"><div class="stat-label">Rejeição</div><div class="pesquisa-pct rejeicao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-rejeicao" style="width:0%;background:#F87171"></div></div></div></div>
-</section>
-
-<!-- AUGUSTO CURY -->
-<section id="scene-cury" class="scene candidate-scene" style="background:var(--bg-secondary)">
-  <div class="candidate-header">
-    <div class="candidate-avatar"><div class="candidate-avatar-inner"><img src="assets/cury.jpg?v=final" alt="Augusto Cury" style="width:100%; height:100%; object-fit:cover;"></div></div>
-    <div class="candidate-meta">
-      <h2 class="candidate-name">—</h2><div class="candidate-partido-badge">—</div>
-      <div class="candidate-info-row"><span class="candidate-info-item info-idade">Idade: <span>—</span></span><span class="candidate-info-item info-estado">Estado: <span>—</span></span><span class="candidate-info-item info-cargo">Cargo: <span>—</span></span></div>
-      <div class="candidate-info-row"><span class="candidate-info-item info-formacao">Formação: <span>—</span></span><span class="candidate-info-item info-ideologia-txt">—</span></div>
-      <div class="ideologia-bar-wrap" style="max-width:380px"><div class="ideologia-label-row"><span>Esquerda</span><span>Centro</span><span>Direita</span></div><div class="ideologia-bar"><div class="ideologia-marker"></div></div></div>
-    </div>
-  </div>
-  <p class="candidate-bio">—</p>
-  <div style="margin: 24px 0 40px 0; text-align: center;">
-    <button class="btn-magnetic btn-saiba-mais" data-candidate-id="augusto_cury" style="width:100%; justify-content: space-between;">
-      <span>Explorar Plano e Histórico</span>
-      <div class="btn-magnetic-icon-wrapper">↗</div>
-    </button>
-  </div>
-  <div class="candidate-section-title">📅 TRAJETÓRIA</div><div class="timeline-horiz"></div>
-  <div class="candidate-section-title">🎯 PROPOSTAS-CHAVE</div><div class="propostas-grid"></div>
-  <div class="candidate-section-title">⚖️ TESTE DE REALIDADE</div>
-  <div class="realidade-grid"><div><div class="realidade-col-title forte">✅ Pontos Factuais Favoráveis</div><div class="col-fortes"></div></div><div><div class="realidade-col-title atencao">⚠️ Pontos de Atenção</div><div class="col-atencao"></div></div></div>
-  <div class="candidate-section-title">📊 PESQUISAS ELEITORAIS</div>
-  <div class="pesquisa-row"><div class="pesquisa-card"><div class="stat-label">Intenção de Voto (1º Turno)</div><div class="pesquisa-pct intencao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-intencao" style="width:0%;background:var(--accent-primary)"></div></div><div class="pesquisa-source">—</div></div><div class="pesquisa-card"><div class="stat-label">Rejeição</div><div class="pesquisa-pct rejeicao">0%</div><div class="pesquisa-bar-wrap"><div class="pesquisa-bar-fill bar-rejeicao" style="width:0%;background:#F87171"></div></div></div></div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     ENCERRAMENTO
-══════════════════════════════════════════ -->
-<section id="scene-encerramento" class="scene">
-  <div class="data-scene">
-    <div class="scene-header fade-in">
-      <span class="scene-tag">🗳️ QUADRO COMPARATIVO</span>
-      <h2 class="scene-title">A decisão é sua</h2>
-      <p class="scene-description">Um panorama final dos 6 candidatos, lado a lado, para facilitar sua comparação.</p>
-    </div>
-
-    <div style="overflow-x:auto;margin-bottom:48px" class="fade-in">
-      <table class="comparativo-table">
-        <thead>
-          <tr>
-            <th class="tema-col">Tema</th>
-            <th><span class="partido-dot" style="background:#ED1C24"></span>Lula</th>
-            <th><span class="partido-dot" style="background:#003DA5"></span>Flávio</th>
-            <th><span class="partido-dot" style="background:#FF6600"></span>Zema</th>
-            <th><span class="partido-dot" style="background:#2651A1"></span>Caiado</th>
-            <th><span class="partido-dot" style="background:#4A7C2E"></span>Renan</th>
-            <th><span class="partido-dot" style="background:#F58220"></span>Cury</th>
-          </tr>
-        </thead>
-        <tbody id="comparativo-tbody"></tbody>
-      </table>
-    </div>
-
-    <div class="chart-container fade-in" style="max-width:800px;margin:0 auto 48px">
-      <div class="chart-title">📊 Intenção de Voto e Rejeição por Candidato</div>
-      <div class="chart-wrap" style="height:280px">
-        <canvas id="chart-pesquisa" data-chart-id="chart-pesquisa"></canvas>
-      </div>
-      <p class="text-muted" style="margin-top:8px">Quaest/Genial · Agosto/2026 · Dados estimados com base no cenário eleitoral</p>
-    </div>
-
-    <div class="cta-block fade-in">
-      <h2>Voto consciente é voto informado.</h2>
-      <p>Nenhum candidato é perfeito. Avalie propostas, histórico e dados. Não escolha pelo sentimento — escolha pelo plano.</p>
-      <div class="cta-buttons">
-        <a href="https://www.tse.jus.br" target="_blank" rel="noopener" class="btn btn-primary">🗳️ Acesse o site do TSE</a>
-        <button class="btn btn-whatsapp" onclick="shareWhatsApp()">💬 WhatsApp</button>
-        <button class="btn btn-twitter" onclick="shareTwitter()">🐦 X / Twitter</button>
-        <button class="btn btn-copy" onclick="copyLink()">🔗 Copiar Link</button>
-      </div>
-      <p class="copy-feedback" id="copy-feedback">✅ Link copiado com sucesso!</p>
-    </div>
-  </div>
-</section>
+<!-- CANDIDATES_DOCUMENTED_START -->
+<section id="scene-candidatos" class="scene candidate-editorial" aria-labelledby="candidates-title">
+<header class="candidate-section-heading"><span class="candidate-eyebrow">Candidaturas · consulta de 02/10/2026</span><h2 id="candidates-title">Propostas com fonte.<br>Comparação com contexto.</h2>
+<p>As 13 candidaturas listadas na página de planos do TSE, em ordem alfabética. Abra um perfil para ler economia, saúde, educação e segurança com os mesmos critérios.</p>
+<p class="candidate-source"><a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026/planos-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026" target="_blank" rel="noopener noreferrer">Conferir a lista no TSE ↗</a> · A presença nessa lista não substitui a consulta à situação do registro eleitoral.</p><a class="candidate-action" href="#scene-encerramento">Comparar duas candidaturas por tema ↓</a></header>
+<div class="candidate-directory"><article class="candidate-directory-card" id="scene-clariana_barao"><div><span class="candidate-record">DC · urna 27</span><h3>Clariana Barão</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="clariana_barao.html#proposta-economia">Economia</a></li><li><a href="clariana_barao.html#proposta-saude">Saúde</a></li><li><a href="clariana_barao.html#proposta-educacao">Educação</a></li><li><a href="clariana_barao.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="clariana_barao.html">Ler propostas e limites ↗<span class="sr-only"> de Clariana Barão</span></a></article><article class="candidate-directory-card" id="scene-edmilson_costa"><div><span class="candidate-record">PCB · urna 21</span><h3>Edmilson Costa</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="edmilson_costa.html#proposta-economia">Economia</a></li><li><a href="edmilson_costa.html#proposta-saude">Saúde</a></li><li><a href="edmilson_costa.html#proposta-educacao">Educação</a></li><li><a href="edmilson_costa.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="edmilson_costa.html">Ler propostas e limites ↗<span class="sr-only"> de Edmilson Costa</span></a></article><article class="candidate-directory-card" id="scene-cury"><div><span class="candidate-record">AVANTE · urna 70</span><h3>Escritor Augusto Cury</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="augusto_cury.html#proposta-economia">Economia</a></li><li><a href="augusto_cury.html#proposta-saude">Saúde</a></li><li><a href="augusto_cury.html#proposta-educacao">Educação</a></li><li><a href="augusto_cury.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="augusto_cury.html">Ler propostas e limites ↗<span class="sr-only"> de Escritor Augusto Cury</span></a></article><article class="candidate-directory-card" id="scene-flavio"><div><span class="candidate-record">PL · urna 22</span><h3>Flávio Bolsonaro</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="flavio_bolsonaro.html#proposta-economia">Economia</a></li><li><a href="flavio_bolsonaro.html#proposta-saude">Saúde</a></li><li><a href="flavio_bolsonaro.html#proposta-educacao">Educação</a></li><li><a href="flavio_bolsonaro.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="flavio_bolsonaro.html">Ler propostas e limites ↗<span class="sr-only"> de Flávio Bolsonaro</span></a></article><article class="candidate-directory-card" id="scene-hertz_dias"><div><span class="candidate-record">PSTU · urna 16</span><h3>Hertz Dias</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="hertz_dias.html#proposta-economia">Economia</a></li><li><a href="hertz_dias.html#proposta-saude">Saúde</a></li><li><a href="hertz_dias.html#proposta-educacao">Educação</a></li><li><a href="hertz_dias.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="hertz_dias.html">Ler propostas e limites ↗<span class="sr-only"> de Hertz Dias</span></a></article><article class="candidate-directory-card" id="scene-leonardo_avalanche"><div><span class="candidate-record">PRTB · urna 28</span><h3>Leonardo Avalanche</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="leonardo_avalanche.html#proposta-economia">Economia</a></li><li><a href="leonardo_avalanche.html#proposta-saude">Saúde</a></li><li><a href="leonardo_avalanche.html#proposta-educacao">Educação</a></li><li><a href="leonardo_avalanche.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="leonardo_avalanche.html">Ler propostas e limites ↗<span class="sr-only"> de Leonardo Avalanche</span></a></article><article class="candidate-directory-card" id="scene-lula"><div><span class="candidate-record">PT · urna 13</span><h3>Lula</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="lula.html#proposta-economia">Economia</a></li><li><a href="lula.html#proposta-saude">Saúde</a></li><li><a href="lula.html#proposta-educacao">Educação</a></li><li><a href="lula.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="lula.html">Ler propostas e limites ↗<span class="sr-only"> de Lula</span></a></article><article class="candidate-directory-card" id="scene-renan"><div><span class="candidate-record">MISSÃO · urna 14</span><h3>Renan Santos</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="renan_santos.html#proposta-economia">Economia</a></li><li><a href="renan_santos.html#proposta-saude">Saúde</a></li><li><a href="renan_santos.html#proposta-educacao">Educação</a></li><li><a href="renan_santos.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="renan_santos.html">Ler propostas e limites ↗<span class="sr-only"> de Renan Santos</span></a></article><article class="candidate-directory-card" id="scene-caiado"><div><span class="candidate-record">PSD · urna 55</span><h3>Ronaldo Caiado</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="caiado.html#proposta-economia">Economia</a></li><li><a href="caiado.html#proposta-saude">Saúde</a></li><li><a href="caiado.html#proposta-educacao">Educação</a></li><li><a href="caiado.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="caiado.html">Ler propostas e limites ↗<span class="sr-only"> de Ronaldo Caiado</span></a></article><article class="candidate-directory-card" id="scene-rui_costa_pimenta"><div><span class="candidate-record">PCO · urna 29</span><h3>Rui Costa Pimenta</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="rui_costa_pimenta.html#proposta-economia">Economia</a></li><li><a href="rui_costa_pimenta.html#proposta-saude">Saúde</a></li><li><a href="rui_costa_pimenta.html#proposta-educacao">Educação</a></li><li><a href="rui_costa_pimenta.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="rui_costa_pimenta.html">Ler propostas e limites ↗<span class="sr-only"> de Rui Costa Pimenta</span></a></article><article class="candidate-directory-card" id="scene-samara"><div><span class="candidate-record">UP · urna 80</span><h3>Samara</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="samara.html#proposta-economia">Economia</a></li><li><a href="samara.html#proposta-saude">Saúde</a></li><li><a href="samara.html#proposta-educacao">Educação</a></li><li><a href="samara.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="samara.html">Ler propostas e limites ↗<span class="sr-only"> de Samara</span></a></article><article class="candidate-directory-card" id="scene-wilson_grassi"><div><span class="candidate-record">DEMOCRATA · urna 35</span><h3>Veterinário Wilson Grassi</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="wilson_grassi.html#proposta-economia">Economia</a></li><li><a href="wilson_grassi.html#proposta-saude">Saúde</a></li><li><a href="wilson_grassi.html#proposta-educacao">Educação</a></li><li><a href="wilson_grassi.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="wilson_grassi.html">Ler propostas e limites ↗<span class="sr-only"> de Veterinário Wilson Grassi</span></a></article><article class="candidate-directory-card" id="scene-zema"><div><span class="candidate-record">NOVO · urna 30</span><h3>Zema</h3></div><p class="candidate-source">Quatro temas · propostas e análise separadas</p><ul class="candidate-topic-links"><li><a href="zema.html#proposta-economia">Economia</a></li><li><a href="zema.html#proposta-saude">Saúde</a></li><li><a href="zema.html#proposta-educacao">Educação</a></li><li><a href="zema.html#proposta-seguranca">Segurança</a></li></ul><a class="candidate-action" href="zema.html">Ler propostas e limites ↗<span class="sr-only"> de Zema</span></a></article></div><details class="candidate-method" id="metodo-candidatos"><summary>Como ler esta comparação e quais são seus limites</summary><div>
+<p><strong>Proposta documentada:</strong> resumo atribuído ao plano a partir do índice temático do TSE. Os links mostram o índice e o documento completo, com a página indicada. O projeto não verificou integralmente todos os planos.</p>
+<p><strong>Análise do projeto:</strong> mecanismos possíveis, limites, interpretações alternativas e indicadores para acompanhar. São inferências e perguntas de avaliação, não declarações do candidato nem prova de que a proposta funcionará.</p>
+<p><strong>Custo, receita, prazo e dependências:</strong> ainda não há auditoria completa ou simulação independente. “Não auditado” não significa “não consta no plano”. Passagens adicionais lidas diretamente no PDF são identificadas nos perfis.</p>
+<p><strong>Mesmos critérios:</strong> quatro temas para todas as 13 candidaturas; ordem alfabética, sem nota de ideologia, ranking de viabilidade ou recomendação de voto. Os recortes não representam a totalidade nem a ordem de prioridade dos programas.</p>
+<p><strong>Pesquisas, declarações e controvérsias:</strong> os percentuais estimados e as antigas checagens sem documentação suficiente foram retirados. Esta revisão não apresenta um levantamento auditado desses itens. Pesquisas exigem documento, campo, amostra, margem, cenário e registro; controvérsias exigem documentos e situação processual, distinguindo alegação de decisão.</p>
+<p><strong>Fonte e atualização:</strong> <a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026/planos-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026" target="_blank" rel="noopener noreferrer">Página de planos do TSE ↗</a> · consulta em 02/10/2026. A publicação no TSE comprova a origem do programa; não é endosso à viabilidade ou à veracidade de todas as afirmações. Para o registro, <a href="https://divulgacandcontas.tse.jus.br/divulga/" target="_blank" rel="noopener noreferrer">consulte o DivulgaCandContas ↗</a>.</p>
+<p><a href="dados/candidatos-2026-10-02.json" download>Baixar os recortes e suas referências (JSON)</a></p></div></details></section>
+<section id="scene-encerramento" class="scene candidate-editorial" aria-labelledby="compare-title"><header class="candidate-section-heading"><span class="candidate-eyebrow">Comparador por tema</span><h2 id="compare-title">A mesma pergunta.<br>Dois caminhos para avaliar.</h2><p>Escolha o tema e as candidaturas. Leia a proposta, a explicação e o contraponto antes de tirar uma conclusão.</p></header>
+<div class="candidate-comparator" data-candidate-comparator><fieldset class="compare-controls"><legend>Escolhas da comparação</legend><label>Tema<select id="compare-topic" disabled><option value="economia">Economia</option><option value="saude">Saúde</option><option value="educacao">Educação</option><option value="seguranca">Segurança</option></select></label><label>Candidatura A<select id="compare-a" disabled><option value="clariana_barao" selected>Clariana Barão · DC</option><option value="edmilson_costa">Edmilson Costa · PCB</option><option value="augusto_cury">Escritor Augusto Cury · AVANTE</option><option value="flavio_bolsonaro">Flávio Bolsonaro · PL</option><option value="hertz_dias">Hertz Dias · PSTU</option><option value="leonardo_avalanche">Leonardo Avalanche · PRTB</option><option value="lula">Lula · PT</option><option value="renan_santos">Renan Santos · MISSÃO</option><option value="caiado">Ronaldo Caiado · PSD</option><option value="rui_costa_pimenta">Rui Costa Pimenta · PCO</option><option value="samara">Samara · UP</option><option value="wilson_grassi">Veterinário Wilson Grassi · DEMOCRATA</option><option value="zema">Zema · NOVO</option></select></label><label>Candidatura B<select id="compare-b" disabled><option value="clariana_barao">Clariana Barão · DC</option><option value="edmilson_costa" selected>Edmilson Costa · PCB</option><option value="augusto_cury">Escritor Augusto Cury · AVANTE</option><option value="flavio_bolsonaro">Flávio Bolsonaro · PL</option><option value="hertz_dias">Hertz Dias · PSTU</option><option value="leonardo_avalanche">Leonardo Avalanche · PRTB</option><option value="lula">Lula · PT</option><option value="renan_santos">Renan Santos · MISSÃO</option><option value="caiado">Ronaldo Caiado · PSD</option><option value="rui_costa_pimenta">Rui Costa Pimenta · PCO</option><option value="samara">Samara · UP</option><option value="wilson_grassi">Veterinário Wilson Grassi · DEMOCRATA</option><option value="zema">Zema · NOVO</option></select></label></fieldset><p class="candidate-source">A seleção inicial segue a ordem alfabética. O comparador não atribui pontuação.</p><p class="sr-only" id="compare-status" role="status" aria-live="polite" aria-atomic="true"></p><div id="compare-result"><article class="comparison-reading" aria-labelledby="comparison-question"><header class="comparison-question"><span class="candidate-eyebrow">Pergunta · Economia</span><h3 id="comparison-question">Como ampliar renda e emprego sem comprometer o financiamento dos serviços?</h3></header>
+<div class="compare-evidence"><h4>Dados comparáveis para julgar resultados</h4><p>Compare renda mediana real, emprego formal, participação e subutilização, investimento, resultado primário e dívida/PIB. A média salarial e a taxa de desemprego, sozinhas, não descrevem a situação de todas as famílias.</p><a href="index.html#economia-contas">Consultar os indicadores e suas fontes ↗</a></div>
+<div class="compare-identities"><div><span class="candidate-eyebrow">Candidatura A</span><span class="candidate-record">DC · urna 27</span><h3>Clariana Barão</h3></div><div><span class="candidate-eyebrow">Candidatura B</span><span class="candidate-record">PCB · urna 21</span><h3>Edmilson Costa</h3></div></div>
+<section class="compare-row"><h4>Proposta documentada</h4><div class="compare-pair"><div class="compare-cell"><span class="compare-mobile-name">A · Clariana Barão</span><p>Revisão de gastos e subsídios, crédito e capacitação para pequenos negócios e infraestrutura com parcerias público-privadas.</p><p class="candidate-source"><a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/plano-de-governo-1" target="_blank" rel="noopener noreferrer">Plano completo · p. 5–6 ↗</a> · <a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026/clariana-barao-propostas-de-governo" target="_blank" rel="noopener noreferrer">Índice do TSE ↗</a></p></div><div class="compare-cell"><span class="compare-mobile-name">B · Edmilson Costa</span><p>Jornada de 30 horas sem redução salarial, tributação progressiva, estatização bancária e suspensão e auditoria dos juros da dívida.</p><p class="candidate-source"><a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pcb" target="_blank" rel="noopener noreferrer">Plano completo · p. 2, 4–5, 14 ↗</a> · <a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026/edmilson-costa-propostas-de-governo" target="_blank" rel="noopener noreferrer">Índice do TSE ↗</a></p></div></div></section><section class="compare-row"><h4>Como pode funcionar <span class="analysis-label">Análise do projeto</span></h4><div class="compare-pair"><div class="compare-cell"><span class="compare-mobile-name">A · Clariana Barão</span><p>Revisar despesas pode abrir espaço orçamentário; crédito e capacitação procuram reduzir barreiras à expansão de pequenos negócios.</p></div><div class="compare-cell"><span class="compare-mobile-name">B · Edmilson Costa</span><p>Redistribuição de renda e reorganização do crédito buscam alterar a divisão dos recursos e das horas de trabalho.</p></div></div></section><section class="compare-row"><h4>Limites a conferir <span class="analysis-label">Análise do projeto</span></h4><div class="compare-pair"><div class="compare-cell"><span class="compare-mobile-name">A · Clariana Barão</span><p>É preciso separar economia recorrente de receita temporária e conferir custo do crédito, inadimplência e obrigações futuras das parcerias.</p></div><div class="compare-cell"><span class="compare-mobile-name">B · Edmilson Costa</span><p>Medir produtividade, custo do trabalho, oferta de crédito e efeito da suspensão sobre refinanciamento, juros e segurança dos contratos.</p></div></div></section><section class="compare-row"><h4>Interpretação alternativa <span class="analysis-label">Análise do projeto</span></h4><div class="compare-pair"><div class="compare-cell"><span class="compare-mobile-name">A · Clariana Barão</span><p>Crédito sem demanda ou produtividade pode aumentar dívida empresarial. Simplificar regras e melhorar infraestrutura também pode apoiar negócios.</p></div><div class="compare-cell"><span class="compare-mobile-name">B · Edmilson Costa</span><p>Reduzir jornadas pode gerar contratações ou reorganização da produção; o efeito depende de demanda, produtividade e custo, não apenas da lei.</p></div></div></section><section class="compare-row"><h4>Custeio e prazo</h4><div class="compare-pair"><div class="compare-cell"><span class="compare-mobile-name">A · Clariana Barão</span><p>Não auditados neste recorte. Consulte o plano para conferir custo inicial e recorrente, receita ou compensação, prazo e hipóteses. A falta dessa auditoria não prova ausência de detalhamento no documento.</p></div><div class="compare-cell"><span class="compare-mobile-name">B · Edmilson Costa</span><p>Não auditados neste recorte. Consulte o plano para conferir custo inicial e recorrente, receita ou compensação, prazo e hipóteses. A falta dessa auditoria não prova ausência de detalhamento no documento.</p></div></div></section><section class="compare-row"><h4>Conclusão permitida <span class="analysis-label">Análise do projeto</span></h4><div class="compare-pair"><div class="compare-cell"><span class="compare-mobile-name">A · Clariana Barão</span><p>A fonte documenta a proposta. Este recorte permite comparar o caminho escolhido; não demonstra eficácia, custo total nem execução garantida.</p><a href="clariana_barao.html#proposta-economia">Ler o ciclo completo de Clariana Barão ↗</a></div><div class="compare-cell"><span class="compare-mobile-name">B · Edmilson Costa</span><p>A fonte documenta a proposta. Este recorte permite comparar o caminho escolhido; não demonstra eficácia, custo total nem execução garantida.</p><a href="edmilson_costa.html#proposta-economia">Ler o ciclo completo de Edmilson Costa ↗</a></div></div></section>
+<details class="candidate-method"><summary>Dependências e indicadores para acompanhar ambos</summary><div><p>Mudanças tributárias, trabalhistas e fiscais podem exigir leis ou emendas constitucionais e negociação com o Congresso. Avaliar também o efeito sobre empresas, famílias, estados e municípios.</p><p><strong>Medir:</strong> Renda mediana real e formalização, junto com investimento, inflação e trajetória fiscal. Fixar ano-base, prazo, distribuição por renda e região e cenário sem a medida.</p><p>Uma política pode estimular a demanda no curto prazo e elevar despesas permanentes. Outra pode reduzir gastos e afetar serviços ou atividade. Juros, produtividade e conjuntura também influenciam os resultados; não basta atribuir tudo ao presidente.</p></div></details></article></div><button class="candidate-action compare-copy" type="button" hidden>Copiar link desta comparação</button><noscript><p>Os seletores precisam de JavaScript. A comparação inicial está disponível acima e todos os <a href="#scene-candidatos">13 perfis</a> podem ser lidos normalmente.</p></noscript></div></section>
+<!-- CANDIDATES_DOCUMENTED_END -->
 
 <!-- CANDIDATE MODAL OVERLAY REMOVED -->
 
@@ -1723,16 +1514,16 @@
     <strong>Outras fontes citadas no projeto:</strong> IBGE · BCB (Banco Central) · TSE · IPEA · FBSP (Anuário Brasileiro de Segurança Pública 2026) ·
     INEP · OCDE · DataSUS · CNES · CFM · DIEESE · Tesouro Nacional · Receita Federal · Boletim Focus (BCB) · LOA 2026
     <br>
-    <strong>Dados de pesquisa eleitoral:</strong> Datafolha (Registro TSE nº BR-03669/2026) · Quaest (Registro TSE nº BR-07065/2026) · Setembro/2026
+    <strong>Candidaturas:</strong> recortes dos 13 planos listados pelo TSE, consultados em 02/10/2026. Propostas documentadas e análises do projeto são identificadas separadamente; custo total e situação do registro eleitoral não foram auditados integralmente.
     <br>
-    <strong>Aviso:</strong> Projeto independente sem vínculo com partidos ou candidatos. Dados factuais coletados de registros oficiais no TSE e pesquisas eleitorais registradas, sem viés editorial. Dados revisados e atualizados em 06/09/2026.
+    <strong>Aviso:</strong> projeto independente sem vínculo com partidos ou candidatos. Fontes, definições e limites estão disponíveis junto ao conteúdo. <a href="#metodo-candidatos">Consultar o método de comparação dos planos</a>.
   </p>
 </footer>
 
 <!-- SCRIPTS -->
 
 
-<script type="module" src="js/app.js?v=evidence1_20261002_macro"></script>
+<script type="module" src="js/app.js?v=20261002_candidates1"></script>
 
 </body>
 </html>

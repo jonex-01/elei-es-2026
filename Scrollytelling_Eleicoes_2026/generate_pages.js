@@ -1,8 +1,2 @@
-const fs = require('fs');
-const candidatos = ['lula', 'flavio_bolsonaro', 'zema', 'caiado', 'renan_santos', 'augusto_cury'];
-const template = fs.readFileSync('candidato.html', 'utf8');
-
-candidatos.forEach(c => {
-  const content = template.replace('<body>', `<body data-candidate-id="${c}">`);
-  fs.writeFileSync(`${c}.html`, content, 'utf8');
-});
+// O comando anterior agora gera 13 perfis estáticos documentados.
+import('./generate_candidates.mjs').catch(error=>{console.error(error);process.exitCode=1;});

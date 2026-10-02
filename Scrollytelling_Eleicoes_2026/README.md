@@ -1,6 +1,6 @@
 # 🗳️ Scrollytelling Eleições 2026
 
-Site interativo e imparcial sobre as Eleições Presidenciais Brasileiras de 2026.
+Guia independente das Eleições Presidenciais Brasileiras de 2026, com indicadores, propostas documentadas e limites das análises.
 
 ## Como rodar localmente
 
@@ -31,11 +31,11 @@ Scrollytelling_Eleicoes_2026/
 
 ## Funcionalidades
 
-- 🎨 **Sistema "Chameleon"** — cores mudam conforme o candidato em foco
+- 🎨 **Temas claro e escuro** com a mesma apresentação para todas as candidaturas
 - ⏱️ **Countdown em tempo real** para o 1º turno (4/Out/2026)
 - 📊 **Gráficos de linhas** com valores consultáveis, fontes e escalas explícitas
 - 🌙 **Toggle Dark/Light mode** com persistência
-- 📍 **Barra de progresso lateral** com 13 dots clicáveis
+- 📍 **Navegação por capítulos** com acesso às candidaturas e ao comparador
 - 📱 **Responsivo** — mobile a desktop
 - 🔗 **Compartilhamento** WhatsApp, Twitter/X e copiar link
 - ♿ **Acessível** — aria-labels, skip link, contraste AA
@@ -85,11 +85,24 @@ Séries e estimativas antigas sem metodologia rastreável deixaram de ser exibid
 
 Os esquemas explicam mecanismos e limites; não afirmam correlação estatística nem causalidade entre programas sociais e dívida. Valores de orçamento são identificados como autorização, procedimentos não são pessoas únicas, e séries de violência com definições diferentes não são misturadas.
 
-### Pesquisa anterior do projeto
+### Candidaturas: revisão documental de 02/10/2026
 
-- Fontes: IBGE, BCB, TSE, FBSP, INEP, OCDE, CFM, DIEESE
-- Pesquisas: Quaest/Genial (Agosto/2026)
-- Projeto 100% imparcial — sem vínculo com partidos ou candidatos
+`js/candidates-data.mjs` substitui os dados eleitorais antigos na interface. A revisão usa as **13 candidaturas listadas na página de planos do TSE**, com partido e número conforme essa fonte. A inclusão não equivale à auditoria da situação do registro ou da elegibilidade. Caiado passa de UNIÃO/44 para **PSD/55**. A ordem é alfabética e os quatro temas são iguais para todos.
+
+Cada perfil segue **pergunta → proposta e dados comparáveis → explicação → interpretação alternativa → conclusão permitida**. Os resumos partem do índice temático do TSE, com página indicada e links para índice e plano. Os mecanismos e contrapontos são inferências do projeto, identificadas no texto. Há passagens adicionais lidas diretamente em cinco PDFs, registradas em `DOCUMENT_NOTES`; não se afirma leitura integral de todos os planos.
+
+Custos, financiamento, cronogramas e compatibilidade jurídica não foram auditados integralmente. “Não auditado” não significa ausência no plano. Trajetórias, controvérsias e declarações antigas sem documentação suficiente não são exibidas; novas inclusões exigem fontes específicas e distinção entre alegação, declaração e decisão. Percentuais de pesquisas estimados e gráficos de checagens sem comprovação foram retirados. Não há notas de ideologia ou de viabilidade.
+
+O comparador em `js/candidate-view.mjs` confronta duas candidaturas no mesmo tema e permite copiar uma URL que preserva as seleções. No celular, as candidaturas aparecem dentro de cada critério, antes do próximo critério. Sem JavaScript, os 13 perfis e uma comparação inicial continuam disponíveis em HTML. Não há ranking ou recomendação de voto.
+
+Para gerar os perfis, diretório, comparação inicial e arquivo público de referências:
+
+```bash
+node generate_candidates.mjs
+# O comando anterior node generate_pages.js também continua funcionando.
+```
+
+`dados/candidatos-2026-10-02.json` contém os 52 recortes, fontes e limites. O gerador é idempotente e preserva os blocos macro. Atualizações exigem nova consulta à fonte, revisão humana das sínteses e atualização da data. `js/data.js` e `js/data_fase2.js` permanecem apenas como legado, não são carregados pela interface e não devem ser reutilizados como fontes verificadas.
 
 ### Saúde, educação e segurança: a mesma sequência de análise
 

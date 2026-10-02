@@ -1,3 +1,6 @@
+// LEGADO NÃO AUDITADO: dados e checagens antigas não alimentam mais o site.
+// Não reutilizar as projeções deste arquivo como fatos ou fontes verificadas.
+// A revisão documental ativa está em candidates-data.mjs (02/10/2026).
 export const PHASE2_DATA = {
   "metadata": {
     "data_pesquisa": "2026-09-06",
