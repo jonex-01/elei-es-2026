@@ -49,12 +49,12 @@ export const BUSINESS_CYCLE = {
   }, {
     caption: 'Histórico anual de CNPJs envolvidos em pedidos judiciais',
     layout: 'year',
-    presentation: 'paired-bars',
+    presentation: 'lines',
     chartMax: 2500,
     chartRows: BUSINESS_HISTORY.map(([year, , recovery, , bankruptcy]) => [year, recovery, bankruptcy]),
     headers: ['Ano completo', 'Recuperação judicial · requerida', 'Falência · requerida'],
     rows: BUSINESS_HISTORY.map(([year, , rj, , bankruptcy]) => [String(year), format(rj), format(bankruptcy)]),
-    note: 'Série revisada publicada em abril/2026. CNPJs envolvidos nos pedidos de cada ano, não estoque de empresas ainda em recuperação nem número de falências decretadas. Dados de 2025 preliminares; não concatenamos o indicador antigo com esta metodologia. As duas colunas não devem ser somadas: pode haver sobreposição.',
+    note: 'Série revisada publicada em abril/2026. CNPJs envolvidos nos pedidos de cada ano, não estoque de empresas ainda em recuperação nem número de falências decretadas. Dados de 2025 preliminares; não concatenamos o indicador antigo com esta metodologia. As duas séries não devem ser somadas: pode haver sobreposição.',
     sources: ['empresasRJHistoria', 'empresasFalHistoria', 'empresasDados']
   }, {
     caption: '2026 parcial: processos e CNPJs são contagens distintas',
