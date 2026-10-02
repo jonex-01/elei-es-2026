@@ -1,4 +1,33 @@
 /* Hierarquia documental comum às 13 candidaturas. */
+.candidate-poll-summary{margin:30px 0;padding:22px 26px;background:var(--bg-secondary);border:1px solid var(--border-strong);border-radius:12px}
+.candidate-poll-summary p{line-height:1.65;margin:12px 0}
+.candidate-poll-summary a{color:var(--accent-primary)}
+.poll-average{font:600 1.8rem/1.4 'Outfit',sans-serif;color:var(--text-primary)}
+.candidate-polls,.poll-overview,.candidate-critical-overview{padding:40px 0;scroll-margin-top:110px;border-top:1px solid var(--border-strong)}
+.candidate-polls h2,.poll-overview h3,.candidate-critical-overview h3{font:600 clamp(1.5rem,3vw,2.4rem)/1.25 'Outfit',sans-serif;margin:14px 0 24px;letter-spacing:-.025em}
+.poll-institutes{margin:24px 0}
+.poll-institutes>div{padding:16px 0;border-top:1px solid var(--border)}
+.poll-institutes dt{font:600 1rem/1.5 'Outfit',sans-serif}
+.poll-institutes dt span{font-weight:400;color:var(--text-secondary)}
+.poll-institutes dd{margin:10px 0;line-height:1.7}
+.poll-sources p{font-size:.85rem;line-height:1.8}
+.candidate-table-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;border:1px solid var(--border-strong);border-radius:12px;margin:24px 0;scrollbar-width:auto}
+.candidate-table-scroll:focus-visible{outline:2px solid var(--accent-primary);outline-offset:4px}
+.candidate-polls-table,.candidate-critical-table{border-collapse:collapse;width:100%;font-size:.85rem}
+.candidate-polls-table{min-width:1140px}
+.candidate-critical-table{min-width:1740px;table-layout:fixed}
+.candidate-polls-table caption,.candidate-critical-table caption{text-align:left;padding:18px;font:600 .9rem/1.5 'Outfit',sans-serif;background:var(--bg-secondary)}
+.candidate-polls-table th,.candidate-polls-table td,.candidate-critical-table th,.candidate-critical-table td{padding:18px;vertical-align:top;border-top:1px solid var(--border);border-right:1px solid var(--border);text-align:left;line-height:1.65}
+.candidate-polls-table th,.candidate-critical-table th{font-family:'Outfit',sans-serif;background:var(--bg-secondary)}
+.candidate-polls-table small,.candidate-critical-table small{display:block;color:var(--text-secondary);font-weight:400}
+.candidate-polls-table th:first-child{min-width:170px}
+.candidate-critical-table p{margin:0 0 14px}
+.candidate-critical-table .matrix-label{font:600 .75rem/1.5 'Outfit',sans-serif;margin:22px 0 10px}
+.candidate-critical-table .matrix-label:first-child{margin-top:0}
+.candidate-critical-table .analysis-label{display:block;margin:4px 0 0}
+.candidate-critical-table a{font-size:.8rem}
+.poll-overview,.candidate-critical-overview{max-width:1160px;margin:auto}
+@media(max-width:600px){.candidate-poll-summary{padding:18px}.poll-average{font-size:1.5rem}}
 .candidate-interview{padding:40px 0;scroll-margin-top:110px;border-bottom:1px solid var(--border-strong)}
 .candidate-interview h2{font:600 clamp(1.5rem,3vw,2.4rem)/1.25 'Outfit',sans-serif;margin:14px 0 24px;letter-spacing:-.025em}
 .candidate-interview h3{font:600 1.1rem/1.4 'Outfit',sans-serif;margin-bottom:14px}

@@ -1,0 +1,242 @@
+{
+  "reviewDate": "02/10/2026",
+  "method": "Média aritmética simples, sem pesos, do total de intenção de voto nacional estimulada no 1º turno: uma rodada por instituto entre os relatórios Datafolha, Quaest e AtlasIntel/Bloomberg conferidos até 02/10/2026, com campo encerrado nos últimos 10 dias. Não mistura voto espontâneo, votos válidos, segundo turno ou pesquisas estaduais. Não é projeção eleitoral nem levantamento exaustivo de todos os institutos. Modos de entrevista, população-alvo e datas diferem. Não possui margem de erro combinada e não corrige efeito de instituto. Resultados censurados (<1%) não viram zero e impedem média pontual. Zero publicado permanece zero no cálculo, sujeito ao arredondamento da fonte. Rejeição permanece por instituto: questionários diferentes e ausência de dados não são combinados.",
+  "polls": [
+    {
+      "id": "datafolha-20261001",
+      "institute": "Datafolha",
+      "published": "02/10/2026",
+      "field": "29/09–01/10/2026",
+      "fieldEnd": "2026-10-01",
+      "sample": 2506,
+      "margin": 2,
+      "confidence": 95,
+      "registration": "BR-08039/2026",
+      "population": "Eleitores de 16 anos ou mais",
+      "method": "Entrevistas presenciais em 152 municípios",
+      "source": "https://datafolha.folha.uol.com.br/eleicoes/2026/10/no-1o-turno-lula-pt-lidera-com-45-dos-validos-e-flavio-bolsonaro-pl-tem-40.shtml",
+      "voteReference": "Total de votos · 1º turno estimulado; não são votos válidos",
+      "rejectionQuestion": "Candidatos em quem não votaria de jeito nenhum",
+      "votes": {
+        "lula": 42,
+        "flavio_bolsonaro": 38,
+        "zema": 1,
+        "caiado": 3,
+        "renan_santos": 3,
+        "augusto_cury": 4,
+        "samara": 1,
+        "edmilson_costa": {
+          "lt": 1
+        },
+        "wilson_grassi": {
+          "lt": 1
+        },
+        "clariana_barao": {
+          "lt": 1
+        },
+        "rui_costa_pimenta": {
+          "lt": 1
+        },
+        "leonardo_avalanche": {
+          "lt": 1
+        },
+        "hertz_dias": {
+          "lt": 1
+        }
+      },
+      "rejection": {
+        "lula": 45,
+        "flavio_bolsonaro": 45,
+        "zema": 15,
+        "caiado": 14,
+        "renan_santos": 16,
+        "augusto_cury": 11,
+        "samara": 9,
+        "edmilson_costa": 9,
+        "wilson_grassi": null,
+        "clariana_barao": null,
+        "rui_costa_pimenta": 11,
+        "leonardo_avalanche": null,
+        "hertz_dias": null
+      }
+    },
+    {
+      "id": "quaest-20260928",
+      "institute": "Quaest",
+      "published": "28/09/2026",
+      "field": "24–27/09/2026",
+      "fieldEnd": "2026-09-27",
+      "sample": 2004,
+      "margin": 2,
+      "confidence": 95,
+      "registration": "BR-06520/2026",
+      "population": "Eleitores de 16 anos ou mais",
+      "method": "Entrevistas pessoais domiciliares",
+      "source": "https://static.poder360.com.br/uploads/2026/09/pesquisa-quaest-presidente-28set2026v2.pdf",
+      "institutePage": "https://quaest.com.br/relatorios/pesquisa-de-intencao-de-voto-para-presidente-rodada-6-28-09-2026/",
+      "voteReference": "PDF p. 18 · 1º turno estimulado, cenário 1 · última coluna (28/Set)",
+      "rejectionReference": "PDF p. 83 e 85 · última coluna (28/Set)",
+      "rejectionQuestion": "Conhece e não votaria de jeito nenhum, após distinguir desconhecimento e possibilidade de voto",
+      "votes": {
+        "lula": 39,
+        "flavio_bolsonaro": 34,
+        "zema": 1,
+        "caiado": 4,
+        "renan_santos": 3,
+        "augusto_cury": 4,
+        "samara": 0,
+        "edmilson_costa": 0,
+        "wilson_grassi": 0,
+        "clariana_barao": 0,
+        "rui_costa_pimenta": 0,
+        "leonardo_avalanche": 0,
+        "hertz_dias": 0
+      },
+      "rejection": {
+        "lula": 54,
+        "flavio_bolsonaro": 56,
+        "zema": 45,
+        "caiado": 40,
+        "renan_santos": 35,
+        "augusto_cury": 31,
+        "samara": 14,
+        "edmilson_costa": 13,
+        "wilson_grassi": 12,
+        "clariana_barao": 10,
+        "rui_costa_pimenta": 23,
+        "leonardo_avalanche": 12,
+        "hertz_dias": 13
+      },
+      "unknown": {
+        "lula": 0,
+        "flavio_bolsonaro": 1,
+        "zema": 35,
+        "caiado": 32,
+        "renan_santos": 50,
+        "augusto_cury": 45,
+        "samara": 83,
+        "edmilson_costa": 85,
+        "wilson_grassi": 86,
+        "clariana_barao": 89,
+        "rui_costa_pimenta": 74,
+        "leonardo_avalanche": 87,
+        "hertz_dias": 86
+      }
+    },
+    {
+      "id": "atlas-20260929",
+      "institute": "AtlasIntel/Bloomberg",
+      "published": "29/09/2026",
+      "field": "23–28/09/2026",
+      "fieldEnd": "2026-09-28",
+      "sample": 5005,
+      "margin": 1,
+      "confidence": 95,
+      "registration": "BR-04391/2026",
+      "population": "População adulta brasileira",
+      "method": "Recrutamento digital aleatório (Atlas RDR), com pós-estratificação",
+      "source": "https://cdn1.atlasintel.org/pesquisa_atlas_bloomberg__nacional_260929_f6e4ce397d269a6f.pdf",
+      "institutePage": "https://atlasintel.org/poll/brazil-national-2026-09-29",
+      "voteReference": "PDF p. 14 · total de votos no 1º turno; metodologia p. 5",
+      "rejectionQuestion": null,
+      "votes": {
+        "lula": 45.3,
+        "flavio_bolsonaro": 42.2,
+        "zema": 0.9,
+        "caiado": 1.8,
+        "renan_santos": 5.2,
+        "augusto_cury": 2,
+        "samara": 0.4,
+        "edmilson_costa": 0,
+        "wilson_grassi": 0,
+        "clariana_barao": 0,
+        "rui_costa_pimenta": 0.1,
+        "leonardo_avalanche": null,
+        "hertz_dias": 0
+      },
+      "rejection": {
+        "lula": null,
+        "flavio_bolsonaro": null,
+        "zema": null,
+        "caiado": null,
+        "renan_santos": null,
+        "augusto_cury": null,
+        "samara": null,
+        "edmilson_costa": null,
+        "wilson_grassi": null,
+        "clariana_barao": null,
+        "rui_costa_pimenta": null,
+        "leonardo_avalanche": null,
+        "hertz_dias": null
+      },
+      "note": "Este relatório não publica rejeição. Leonardo Avalanche não aparece individualmente no gráfico; não foi convertido em zero."
+    }
+  ],
+  "averages": {
+    "clariana_barao": {
+      "value": null,
+      "count": 3,
+      "reason": "Sem média pontual: há resultado <1%"
+    },
+    "edmilson_costa": {
+      "value": null,
+      "count": 3,
+      "reason": "Sem média pontual: há resultado <1%"
+    },
+    "augusto_cury": {
+      "value": 3.3333333333333335,
+      "count": 3,
+      "reason": null
+    },
+    "flavio_bolsonaro": {
+      "value": 38.06666666666667,
+      "count": 3,
+      "reason": null
+    },
+    "hertz_dias": {
+      "value": null,
+      "count": 3,
+      "reason": "Sem média pontual: há resultado <1%"
+    },
+    "leonardo_avalanche": {
+      "value": null,
+      "count": 2,
+      "reason": "Sem média pontual: há resultado <1%"
+    },
+    "lula": {
+      "value": 42.1,
+      "count": 3,
+      "reason": null
+    },
+    "renan_santos": {
+      "value": 3.733333333333333,
+      "count": 3,
+      "reason": null
+    },
+    "caiado": {
+      "value": 2.9333333333333336,
+      "count": 3,
+      "reason": null
+    },
+    "rui_costa_pimenta": {
+      "value": null,
+      "count": 3,
+      "reason": "Sem média pontual: há resultado <1%"
+    },
+    "samara": {
+      "value": 0.4666666666666666,
+      "count": 3,
+      "reason": null
+    },
+    "wilson_grassi": {
+      "value": null,
+      "count": 3,
+      "reason": "Sem média pontual: há resultado <1%"
+    },
+    "zema": {
+      "value": 0.9666666666666667,
+      "count": 3,
+      "reason": null
+    }
+  }
+}
