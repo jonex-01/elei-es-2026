@@ -52,7 +52,16 @@ const analysis = data => !data ? '' : `<div class="economy-analysis">
   ${demonstration(data.demo)}
   <div class="economy-reading">${data.reading.map(([title, text, keys = []]) => `<details class="macro-details"><summary>${escape(title)}</summary><p>${escape(text)}</p>${keys.length ? `<div class="macro-source">${keys.map(source).join(' · ')}</div>` : ''}</details>`).join('')}</div>
 </div>`;
-const cycleTable = data => `<figure class="cycle-evidence">
+const historyChart = data => `<figure class="cycle-evidence business-history" aria-labelledby="business-history-title">
+  <figcaption id="business-history-title">${escape(data.caption)}</figcaption>
+  <p class="business-chart-unit">CNPJs por ano · mesma escala nas duas séries · eixo começa em zero</p>
+  <ul class="business-chart-legend"><li><i class="business-recovery" aria-hidden="true"></i>Recuperação judicial requerida</li><li><i class="business-bankruptcy" aria-hidden="true"></i>Falência requerida</li></ul>
+  <div class="business-chart-axis" aria-hidden="true"><span>0</span><span>${number(data.chartMax)} CNPJs</span></div>
+  <ol class="business-chart-years" aria-label="Valores anuais de recuperação judicial e falência requeridas">${data.chartRows.map(([year, recovery, bankruptcy]) => `<li class="business-chart-year"><strong>${year}</strong><div>${[[recovery, 'recovery', 'Recuperação judicial requerida'], [bankruptcy, 'bankruptcy', 'Falência requerida']].map(([value, kind, label]) => `<div class="business-series"><span class="business-chart-sr">${label}: </span><div class="business-chart-track" aria-hidden="true"><span class="business-${kind}" style="width:${value / data.chartMax * 100}%"></span></div><span class="business-chart-value">${number(value)}<span class="business-chart-sr"> CNPJs</span></span></div>`).join('')}</div></li>`).join('')}</ol>
+  <p class="macro-chart-note">${escape(data.note)}</p><div class="macro-source">${data.sources.map(source).join(' · ')}</div>
+  <details class="macro-details business-chart-data"><summary>Consultar valores em tabela</summary>${cycleTable({ ...data, presentation: 'table' })}</details>
+</figure>`;
+const cycleTable = data => data.presentation === 'paired-bars' ? historyChart(data) : `<figure class="cycle-evidence">
   <table class="cycle-table" data-columns="${data.headers.length}" data-layout="${escape(data.layout || 'indicator')}"><caption>${escape(data.caption)}</caption>
     <thead><tr>${data.headers.map(label => `<th scope="col">${escape(label)}</th>`).join('')}</tr></thead>
     <tbody>${data.rows.map(row => `<tr>${row.map((value, i) => i === 0 ? `<th scope="row">${escape(value)}</th>` : `<td>${escape(value)}</td>`).join('')}</tr>`).join('')}</tbody>
