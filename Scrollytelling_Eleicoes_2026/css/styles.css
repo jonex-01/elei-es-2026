@@ -1180,11 +1180,11 @@ p  { color: var(--text-secondary); }
 }
 
 #scene-lula .candidate-header { background-image: url('../assets/banner_pt_user.jpg'); }
-#scene-flavio .candidate-header { background-image: url('../assets/banner_pl.jpg'); }
-#scene-zema .candidate-header { background-image: url('../assets/banner_novo.jpg'); }
-#scene-caiado .candidate-header { background-image: url('../assets/banner_uniao.jpg'); }
-#scene-renan .candidate-header { background-image: url('../assets/banner_missao.jpg'); }
-#scene-cury .candidate-header { background-image: url('../assets/banner_psdb.jpg'); }
+#scene-flavio .candidate-header { background: #143578; }
+#scene-zema .candidate-header { background: #a63f09; }
+#scene-caiado .candidate-header { background: #125c46; }
+#scene-renan .candidate-header { background: #292718; border-bottom-color: #efd328; }
+#scene-cury .candidate-header { background: #076b78; }
 
 .candidate-avatar, .candidate-meta {
   position: relative;
